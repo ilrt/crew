@@ -1,1 +1,2 @@
+#sidebar TableOfContents
 = Introduction =
