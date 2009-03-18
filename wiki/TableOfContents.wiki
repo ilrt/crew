@@ -1,7 +1,7 @@
   * [Introduction Introduction]
   * [Architecture Crew Architecture]
   * [Compile Compiling the source code]
-  * [Installation Installing the software]
+  * [Configuration Configuring the software]
   * [Harvester Harvesting events]
   * [Recording Recording events]
   * [UserManagement User Management]
