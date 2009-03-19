@@ -1,6 +1,5 @@
-#sidebar TableOfContents
-
 #summary Compiling the source code
+#sidebar TableOfContents
 
 == Obtaining the source code ==
 
