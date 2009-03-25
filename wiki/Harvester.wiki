@@ -43,16 +43,16 @@ The access controls specify the roles that can READ, WRITE and DELETE a harvest 
 
 [http://farm4.static.flickr.com/3432/3384038175_18e917ce41.jpg]
 
-READ - this permission defines who can see the event data that will be harvested from the location of the harvest source. By default anyone can see a harvested event.
-WRITE - this permission defines who can update the information of a harvest source and who can initiate a manual harvest by selecting the "Harvest Source Now" button on the list of available resources.
-DELETE - this permission defines who can delete the harvest source and its related event data.
+  * READ - this permission defines who can see the event data that will be harvested from the location of the harvest source. By default anyone can see a harvested event.
+  * WRITE - this permission defines who can update the information of a harvest source and who can initiate a manual harvest by selecting the "Harvest Source Now" button on the list of available resources.
+  * DELETE - this permission defines who can delete the harvest source and its related event data.
 
 The default roles in the system are:
 
-ADMIN - the main administrative user. It is recommended not to alter the permissions for this role.
-ANONYMOUS - unauthenticated (anonymous) users that are browsing the web application.
-USER - authenticated users that are browsing the web application.
-HARVESTER_ADMIN - an administrative role defined for harvester administration. This allows power users or conference organizers to be granted harvester privileges without administrative responsibilities over the rest of the application.
+  * ADMIN - the main administrative user. It is recommended not to alter the permissions for this role.
+  * ANONYMOUS - unauthenticated (anonymous) users that are browsing the web application.
+  * USER - authenticated users that are browsing the web application.
+  * HARVESTER_ADMIN - an administrative role defined for harvester administration. This allows power users or conference organizers to be granted harvester privileges without administrative responsibilities over the rest of the application.
 
 Additional roles can be created by an administrator and these roles can be assigned access rights to harvest sources. This can be useful because you can create special roles that will have administrative responsibilities for specific harvest sources. For example, a JISC programme manager might be responsible for VRE events. If we have a role JISC_VRE_MANAGER and this and the ADMIN role are the only ones with WRITE and DELETE privileges, then only those users assigned to a group that is allocated these roles will be able to see the list of source and be able to Edit, Delete and Harvest them.
 
