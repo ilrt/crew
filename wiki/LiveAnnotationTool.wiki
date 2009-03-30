@@ -11,10 +11,14 @@ The LiveAnnotationTool appears like a standard "chat" tool. When the user connec
 The name is used in the roster of the chat tool so other people can see who else is annotating sessions otherwise this information is not stored. The email address is used when the annotations are uploaded to the server to allow the annotation author to 
 confirm the live annotations. 
 
+Once the user provided the name and email address the Annotation tool is shown:
 
-= Details =
+[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/annotations.png]
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+The annotation tool provides three main areas:
+  * *chat* (top left)
+  the chat provides the user a view of annotations done. this is a scrolling box where the user can read all the annotations of the current session. As long as a user is connected to a session this box also provides a button [http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/edit.png] to edit his own comments. 
+  The second button in the "chat" part is to respond  [http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/response.png] to a comment another user has provided.
+  
+
+ 
