@@ -1,5 +1,6 @@
 #sidebar TableOfContents
 = CrewPlayer =
+[http://crew.googlecode.com/svn/wiki/images/crewPlayer.png]
 #summary One-sentence summary of this page.
 
 = Introduction =
