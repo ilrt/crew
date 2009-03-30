@@ -31,13 +31,10 @@ The xml file defines different kinds of replay positions:
   a predefined replay position `assignable="false"` is used for elements used for standard tasks the current crew-player defines three such tasks:
     * *Controls* 
     [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/controls.png]
-
     The controls position contains the play/pause button and the audio volume control.
     * *Annotation* 
     [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/annotations.png]
-
     The Annotation position accommodates the screen-shots of the new slides as well as the live annotations created by the event audience.  
     * *Slider* 
     [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/slider.png]
-
     The Slider position is a representation of a time-slider. It consists of a list of slide-bars one for each of the used annotation types. This slider bar should be located on the bottom of the player, as the player currently calculates its height dependent on the number of annotation types. The time-slider represents contains annotation indicators for each individual live annotation in relation to the recording. The gray bar can be moved along the time slider to seek to a new replay position. When hovering over an annotation indicator a tooltip appears to show the content of the annotation. 
