@@ -6,5 +6,5 @@
   * [Recording Recording events]
     * [LiveAnnotationTool Creating Live-Annotations]
   * [CrewPlayer Replay Recordings]
-    *[ReplayLayout Replay Layouts]
+    * [ReplayLayout Replay Layouts]
   * [UserManagement User Management]
