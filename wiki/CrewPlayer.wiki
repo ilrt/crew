@@ -6,7 +6,7 @@
 
 Add your content here.
 
-
+[http://code.google.com/p/crew/source/browse/wiki/images/crew-logo.png]
 = Details =
 
 Add your content here.  Format your content with:
