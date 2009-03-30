@@ -1,0 +1,24 @@
+#summary The ReplayLayout defines the look of the CrewPlayer.
+
+= Introduction =
+
+The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define different Layouts to be used for the Player. These ReplayLayouts define replay positions i.e. positions where a video or metadata stream is displayed. A ReplayLayout is defined in the layouts.xml file as described below. 
+
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<layouts>
+    <layout name="CrewDefault">
+        <element name="Video" x="30" y="30" width="240" height="196"/>
+        <element name="Screen" x="285" y="30" width="720" height="540" has-changes="true" />
+        <element name="Annotation" x="30" y="245" width="240" height="325" assignable="false"/>
+        <element name="Slider" x="120" y="580" width="885" height="175" assignable="false"/>
+        <element name="Controls" x="30" y="580" width="100" height="20" assignable="false"/>
+    </layout>
+</layouts>
+}}}
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
