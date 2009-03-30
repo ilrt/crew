@@ -17,7 +17,7 @@ The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define diff
 </layouts>
 }}}
 
-Each replay position has a position `x="`_<number>_`" y="`_<number>_`"` and its dimensions `width="`*`_<number>_`*`" height="`_<number>_`"` assigned.   
+Each replay position has a position `x="`*`<number>`*`" y="`*`<number>`*`"` and its dimensions `width="`*`<number>`*`" height="`*`<number>`*`"` assigned.   
 
 The xml file defines different kinds of replay positions: 
   *assingable*  an assignable replay position displays a video stream. The video stream has a name assigned such as   
