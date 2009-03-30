@@ -4,7 +4,7 @@
   * [Configuration Configuring the software]
   * [Harvester Harvesting events]
   * [Recording Recording events]
-  * [LiveAnnotationTool Creating Live-Annotations]
+  * [LiveAnnotationTool Creating Live Annotations]
   * [CrewPlayer Replay Recordings]
     * [ReplayLayout Replay Layouts]
   * [UserManagement User Management]
