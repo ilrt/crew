@@ -1,6 +1,9 @@
 #summary The ReplayLayout defines the look of the CrewPlayer.
+#sidebar TableOfContents
 
 = Introduction =
+
+[http://crew.googlecode.com/svn/wiki/images/CrewPlayer/positions.png]
 
 The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define different layouts to be used for the Player. These ReplayLayouts define replay positions, i.e. positions where a video or metadata stream is displayed. A ReplayLayout is defined in the layouts.xml file as described below. 
 
@@ -23,8 +26,14 @@ The xml file defines different kinds of replay positions:
   * *assingable*  
   an assignable replay position displays a video stream. Each video stream has a name assigned that matches the stream name of a recording. The assingment of these names is done in the [Recording event recorder]. 
   * *predefined*  
-a pro 
-
+  a predefined replay position `assignable="false"` is used for elements used for standard tasks the current crew-player defines three such tasks:
+    * *Controls* 
+    [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/controls.png]
+    The controls position contains the play/pause button and the audio volume control.
+    * *Annotation* 
+    [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/annotations.png]
+    * *Slider* 
+    [http://crew.googlecode.com/svn/wiki/images/CrewPlayer/slider.png]
 
 = Details =
 
