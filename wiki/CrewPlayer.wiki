@@ -6,7 +6,7 @@
 
 Add your content here.
 
- [ http://code.google.com/p/crew/source/browse/wiki/images/crew-logo.png ]
+ [http://crew.googlecode.com/svn/wiki/images/crew-logo.png]
 
 = Details =
 
