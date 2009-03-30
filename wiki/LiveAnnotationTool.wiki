@@ -1,9 +1,15 @@
-#summary One-sentence summary of this page.
+#summary The Live Annotation Tool is a web based user interface that is started by the [Recording event recorder] to allow the event audience to annotate a presentation.
 #sidebar TableOfContents
 
 = Introduction =
+The LiveAnnotationTool is a web based user interface that is started by the [Recording event recorder] to allow the event audience to annotate a presentation. The annotations are recorded with the time-stamp of the annotation-author starting to write the annotation. This allows to connect the annotation to the recording and the time when the author thought of it. As the annotation tool is run on the same machine as the recording application, these time-stamps also avoids time differences between the recording machine and the machine taking the annotations. 
 
-Add your content here.
+The LiveAnnotationTool appears like a standard "chat" tool. When the user connects to the LiveAnnotationTool he should provide an e-Mail address and a "nickname" that is used in the current session. 
+
+[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/session.png]
+
+The name is used in the roster of the chat tool so other people can see who else is annotating sessions otherwise this information is not stored. The email address is used when the annotations are uploaded to the server to allow the annotation author to 
+confirm the live annotations. 
 
 
 = Details =
