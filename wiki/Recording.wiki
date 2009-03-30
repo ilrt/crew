@@ -1,2 +1,4 @@
 #sidebar TableOfContents
 = Introduction =
+== Annotating Recordings == 
+The Event Recorder also starts in the background a Web server that allows the Recorded session to be annotated. These "Live-Annotations" are timestamped comments provided by the Session Audience. The Live-Annotations will appear in CrewPlayer alongside the recorded  video streams.
