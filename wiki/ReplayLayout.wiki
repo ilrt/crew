@@ -2,7 +2,7 @@
 
 = Introduction =
 
-The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define different Layouts to be used for the Player. These ReplayLayouts define replay positions i.e. positions where a video or metadata stream is displayed. A ReplayLayout is defined in the layouts.xml file as described below. 
+The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define different Layouts to be used for the Player. These ReplayLayouts define replay positions, i.e. positions where a video or metadata stream is displayed. A ReplayLayout is defined in the layouts.xml file as described below. 
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
@@ -16,6 +16,11 @@ The ReplayLayout defines the look of the CrewPlayer. A Crew user can Define diff
     </layout>
 </layouts>
 }}}
+
+Each replay position has a position `x="_<number>_" y="_<number>_"` and its dimensions `width="_<number>_" height="_<number>_"` assigned.   
+
+The xml file defines different kinds of replay positions: 
+  *assingable*  an assignable replay position displays a video stream. The video stream has a name assigned such as   
 = Details =
 
 Add your content here.  Format your content with:
