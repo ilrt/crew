@@ -77,8 +77,18 @@ The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
         <contains name="CrewLiveAnnotationTitle" type="text" displayname="Name" />
         <contains name="CrewLiveAnnotationUrl" type="text" image="/img/small/link.png" displayname="Url" />
         <format>
-            <input>&lt;a href="${CrewLiveAnnotationUrl}"&gt;${CrewLiveAnnotationTitle} (&lt;img src="${CrewLiveAnnotationUrl.image}" /&gt; {CrewLiveAnnotationUrl})&lt;/a&gt;${CrewLiveAnnotationComment}</input>
-            <player>&lt;b&gt;${CrewLiveAnnotationTitle}&lt;/b&gt;&lt;br/&gt;&lt;font color="#0000ff"&gt;${CrewLiveAnnotationUrl}&lt;/font&gt;&lt;br/&gt;${CrewLiveAnnotationComment}</player>
+            <input>
+                &lt;a href="${CrewLiveAnnotationUrl}"&gt;
+                ${CrewLiveAnnotationTitle}
+                (&lt;img src="${CrewLiveAnnotationUrl.image}"/&gt;
+                {CrewLiveAnnotationUrl})&lt;/a&gt;
+                ${CrewLiveAnnotationComment}
+            </input>
+            <player>
+                &lt;b&gt;${CrewLiveAnnotationTitle}&lt;/b&gt;&lt;br/&gt;
+                &lt;font color="#0000ff"&gt;${CrewLiveAnnotationUrl}&lt;/font&gt;&lt;br/&gt;
+                ${CrewLiveAnnotationComment}
+            </player>
             <output>${CrewLiveAnnotationComment}</output>
         </format>
         <convertsTo>
@@ -105,4 +115,14 @@ The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
   defines the image to be used to indicate the live annotation type in the *chat* part of the [LiveAnnotationTool live annotation tool].
 
   * *`<colour value="..." />`* 
-  the html-style colour value is used by the CrewPlayer for the indicator of the time-stamp of the annotation on the time-slider. 
+  the html-style colour value is used by the CrewPlayer for the indicator of the time-stamp of the annotation on the time-slider.
+
+  * *`<contains name="..." type="`*{_text_, _textarea_, _messageId_}*`" [displayname="..."] [`*_user-defined-variable_*`="..."]* />`* 
+  defines the relationship between the user input and the variables defined for the annotations in the CREW databases. The CREW databases define their data structures in the [LiveAnnotationProfile profiles.xml] file in the CrewWeb development tree.  
+    * *`name`* the name of the live annotation type
+    * *`type`* the name of the live annotation type
+      * *`text`* the name of the live annotation type
+      * *`textarea`* the name of the live annotation type
+      * *`messageId`* the name of the live annotation type
+    * *`displayname`* the name of the live annotation type
+    * _user-defined-variable_
