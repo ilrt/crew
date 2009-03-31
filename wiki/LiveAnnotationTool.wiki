@@ -19,6 +19,12 @@ The annotation tool provides three main areas:
   * *chat* (top left)
   the chat provides the user a view of annotations done. this is a scrolling box where the user can read all the annotations of the current session. As long as a user is connected to a session this box also provides a button [http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/edit.png] to edit his own comments. 
   The second button in the "chat" part is to respond  [http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/response.png] to a comment another user has provided.
+  * *roster* (top right)
+  the roster provides the list of users currently logged on to the annotation tool. This is purely informational and not stored in the live annotation system. The list shows the nicknames of the users. If a user does not provide a nickname the email address is shown.
+  * *[LiveAnnotationTypes list of annotation types]* (bottom)
+  the button box on the bottom provides the selection of [LiveAnnotationTypes annotation types] the user can choose from. Clicking on one of the buttons changes this selector into a set of input boxes to create the annotation:
+  [http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/annotatePerson.png]
+   
   
 
  
