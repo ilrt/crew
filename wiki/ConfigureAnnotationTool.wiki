@@ -3,15 +3,39 @@
 
 
 = Introduction =
-The Live Annotation types and the general settings of the live annotation tool are defined in the liveannotations.xml file. This file consits of two sections:
+The Live Annotation types and the general settings of the live annotation tool are defined in the liveannotations.xml file. This file consists of two sections:
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
 <liveAnnotations>
     <properties>
 }}}
 
-  * *properties* 
   the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
+  
+{{{
+    </properties>
+    <liveAnnotationType *...* >
+}}}
+
+   ...
+
+{{{
+    </liveAnnotationType>
+    <liveAnnotationType *...* >
+}}}
+
+   ...
+
+{{{
+    </liveAnnotationType>
+</liveAnnotations>
+}}}
+
+  * *live annotation types*
+  the [DefiningLiveAnnotationTypes live annotation types] section provides a list that defines the information and appearance of each individual [LiveAnnotationTypes annotation type] to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
+
+== Property definitions ==
+
   {{{
     <properties>
         <button width="100" height="100" />
@@ -26,33 +50,16 @@ The Live Annotation types and the general settings of the live annotation tool a
         </textColours>
     </properties>
   }}}
-  This includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.    
+
+  * *`<button width="..." height="..." />`*
+  defines the width and height of the buttons for the annotation types on the bottom of the [LiveAnnotationTool live annotation tool].
+  * *`<thumbnail width="..." height="..." />`*
+  defines the with and height of the thumbnail images that indicate the annotation type inside the *chat* part of the [LiveAnnotationTool live annotation tool].
+  * *`<itemthumb width="..." height="..." />`*
+  defines the with and height of the images used in more complex annotations (i.e. Person) that indicate special parts of the annotation (i.e. email, URL) in the *chat* part of the [LiveAnnotationTool live annotation tool].
+  * *`<textColours> <colour value="..."/> ... </textColours>`* 
+  defines a list of colours (specified using html-style colour definitions) to be used by the *chat* part of the [LiveAnnotationTool live annotation tool]. Each user is assigned a colour from this list when logging on to the annotation tool.
   
-
-{{{
-    </properties>
-    <liveAnnotationType
-}}}
-
-   ...
-
-{{{
-    </liveAnnotationType>
-    <liveAnnotationType
-}}}
-
-   ...
-
-{{{
-    </liveAnnotationType>
-</liveAnnotations>
-}}}
-
-
-  * *live annotation types*
-  the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
-
-
 == Default liveannotations.xml file ==
 
 {{{
