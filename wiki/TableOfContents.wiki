@@ -7,7 +7,7 @@
   * [LiveAnnotationTool Creating Live Annotations]
     * [LiveAnnotationTypes Annotation types ]
     * [DefiningLiveAnnotationTypes defining Annotation types]
-    * [LiveAnnotationsXML default liveannotations.xml file]    
+    * [LiveAnnotationsXML liveannotations.xml file]    
   * [CrewPlayer Replay Recordings]
     * [ReplayLayout Replay Layouts]
   * [UserManagement User Management]
