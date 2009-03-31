@@ -10,7 +10,24 @@ The Live Annotation types and the general settings of the live annotation tool a
     <properties>
 }}}
 
-    ...
+  * *properties* 
+  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
+  {{{
+    <properties>
+        <button width="100" height="100" />
+        <thumbnail width="30" height="30" />
+        <itemthumb width="20" height="20" />
+        <textColours>
+            <colour value="#C11B17"/>
+            <colour value="#347235"/>
+            <colour value="#0000FF"/>
+            <colour value="#800517"/>
+            <colour value="#000000"/>
+        </textColours>
+    </properties>
+  }}}
+  This includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.    
+  
 
 {{{
     </properties>
@@ -31,24 +48,6 @@ The Live Annotation types and the general settings of the live annotation tool a
 </liveAnnotations>
 }}}
 
-  * *properties* 
-  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
-  {{{
-    <properties>
-        <button width="100" height="100" />
-        <thumbnail width="30" height="30" />
-        <itemthumb width="20" height="20" />
-        <textColours>
-            <colour value="#C11B17"/>
-            <colour value="#347235"/>
-            <colour value="#0000FF"/>
-            <colour value="#800517"/>
-            <colour value="#000000"/>
-        </textColours>
-    </properties>
-  }}}
-
-  This includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.    
 
   * *live annotation types*
   the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
