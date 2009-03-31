@@ -1,4 +1,4 @@
-#summary The Live Annotation Tool is a web based user interface that is started by the [Recording event recorder] to allow the event audience to annotate a presentation.
+#summary The Live Annotation Tool is a web based user interface that is started by the  event recorder to allow the event audience to annotate a presentation.
 #sidebar TableOfContents
 
 = Introduction =
