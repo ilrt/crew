@@ -1,4 +1,5 @@
 #summary The Live Annotation types and the general settings of the live annotation tool are defined in the liveannotations.xml file.
+#sidebar TableOfContents
 
 
 = Introduction =
@@ -7,9 +8,7 @@ The Live Annotation types and the general settings of the live annotation tool a
   * *properties* 
   the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. this includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.
   * *live annotation types*
-
-
-This file contains the general settings for the Live Annotation Tool as well as the definitions for the different live annotation types.
+  the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
 
 
 = Default liveannotations.xml file =
