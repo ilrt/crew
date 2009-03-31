@@ -1,4 +1,5 @@
 #summary Definition of a profile for the LiveAnnotation types.
+#sidebar TableOfContents
 = Introduction =
 
 The profile.xml file defines the names and data types to be used in the Live annotations. 
