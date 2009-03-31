@@ -10,7 +10,7 @@ The Live Annotation types and the general settings of the live annotation tool a
   * *live annotation types*
   the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
 
-= Configuring the [LiveAnnotationTool Live Annotation Tool] =
+= Configuring the Live Annotation Tool =
 
 The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
 {{{
