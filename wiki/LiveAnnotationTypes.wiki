@@ -1,4 +1,5 @@
 #summary The live annotation types are defined by an xml definition file (liveannotations.xml). The default configuration file in Crew provides a set of predefined live annotation types.
+#sidebar TableOfContents
 
 = Introduction =
 The default configuration file for the live annotation types provides the following types
