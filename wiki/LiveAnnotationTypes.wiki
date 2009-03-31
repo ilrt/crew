@@ -18,10 +18,21 @@ The comment type is for general comments made during the presentation.
 
 The important point can be used to highlight special remarks or show that the presenter put emphasis on certain issues. 
 </td></tr>
-<tr><td>[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/link.png] </td><td>*Linked Resource*</td></tr>
-<tr><td>[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/slide.png] </td><td> *Slide* </td></tr></table>
+<tr><td>[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/link.png] </td><td>*Linked Resource*
 
-Other types can be specified by the user through the modification of the 
+A linked resources is a more complex annotation. This provides input boxes for a *_name_* and a *_URL_* of the resource. It also provides the multi-line input box for the user to give a comment on the resource that is annotated. If the user does not specify the *_name_* or the *_URL_* the annotation will be converted into a *Comment*.  
+</td></tr>
+<tr><td>[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/person.png] </td><td>*Person*
+
+A person annotation provides input boxes for the *_name_*, an *_email_* address and a *_URL_*. It also provides the multi-line input box for the user to give a comment. 
+If all the text fields are left blank the annotation will be converted into a *Comment*. 
+</td></tr>
+<tr><td>[http://crew.googlecode.com/svn/wiki/images/LiveAnnotations/types/slide.png] </td><td> *Slide* 
+
+The slide annotation is to define slide titles or the general content summary of a slide. These annotations are assigned to the timestamp of the previous slide change that is calculated by the recording tool.  
+</td></tr></table>
+
+[DefiningLiveAnnotationTypes Other types] can be defined by the user through the modification of the liveannotations.xml file. 
 
 
 
