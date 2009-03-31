@@ -32,16 +32,4 @@ If all the text fields are left blank the annotation will be converted into a *C
 The slide annotation is to define slide titles or the general content summary of a slide. These annotations are assigned to the timestamp of the previous slide change that is calculated by the recording tool.  
 </td></tr></table>
 
-[DefiningLiveAnnotationTypes Other types] can be defined by the user through the modification of the liveannotations.xml file. 
-
-
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+[DefiningLiveAnnotationTypes Other types] can be defined by the user through the modification of the [LiveAnnotationsXML liveannotations.xml] file. 
