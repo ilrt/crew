@@ -1,21 +1,11 @@
-* [Introduction Introduction]
-
-* [Architecture Crew Architecture]
-
-* [Compile Compiling the source code]
-
-* [Configuration Configuring the software]
-
-* [Harvester Harvesting events]
-
-* [Recording Recording events]
-
-* [LiveAnnotationTool Creating Live Annotations]
-
-  * [LiveAnnotationTypes predefined Annotation types ]
-
-* [CrewPlayer Replay Recordings]
-
-  * [ReplayLayout Replay Layouts]
-
-* [UserManagement User Management]
+  * [Introduction Introduction]
+  * [Architecture Crew Architecture]
+  * [Compile Compiling the source code]
+  * [Configuration Configuring the software]
+  * [Harvester Harvesting events]
+  * [Recording Recording events]
+  * [LiveAnnotationTool Creating Live Annotations]
+    * [LiveAnnotationTypes predefined Annotation types ]
+  * [CrewPlayer Replay Recordings]
+    * [ReplayLayout Replay Layouts]
+  * [UserManagement User Management]
