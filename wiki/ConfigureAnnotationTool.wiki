@@ -4,11 +4,31 @@
 
 = Introduction =
 The Live Annotation types and the general settings of the live annotation tool are defined in the liveannotations.xml file. This file consits of two sections:
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<liveAnnotations>
+    <properties>
+}}}
+    ...
+{{{
+    </properties>
+    <liveAnnotationType
+}}}
+   ...
+{{{
+    </liveAnnotationType>
+    <liveAnnotationType
+}}}
+   ...
+{{{
+    </liveAnnotationType>
+</liveAnnotations>
+}}}
 
   * *properties* 
-  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. this includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.    
+  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
   {{{
-     <properties>
+    <properties>
         <button width="100" height="100" />
         <thumbnail width="30" height="30" />
         <itemthumb width="20" height="20" />
@@ -21,6 +41,8 @@ The Live Annotation types and the general settings of the live annotation tool a
         </textColours>
     </properties>
   }}}
+
+  This includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.    
 
   * *live annotation types*
   the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
@@ -227,6 +249,4 @@ The Live Annotation types and the general settings of the live annotation tool a
         </format>
     </liveAnnotationType>
 </liveAnnotations>
-
-
 }}}
