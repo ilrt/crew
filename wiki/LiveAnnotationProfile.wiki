@@ -1,6 +1,7 @@
-#summary definition of profile for the LiveAnnotation types. This One-sentence summary of this page.
-
+#summary Definition of a profile for the LiveAnnotation types.
 = Introduction =
+
+The profile.xml file defines the names and data types to be used in the Live annotations. 
 
 {{{
 <profile id="LiveAnnotation" type="http://www.crew-vre.net/2008/10/crew-ns#LiveAnnotation" >
