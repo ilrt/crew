@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+    <!-- load the properties files -->
+
+    <bean id="propertiesConfig"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>jdbc.properties</value>
+                <value>hibernate.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- datasource -->
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <!-- session factory (spring) -->
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="hibernate.cfg.xml"/>
+        <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- hibernate template (spring) -->
+
+    <bean id="hibernateTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- transaction manager (spring) -->
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- user details DAO -->
+
+    <bean id="userDao" class="org.ilrt.dibden.dao.hibernate.UserDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <!-- user roles DAO -->
+
+    <bean id="roleDao" class="org.ilrt.dibden.dao.hibernate.RoleDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <!-- groups DAO -->
+    <bean id="groupDao" class="org.ilrt.dibden.dao.hibernate.GroupDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+
+    <bean id="resetMailMessage" class="org.springframework.mail.SimpleMailMessage"/>
+
+    <bean id="mailSender" class="org.ilrt.dibden.facade.MockMailSender" />
+
+    <!-- usermanagement facade -->
+    <bean id="userManagementFacade" class="org.ilrt.dibden.facade.impl.UserManagementFacadeImpl">
+
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="roleDao"/>
+        <constructor-arg index="2" ref="groupDao"/>
+        <constructor-arg index="3" value="md5"/>
+        <constructor-arg index="4" ref="mailSender"/>
+        <constructor-arg index="5" ref="resetMailMessage"/>
+    </bean>
+
+    <!-- User Details Service -->
+<!--
+    <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
+        <property name="usersByUsernameQuery"
+                  value="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME = ?"/>
+        <property name="authoritiesByUsernameQuery"
+                  value="SELECT USERNAME, ROLEID FROM USERS_ROLES WHERE USERNAME = ?"/>
+        <property name="rolePrefix" value="ROLE_"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+-->
+</beans>
