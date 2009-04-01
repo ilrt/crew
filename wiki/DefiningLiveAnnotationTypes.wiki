@@ -6,27 +6,27 @@
 The Live Annotation types and the general settings of the live annotation tool are defined in the [LiveAnnotationsXML liveannotations.xml] file. This file consists of two sections:
 
   * *properties* 
-  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. this includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the internal icons of an annotation and a list of colours to be used by different users of the annotation tool.
+  The properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. This includes the size of the annotation type buttons, the size of the thumbnail images inside the *chat* part of the [LiveAnnotationTool live annotation tool], the size of the annotation specific icons highlighting individual parts of an annotation and a list of colours to be used by different users of the annotation tool.
   * *live annotation types*
-  the live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
+  The live annotation types section provides a list that defines the information and appearance of each individual annotation type to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer. 
 
 = Configuring the Live Annotation Tool =
 
-The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
+The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
 <liveAnnotations>
     <properties>
 }}}
 
-  the properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
+  The properties section contains the general settings for the [LiveAnnotationTool live annotation tool]. 
   
 {{{
     </properties>
     <liveAnnotationType *...* >
 }}}
 
-   multiple live annotation type sections provide definitions of the information and appearance of each individual [LiveAnnotationTypes annotation type] to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer
+   Multiple live annotation type sections provide definitions of the information and appearance of each individual [LiveAnnotationTypes annotation type] to be created and used by the [LiveAnnotationTool live annotation tool] and the CrewPlayer.
 
 {{{
     </liveAnnotationType>
@@ -101,13 +101,13 @@ The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
 
   * *`<liveAnnotationType name="..." [type="..."] [index="..."]> ... </liveAnnotationType>`*
   defines the name, type and the order in which the CrewPlayer uses the liveAnnotationType. 
-    * *`name`* the name of the live annotation type
-    * *`type`* the type that a live annotation is stored as, if this value is unset the live annotation will be stored under its name.
-    * *`index`* The CrewPlayer shows for each of the annotation types that where entered during the recording a bar in time-slider. These bars are in the order provided by the index value. 
+    * *`name`* The name of the live annotation type.
+    * *`type`* The type that a live annotation is stored as, if this value is unset the live annotation will be stored under its name.
+    * *`index`* The CrewPlayer shows for each of the annotation types that was entered during the recording a bar in time-slider. These bars are shown in the order provided by the index value. 
 
   * *`<button image="..." visible="`*{_true_, _false_, _inline_}*`" />`*
   defines the image to be used for the button in the [LiveAnnotationTool live annotation tool]. The visible value defines how the annotation is used: 
-    * *`visible="true"`* the button is shown in the normal selection bar for live annotation types
+    * *`visible="true"`* -- the button is shown in the normal selection bar for live annotation types
     * *`visible="false"`* the button is not show in the selection bar, this is used for annotation types which are exclusively used as "conversions" for other types. The user cannot input this type but it will be used to display as a better match for anntotations that are filled in incompletely (i.e. a person is specified without an email-address). 
     * *`visible="inline"`* the button is shown inside the chat tool. This can be used to create annotations in response to annotations of other users.
 
