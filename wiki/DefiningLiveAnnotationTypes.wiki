@@ -133,6 +133,6 @@ The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
       <tt>*${*_name_*.*_variable-name_*}*</tt>
   * *`<format> ... </format>`* 
   The format section provides a set of formats that are used to show an annotation of the type. Currently there are 3 formats used:
-    * *`<input> ... </input>`* – Escaped-HTML string that is used to print the annotation in the `chat part` of live annotation tool.
+    * *`<input> ... </input>`* – Escaped-HTML string that is used to print the annotation in the 'chat part' of live annotation tool.
     * *`<player> ... </player>`* – Escaped-HTML string that is used to output the annotation in the tool-tips of the time-slider as well as the annotation bar of the CrewPlayer.
     * *`<output> ... </output>`* 
