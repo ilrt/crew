@@ -120,9 +120,11 @@ The [LiveAnnotationsXML liveannotations.xml] This file consists of two sections:
   * *`<contains name="..." type="`*{_text_, _textarea_, _messageId_}*`" [displayname="..."] [`*_user-defined-variable_*`="..."]* />`* 
   defines the relationship between the user input and the variables defined for the annotations in the CREW databases. The CREW databases define their data structures in the [LiveAnnotationProfile profiles.xml] file in the CrewWeb development tree.  
     * *`name`* the name of the live annotation type
-    * *`type`* the name of the live annotation type
-      * *`text`* the name of the live annotation type
-      * *`textarea`* the name of the live annotation type
-      * *`messageId`* the name of the live annotation type
-    * *`displayname`* the name of the live annotation type
+    the name must be one of the *`id`* values of a *`profileEntry`* in the [LiveAnnotationProfile profiles.xml] file in order to go into the annotations database
+    * *`type`* 
+    defines the input fields the [LiveAnnotationTool live annotation tool] presents to the user  
+      * *`text`* the live annotation tool presents a single line text box to input the value to be assigned
+      * *`textarea`* the live annotation tool presents a multi-line textarea to input longer messages. This is to store the main body of the annotation. 
+      * *`messageId`* the live annotation tool assignes the messageId of the selected message to the value of that variable. This type should only be used with *`visible="inline"`*
+    * *`displayname`* the heading for the input-box to be shown in the live annotation tool. If `displayname` is not set the `name` will be shown.
     * _user-defined-variable_
