@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.ilrt.dibden</groupId>
+    <artifactId>dibden-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.2-SNAPSHOT</version>
+    <name>dibden-parent</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <spring.version>2.5.5</spring.version>
+        <junit.version>4.4</junit.version>
+        <jetty.version>6.1.10</jetty.version>
+        <hibernate.version>3.3.1.GA</hibernate.version>
+    </properties>
+    <modules>
+        <module>dibden</module>
+        <module>dibden-web</module>
+        <module>dibden-realms</module>
+  </modules>
+</project>
