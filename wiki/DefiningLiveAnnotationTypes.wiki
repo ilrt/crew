@@ -154,6 +154,6 @@ ${CrewLiveAnnotationUrl.image}
      * *`<` → `&lt;`*
      * *`>` → `&gt;`*
   * *`<convertsTo>...</convertsTo>`*
-  The convertsTo section provides a list of annotation types that can be used as valid conversions if some of the variables are not set. These conversion types are mainly there to provide formating rules that the annotation tool and player can render the annotation correctly. Most of the conversion types will be invisible to the end user and have the original type specified as the type to store the annotation in. If the type of a conversion type is not set to the original type the annotation will be stored as the converted type.  
+  The convertsTo section provides a list of annotation types that can be used as valid conversions if some of the variables are not set. These conversion types are mainly there to provide formating rules that the annotation tool and player can render the annotation correctly. Most of the conversion types will be invisible to the end user and have the original type specified as the type to store the annotation in. The type of the annotation will be set to the type it converts to.  
     * *`<type name="..."/>`* defines the name of another type in this XML file that this annotation type can be converted to. Outputs that use the formating specified in this XML file will do a best match (having the most parameters set) of types an annotation can convert to. The author of this file should provide conversions for all possible cases.
   
