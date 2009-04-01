@@ -1,0 +1,29 @@
+<rdf:RDF
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> 
+  <rdf:Description rdf:about="http://www.crew_vre.net/testdata#event1">
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-08-29T13:10:00+00:00</dc:creation-date>
+    <iugo:hasTag>Web</iugo:hasTag>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#internet"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Conference Event</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#ConferenceEvent"/>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-22T09:00:00Z</eswc:hasStartDateTime>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <dc:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.</dc:description>
+    <eswc:hasProgramme rdf:resource="http://www.example.org/programme"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-22T17:00:00Z</eswc:hasEndDateTime>
+    <eswc:hasProceedings rdf:resource="http://www.example.org/proceedings"/>
+    <iugo:hasTag>Internet</iugo:hasTag>
+    <iugo:hasTag>Java</iugo:hasTag>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#bristol"/>
+  </rdf:Description>
+</rdf:RDF>
