@@ -129,7 +129,7 @@ CrewLiveAnnotationUrl
     * *`displayname`* – The heading for the input-box to be shown in the live annotation tool. 
     If *`displayname`* is not set the *`name`* will be shown.
     * _<tt>user-defined-variable</tt>_
-    The user can define any number of variables to be used in the *`<format>`* sections. To access these variables the variable-name is used as extension of the *`name`* of the contains field it was specified in:
+    The user can define any number of variables to be used in the *`<format>`* sections. To access these variables the variable-name is used as extension of the *`name`* of the *`contains`* field it was specified in:
       <tt>*${*_name_*.*_variable-name_*}*</tt>
     Example:
         {{{
@@ -149,7 +149,7 @@ ${CrewLiveAnnotationUrl.image}
     * *`<input> ... </input>`* – Escaped-HTML string that is used to print the annotation in the 'chat part' of live annotation tool.
     * *`<player> ... </player>`* – Escaped-HTML string that is used to output the annotation in the tool-tips of the time-slider as well as the annotation bar of the CrewPlayer.
     * *`<output> ... </output>`* plain text string output format  of the annotation
-  The format strings are parsed to replace variables <tt>*${*_variable-name_*}*</tt> by the value of the variable. This can be used for parts of the annotation using the *`name`* of the contains field or using the user-defined variables as described above (<tt>*${*_name_*.*_variable-name_*}*</tt>). 
+  The format strings are parsed to replace variables <tt>*${*_variable-name_*}*</tt> by the value of the variable. This can be used for parts of the annotation using the *`name`* of the *`contains`* field or using the user-defined variables as described above (<tt>*${*_name_*.*_variable-name_*}*</tt>). 
   Formats that contain HTML-code need to replace angle brackets by their HTML-replacement to not interfere with the XML:
      * *`<` → `&lt;`*
      * *`>` → `&gt;`*
