@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT $graph $id $title $givenName $family_name $name
+WHERE {
+    GRAPH $graph {
+        $id rdf:type foaf:Person .
+        OPTIONAL { $id foaf:title $title } .
+        OPTIONAL { $id foaf:givenName $givenName } .
+        OPTIONAL { $id foaf:family_name $family_name } .
+        OPTIONAL { $id foaf:name $name } .
+    }
+}
+ORDER BY $family_name
