@@ -1,0 +1,44 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.crew_vre.net/testdata#event2">
+    <dc:description>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.</dc:description>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#banking_and_finance"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <eswc:hasLocation rdf:resource="http://www.crew_vre.net/testdata#place1"/>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-01-22T15:10:00+00:00</dc:creation-date>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-12T17:00:00Z</eswc:hasEndDateTime>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#ConferenceEvent"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Fictional Conference Event</dc:title>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-11T09:00:00Z</eswc:hasStartDateTime>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#social_and_economic_sciences"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+</rdf:RDF>

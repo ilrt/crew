@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <!-- load the properties file -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/classes/crew.properties"/>
+    </bean>
+
+    <!-- list events -->
+    <bean name="/listEvents.do" id="listEventsController"
+          class="net.crew_vre.web.controller.ListEventsController">
+        <constructor-arg index="0" ref="facetService"/>
+        <constructor-arg index="1" ref="listEventsFacade"/>
+        <constructor-arg index="2" ref="browseHistory"/>
+        <constructor-arg index="3" ref="eventFacets"/>
+        <constructor-arg index="4" ref="feedList"/>
+    </bean>
+
+    <!-- list people -->
+    <bean name="/listPeople.do" id="listPeopleController"
+          class="net.crew_vre.web.controller.ListPeopleController">
+        <constructor-arg index="0" ref="facetService"/>
+        <constructor-arg index="1" ref="listPeopleFacade"/>
+        <constructor-arg index="2" ref="browseHistory"/>
+        <constructor-arg index="3" ref="personFacets"/>
+    </bean>
+
+    <!-- display event -->
+    <bean name="/displayEvent.do" id="displayEventController"
+          class="net.crew_vre.web.controller.DisplayEventController">
+        <constructor-arg index="0" ref="displayEventFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+    </bean>
+
+    <!-- display recording -->
+    <bean name="/displayRecording.do" id="displayRecordingController"
+          class="net.crew_vre.web.controller.DisplayRecordingController">
+        <property name="displayRecordingFacade" ref="displayRecordingFacade"/>
+    </bean>
+
+    <!-- display place -->
+    <bean name="/displayPlace.do" id="displayPlaceController"
+          class="net.crew_vre.web.controller.DisplayPlaceController">
+        <constructor-arg index="0" ref="displayPlaceFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+        <constructor-arg index="2" value="${google.map.key}"/>
+    </bean>
+
+    <!-- display person -->
+    <bean name="/displayPerson.do" id="displayPersonController"
+          class="net.crew_vre.web.controller.DisplayPersonController">
+        <constructor-arg index="0" ref="displayPersonFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+    </bean>
+
+    <!-- event calendar -->
+    <bean name="/eventCalendar.do" id="eventCalendarController"
+          class="net.crew_vre.web.controller.EventCalendarController">
+        <constructor-arg index="0" ref="displayEventFacade"/>
+    </bean>
+
+    <!-- feed - upcoming events -->
+    <bean name="/feeds/upcomingEvents.xml" id="upcomingEventsFeedController"
+          class="net.crew_vre.web.controller.feeds.UpcomingEventsFeedController">
+        <constructor-arg index="0" ref="upcomingEvents"/>
+        <constructor-arg index="1" ref="mainEventService"/>
+    </bean>
+
+    <!-- feed - upcoming events -->
+    <bean name="/feeds/recentlyAdded.xml" id="recentlyCreatedFeedController"
+          class="net.crew_vre.web.controller.feeds.RecentlyCreatedEventsFeedController">
+        <constructor-arg index="0" ref="recentlyAddedEvents"/>
+        <constructor-arg index="1" ref="mainEventService"/>
+    </bean>
+
+
+    <!-- user registration -->
+
+    <bean id="registrationValidator" class="org.ilrt.dibden.web.RegistrationValidator">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <bean name="/registration.do" class="org.ilrt.dibden.web.RegistrationController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" ref="reCaptcha"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.RegistrationCommand"/>
+        <property name="validator" ref="registrationValidator"/>
+        <property name="successView" value="registrationSuccess"/>
+    </bean>
+
+    <!-- change password -->
+
+    <bean id="changePasswordValidator" class="org.ilrt.dibden.web.ChangePasswordValidator"/>
+
+    <bean name="/changePassword.do" class="org.ilrt.dibden.web.ChangePasswordController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.ChangePasswordCommand"/>
+        <property name="validator" ref="changePasswordValidator"/>
+        <property name="successView" value="changePasswordSuccess"/>
+    </bean>
+
+    <!-- mail new password -->
+
+    <bean id="generatePasswordValidator"
+          class="org.ilrt.dibden.web.GeneratePasswordValidator"/>
+
+    <bean name="/forgottenPassword.do"
+          class="org.ilrt.dibden.web.GeneratePasswordController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.GeneratePasswordCommand"/>
+        <property name="validator" ref="generatePasswordValidator"/>
+        <property name="successView" value="passwordReset"/>
+    </bean>
+
+
+    <!-- view profile -->
+
+    <bean name="/displayProfile.do" class="org.ilrt.dibden.web.DisplayProfileController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+
+    <!-- logout -->
+
+    <bean name="/logout.do" class="net.crew_vre.web.controller.LogoutController"/>
+
+
+    <!-- facet stuff -->
+
+    <bean id="utility" class="net.crew_vre.web.Utility">
+        <constructor-arg index="0" ref="nsPrefixes"/>
+    </bean>
+
+    <bean id="alphaNumericFacetFactory"
+          class="net.crew_vre.web.facet.impl.AlphaNumericFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+    </bean>
+
+    <bean id="hierarchicalFacetFactory"
+          class="net.crew_vre.web.facet.impl.HierarchicalFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="nsPrefixes"/>
+    </bean>
+
+    <bean id="dateTimeFacetFactory" class="net.crew_vre.web.facet.impl.DateTimeFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="monthMap"/>
+    </bean>
+
+    <bean id="flatFacetFactory" class="net.crew_vre.web.facet.impl.FlatFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="utility"/>
+    </bean>
+
+    <bean id="facetService" class="net.crew_vre.web.facet.impl.FacetServiceImpl">
+        <constructor-arg index="0" ref="utility"/>
+        <constructor-arg index="1" ref="alphaNumericFacetFactory"/>
+        <constructor-arg index="2" ref="hierarchicalFacetFactory"/>
+        <constructor-arg index="3" ref="dateTimeFacetFactory"/>
+        <constructor-arg index="4" ref="flatFacetFactory"/>
+    </bean>
+
+    <!-- jsp view resolver -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- message bundle -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+</beans>

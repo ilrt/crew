@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <!-- Datafactory that loads a file of the classpath -->
+    <bean id="datasetFactory" class="net.crew_vre.jena.query.impl.DatasetFactoryClasspathFileImpl">
+        <constructor-arg index="0" value="/graphs/mergedOntologies.rdf" />
+        <constructor-arg index="1" value="/graphs/named/" />
+    </bean>
+
+    <!-- Utility used by all of the DAOs -->
+    <bean id="jqUtility" class="net.crew_vre.events.dao.impl.JenaQueryUtilityImpl" />
+
+    <!-- the DAOs are defined below -->
+    <bean id="roleDao" class="net.crew_vre.events.dao.impl.RoleDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="placeDao" class="net.crew_vre.events.dao.impl.PlaceDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="locationDao" class="net.crew_vre.events.dao.impl.LocationDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="personDao" class="net.crew_vre.events.dao.impl.PersonDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+        <constructor-arg index="2" ref="eventDao" />
+    </bean>
+
+    <bean id="mainEventDao" class="net.crew_vre.events.dao.impl.MainEventDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+        <constructor-arg index="2" ref="locationDao" />
+    </bean>
+
+    <bean id="recordingDao" class="net.crew_vre.events.dao.impl.RecordingDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="eventDao" class="net.crew_vre.events.dao.impl.EventDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="paperDao" class="net.crew_vre.events.dao.impl.PaperDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+    <bean id="refinementDao" class="net.crew_vre.events.dao.impl.RefinementDaoImpl">
+        <constructor-arg index="0" ref="datasetFactory" />
+        <constructor-arg index="1" ref="jqUtility" />
+    </bean>
+
+</beans>

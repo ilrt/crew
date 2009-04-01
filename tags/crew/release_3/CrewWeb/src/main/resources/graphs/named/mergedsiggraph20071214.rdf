@@ -1,0 +1,79 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-nick-holliman">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#sigraph-2007-12-14"/>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#nick-holliman"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#nick-holliman">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-nick-holliman"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.dur.ac.uk/n.s.holliman/"/>
+    <foaf:family_name>Holliman</foaf:family_name>
+    <foaf:givenName>Nick</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#sigraph-2007-12-14">
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/manchester/kilburn/1.10/"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#computing"/>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-18T17:20:00+00:00</dc:creation-date>
+    <dc:description>Human binocular vision creates the sensation of stereopsis providing us with advantages 
+            in interpreting the spatial structure of the real world. The introduction of a growing number of 
+            electronic displays capable of presenting an artificial binocular stimulus creates significant new 
+            challenges for visualization scientists. These include how to ensure binocular images are always 
+            comfortable to view and in what ways the stereoscopic perceived depth effect can be used to convey 
+            useful information within a visualization.
+
+            I will describe current inter-disciplinary research projects at the Durham Visualization Laboratory 
+            in binocular imaging, including; collaborations with psychologists to investigate the response of the 
+            eye to artificial binocular stimulus, projects with display manufacturers to empirically evaluate display 
+            performance, the development of new algorithms for stereoscopic rendering in computer science and conclude 
+            by showing stereoscopic images and movies from recent collaborative visualization projects with cosmologists, 
+            astronomers, earth scientists and fine artists.
+        </dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Binocular Imaging Projects in the Durham Visualization Laboratory</dc:title>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <crew:hasRecordingId>119764053179482931385</crew:hasRecordingId>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-12-14T14:00:00Z</eswc:hasStartDateTime>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-12-14T15:00:00Z</eswc:hasEndDateTime>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#engineering_and_technology"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-nick-holliman"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/manchester/kilburn/1.10/">
+    <eswc:isLocationFor rdf:resource="http://www.crew_vre.net/events#sigraph-2007-12-14"/>
+    <pos:long>-2.233722</pos:long>
+    <pos:lat>53.467339</pos:lat>
+    <dc:title>Access Grid, 1.10, Kilburn Building</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+</rdf:RDF>

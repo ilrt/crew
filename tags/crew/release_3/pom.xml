@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.crew_vre</groupId>
+    <artifactId>Crew</artifactId>
+    <packaging>pom</packaging>
+    <version>0.3-SNAPSHOT</version>
+    <name>Crew</name>
+    <url>http://maven.apache.org</url>
+
+    <!-- modules -->
+    <modules>
+        <module>CrewEvents</module>
+        <module>CrewAnnotations</module>
+        <module>CrewAuthorization</module>
+        <module>CrewRecordings</module>
+        <module>CrewWeb</module>
+        <module>CrewCommons</module>
+    </modules>
+
+    <!-- properties -->
+    <properties>
+        <spring.version>2.5.5</spring.version>
+        <junit.version>4.4</junit.version>
+        <jena.version>2.5.6</jena.version>
+        <arq.version>2.3</arq.version>
+        <caboto.version>0.1</caboto.version>
+    </properties>
+
+    <!-- developers -->
+    <developers>
+        <developer>
+            <name>Mike Jones</name>
+            <email>mike.a.jones@bristol.ac.uk</email>
+            <organization>ILRT (Universitry of Bristol)</organization>
+            <organizationUrl>http://www.ilrt.bris.ac.uk</organizationUrl>
+        </developer>
+        <developer>
+            <name>Andrew Rowley</name>
+            <email>Andrew.Rowley@manchester.ac.uk</email>
+            <organization>RCS (Universitry of Manchester)</organization>
+            <organizationUrl>http://www.rcs.manchester.ac.uk</organizationUrl>
+        </developer>
+        <developer>
+            <name>Anja Le Blanc</name>
+            <email>anja.leblanc@manchester.ac.uk</email>
+            <organization>RCS (Universitry of Manchester)</organization>
+            <organizationUrl>http://www.rcs.manchester.ac.uk</organizationUrl>
+        </developer>
+        <developer>
+            <name>Tobias Schiebeck</name>
+            <email>Tobias.Schiebeck@manchester.ac.uk</email>
+            <organization>RCS (Universitry of Manchester)</organization>
+            <organizationUrl>http://www.rcs.manchester.ac.uk</organizationUrl>
+        </developer>
+        <developer>
+            <name>Damian Steer</name>
+            <email>d.steer@bristol.ac.uk</email>
+            <organization>ILRT (Universitry of Bristol)</organization>
+            <organizationUrl>http://www.ilrt.bris.ac.uk</organizationUrl>
+        </developer>
+    </developers>
+
+
+</project>

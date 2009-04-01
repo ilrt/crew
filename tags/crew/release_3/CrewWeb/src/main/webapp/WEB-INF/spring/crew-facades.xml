@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean id="listEventsFacade" class="net.crew_vre.web.facade.impl.ListEventsFacadeImpl">
+        <constructor-arg index="0" ref="mainEventService" />
+    </bean>
+
+    <bean id="listPeopleFacade" class="net.crew_vre.web.facade.impl.ListPeopleFacadeImpl">
+        <constructor-arg index="0" ref="personService" />
+    </bean>
+
+    <bean id="displayEventFacade" class="net.crew_vre.web.facade.impl.DisplayEventFacadeImpl">
+        <constructor-arg index="0" ref="eventService" />
+    </bean>
+
+    <bean id="displayRecordingFacade" class="net.crew_vre.web.facade.impl.DisplayRecordingFacadeImpl">
+        <constructor-arg index="0" ref="recordingService" />
+    </bean>
+
+    <bean id="displayPlaceFacade" class="net.crew_vre.web.facade.impl.DisplayPlaceFacadeImpl">
+        <constructor-arg index="0" ref="placeDao" />
+    </bean>
+
+    <bean id="displayPersonFacade" class="net.crew_vre.web.facade.impl.DisplayPersonFacadeImpl">
+        <constructor-arg index="0" ref="personService" />
+    </bean>
+
+    <bean id="browseHistory" class="net.crew_vre.web.history.BrowseHistory" />
+
+</beans>
