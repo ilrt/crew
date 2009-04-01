@@ -1,0 +1,68 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-dave-shreiner">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#sigraph-2007-12-07"/>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#dave-shreiner"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#sigraph-2007-12-07">
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#computing"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Survey of Mobile Graphics Technologies</dc:title>
+    <dc:description>Hardware acceleration for graphics in mobile devices has features and capabilities that rival current 
+        desktop systems. This talk will discuss the current trends in graphics systems for embedded and mobile devices, focusing 
+        on architectural considerations for performance, power, and capabilities. Additionally, a brief discussion of available 
+        programming interfaces will also be included.</dc:description>
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/manchester/kilburn/1.10/"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-12-07T15:00:00Z</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-12-07T14:00:00Z</eswc:hasStartDateTime>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-19T09:55:00+00:00</dc:creation-date>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <crew:hasRecordingId>1197035456134752435875</crew:hasRecordingId>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-dave-shreiner"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#engineering_and_technology"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/manchester/kilburn/1.10/">
+    <eswc:isLocationFor rdf:resource="http://www.crew_vre.net/events#sigraph-2007-12-07"/>
+    <pos:long>-2.233722</pos:long>
+    <pos:lat>53.467339</pos:lat>
+    <dc:title>Access Grid, 1.10, Kilburn Building</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#dave-shreiner">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-dave-shreiner"/>
+    <foaf:family_name>Shreiner</foaf:family_name>
+    <foaf:givenName>Dave</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+</rdf:RDF>

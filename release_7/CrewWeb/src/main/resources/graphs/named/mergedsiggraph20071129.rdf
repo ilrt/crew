@@ -1,0 +1,94 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://crew.ilrt.bris.ac.uk/roles/#presenter-j-leng">
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#j-leng"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#j-leng">
+    <eswc:holdsRole rdf:resource="http://crew.ilrt.bris.ac.uk/roles/#presenter-j-leng"/>
+    <foaf:name>J. Leng</foaf:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-j-leng"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#i-barrass">
+    <eswc:holdsRole rdf:resource="http://crew.ilrt.bris.ac.uk/roles/#presenter-i-barrass"/>
+    <foaf:name>I. Barrass</foaf:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-i-barrass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-j-leng">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#sigraph-2007-11-29"/>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#j-leng"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/manchester/kilburn/1.10/">
+    <eswc:isLocationFor rdf:resource="http://www.crew_vre.net/events#sigraph-2007-11-29"/>
+    <pos:long>-2.233722</pos:long>
+    <pos:lat>53.467339</pos:lat>
+    <dc:title>Access Grid, 1.10, Kilburn Building</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-i-barrass">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#sigraph-2007-11-29"/>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#i-barrass"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#sigraph-2007-11-29">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computational Steering for Scenario Testing in Infectious Disease Contingency Planning</dc:title>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-29T14:00:00Z</eswc:hasStartDateTime>
+    <dc:description>The Microbial Risk Assessment unit (MRA) within the Health Protection Agency (HPA) currently uses meta-population 
+            patch models to assess the possible impact of emerging and re-emerging human transmissible disease within the United Kingdom. 
+            These models are used to forecast the possible outcomes for various scenarios and are evaluated from values that are set prior 
+            to the start of the simulation. A recent project with the University of Manchester integrated computational steering so that 
+            these scenarios can now be changed interactively to mimic public health interventions. To help inform these intervention choices 
+            improvements to real-time visualization were required.
+
+            This talk will introduce the model and discuss the challenges that had to be overcome to make these improvements possible. A 
+            speaker from the HPA will also be present to show the results and discuss how interactivity of these codes could affect the way 
+            the policy on the control of infectious disease is developed.</dc:description>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-19T11:43:00+00:00</dc:creation-date>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-29T15:00:00Z</eswc:hasEndDateTime>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#computing"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/manchester/kilburn/1.10/"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-i-barrass"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#engineering_and_technology"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-j-leng"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://crew.ilrt.bris.ac.uk/roles/#presenter-i-barrass">
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#i-barrass"/>
+  </rdf:Description>
+</rdf:RDF>
