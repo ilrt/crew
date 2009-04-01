@@ -41,7 +41,7 @@ The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
 }}}
 
 == Property Definitions ==
-
+CrewLiveAnnotationUrl
   {{{
     <properties>
         <button width="100" height="100" />
@@ -131,7 +131,20 @@ The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
     * _<tt>user-defined-variable</tt>_
     The user can define any number of variables to be used in the *`<format>`* sections. To access these variables the variable-name is used as extension of the *`name`* of the contains field it was specified in:
       <tt>*${*_name_*.*_variable-name_*}*</tt>
-  * *`<format> ... </format>`* 
+    Example:
+        {{{
+...
+<contains name="CrewLiveAnnotationUrl" type="text" image="/img/small/link.png" displayname="Url" />
+...
+   }}}
+    to use the image: 
+      <tt>_/img/small/link.png_</tt>
+    you use:
+        {{{
+${CrewLiveAnnotationUrl.image}
+   }}}
+
+    * *`<format> ... </format>`* 
   The format section provides a set of formats that are used to show an annotation of the type. Currently there are 3 formats used:
     * *`<input> ... </input>`* – Escaped-HTML string that is used to print the annotation in the 'chat part' of live annotation tool.
     * *`<player> ... </player>`* – Escaped-HTML string that is used to output the annotation in the tool-tips of the time-slider as well as the annotation bar of the CrewPlayer.
