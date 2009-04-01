@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:ehcache="http://www.springmodules.org/schema/ehcache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security-2.0.1.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                           http://www.springmodules.org/schema/ehcache
+                           http://www.springmodules.org/schema/cache/springmodules-ehcache.xsd">
+
+
+    <!--
+            This is the main configuration file for the CREW web application. At some point,
+            we'll divide this file up into smaller chunks :-D
+    -->
+
+    <!-- ========== CACHE ========== -->
+
+    <ehcache:config configLocation="classpath:ehcache.xml"/>
+
+    <ehcache:proxy id="mainEventDao" refId="mainEventDaoTarget">
+        <ehcache:caching cacheName="crewCache" methodName="find*"/>
+    </ehcache:proxy>
+
+    <ehcache:proxy id="harvesterSourceManagementFacade"
+                   refId="harvesterSourceManagementFacadeTarget">
+        <ehcache:caching cacheName="crewCache" methodName="findSource"/>
+        <ehcache:flushing cacheNames="crewCache" methodName="harvestSource"/>
+        <ehcache:flushing cacheNames="crewCache" methodName="removeSource*"/>
+    </ehcache:proxy>
+
+    <ehcache:proxy id="listEventsFacade" refId="listEventsFacadeTarget">
+        <ehcache:caching cacheName="crewCache" methodName="totalEventsAvailable*"/>
+        <ehcache:caching cacheName="crewCache" methodName="display*"/>
+    </ehcache:proxy>
+
+
+    <!-- ========== PROPERTIES FILES ========== -->
+
+    <bean id="propertiesConfig"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:hibernate.properties</value>
+                <value>classpath:crew.properties</value>
+                <value>classpath:version.properties</value>
+                <value>classpath:events.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- ========== DATA SOURCES ========== -->
+
+    <!-- datasource for the user database -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <bean id="eventsDataSource" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+        <property name="driverClassName" value="${events.database.driver}"/>
+        <property name="url" value="${events.database.url}"/>
+        <property name="username" value="${events.database.username}"/>
+        <property name="password" value="${events.database.password}"/>
+        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="10"/>
+        <property name="logAbandoned" value="true"/>
+        <property name="maxWait" value="10000"/>
+        <property name="maxIdle" value="5000"/>
+    </bean>
+
+
+    <bean id="database" class="org.caboto.jena.db.impl.DatasourceDatabase">
+        <constructor-arg index="0" ref="eventsDataSource"/>
+        <constructor-arg index="1" value="${events.database.type}"/>
+        <constructor-arg index="2" value="${events.database.layout}"/>
+    </bean>
+
+    <bean id="vocabInit" class="net.crew_vre.web.startup.Vocabularies" init-method="init"
+          lazy-init="false">
+        <constructor-arg index="0" value="rules/crew.rules"/>
+        <constructor-arg index="1" value="vocabs/"/>
+        <constructor-arg index="2" ref="database"/>
+    </bean>
+
+    <bean id="memoryCacheDatabase" class="net.crew_vre.db.MemoryCacheDatabase" lazy-init="false"
+          depends-on="vocabInit">
+        <constructor-arg index="0" value="events.database"/>
+        <constructor-arg index="1" value="/events.properties"/>
+    </bean>
+
+    <bean id="cacheUpdateModelAdvice" class="net.crew_vre.db.CacheUpdateModelAdvice">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="databaseProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.caboto.jena.db.Database"/>
+        <property name="interceptorNames" value="cacheUpdateModelAdvice"/>
+        <property name="target" ref="database"/>
+    </bean>
+
+
+    <!-- ========== SECURITY ========== -->
+
+    <!-- gate keeper : authority on who can see what -->
+
+    <bean id="gatekeeper" class="org.caboto.security.spring.GateKeeperImpl">
+        <constructor-arg index="0" value="ROLE_ADMIN"/>
+    </bean>
+
+    <!-- aop implementation to filter results -->
+
+    <bean id="exitGuard" class="org.caboto.security.spring.ExitGuard">
+        <constructor-arg index="0" ref="gatekeeper"/>
+    </bean>
+
+    <bean id="annotationDaoProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.caboto.dao.AnnotationDao"/>
+        <property name="interceptorNames" value="exitGuard"/>
+        <property name="target" ref="annotationDao"/>
+    </bean>
+
+    <!-- the provider of the user details -->
+    <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
+        <property name="enableGroups" value="true"/>
+        <property name="enableAuthorities" value="false"/>
+        <property name="usersByUsernameQuery"
+                  value="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME = ?"/>
+        <property name="groupAuthoritiesByUsernameQuery"
+                  value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM GROUPS G, USERS_GROUPS UG,
+                  GROUPS_ROLES GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
+                  AND G.GROUPID = UG.GROUPID"/>
+        <property name="rolePrefix" value="ROLE_"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- authentication provider -->
+    <security:authentication-provider user-service-ref="userDetailsService">
+        <security:password-encoder hash="md5"/>
+    </security:authentication-provider>
+
+    <!-- HTTP restrictions -->
+    <security:http access-decision-manager-ref="decisionManager" path-type="regex"
+                   lowercase-comparisons="false">
+        <security:form-login login-page="/login.jsp"
+                             authentication-failure-url="/login.jsp?login_error=1"/>
+        <security:anonymous username="anonymous" granted-authority="ROLE_ANONYMOUS"/>
+        <security:intercept-url pattern="/login.jsp" filters="none"/>
+        <security:intercept-url pattern="/public/.*$" method="POST"
+                                access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern="/public/.*$" method="DELETE"
+                                access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern="/private/.*$" method="GET"
+                                access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern="/private/.*$" method="POST"
+                                access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern="/private/.*$" method="DELETE"
+                                access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern="/secured/admin/.*$" access="ROLE_ADMIN"/>
+        <security:intercept-url pattern="/secured/harvester/.*$" access="ROLE_HARVESTER_ADMIN"/>
+        <security:intercept-url pattern="/secured/.*$" access="IS_AUTHENTICATED_FULLY"/>
+        <security:intercept-url pattern=".*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+    </security:http>
+
+    <!-- voter for resources -->
+
+    <bean id="resourceVoter" class="org.caboto.security.spring.ResourceAccessDecisionVoter">
+        <constructor-arg index="0" ref="gatekeeper"/>
+        <constructor-arg index="1" value="annotation"/>
+    </bean>
+
+    <bean id="roleVoter" class="org.springframework.security.vote.RoleVoter"/>
+
+    <bean id="authenticatedVoter" class="org.springframework.security.vote.AuthenticatedVoter"/>
+
+    <!-- custom decision manager -->
+
+    <bean id="decisionManager" class="org.springframework.security.vote.UnanimousBased">
+        <property name="allowIfAllAbstainDecisions" value="true"/>
+        <property name="decisionVoters">
+            <list>
+                <ref local="roleVoter"/>
+                <ref local="authenticatedVoter"/>
+                <ref local="resourceVoter"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- ========== CABOTO INTEGRATION ========== -->
+
+    <!-- scan for caboto classes -->
+    <context:component-scan base-package="org.caboto"/>
+
+    <!-- repository gives access to the profile of allowed annotations -->
+
+    <bean id="profileRepository" class="org.caboto.profile.ProfileRepositoryXmlImpl">
+        <constructor-arg index="0" value="profiles.xml"/>
+    </bean>
+
+    <!-- factory creates SDB stores: provides access to the RDF store -->
+
+    <bean id="cabotoDatabase" class="org.caboto.jena.db.impl.SDBDatabase">
+        <constructor-arg index="0" value="caboto.db"/>
+        <constructor-arg index="1" value="/caboto.properties"/>
+    </bean>
+
+    <!-- DAO class for creating and retrieving annotations -->
+
+    <bean id="annotationDao" class="org.caboto.dao.AnnotationDaoImpl" scope="prototype">
+        <constructor-arg index="0" ref="profileRepository"/>
+        <constructor-arg index="1" ref="cabotoDatabase"/>
+    </bean>
+
+    <!-- utility class for converting RDF annotations to JSON -->
+
+    <bean id="jsonSupport" class="org.caboto.CabotoJsonSupport"/>
+
+
+    <!-- ========== EVENT DAOs ========== -->
+
+    <!-- Events Database that loads a file of the classpath -->
+    <!--
+    <bean id="eventDatabase" class="org.caboto.jena.db.impl.FileDatabase">
+        <constructor-arg index="0" value="/graphs/mergedOntologies.rdf"/>
+        <constructor-arg index="1" value="/graphs/named/"/>
+    </bean>
+    -->
+
+    <!-- The database to be used for recordings -->
+    <bean id="recordingsDb" class="org.caboto.jena.db.impl.SDBDatabase">
+        <constructor-arg index="0" value="recordings.db"/>
+        <constructor-arg index="1" value="/recordings.properties"/>
+    </bean>
+
+    <bean id="roleDao" class="net.crew_vre.events.dao.impl.RoleDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="placeDao" class="net.crew_vre.events.dao.impl.PlaceDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="locationDao" class="net.crew_vre.events.dao.impl.LocationDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="personDao" class="net.crew_vre.events.dao.impl.PersonDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+        <constructor-arg index="1" ref="eventDao"/>
+    </bean>
+
+    <bean id="mainEventDaoTarget" class="net.crew_vre.events.dao.impl.MainEventDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+        <constructor-arg index="1" ref="locationDao"/>
+    </bean>
+
+    <bean id="eventDao" class="net.crew_vre.events.dao.impl.EventDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="paperDao" class="net.crew_vre.events.dao.impl.PaperDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="refinementDao" class="net.crew_vre.events.dao.impl.RefinementDaoImpl">
+        <!-- <constructor-arg index="0" ref="database"/> -->
+    </bean>
+
+    <bean id="recordingDao" class="net.crew_vre.recordings.dao.impl.RecordingDaoImpl">
+        <constructor-arg index="0" value="/recordings.properties"/>
+        <constructor-arg index="1" ref="recordingsDb"/>
+    </bean>
+
+
+    <!-- ========== EVENTS SERVICES ========== -->
+
+    <bean id="eventService" class="net.crew_vre.events.service.impl.EventServiceImpl">
+        <constructor-arg index="0" ref="eventDao"/>
+        <constructor-arg index="1" ref="locationDao"/>
+        <constructor-arg index="2" ref="roleDao"/>
+        <constructor-arg index="3" ref="paperService"/>
+    </bean>
+
+    <bean id="mainEventService" class="net.crew_vre.events.service.impl.MainEventServiceImpl">
+        <constructor-arg index="0" ref="mainEventDao"/>
+    </bean>
+
+    <bean id="recordingService" class="net.crew_vre.recordings.service.impl.RecordingServiceImpl">
+        <constructor-arg index="0" ref="recordingDao"/>
+    </bean>
+
+    <bean id="personService" class="net.crew_vre.events.service.impl.PersonServiceImpl">
+        <constructor-arg index="0" ref="personDao"/>
+    </bean>
+
+    <bean id="paperService" class="net.crew_vre.events.service.impl.PaperServiceImpl">
+        <constructor-arg index="0" ref="paperDao"/>
+        <constructor-arg index="1" ref="personDao"/>
+    </bean>
+
+
+    <!-- ========== EVENTS FACADES ========== -->
+
+    <bean id="listEventsFacadeTarget" class="net.crew_vre.web.facade.impl.ListEventsFacadeImpl">
+        <constructor-arg index="0" ref="mainEventService"/>
+    </bean>
+
+    <bean id="listPeopleFacade" class="net.crew_vre.web.facade.impl.ListPeopleFacadeImpl">
+        <constructor-arg index="0" ref="personService"/>
+    </bean>
+
+    <bean id="displayEventFacade" class="net.crew_vre.web.facade.impl.DisplayEventFacadeImpl">
+        <constructor-arg index="0" ref="eventService"/>
+    </bean>
+
+    <bean id="displayRecordingFacade"
+          class="net.crew_vre.web.facade.impl.DisplayRecordingFacadeImpl">
+        <constructor-arg index="0" ref="recordingService"/>
+    </bean>
+
+    <bean id="displayPlaceFacade" class="net.crew_vre.web.facade.impl.DisplayPlaceFacadeImpl">
+        <constructor-arg index="0" ref="placeDao"/>
+    </bean>
+
+    <bean id="displayPersonFacade" class="net.crew_vre.web.facade.impl.DisplayPersonFacadeImpl">
+        <constructor-arg index="0" ref="personService"/>
+    </bean>
+
+    <bean id="browseHistory" class="net.crew_vre.web.history.BrowseHistory"/>
+
+
+    <!-- ========== MVC CONTROLLERS FOR EVENTS ========== -->
+
+    <!-- list events -->
+    <bean name="/listEvents.do" id="listEventsController"
+          class="net.crew_vre.web.controller.ListEventsController">
+        <constructor-arg index="0" ref="facetService"/>
+        <constructor-arg index="1" ref="listEventsFacade"/>
+        <constructor-arg index="2" ref="browseHistory"/>
+        <constructor-arg index="3" ref="eventFacets"/>
+        <constructor-arg index="4" ref="feedList"/>
+    </bean>
+
+    <!-- list people -->
+    <bean name="/listPeople.do" id="listPeopleController"
+          class="net.crew_vre.web.controller.ListPeopleController">
+        <constructor-arg index="0" ref="facetService"/>
+        <constructor-arg index="1" ref="listPeopleFacade"/>
+        <constructor-arg index="2" ref="browseHistory"/>
+        <constructor-arg index="3" ref="personFacets"/>
+    </bean>
+
+    <!-- display event -->
+    <bean name="/displayEvent.do" id="displayEventController"
+          class="net.crew_vre.web.controller.DisplayEventController">
+        <constructor-arg index="0" ref="displayEventFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+    </bean>
+
+    <!-- display recording -->
+    <bean name="/displayRecording.do" id="displayRecordingController"
+          class="net.crew_vre.web.controller.DisplayRecordingController">
+        <property name="displayRecordingFacade" ref="displayRecordingFacade"/>
+    </bean>
+
+    <!-- display place -->
+    <bean name="/displayPlace.do" id="displayPlaceController"
+          class="net.crew_vre.web.controller.DisplayPlaceController">
+        <constructor-arg index="0" ref="displayPlaceFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+        <constructor-arg index="2" value="${google.map.key}"/>
+    </bean>
+
+    <!-- display person -->
+    <bean name="/displayPerson.do" id="displayPersonController"
+          class="net.crew_vre.web.controller.DisplayPersonController">
+        <constructor-arg index="0" ref="displayPersonFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+    </bean>
+
+    <!-- event calendar -->
+    <bean name="/eventCalendar.do" id="eventCalendarController"
+          class="net.crew_vre.web.controller.EventCalendarController">
+        <constructor-arg index="0" ref="displayEventFacade"/>
+    </bean>
+
+    <!-- ========== EVENT FACET CONFIGURATIONS ========== -->
+
+    <!-- prefixes -->
+    <util:map id="nsPrefixes" map-class="java.util.HashMap">
+        <entry key="rdf" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        <entry key="skos" value="http://www.w3.org/2004/02/skos/core#"/>
+        <entry key="foaf" value="http://xmlns.com/foaf/0.1/"/>
+        <entry key="eswc" value="http://www.eswc2006.org/technologies/ontology#"/>
+        <entry key="owl" value="http://www.w3.org/2002/07/owl#"/>
+        <entry key="dc" value="http://purl.org/dc/elements/1.1/"/>
+        <entry key="dcterms" value="http://purl.org/dc/terms/"/>
+        <entry key="iugo" value="http://www.ilrt.bristol.ac.uk/iugo#"/>
+        <entry key="rdfs" value="http://www.w3.org/2000/01/rdf-schema#"/>
+        <entry key="iugosubs" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#"/>
+        <entry key="loc" value="http://www.ilrt.bristol.ac.uk/iugo/location/#"/>
+    </util:map>
+
+    <!-- locations -->
+    <util:map id="locations" map-class="java.util.HashMap">
+        <entry key="facetType" value="Hierarchical"/>
+        <entry key="facetTitle" value="Locations"/>
+        <entry key="linkProperty" value="http://www.ilrt.bristol.ac.uk/iugo#hasLocation"/>
+        <entry key="widerProperty" value="http://www.w3.org/2004/02/skos/core#broader"/>
+        <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+        <entry key="paramName" value="locations"/>
+        <entry key="prefix" value="loc"/>
+    </util:map>
+
+    <!-- subjects -->
+    <util:map id="subjects" map-class="java.util.HashMap">
+        <entry key="facetType" value="Hierarchical"/>
+        <entry key="facetTitle" value="Subjects"/>
+        <entry key="linkProperty" value="http://www.ilrt.bristol.ac.uk/iugo#hasSubject"/>
+        <entry key="widerProperty" value="http://www.w3.org/2004/02/skos/core#broader"/>
+        <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+        <entry key="paramName" value="subjects"/>
+        <entry key="prefix" value="iugosubs"/>
+    </util:map>
+
+    <!-- event titles -->
+    <util:map id="eventTitles" map-class="java.util.HashMap">
+        <entry key="facetType" value="AlphaNumeric"/>
+        <entry key="facetTitle" value="Event Titles"/>
+        <entry key="linkProperty" value="http://purl.org/dc/elements/1.1/title"/>
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+        <entry key="paramName" value="eventTitles"/>
+    </util:map>
+
+    <!-- event dates -->
+    <util:map id="eventDate" map-class="java.util.HashMap">
+        <entry key="facetType" value="DateTime"/>
+        <entry key="facetTitle" value="Event Date"/>
+        <entry key="linkProperty"
+               value="http://www.crew-vre.net/ontology#hasStartDate"/>
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+        <entry key="paramName" value="eventDateTime"/>
+    </util:map>
+
+    <!-- list of facet configurations: events -->
+    <util:list id="eventFacets" list-class="java.util.ArrayList">
+        <ref bean="locations"/>
+        <ref bean="subjects"/>
+        <ref bean="eventTitles"/>
+        <ref bean="eventDate"/>
+        <!-- <ref bean="eventTypes" /> -->
+    </util:list>
+
+    <!-- lookup table of months -->
+    <util:map id="monthMap" map-class="java.util.HashMap">
+        <entry key="01" value="January"/>
+        <entry key="02" value="February"/>
+        <entry key="03" value="March"/>
+        <entry key="04" value="April"/>
+        <entry key="05" value="May"/>
+        <entry key="06" value="June"/>
+        <entry key="07" value="July"/>
+        <entry key="08" value="August"/>
+        <entry key="09" value="September"/>
+        <entry key="10" value="October"/>
+        <entry key="11" value="November"/>
+        <entry key="12" value="December"/>
+    </util:map>
+
+    <!-- name of people -->
+    <util:map id="personName" map-class="java.util.HashMap">
+        <entry key="facetType" value="AlphaNumeric"/>
+        <entry key="facetTitle" value="Family Names"/>
+        <entry key="linkProperty" value="http://xmlns.com/foaf/0.1/family_name"/>
+        <entry key="constraintType" value="http://xmlns.com/foaf/0.1/Person"/>
+        <entry key="paramName" value="personName"/>
+    </util:map>
+
+    <!-- list of facet configurations: people -->
+    <util:list id="personFacets" list-class="java.util.ArrayList">
+        <ref bean="personName"/>
+    </util:list>
+
+    <bean id="utility" class="net.crew_vre.web.Utility">
+        <constructor-arg index="0" ref="nsPrefixes"/>
+    </bean>
+
+    <bean id="alphaNumericFacetFactory"
+          class="net.crew_vre.web.facet.impl.AlphaNumericFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+    </bean>
+
+    <bean id="hierarchicalFacetFactory"
+          class="net.crew_vre.web.facet.impl.HierarchicalFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="nsPrefixes"/>
+    </bean>
+
+    <bean id="dateTimeFacetFactory" class="net.crew_vre.web.facet.impl.DateTimeFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="monthMap"/>
+    </bean>
+
+    <bean id="flatFacetFactory" class="net.crew_vre.web.facet.impl.FlatFacetFactoryImpl">
+        <constructor-arg index="0" ref="refinementDao"/>
+        <constructor-arg index="1" ref="utility"/>
+    </bean>
+
+    <bean id="facetService" class="net.crew_vre.web.facet.impl.FacetServiceImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+        <constructor-arg index="1" ref="utility"/>
+        <constructor-arg index="2" ref="alphaNumericFacetFactory"/>
+        <constructor-arg index="3" ref="hierarchicalFacetFactory"/>
+        <constructor-arg index="4" ref="dateTimeFacetFactory"/>
+        <constructor-arg index="5" ref="flatFacetFactory"/>
+    </bean>
+
+    <!-- ========== ATOM / RSS FEEDS ========== -->
+
+    <!-- feed - upcoming events -->
+    <util:map id="upcomingEvents" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0"/>
+        <entry key="language" value="en"/>
+        <entry key="title" value="Upcoming research conferences, workshops and other events"/>
+        <entry key="description" value="Upcoming research conferences, workshops and other events
+                                        registered with CREW."/>
+        <entry key="eventUrlFragment" value="displayEvent.do?eventId="/>
+        <entry key="contentType" value="application/atom+xml"/>
+        <entry key="periodInDays" value="100"/>
+        <entry key="feedUrl" value="feeds/upcomingEvents.xml"/>
+    </util:map>
+
+    <!-- feed - recently added events -->
+    <util:map id="recentlyAddedEvents" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0"/>
+        <entry key="language" value="en"/>
+        <entry key="title" value="Recently added research conferences, workshops and other events"/>
+        <entry key="description" value="Research conferences, workshops and other events recently
+                                        registered with CREW."/>
+        <entry key="eventUrlFragment" value="displayEvent.do?eventId="/>
+        <entry key="contentType" value="application/atom+xml"/>
+        <entry key="periodInDays" value="31"/>
+        <entry key="feedUrl" value="feeds/recentlyAdded.xml"/>
+    </util:map>
+
+    <util:list id="feedList" list-class="java.util.ArrayList">
+        <ref bean="upcomingEvents"/>
+        <ref bean="recentlyAddedEvents"/>
+    </util:list>
+
+    <!-- feed - upcoming events -->
+    <bean name="/feeds/upcomingEvents.xml" id="upcomingEventsFeedController"
+          class="net.crew_vre.web.controller.feeds.UpcomingEventsFeedController">
+        <constructor-arg index="0" ref="upcomingEvents"/>
+        <constructor-arg index="1" ref="mainEventService"/>
+    </bean>
+
+    <!-- feed - upcoming events -->
+    <bean name="/feeds/recentlyAdded.xml" id="recentlyCreatedFeedController"
+          class="net.crew_vre.web.controller.feeds.RecentlyCreatedEventsFeedController">
+        <constructor-arg index="0" ref="recentlyAddedEvents"/>
+        <constructor-arg index="1" ref="mainEventService"/>
+    </bean>
+
+
+    <!-- ========== USER MANAGEMENT ========== -->
+
+
+    <!-- session factory - spring hiberate support -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="/WEB-INF/hibernate.cfg.xml"/>
+        <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- hibernate template - spring hibernate support -->
+    <bean id="hibernateTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- transaction manager - spring hibernate support -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="transactionAttributeSource"
+          class="org.springframework.transaction.interceptor.MatchAlwaysTransactionAttributeSource"/>
+
+    <!-- DAOs and facades -->
+
+    <bean id="userDao" class="org.ilrt.dibden.dao.hibernate.UserDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="rolesDao" class="org.ilrt.dibden.dao.hibernate.RoleDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="groupDao" class="org.ilrt.dibden.dao.hibernate.GroupDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="userManagementFacadeImpl"
+          class="org.ilrt.dibden.facade.impl.UserManagementFacadeImpl">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="rolesDao"/>
+        <constructor-arg index="2" ref="groupDao"/>
+        <constructor-arg index="3" value="md5"/>
+        <constructor-arg index="4" ref="mailSender"/>
+        <constructor-arg index="5" ref="resetMailMessage"/>
+    </bean>
+
+    <!-- proxy for transactions -->
+    <bean id="userManagementFacade"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="proxyInterfaces">
+            <list>
+                <value>org.ilrt.dibden.facade.UserManagementFacade</value>
+            </list>
+        </property>
+        <property name="target" ref="userManagementFacadeImpl"/>
+        <property name="transactionManager" ref="transactionManager"/>
+        <property name="transactionAttributeSource" ref="transactionAttributeSource"/>
+    </bean>
+
+    <!-- initialize service-->
+    <bean id="startup" class="net.crew_vre.web.startup.UserManagement" init-method="init">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <!-- mailer configuration -->
+    <bean id="resetMailMessage" class="org.springframework.mail.SimpleMailMessage"
+          scope="prototype">
+        <property name="from" value="${mail.from.address}"/>
+        <property name="subject" value="${mail.title}"/>
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host}"/>
+    </bean>
+
+    <!-- captcha configuration -->
+    <bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">
+        <property name="privateKey" value="${private.key}"/>
+        <property name="publicKey" value="${public.key}"/>
+        <property name="recaptchaServer" value="http://api.recaptcha.net"/>
+        <property name="includeNoscript" value="false"/>
+    </bean>
+    <!-- user registration -->
+    <bean id="registrationValidator" class="org.ilrt.dibden.web.validator.RegistrationValidator">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <bean name="/registration.do" class="org.ilrt.dibden.web.controller.RegistrationController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" ref="reCaptcha"/>
+        <constructor-arg index="2" value="${public.key}"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.RegistrationCommand"/>
+        <property name="commandName" value="registrationCommand"/>
+        <property name="validator" ref="registrationValidator"/>
+        <property name="successView" value="registrationSuccess"/>
+    </bean>
+
+    <!-- change password -->
+    <bean id="changePasswordValidator"
+          class="org.ilrt.dibden.web.validator.ChangePasswordValidator"/>
+
+    <bean name="/secured/changePassword.do"
+          class="org.ilrt.dibden.web.controller.ChangePasswordController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.ChangePasswordCommand"/>
+        <property name="validator" ref="changePasswordValidator"/>
+        <property name="successView" value="changePasswordSuccess"/>
+        <property name="formView" value="changePassword"/>
+    </bean>
+
+    <!-- mail new password -->
+    <bean id="generatePasswordValidator"
+          class="org.ilrt.dibden.web.validator.GeneratePasswordValidator"/>
+
+    <bean name="/forgottenPassword.do"
+          class="org.ilrt.dibden.web.controller.GeneratePasswordController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.GeneratePasswordCommand"/>
+        <property name="validator" ref="generatePasswordValidator"/>
+        <property name="successView" value="passwordReset"/>
+    </bean>
+
+    <!-- view profile -->
+
+    <bean name="/secured/displayProfile.do"
+          class="org.ilrt.dibden.web.controller.DisplayProfileController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <!-- display admin details -->
+    <bean name="/adminActions.do" class="org.springframework.web.servlet.mvc.UrlFilenameViewController" />
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+    <!-- list users -->
+
+    <bean name="/secured/admin/listUsers.do"
+          class="org.ilrt.dibden.web.controller.ListUsersController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.ListUserForm"/>
+        <property name="commandName" value="listUserForm"/>
+    </bean>
+
+
+    <!-- edit users -->
+
+    <bean name="/secured/admin/editUser.do"
+          class="org.ilrt.dibden.web.controller.EditUserController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.UserForm"/>
+        <property name="commandName" value="userForm"/>
+    </bean>
+
+    <!-- list roles -->
+
+    <bean id="listRolesValidator" class="org.ilrt.dibden.web.validator.ListRolesValidator">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <bean name="/secured/admin/listRoles.do"
+          class="org.ilrt.dibden.web.controller.ListRolesController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.ListRoleForm"/>
+        <property name="commandName" value="listRoleForm"/>
+        <property name="validator" ref="listRolesValidator"/>
+    </bean>
+
+
+    <!-- add / edit roles -->
+
+    <bean id="roleValidator" class="org.ilrt.dibden.web.validator.RoleValidator"/>
+
+    <bean name="/secured/admin/addRole.do" class="org.ilrt.dibden.web.controller.AddRoleController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.RoleForm"/>
+        <property name="commandName" value="roleForm"/>
+        <property name="validator" ref="roleValidator"/>
+        <property name="formView" value="addRole"/>
+    </bean>
+
+    <bean name="/secured/admin/editRole.do"
+          class="org.ilrt.dibden.web.controller.EditRoleController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.RoleForm"/>
+        <property name="commandName" value="roleForm"/>
+        <property name="validator" ref="roleValidator"/>
+    </bean>
+
+    <!-- list groups -->
+
+    <bean id="listGroupsValidator" class="org.ilrt.dibden.web.validator.ListGroupsValidator">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+    </bean>
+
+    <bean name="/secured/admin/listGroups.do"
+          class="org.ilrt.dibden.web.controller.ListGroupsController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.ListGroupForm"/>
+        <property name="commandName" value="listGroupForm"/>
+        <property name="validator" ref="listGroupsValidator"/>
+    </bean>
+
+
+    <!-- add / edit groups -->
+
+    <bean id="groupValidator" class="org.ilrt.dibden.web.validator.GroupValidator"/>
+
+    <bean name="/secured/admin/addGroup.do"
+          class="org.ilrt.dibden.web.controller.AddGroupController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.GroupForm"/>
+        <property name="commandName" value="groupForm"/>
+        <property name="validator" ref="groupValidator"/>
+        <property name="formView" value="addGroup"/>
+    </bean>
+
+    <bean name="/secured/admin/editGroup.do"
+          class="org.ilrt.dibden.web.controller.EditGroupController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.GroupForm"/>
+        <property name="commandName" value="groupForm"/>
+        <property name="validator" ref="groupValidator"/>
+    </bean>
+
+    <!-- logout -->
+    <bean name="/logout.do" class="net.crew_vre.web.controller.LogoutController"/>
+
+
+    <!-- ========== HARVESTER ========== -->
+
+    <!--
+    <bean id="store" factory-method="create" class="com.hp.hpl.jena.sdb.store.StoreFactory">
+        <constructor-arg value="src/main/resources/sdb.ttl"/>
+    </bean>
+    -->
+
+    <!--
+    <bean id="sources" class="net.crew_vre.harvester.impl.HarvestSourcesImpl">
+        <constructor-arg>
+            <list>
+                <bean class="net.crew_vre.harvester.impl.SimpleHarvestSource">
+                    <constructor-arg index="0" value="http://www.google.com/"/>
+                    <constructor-arg index="1" value="This is a title"/>
+                    <constructor-arg index="2" value="This is description"/>
+
+                </bean>
+                <bean class="net.crew_vre.harvester.impl.SimpleHarvestSource">
+                    <constructor-arg index="0" value="http://danbri.org/foaf.rdf"/>
+                    <constructor-arg index="1" value="This is a title"/>
+                    <constructor-arg index="2" value="This is description"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+    -->
+    <!--
+    <bean id="harvester" class="net.crew_vre.harvester.Harvester">
+        <constructor-arg ref="sources"/>
+        <constructor-arg ref="store"/>
+        <constructor-arg>
+            <bean class="net.crew_vre.harvester.impl.HttpResolver"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="harvesterJobDetail"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="harvester"/>
+        <property name="targetMethod" value="harvest"/>
+        <property name="concurrent" value="false"/>
+    </bean>
+
+    <bean id="harvesterTrigger"
+        class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="harvesterJobDetail"/>
+        <property name="cronExpression" value="30 * * * * ?"/>
+    </bean>
+
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="harvesterTrigger" />
+            </list>
+        </property>
+    </bean>
+    -->
+
+    <!--
+    <bean id="harvester" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="net.crew_vre.harvester.Harvester"/>
+        <property name="interceptorNames" value="cacheUpdateModelAdvice"/>
+        <property name="target" ref="harvesterTarget"/>
+    </bean>
+    -->
+
+    <bean id="harvesterDao" class="net.crew_vre.harvester.impl.HarvesterDaoImpl">
+        <constructor-arg index="0" ref="databaseProxy"/>
+    </bean>
+
+    <bean id="httpResolver" class="net.crew_vre.harvester.impl.HttpResolver">
+        <constructor-arg index="0" ref="harvesterDao"/>
+    </bean>
+
+    <bean id="rulesManager" class="net.crew_vre.harvester.impl.RulesManagerImpl">
+        <constructor-arg index="0" value="rules/crew.rules"/>
+        <constructor-arg index="1" value="vocabs/"/>
+    </bean>
+
+    <bean id="harvester" class="net.crew_vre.harvester.impl.HarvesterImpl">
+        <constructor-arg index="0" ref="databaseProxy"/>
+        <constructor-arg index="1" ref="httpResolver"/>
+        <constructor-arg index="2" ref="rulesManager"/>
+    </bean>
+
+    <bean id="harvesterSourceManagementFacadeTarget"
+          class="net.crew_vre.harvester.impl.HarversterSourceManagementFacadeImpl">
+        <constructor-arg index="0" ref="harvesterDao"/>
+        <constructor-arg index="1" ref="harvester"/>
+    </bean>
+
+
+    <bean id="harvestSourceValidator" class="net.crew_vre.harvester.web.HarvestSourceValidator">
+        <constructor-arg index="0" ref="harvesterSourceManagementFacade"/>
+    </bean>
+
+    <bean name="/secured/harvester/listHarvestSources.do"
+          class="net.crew_vre.harvester.web.ListHarvestSourcesController">
+        <constructor-arg index="0" ref="harvesterSourceManagementFacade"/>
+        <property name="commandClass" value="net.crew_vre.harvester.web.ListHarvestSourcesForm"/>
+        <property name="commandName" value="listSourcesForm"/>
+        <property name="formView" value="listHarvestSources"/>
+    </bean>
+
+    <bean name="/secured/harvester/addHarvestSource.do"
+          class="net.crew_vre.harvester.web.AddHarvestSourceController">
+        <constructor-arg index="0" ref="harvesterSourceManagementFacade"/>
+        <property name="commandClass"
+                  value="net.crew_vre.harvester.web.HarvestSourceForm"/>
+        <property name="commandName" value="source"/>
+        <property name="formView" value="addHarvestSource"/>
+        <property name="successView" value="redirect:./listHarvestSources.do"/>
+        <property name="validator" ref="harvestSourceValidator"/>
+    </bean>
+
+    <bean name="/secured/harvester/editHarvestSource.do"
+          class="net.crew_vre.harvester.web.EditHarvestSourceController">
+        <constructor-arg index="0" ref="harvesterSourceManagementFacade"/>
+        <property name="commandClass"
+                  value="net.crew_vre.harvester.web.HarvestSourceForm"/>
+        <property name="commandName" value="source"/>
+        <property name="formView" value="editHarvestSource"/>
+        <property name="successView" value="redirect:./listHarvestSources.do"/>
+    </bean>
+
+    <bean name="/secured/admin/sparql.do" class="net.crew_vre.web.controller.SparqlQueryController">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+        <property name="commandClass" value="net.crew_vre.web.form.SparqlQueryForm"/>
+        <property name="formView" value="sparql"/>
+        <property name="successView" value="./sparql.do"/>
+        <property name="commandName" value="sparql"/>
+    </bean>
+
+
+</beans>
