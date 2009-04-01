@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- $Id: default.rdf 1132 2009-03-20 19:05:47Z cmmaj $-->
+<rdf:RDF xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="#default">
+    <dc:title>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua.</dc:title>
+  </rdf:Description>
+</rdf:RDF>

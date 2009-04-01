@@ -1,0 +1,1101 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres1/Hammersley_ethnography_rmf.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#martyn-hammersley"/>
+    <dc:title>What is Ethnography?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-hammersley"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres5/RMF,_socio-cultural.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#mike-savage"/>
+    <dc:title>The relevance of histories of methods expertise for examining?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session29-marsh">
+    <crew:hasRecordingId>1215413342272796534702</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-herb-marsh"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres1/RMF_workshop_What_is_FINAL_10_June.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is meta-analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session6-carr">
+    <crew:hasRecordingId>1215168409688944930690</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres2/ESRC_research_methods_festival.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-vanessa-carr"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is archival research?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-charles-ragin-session-49">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#charles-ragin"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session49"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#john-molitor">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-john-molitor"/>
+    <foaf:family_name>Molitor</foaf:family_name>
+    <foaf:givenName>John</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session49">
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/plen/pres1/RDSI_RMF.pdf"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-ragin-session-49"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T22:00:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T20:30:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 49: Redesigning Social Inquiry</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session39-geneletti">
+    <crew:hasRecordingId>1215417756151378984706</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-sara-geneletti"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres1/whatistalk.pdf"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What are graphical models?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#paul-longley">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-paul-longley"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.ncess.ac.uk/"/>
+    <foaf:family_name>Longley</foaf:family_name>
+    <foaf:givenName>Paul</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session18-neale">
+    <crew:hasRecordingId>1215187136156697095700</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres5/What_is_QL_Research_RMF_oxford__2008.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-bren-neale"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is qualitative longitudinal research?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#charles-antaki">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-antaki"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.lboro.ac.uk/"/>
+    <foaf:family_name>Antaki</foaf:family_name>
+    <foaf:givenName>Charles</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session29">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-longley"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-lambert"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-jones"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-marsh"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:45:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 29: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30">
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#social_and_economic_sciences"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#oxford"/>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T14:00:00+01:00</eswc:hasStartDateTime>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session49"/>
+    <dc:description>The Festival aims to engage social scientists across a wide range of disciplines and sectors and at different 
+            points in their research careers. We are aiming to stimulate interest, raise issues, highlight opportunities and showcase 
+            new developments.</dc:description>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#ConferenceEvent"/>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-19T11:22:00+01:00</dc:creation-date>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3rd ESRC Research Methods Festival</dc:title>
+    <eswc:hasProgramme rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T17:30:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6"/>
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/oxford/stcatherinescollege/"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-mike-savage">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#mike-savage"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-peter-beresford">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#peter-bIvonne Solis Trapalaeresford"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-boxall-beresford"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#peter-beresford"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-peter-halfpenny">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#peter-halfpenny"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-halfpenny"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-ivonne-solis-trapala">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#ivonne-solis-trapala"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-trapala"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres1/boxall_2008.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#peter-beresford"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#kathy-boxall"/>
+    <dc:title>What is participatory Research with Service Users?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-boxall-beresford"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres5/What_is_QL_Research_RMF_oxford__2008.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#bren-neale"/>
+    <dc:title>What is Qualitative Longitudinal Research?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-neale"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#martyn-hammersley">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-martyn-hammersley"/>
+    <foaf:family_name>Hammersley</foaf:family_name>
+    <foaf:givenName>Martyn</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-corinne-squire">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#corinne-squire"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-squire"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres1/What_are_ABM_NG.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#nigel-gilbert"/>
+    <dc:title>What are agent-based models?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-gilbert"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor">
+    <crew:hasRecordingId>1215420337205598891711</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-john-molitor"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres2/jassy_ox.ppt"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres1/bayesian.pdf"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is Bayesian analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session18-hammersley">
+    <crew:hasRecordingId>1215185500714578301699</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres1/Hammersley_ethnography_rmf.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-martyn-hammersley"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is ethnography?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres1/whatistalk.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#sara-geneletti"/>
+    <dc:title>What are graphical models?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-geneletti"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-john-molitor">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#john-molitor"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-paul-longley">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#paul-longley"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-longley"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#corinne-squire">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-corinne-squire"/>
+    <foaf:family_name>Squire</foaf:family_name>
+    <foaf:givenName>Corinne</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-tom-hall">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#tom-hall"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-hall"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session29-lambert">
+    <crew:hasRecordingId>1215414928871371359704</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-paul-lambert"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres3/what_is_quantitative_longitudinal_analysis_2july2008.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is quantitative longitudinal analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#sara-geneletti">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-sara-geneletti"/>
+    <foaf:family_name>Geneletti</foaf:family_name>
+    <foaf:givenName>Sara</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres4/What_is_narrative_research,_Squire,_NCRM_2008.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#corinne-squire"/>
+    <dc:title>What is narrative research?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-squire"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-charles-ragin">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#charles-ragin"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-ragin"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-charles-antaki">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#charles-antaki"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-antaki"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#harry-woodruff">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-harry-woodruff"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.foresight.gov.uk/Horizon%20Scanning%20Centre/index.asp"/>
+    <foaf:family_name>Woodruff</foaf:family_name>
+    <foaf:givenName>Harry</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session6-dicks">
+    <crew:hasRecordingId>121516736952124648686</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-bella-dicks"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres3/What_is_multimodality.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is multimodality?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#bren-neale">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-bren-neale"/>
+    <foaf:family_name>Neale</foaf:family_name>
+    <foaf:givenName>Bren</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-nigel-gilbert">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#nigel-gilbert"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-gilbert"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-paul-lambert">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#paul-lambert"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-lambert"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session39-ananiadou">
+    <crew:hasRecordingId>1215419883605357799709</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-sophia-ananiadou"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres3/What_is_Text_Mining.pdf"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is text mining?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#peter-halfpenny">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-peter-halfpenny"/>
+    <foaf:family_name>Halfpenny</foaf:family_name>
+    <foaf:givenName>Peter</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres2/jassy_ox.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#nuoo-ting-molitor"/>
+    <dc:title>Bayesian graphical models for combining mismatched administrative and survey data: application 
+	              to low birth weight and water disinfection by-products</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres4/RMF,_Social_networks.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#mike-savage"/>
+    <dc:title>What is Social Network Analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session50-antaki">
+    <crew:hasRecordingId>1215422473661849830713</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-antaki"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres3/ESRC_methods_2008a.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is discourse analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session29-jones">
+    <crew:hasRecordingId>1215414189781344772703</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-kelvyn-jones"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres4/What_is_multilevel_modelling_KJ_OxfordRF_2008.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is multi-level modelling?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#jon-prosser">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-jon-prosser"/>
+    <foaf:family_name>Prosser</foaf:family_name>
+    <foaf:givenName>Jon</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres3/rhythmanalysis_2.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#tom-hall"/>
+    <dc:title>What is rhythmanalysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-hall"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#vanessa-carr">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-vanessa-carr"/>
+    <foaf:family_name>Carr</foaf:family_name>
+    <foaf:givenName>Vanessa</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-sophia-ananiadou">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#sophia-ananiadou"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-ananiadou"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-jon-prosser">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#jon-prosser"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-prosser"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#peter-bIvonne Solis Trapalaeresford">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-peter-beresford"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres1/bayesian.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#john-molitor"/>
+    <dc:title>What are Bayesian Methods?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#alex-singleton">
+    <foaf:family_name>Singleton</foaf:family_name>
+    <foaf:givenName>Alex</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#charles-ragin">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-ragin"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.arizona.edu/"/>
+    <foaf:family_name>Ragin</foaf:family_name>
+    <foaf:givenName>Charles</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-ragin-session-49"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres4/What_is_e-Social_Science.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#peter-halfpenny"/>
+    <dc:title>What is e-Social Science?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-halfpenny"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#ivonne-solis-trapala">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-ivonne-solis-trapala"/>
+    <foaf:family_name>Trapala</foaf:family_name>
+    <foaf:givenName>Ivonne Solis</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-kelvyn-jones">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#kelvyn-jones"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-jones"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session18-prosser">
+    <crew:hasRecordingId>1215181606408382542696</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres2/What_is.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-jon-prosser"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What are visual research methods?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session8-halfpenny">
+    <crew:hasRecordingId>1215175570706588346694</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres4/What_is_e-Social_Science.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-peter-halfpenny"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is e-Social science?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session50">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-antaki"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-ragin"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-trapala"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:45:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:15:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 50: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres1/RMF_workshop_What_is_FINAL_10_June.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#herb-marsh"/>
+    <dc:title>What is Meta-analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-marsh"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres4/What_is_multilevel_modelling_KJ_OxfordRF_2008.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#kelvyn-jones"/>
+    <dc:title>What is: multilevel modelling?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-jones"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session6-boxall-beresford">
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres1/boxall_2008.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-peter-beresford"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-kathy-boxall"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is participatory research with service users?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#herb-marsh">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-herb-marsh"/>
+    <foaf:family_name>Marsh</foaf:family_name>
+    <foaf:givenName>Herb</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session18">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-neale"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-hammersley"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-squire"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-prosser"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:30:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:00:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 18: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-kathy-charmaz">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#kathy-charmaz"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-charmaz"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#sophia-ananiadou">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-sophia-ananiadou"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.manchester.ac.uk/"/>
+    <foaf:family_name>Ananiadou</foaf:family_name>
+    <foaf:givenName>Sophia</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#mike-savage">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-mike-savage"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.manchester.ac.uk/"/>
+    <foaf:family_name>Savage</foaf:family_name>
+    <foaf:givenName>Mike</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres2/ESRC_research_methods_festival.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#peter-beresford"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#vanessa-car"/>
+    <dc:title>What is Archival Research?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-carr"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session8-hall">
+    <crew:hasRecordingId>1215173088733245614691</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres3/rhythmanalysis_2.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-tom-hall"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is rhythmanalysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#nuoo-ting-molitor">
+    <foaf:family_name>Molitor</foaf:family_name>
+    <foaf:givenName>Nuoo-Ting</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session39">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-ananiadou"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-woodruff"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-geneletti"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:30:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:00:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 39: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage">
+    <crew:hasRecordingId>1215418373854162233707</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-mike-savage"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres5/RMF,_socio-cultural.ppt"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres4/RMF,_Social_networks.ppt"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is social network analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/plen/pres1/RDSI_RMF.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#charles-ragin"/>
+    <dc:title>Resdesigning Social Inquiry</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session49"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres2/08_07_02_-_ESRC_Research_Methods_HSC.PPT">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#harry-woodruff"/>
+    <dc:title>What is..... Horizon Scanning?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-woodruff"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session29-longley">
+    <crew:hasRecordingId>1215417257143390291705</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres2/AlexSingleton.pdf"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-paul-longley"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What are geographic information systems for the Google generation?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-martyn-hammersley">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#martyn-hammersley"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-hammersley"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#kathy-charmaz">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-kathy-charmaz"/>
+    <foaf:family_name>Charmaz</foaf:family_name>
+    <foaf:givenName>Kathy</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session39-woodruff">
+    <crew:hasRecordingId>1215418535236915085708</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-harry-woodruff"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres2/08_07_02_-_ESRC_Research_Methods_HSC.PPT"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is horizon scanning?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres3/what_is_quantitative_longitudinal_analysis_2july2008.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#paul-lambert"/>
+    <dc:title>Quantitative Longitudinal Analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-lambert"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-kathy-boxall">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#kathy-boxall"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-boxall-beresford"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#tom-hall">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-tom-hall"/>
+    <foaf:family_name>Hall</foaf:family_name>
+    <foaf:givenName>Tom</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session18-squire">
+    <crew:hasRecordingId>1215183783270192134697</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres4/What_is_narrative_research,_Squire,_NCRM_2008.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-corinne-squire"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is narrative analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session8-charmaz">
+    <crew:hasRecordingId>1215173415873296605692</crew:hasRecordingId>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres2/What_is_Grounded_Theory.ppt.4-24-08.SS.ppt"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-kathy-charmaz"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is grounded theory?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#peter-beresford">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-peter-beresford"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.brunel.ac.uk/"/>
+    <foaf:family_name>Beresford</foaf:family_name>
+    <foaf:givenName>Peter</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-bren-neale">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#bren-neale"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-neale"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-harry-woodruff">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#harry-woodruff"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-woodruff"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#kathy-boxall">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-kathy-boxall"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.shef.ac.uk/"/>
+    <foaf:family_name>Boxall</foaf:family_name>
+    <foaf:givenName>Kathy</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha0/pres3/What_is_multimodality.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#bella-dicks"/>
+    <dc:title>What is Multimodality?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-dicks"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session8">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-gilbert"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-halfpenny"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-charmaz"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-hall"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T12:45:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T09:15:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 8: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-sara-geneletti">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#sara-geneletti"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-geneletti"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#kelvyn-jones">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-kelvyn-jones"/>
+    <foaf:family_name>Jones</foaf:family_name>
+    <foaf:givenName>Kelvyn</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#bella-dicks">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-bella-dicks"/>
+    <foaf:family_name>Dicks</foaf:family_name>
+    <foaf:givenName>Bella</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-vanessa-carr">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#vanessa-carr"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-carr"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres3/ESRC_methods_2008a.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#charles-antaki"/>
+    <dc:title>What is Discourse Analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-antaki"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha2/pres2/AlexSingleton.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#alex-singleton"/>
+    <dc:title>What is GIS for the Google Generation?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-longley"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-herb-marsh">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#herb-marsh"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-marsh"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres2/What_is_Grounded_Theory.ppt.4-24-08.SS.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#kathy-charmaz"/>
+    <dc:title>What is Grounded Theory?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-charmaz"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session8-gilbert">
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha1/pres1/What_are_ABM_NG.pdf"/>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-nigel-gilbert"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What are agent-based simulation models?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres4/ILSTWhatis.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#ivonne-solis-trapala"/>
+    <dc:title>What is discrete longitudinal data analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-trapala"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session6">
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-boxall-beresford"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-carr"/>
+    <eswc:hasPart rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-dicks"/>
+    <dc:description>The ‘What is?’ sessions provide short, accessible introductory guides to key methods. No prior knowledge of these 
+            methods is required. The format is for the presenters to each spend 20-25 minutes talking about their particular method, followed 
+            by 15-20 minutes of questions and answers on that presentation. Because the ‘What is?’ sessions proved a particularly popular
+            feature of the 2006 Research Methods Festival, in 2008 we are requiring booking of places. And because these sessions will be
+            recorded so that they can subsequently be made available on the NCRM website, booking to attend will indicate preparedness
+            to consent to being in a session that will be recorded.</dc:description>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T17:30:00+01:00</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T14:00:00+01:00</eswc:hasStartDateTime>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Session 6: What is?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#presenter-bella-dicks">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:heldBy rdf:resource="http://www.crew_vre.net/events#bella-dicks"/>
+    <eswc:isRoleAt rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-dicks"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session50-trapala">
+    <crew:hasRecordingId>1215420058754909984710</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-ivonne-solis-trapala"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres4/ILSTWhatis.pdf"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is discrete longitudinal data analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha4/pres2/What_is.ppt">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#jon-prosser"/>
+    <dc:title>What are Visual Methods?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-prosser"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres5/What_is_QCA.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#charles-ragin"/>
+    <dc:title>What is Qualitative Comparative Analysis?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-ragin"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/oxford/stcatherinescollege/">
+    <pos:long>-1.245098</pos:long>
+    <pos:lat>51.757066</pos:lat>
+    <dc:description></dc:description>
+    <dc:title>St Catherine's College, Oxford.</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#nigel-gilbert">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-nigel-gilbert"/>
+    <foaf:family_name>Gilbert</foaf:family_name>
+    <foaf:givenName>Nigel</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#rmf-2008-06-30-session50-ragin">
+    <crew:hasRecordingId>1215421798074243891712</crew:hasRecordingId>
+    <eswc:hasRole rdf:resource="http://www.crew_vre.net/events#presenter-charles-ragin"/>
+    <eswc:hasRelatedArtefact rdf:resource="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha3/pres5/What_is_QCA.pdf"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">What is qualitative comparative analysis?</dc:title>
+    <eswc:isPartOf rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.ncrm.ac.uk/RMF2008/festival/programme/wha5/pres3/What_is_Text_Mining.pdf">
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Retrievable"/>
+    <dc:creator rdf:resource="http://www.crew_vre.net/events#sophia-ananiadou"/>
+    <dc:title>What is text mining?</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Paper"/>
+    <eswc:relatedToEvent rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-ananiadou"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Artefact"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Document"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew_vre.net/events#paul-lambert">
+    <eswc:holdsRole rdf:resource="http://www.crew_vre.net/events#presenter-paul-lambert"/>
+    <foaf:workplaceHomepage rdf:resource="http://www.stir.ac.uk/"/>
+    <foaf:family_name>Lambert</foaf:family_name>
+    <foaf:givenName>Paul</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+</rdf:RDF>

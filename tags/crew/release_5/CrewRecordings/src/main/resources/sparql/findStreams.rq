@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX crew: <http://www.crew-vre.net/ontology#>
+SELECT $uri $streamuri $ssrc $startTime $firstTimestamp $packetsSeen $packetsMissed $rtpType
+WHERE {
+    GRAPH $graph {
+        $uri rdf:type crew:Recording .
+        $uri crew:has-stream $streamuri
+        $streamuri crew:has-ssrc $ssrc
+        $streamuri crew:has-start-time $startTime
+        $streamuri crew:has-end-time $endTime
+        $streamuri crew:has-first-timestamp $firstTimestamp
+        $streamuri crew:has-packets-seen $packetsSeen
+        $streamuri crew:has-packets-missed $packetsMissed
+        $streamuri crew:has-bytes $bytes
+        $streamuri crew:has-rtp-type $rtpType
+        OPTIONAL { $streamuri crew:has-cname $cname }
+        OPTIONAL { $streamuri crew:has-name $name }
+        OPTIONAL { $streamuri crew:has-email $email }
+        OPTIONAL { $streamuri crew:has-phone-number $phoneNumber }
+        OPTIONAL { $streamuri crew:has-location $location }
+        OPTIONAL { $streamuri crew:has-tool $tool }
+        OPTIONAL { $streamuri crew:has-note $note }
+    }
+}

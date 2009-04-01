@@ -1,0 +1,10 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX eswc: <http://www.eswc2006.org/technologies/ontology#>
+SELECT $graph $id $name
+WHERE {
+    GRAPH $graph {
+        $eventId eswc:isPartOf $id .
+        $id dc:title $name
+    }
+}
+ORDER BY $name
