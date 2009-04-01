@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <!-- Event facet configurations -->
+
+    <!-- prefixes -->
+    <util:map id="nsPrefixes" map-class="java.util.HashMap">
+        <entry key="rdf" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#" />
+        <entry key="skos" value="http://www.w3.org/2004/02/skos/core#" />
+        <entry key="foaf" value="http://xmlns.com/foaf/0.1/" />
+        <entry key="eswc" value="http://www.eswc2006.org/technologies/ontology#" />
+        <entry key="owl" value="http://www.w3.org/2002/07/owl#" />
+        <entry key="dc" value="http://purl.org/dc/elements/1.1/" />
+        <entry key="dcterms" value="http://purl.org/dc/terms/" />
+        <entry key="iugo" value="http://www.ilrt.bristol.ac.uk/iugo#" />
+        <entry key="rdfs" value="http://www.w3.org/2000/01/rdf-schema#" />
+        <entry key="iugosubs" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#" />
+        <entry key="loc" value="http://www.ilrt.bristol.ac.uk/iugo/location/#" />
+    </util:map>
+
+    <!-- locations -->
+    <util:map id="locations" map-class="java.util.HashMap">
+        <entry key="facetType" value="Hierarchical" />
+        <entry key="facetTitle" value="Locations" />
+        <entry key="linkProperty" value="http://www.ilrt.bristol.ac.uk/iugo#hasLocation" />
+        <entry key="widerProperty" value="http://www.w3.org/2004/02/skos/core#broader" />
+        <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/location/#locations" />
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent" />
+        <entry key="paramName" value="locations" />
+        <entry key="prefix" value="loc" />
+    </util:map>
+
+    <!-- subjects -->
+    <util:map id="subjects" map-class="java.util.HashMap">
+        <entry key="facetType" value="Hierarchical" />
+        <entry key="facetTitle" value="Subjects" />
+        <entry key="linkProperty" value="http://www.ilrt.bristol.ac.uk/iugo#hasSubject" />
+        <entry key="widerProperty" value="http://www.w3.org/2004/02/skos/core#broader" />
+        <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines" />
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent" />
+        <entry key="paramName" value="subjects" />
+        <entry key="prefix" value="iugosubs" />
+    </util:map>
+
+    <!-- event titles -->
+    <util:map id="eventTitles" map-class="java.util.HashMap">
+        <entry key="facetType" value="AlphaNumeric" />
+        <entry key="facetTitle" value="Event Titles" />
+        <entry key="linkProperty" value="http://purl.org/dc/elements/1.1/title" />
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent" />
+        <entry key="paramName" value="eventTitles" />
+    </util:map>
+
+    <!-- event dates -->
+    <util:map id="eventDate" map-class="java.util.HashMap">
+        <entry key="facetType" value="DateTime" />
+        <entry key="facetTitle" value="Event Date" />
+        <entry key="linkProperty"
+               value="http://www.eswc2006.org/technologies/ontology#hasStartDateTime" />
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent" />
+        <entry key="paramName" value="eventDateTime" />
+        <entry key="startYear" value="2005" />
+        <entry key="endYear" value="2010" />
+    </util:map>
+
+    <!-- event types -->
+    <!--
+    <util:map id="eventTypes" map-class="java.util.HashMap">
+        <entry key="facetType" value="Flat" />
+        <entry key="facetTitle" value="Event Types" />
+        <entry key="linkProperty" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" />
+        <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent" />
+        <entry key="paramName" value="eventTypes" />
+    </util:map>
+    -->
+    <!-- list of facet configurations: events -->
+    <util:list id="eventFacets" list-class="java.util.ArrayList">
+        <ref bean="locations" />
+        <ref bean="subjects" />
+        <ref bean="eventTitles" />
+        <ref bean="eventDate" />
+        <!-- <ref bean="eventTypes" /> -->
+    </util:list>
+
+    <!-- lookup table of months -->
+    <util:map id="monthMap" map-class="java.util.HashMap">
+        <entry key="01" value="January" />
+        <entry key="02" value="February" />
+        <entry key="03" value="March" />
+        <entry key="04" value="April" />
+        <entry key="05" value="May" />
+        <entry key="06" value="June" />
+        <entry key="07" value="July" />
+        <entry key="08" value="August" />
+        <entry key="09" value="September" />
+        <entry key="10" value="October" />
+        <entry key="11" value="November" />
+        <entry key="12" value="December" />
+    </util:map>
+
+    <!-- Person Facet Configuratiions -->
+
+    <!-- event titles -->
+    <util:map id="personName" map-class="java.util.HashMap">
+        <entry key="facetType" value="AlphaNumeric" />
+        <entry key="facetTitle" value="Family Names" />
+        <entry key="linkProperty" value="http://xmlns.com/foaf/0.1/family_name" />
+        <entry key="constraintType" value="http://xmlns.com/foaf/0.1/Person" />
+        <entry key="paramName" value="personName" />
+    </util:map>
+
+    <!-- list of facet configurations: people -->
+    <util:list id="personFacets" list-class="java.util.ArrayList">
+        <ref bean="personName" />
+    </util:list>
+</beans>

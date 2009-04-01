@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean id="paperService" class="net.crew_vre.events.service.impl.PaperServiceImpl">
+        <constructor-arg index="0" ref="paperDao" />
+        <constructor-arg index="1" ref="personDao" />
+    </bean>
+
+    <bean id="eventService" class="net.crew_vre.events.service.impl.EventServiceImpl">
+        <constructor-arg index="0" ref="eventDao" />
+        <constructor-arg index="1" ref="locationDao" />
+        <constructor-arg index="2" ref="roleDao" />
+        <constructor-arg index="3" ref="paperService" />
+    </bean>
+
+    <bean id="mainEventService" class="net.crew_vre.events.service.impl.MainEventServiceImpl">
+        <constructor-arg index="0" ref="mainEventDao" />
+    </bean>
+
+    <bean id="recordingService" class="net.crew_vre.events.service.impl.RecordingServiceImpl">
+        <constructor-arg index="0" ref="recordingDao" />
+    </bean>
+
+    <bean id="personService" class="net.crew_vre.events.service.impl.PersonServiceImpl">
+        <constructor-arg index="0" ref="personDao" />
+    </bean>
+
+</beans>

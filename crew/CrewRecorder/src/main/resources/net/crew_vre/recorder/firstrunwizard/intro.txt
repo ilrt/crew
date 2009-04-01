@@ -1,4 +1,0 @@
-As this is your first use of the CREW Recorder on this computer,
-we need to gather some information to configure the player.
-This will be saved for future sessions, but can be changed at any
-time from within the user interface.

@@ -1,8 +1,0 @@
-<ehcache>
-    <defaultCache
-            maxElementsInMemory="1000"
-            memoryStoreEvictionPolicy="LFU"/>
-    <cache name="crewCache"
-        maxElementsInMemory="1000"
-        memoryStoreEvictionPolicy="LFU"/>
-</ehcache>

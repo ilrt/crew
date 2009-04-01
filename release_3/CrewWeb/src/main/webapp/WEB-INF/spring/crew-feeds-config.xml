@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+
+    <!-- feed - upcoming events -->
+    <util:map id="upcomingEvents" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0" />
+        <entry key="language" value="en" />
+        <entry key="title" value="Upcoming research conferences, workshops and other events" />
+        <entry key="description" value="Upcoming research conferences, workshops and other events
+                                        registered with CREW." />
+        <entry key="eventUrlFragment" value="displayEvent.do?eventId=" />
+        <entry key="contentType" value="application/atom+xml" />
+        <entry key="periodInDays" value="100" />
+        <entry key="feedUrl" value="feeds/upcomingEvents.xml" />
+    </util:map>
+
+    <!-- feed - recently added events -->
+    <util:map id="recentlyAddedEvents" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0" />
+        <entry key="language" value="en" />
+        <entry key="title" value="Recently added research conferences, workshops and other events"/>
+        <entry key="description" value="Research conferences, workshops and other events recently
+                                        registered with CREW." />
+        <entry key="eventUrlFragment" value="displayEvent.do?eventId=" />
+        <entry key="contentType" value="application/atom+xml" />
+        <entry key="periodInDays" value="31" />
+        <entry key="feedUrl" value="feeds/recentlyAdded.xml" />
+    </util:map>
+
+    <util:list id="feedList" list-class="java.util.ArrayList">
+        <ref bean="upcomingEvents" />
+        <ref bean="recentlyAddedEvents" />
+    </util:list>
+
+</beans>

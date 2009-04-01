@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="propertiesConfig"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/classes/jdbc.properties</value>
+                <value>/WEB-INF/classes/hibernate.properties</value>
+                <value>/WEB-INF/classes/crew.properties</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <!-- DATABASE, HIBERNATE AND TRANSAXTION CONFIGS  -->
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="/WEB-INF/hibernate.cfg.xml"/>
+        <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="hibernateTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!-- DAOs and FACADES -->
+
+    <bean id="userDao" class="org.ilrt.dibden.dao.hibernate.UserDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="groupDao" class="org.ilrt.dibden.dao.hibernate.RoleDaoImpl">
+        <constructor-arg index="0" ref="hibernateTemplate"/>
+    </bean>
+
+    <bean id="userManagementFacade"
+          class="org.ilrt.dibden.facade.impl.UserManagementFacadeImpl">
+        <constructor-arg index="0" ref="userDao"/>
+        <constructor-arg index="1" ref="groupDao"/>
+        <constructor-arg index="2" value="md5"/>
+        <constructor-arg index="3" ref="mailSender"/>
+        <constructor-arg index="4" ref="resetMailMessage"/>
+    </bean>
+
+
+    <!-- OTHER SERVICES -->
+
+    <!-- initialize service-->
+    <bean id="startup" class="org.ilrt.dibden.web.DibdenStartup" init-method="init">
+        <constructor-arg index="0" ref="groupDao"/>
+    </bean>
+
+    <!-- mailer configuration -->
+
+    <bean id="resetMailMessage" class="org.springframework.mail.SimpleMailMessage"
+          scope="prototype">
+        <property name="from" value="${mail.from.address}"/>
+        <property name="subject" value="${mail.title}"/>
+    </bean>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host}"/>
+    </bean>
+
+
+    <!-- captcha configuration -->
+
+    <bean id="reCaptcha" class="net.tanesha.recaptcha.ReCaptchaImpl">
+        <property name="privateKey" value="${private.key}"/>
+        <property name="publicKey" value="${public.key}"/>
+        <property name="recaptchaServer" value="http://api.recaptcha.net"/>
+        <property name="includeNoscript" value="false"/>
+    </bean>
+
+</beans>
