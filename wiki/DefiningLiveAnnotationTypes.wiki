@@ -129,10 +129,18 @@ The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
     * *`displayname`* – The heading for the input-box to be shown in the live annotation tool. 
     If *`displayname`* is not set the *`name`* will be shown.
     * _<tt>user-defined-variable</tt>_
-    The user can define any number of variables to be used in the *`<format>`* sections. To access these variables the variable name is used as extension of the name of the contains field it was specified in:
+    The user can define any number of variables to be used in the *`<format>`* sections. To access these variables the variable-name is used as extension of the *`name`* of the contains field it was specified in:
       <tt>*${*_name_*.*_variable-name_*}*</tt>
   * *`<format> ... </format>`* 
   The format section provides a set of formats that are used to show an annotation of the type. Currently there are 3 formats used:
     * *`<input> ... </input>`* – Escaped-HTML string that is used to print the annotation in the 'chat part' of live annotation tool.
     * *`<player> ... </player>`* – Escaped-HTML string that is used to output the annotation in the tool-tips of the time-slider as well as the annotation bar of the CrewPlayer.
-    * *`<output> ... </output>`* 
+    * *`<output> ... </output>`* plain text string output format  of the annotation
+  The format strings are parsed to replace variables <tt>*${*_variable-name_*}*</tt> by the value of the variable. This can be used for parts of the annotation using the *`name`* of the contains field or using the user-defined variables as described above (<tt>*${*_name_*.*_variable-name_*}*</tt>). 
+  Formats that contain HTML-code need to replace angle brackets by their HTML-replacement to not interfere with the XML:
+     * *`<` → `&lt;`*
+     * *`>` → `&gt;`*
+  * *`<convertsTo>...</convertsTo>`*
+  The convertsTo section provides a list of annotation types that can be used as valid conversions if some of the variables are not set. These conversion types are mainly there to provide formating rules that the annotation tool and player can render the annotation correctly. Most of the conversion types will be invisible to the end user and have the original type specified as the type to store the annotation in. If the type of a conversion type is not set to the original type. The annotation will be stored as the converted type.  
+    * *`<type name="..."/>`* defines the name of another type in this XML file that this annotation type can be converted to. Outputs that use the formating specified in this XML file will do a best match (having the most parameters set) of types an annotation can convert to. The author of this file should provide conversions for all possible cases.
+  
