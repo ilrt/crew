@@ -1,0 +1,132 @@
+body {
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+div.header {
+    position: absolute;
+    top: 0px;
+    margin: 0px 0px 0px 0px;
+}
+div.header h1{
+    margin: 5px 0px 0px 20px;
+	padding: 0px 0px 0px 0px;
+}
+
+div.message {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-left:2%;
+    padding: 5px;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    border: 1px solid grey;
+    border-right: 1px;
+    border-right-color: activeborder;
+    border-right-style: solid;
+    border-bottom: 1px;
+    border-bottom-color: activeborder;
+    border-bottom-style: solid;
+    vertical-align: top;
+    overflow: scroll;
+}
+
+img.icon {
+	border:0px solid grey;
+}
+
+div.participants {
+    position: absolute;
+    margin-left: 3px;
+    top: 50px;
+    left: 80%;
+    width: 20%;
+    height: 80%;
+    vertical-align: top;
+    border-left: 1px;
+    border-left-color: activeborder;
+    border-left-style: solid;
+    border-bottom: 1px;
+    border-bottom-color: activeborder;
+    border-bottom-style: solid;
+    overflow: auto;
+    vertical-align: top;
+}
+
+div.sendmessage {
+    position: absolute;
+  	bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding-left: 2%;
+    height: 210px;
+    border-top: 1px;
+    border-top-color: activeborder;
+    border-top-style: solid;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+div.verticalseparator {
+    position: absolute;
+    top: 50px;
+    left: 80%;
+    width: 3px;
+    height: 80%;
+    background-color: activeborder;
+    cursor: e-resize;
+    overflow: hidden;
+}
+
+div.horizontalseparator {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 3px;
+    width: 100%;
+    cursor: n-resize;
+    background-color: activeborder;
+    overflow: hidden;
+}
+
+sendmessage.sendbox {
+    left: 5px;
+    top: 5px;
+    width: 80%;
+    height: 80px;
+}
+
+input.sendbutton {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 60px;
+}
+
+input.closebutton {
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    width: 60px;
+}
+
+input.aboutbutton {
+    position: absolute;
+    right: 5px;
+    top: 55px;
+    width: 60px;
+}
+
+input.changenickbutton {
+    position: absolute;
+    right: 5px;
+    top: 80px;
+    width: 120px;
+}
+
+div.focusbox {
+    position: absolute;
+    left: 5px;
+    top: 85px;
+}
