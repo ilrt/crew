@@ -108,8 +108,8 @@ The [LiveAnnotationsXML liveannotations.xml] file consists of two sections:
   * *`<button image="..." visible="`*{_true_, _false_, _inline_}*`" />`*
   defines the image to be used for the button in the [LiveAnnotationTool live annotation tool]. The visible value defines how the annotation is used: 
     * *`visible="true"`* -- the button is shown in the normal selection bar for live annotation types
-    * *`visible="false"`* the button is not show in the selection bar, this is used for annotation types which are exclusively used as "conversions" for other types. The user cannot input this type but it will be used to display as a better match for anntotations that are filled in incompletely (i.e. a person is specified without an email-address). 
-    * *`visible="inline"`* the button is shown inside the chat tool. This can be used to create annotations in response to annotations of other users.
+    * *`visible="false"`* -- the button is not show in the selection bar, this is used for annotation types which are exclusively used as "conversions" for other types. The user cannot input this type but it will be used to display as a better match for anntotations that are filled in incompletely (i.e. a person is specified without an email-address). 
+    * *`visible="inline"`* -- the button is shown inside the chat tool. This can be used to create annotations in response to annotations of other users.
 
   * *`<thumbnail name="..." />`*
   defines the image to be used to indicate the live annotation type in the *chat* part of the [LiveAnnotationTool live annotation tool].
