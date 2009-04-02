@@ -1,0 +1,45 @@
+<project name="Plone MediaPlayer" default="all" basedir=".">
+
+	<!-- build property file -->
+	<property file="build.properties"/>
+
+    <!-- the following properties are defined in build.properties
+    <property name="MTASC_BIN" location="bin/mtasc/mtasc.exe"/>
+    <property name="SWFMILL_BIN" location="bin/swfmill/swfmill.exe"/>
+    -->
+
+    <property name="src.dir" location="src"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="build.dir" location="build"/>
+
+    <property name="std_lib.dir" location="lib/as/std"/>
+    <property name="std_lib_v8.dir" location="lib/as/std8"/>
+    <property name="luminicBox.dir" location="lib/as/LuminicboxLog"/>
+    <property name="as2lib.dir" location="lib/as2lib/src"/>
+
+    <taskdef name="swf" classname="org.as2lib.ant.Swf" classpath="lib/as2ant.jar"/>
+    <taskdef name="mtasc" classname="org.as2lib.ant.Mtasc" classpath="lib/as2ant.jar"/>
+    <taskdef name="swfmill" classname="org.as2lib.ant.Swfmill" classpath="lib/as2ant.jar"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <target name="all">
+        <antcall target="crewPlayer"></antcall>
+    </target>
+
+    <target name="crewPlayer" depends="init">
+        <mtasc mtasc="${MTASC_BIN}"
+              src="${src.dir}/org/crew/CrewPlayer.as"
+              header="1:1:12"
+              classpath="${src.dir};${as2lib.dir};${std_lib.dir};${std_lib_v8.dir};${luminicBox.dir}"
+              swf="CrewPlayerClasses.swf"
+              version="8"/>
+        <swfmill swfmill="${SWFMILL_BIN}"
+            src="${src.dir}/CrewPlayer.xml"
+            dest="${build.dir}/CrewPlayer.swf"
+            cmd="simple"/>
+        <delete file="CrewPlayerClasses.swf"/>
+    </target>
+</project>

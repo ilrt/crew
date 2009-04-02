@@ -1,8 +1,0 @@
-PREFIX iugo: <http://www.ilrt.bristol.ac.uk/iugo#>
-SELECT $graph $tag
-WHERE {
-    GRAPH $graph {
-        $id iugo:hasTag $tag
-    }
-}
-ORDER BY $tag

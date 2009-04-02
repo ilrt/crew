@@ -1,9 +1,0 @@
-PREFIX eswc: <http://www.eswc2006.org/technologies/ontology#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-SELECT $graph $placeId $name
-WHERE {
-    GRAPH $graph {
-        $id eswc:hasLocation $placeId .
-        $placeId dc:title $name
-    }
-}

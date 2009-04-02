@@ -1,6 +1,0 @@
-SELECT $object
-WHERE {
-    GRAPH $graph {
-        $id $linkProperty $object.
-    }
-}
