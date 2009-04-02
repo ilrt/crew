@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<movie version="8" width="32" height="32" framerate="12">
+    <background color="#ffffff"/>
+
+    <clip import="CrewPlayerClasses.swf"/>
+
+    <frame>
+        <library>
+            <clip id="crewPlayer" class="org.crew.CrewPlayer"/>
+            <clip id="VideoDisplay">
+                <video id="video" width="360" height="240" smoothing="1"/>
+                <place id="video" name="video" x="0" y="0" depth="1"/>
+            </clip>
+            <clip id="ScreenDisplay">
+                <video id="screen" width="360" height="240" smoothing="1"/>
+                <place id="screen" name="screen" x="0" y="0" depth="1"/>
+            </clip>
+        </library>
+
+        <place id="crewPlayer" name="crewPlayer" x="0" y="0" depth="13"/>
+        <stop/>
+    </frame>
+</movie>
