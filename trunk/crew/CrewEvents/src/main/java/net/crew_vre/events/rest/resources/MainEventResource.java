@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2008, University of Manchester All rights reserved.
- * See LICENCE in root directory of source code for details of the license.
- */
 /**
  * Copyright (c) 2008-2009, University of Bristol
  * Copyright (c) 2008-2009, University of Manchester
@@ -47,6 +43,7 @@ import javax.ws.rs.core.Response;
 import net.crew_vre.events.Utility;
 import net.crew_vre.events.dao.MainEventDao;
 import net.crew_vre.events.domain.EventPart;
+import net.crew_vre.jena.vocabulary.IUGO;
 
 import org.caboto.RdfMediaType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +53,8 @@ import org.springframework.stereotype.Component;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 /**
  * A Main Event resource represented via rest
@@ -82,6 +81,8 @@ public class MainEventResource {
         Model model = ModelFactory.createDefaultModel();
         for (EventPart event : events) {
             model.add(Utility.createModelFromEventPart(event));
+            Resource resource = model.getResource(event.getUri());
+            resource.addProperty(RDF.type, IUGO.MainEvent);
         }
         return Response.status(Response.Status.OK).entity(model).build();
     }
