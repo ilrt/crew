@@ -75,7 +75,7 @@ public class BrowseHistory {
         }
 
         // get the request path
-        StringBuffer url = request.getRequestURL();
+        StringBuffer url = new StringBuffer(request.getRequestURI());
 
         if (request.getQueryString() != null) {
             url.append("?").append(request.getQueryString());
@@ -118,7 +118,7 @@ public class BrowseHistory {
     public void addSearchHistory(HttpServletRequest request) {
 
         // get the uri -> the request that creates the search
-        StringBuffer url = request.getRequestURL();
+        StringBuffer url = new StringBuffer(request.getRequestURI());
 
         // add the query string if there is one
         if (request.getQueryString() != null) {

@@ -66,7 +66,7 @@ public class UpcomingEventsFeedController implements Controller {
                                       HttpServletResponse response) throws Exception {
 
         // get the request url
-        String requestUrl = request.getRequestURL().toString();
+        String requestUrl = request.getRequestURI();
 
         int periodInDays;
 

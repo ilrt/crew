@@ -83,7 +83,7 @@ public class ListEventsController implements Controller {
         List<SearchFilter> searchFilters;
 
         // get the request URL
-        String url = request.getRequestURL().toString();
+        String url = request.getRequestURI();
 
         if (request.getParameter("maxResults") != null) {
             maxResults = Integer.parseInt(request.getParameter("maxResults"));
