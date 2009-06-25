@@ -22,3 +22,6 @@ mvn install
 }}}
 
 This process might take a few minutes because maven will automatically connect to third party repositories to download the libraries that are used by CREW.
+
+If you are using Eclipse to build your project you have to change a compiler setting. Project properties -> Java Compiler -> Errors/Warnings: Deprecated and restricted API: change Forbidden references (access rules) from Error to Warning. 
+This project uses the Unsave class.
