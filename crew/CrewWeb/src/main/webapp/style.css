@@ -5,13 +5,14 @@ body {
     margin: 0px;
 }
 
+/* MyIntute container also has this ID
 #container {
 # width : 100 %;
     min-width: 800px;
     margin-left: 0.5em;
     margin-right: 0.5em;
 }
-
+*/
 
 #headerContainer {
     position: relative;
@@ -200,19 +201,19 @@ h1#header-title span {
 }
 
 .bl {
-    background: #eeeeee url( ./images/box-bl.png ) 0 100% no-repeat;
+ /*   background: #eeeeee url( ./images/box-bl.png ) 0 100% no-repeat; */
 }
 
 .br {
-    background: url( ./images/box-br.png ) 100% 100% no-repeat;
+ /*    background: url( ./images/box-br.png ) 100% 100% no-repeat; */
 }
 
 .tl {
-    background: url( ./images/box-tl.png ) 0 0 no-repeat;
+ /*   background: url( ./images/box-tl.png ) 0 0 no-repeat; */
 }
 
 .tr {
-    background: url( ./images/box-tr.png ) 100% 0 no-repeat;
+ /*   background: url( ./images/box-tr.png ) 100% 0 no-repeat; */
 }
 
 .box {
@@ -221,7 +222,7 @@ h1#header-title span {
 
 .box-header {
     font-size: 1.2em;
-    color: #3F4C6B;
+    color: #3A3939;
     padding-top: 0.6em;
     margin-bottom: 1em;
     border-bottom: 1px solid #000000;
@@ -242,12 +243,12 @@ h1#header-title span {
 }
 
 .box-list-item a:link, .box-list-item a:visited, box-list-item a:active {
-    color: blue;
+    color: #0B6D95;
     text-decoration: none;
 }
 
 .box-list-item a:hover {
-    color: blue;
+    color: #0B6D95;
     text-decoration: underline;
 }
 
@@ -270,49 +271,49 @@ h1#header-title span {
 }
 
 .resultDetails {
-    font-size: 1.1em;
+ /*   font-size: 1.1em; */
     text-align: center;
     margin-bottom: 1em;
 }
 
 .resultHeader {
-    font-size: 1.1em;
+/*    font-size: 1.1em; */
     margin: 0em;
     padding: 0em;
 }
 
 
 .resultHeader a:link, .resultHeader a:visited, .resultHeader a:active {
-    color: blue;
+    color: #0B6D95;
     text-decoration: none;
 }
 
 .resultHeader a:hover {
-    color: blue;
+    color: #0B6D95;
     text-decoration: underline;
 }
 
 
 .resultDate {
-    font-size: 1em;
+/*    font-size: 1em; */
     margin: 0em;
     padding: 0em;
 }
 
 .resultsLocations {
-    font-size: 1em;
+/*    font-size: 1em; */
     margin: 0em;
     padding: 0em;
 }
 
 .rowEven {
-    background: #FFFFCC;
-    border-bottom: #000000 1px dotted;
+/*    background: #FFFFCC; */
+    border-bottom: #CCCCCC 1px dashed;
     padding: 0.3em;
 }
 
 .rowOdd {
-    border-bottom: #000000 1px dotted;
+    border-bottom: #CCCCCC 1px dashed;
     padding: 0.3em;
 }
 
@@ -331,8 +332,8 @@ h1#header-title span {
 }
 
 #event-title {
-    font-size: 1.4em;
-    text-align: center;
+/*    font-size: 1.4em;
+    text-align: center;  */
 }
 
 .videoImage {
@@ -386,12 +387,12 @@ h1#header-title span {
 }
 
 .crew-facet-list-item a:link, .crew-facet-list-item a:visited, .crew-facet-list-item a:active {
-    color: blue;
+    color: #0B6D95;
     text-decoration: none;
 }
 
 .crew-facet-list-item a:hover {
-    color: blue;
+    color: #0B6D95;
     text-decoration: underline;
 }
 
@@ -567,4 +568,19 @@ li.pagination {
 
 .search-hit {
     font-weight: bold;
+}
+
+.col-33percent-left {
+    float: left;
+    width: 250px;
+}
+
+.col-66percent-right {
+    float: right;
+    width: 500px;
+}
+
+.col-3366percent-container {
+    clear: right;
+    padding-top: 0.75em;
 }

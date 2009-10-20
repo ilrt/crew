@@ -672,6 +672,7 @@
         <entry key="rdfs" value="http://www.w3.org/2000/01/rdf-schema#"/>
         <entry key="iugosubs" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#"/>
         <entry key="loc" value="http://www.ilrt.bristol.ac.uk/iugo/location/#"/>
+        <entry key="intutesubs" value="http://www.intute.ac.uk/subjects/#"/>
     </util:map>
 
     <!-- text search -->
@@ -701,13 +702,17 @@
         <entry key="facetTitle" value="Subjects"/>
         <entry key="linkProperty" value="http://www.ilrt.bristol.ac.uk/iugo#hasSubject"/>
         <entry key="widerProperty" value="http://www.w3.org/2004/02/skos/core#broader"/>
-        <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+       <!--  <entry key="facetBase" value="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/> -->
+        <entry key="facetBase" value="http://www.intute.ac.uk/subjects/#disciplines"/>
         <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
         <entry key="paramName" value="subjects"/>
-        <entry key="prefix" value="iugosubs"/>
+        <!-- <entry key="prefix" value="iugosubs"/> -->
+        <entry key="prefix" value="intutesubs"/>
     </util:map>
 
     <!-- event titles -->
+    <!-- Not using this one -->
+    <!--
     <util:map id="eventTitles" map-class="java.util.HashMap">
         <entry key="facetType" value="AlphaNumeric"/>
         <entry key="facetTitle" value="Event Titles"/>
@@ -715,6 +720,7 @@
         <entry key="constraintType" value="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
         <entry key="paramName" value="eventTitles"/>
     </util:map>
+    -->
 
     <!-- event dates -->
     <util:map id="eventDate" map-class="java.util.HashMap">
@@ -729,10 +735,10 @@
     <!-- list of facet configurations: events -->
     <util:list id="eventFacets" list-class="java.util.ArrayList">
         <ref bean="event-text-search"/>
+        <ref bean="eventDate"/>
         <ref bean="locations"/>
         <ref bean="subjects"/>
-        <ref bean="eventTitles"/>
-        <ref bean="eventDate"/>
+        <!-- <ref bean="eventTitles"/> -->
         <!-- <ref bean="eventTypes" /> -->
     </util:list>
 

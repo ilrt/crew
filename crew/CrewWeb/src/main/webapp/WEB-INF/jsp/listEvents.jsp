@@ -8,8 +8,15 @@
 <%@ page session="false" contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title><spring:message code="event.list.title"/></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="description" content="Intute - Conferences and events" />
+<meta name="copyright" content="Intute 2009" />
+<meta name="keywords" content="internet; resource; catalogue" />
+<meta name="author" content="intute" />
+<meta http-equiv="content-language" content="en" />
+<title><spring:message code="event.list.title"/></title>
 
 
     <c:if test="${not empty feedList}">
@@ -19,29 +26,64 @@
         </c:forEach>
     </c:if>
 
-    <style type="text/css" media="screen">@import "./style.css";</style>
+<style type="text/css" media="screen">@import "./style.css";</style>
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/intute.css" />
+<link rel="stylesheet" type="text/css" media="print" href="http://www.intute.ac.uk/intute-print.css" />
+
+   <%--[if IE]>
+   	<link rel="stylesheet" href="http://www.intute.ac.uk/intute-ie.css" type="text/css">
+   	<![endif]--%>
+   	
+<%--myintute code ############################################################## --%>
+<script language="javascript" src="/myintute/scripts/button.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/functions.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/init.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/dosearch.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/shiv.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/prototype.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/scriptaculous.js"
+type="text/javascript"></script>
+<%-- ########################################################################### --%>
+
+<script src="http://www.intute.ac.uk/scripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.intute.ac.uk/scripts/mega-dropdown.js" type="text/javascript" charset="utf-8"></script>
+   	
 </head>
-<body>
+<body onload="setCookie()">
 
-<div id="container">
+<%@ include file="includes/menu-services.jsp" %>
+   		
+<%--CONTENT CONTAINER--%>
+<div class="content-background">
+<div class="content-container center">
+           
+<%--breadcrumbs--%>
+<p class="breadcrumbs smalltext"><a href="http://www.intute.ac.uk/">Home</a> 
+&rsaquo; <a href="http://www.intute.ac.uk/services.html">All services</a> &rsaquo; <spring:message code="event.page.title"/></p>
 
-<%-- banner navigation--%>
-<%@ include file="includes/topNavAll.jsp" %>
+<h1><spring:message code="event.page.title"/></h1>
+<div class="content" id="content-full-width">
+<p>
+Some text here about the database
+</p>
 
+<p>Log in to your MyIntute account if you have any conferences or events you wish to add to the database.</p> 
 
-<%-- the logo banner --%>
-<%--<%@ include file="includes/logo.jsp" %>--%>
+<%-- Column container --%>
+<div class="col-3366percent-container">
 
-<%-- The main content --%>
-<div id="mainBody">
+<%--left hand column--%>
+<div class="col-33percent-left">
 
-
-<%-- The left column: navigation --%>
-<div id="leftColumn">
-
-    <%-- quick links --%>
-    <%-- <%@ include file="includes/quickLinks.jsp" %> --%>
-
+<div class="services-box" id="services-box-conferences">
     <%-- the facets ---%>
     <div class="bl">
         <div class="br">
@@ -58,27 +100,23 @@
             </div>
         </div>
     </div>
-
-
 </div>
-
-<%-- The right column: RSS Feeds etc --%>
-<div id="rightColumn">
-
-    <%-- quick links --%>
-    <%-- <%@ include file="includes/box-aboutCrew.jsp" %> --%>
-
+<div class="services-box" id="services-box-forthcoming-events-rss">
     <%-- upcoming events --%>
     <%@ include file="includes/box-upcomingEvents.jsp" %>
-
+</div>
+<div class="services-box" id="services-box-recent-events-rss">
     <%-- recently added events --%>
     <%@ include file="includes/box-recentlyAdded.jsp" %>
-
 </div>
 
-<!-- Middle column: main content -->
-<div id="middleColumn">
+<%-- end left hand column --%>
+</div>
 
+<%--right hand column--%>
+<div class="col-66percent-right">
+
+<div class="services-box" id="events-results">
 
     <%-- display info about the number of results --%>
     <div class="resultDetails">
@@ -110,7 +148,6 @@
         </c:choose>
 
     </div>
-
     <%-- the results --%>
     <c:if test="${not empty listEvents}">
         <c:forEach var="event" items="${listEvents}" varStatus="rowNum">
@@ -164,11 +201,42 @@
                 <crew:nav navHelper="${nav}" params="${parameters}" className="pagination"/>
             </div>
         </c:if>
-
-
-    </div>
+<%-- end services box --%>
 </div>
 
+<%--end of right col--%>
+</div>
 
-<%-- the logo banner --%>
+<%-- end of column container --%>
+</div>
+
+<%--end of content--%>
+</div>
+
+<%--MyIntute--%>
+<span id="load"></span>
+<div id="container" class="myintute-container"><noscript>
+<p><img src="/myintute/mockup_files/off.png" alt="tick" /><br/><b><font
+color="red">MyInute functionality requires the use of Javascript and
+cookies.</font></b>
+<br/>To use MyIntute please enable javascript and cookies in your
+browser.</p>
+
+</noscript>
+</div>
+
+<%--end of Myintute--%>
+<%--end of content-container--%>
+
+<%--important div to prevent IE guillotine bug--%>
+<div style="clear: both"></div>
+
+  </div>
+<%--end of content background--%>
+</div>
+   
+   <%--FOOTER--%>
+
 <%@ include file="includes/footer.jsp" %>
+</body>
+</html>

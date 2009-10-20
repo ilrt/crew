@@ -4099,4 +4099,319 @@
     <skos:prefLabel xml:lang="en">Sudan</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#cross_disciplinary">
+    <rdfs:label>Cross-disciplinary (general)</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Cross-disciplinary (general)</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>  
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#architecture_and_planning">
+    <rdfs:label>Architecture and planning</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Architecture and planning</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#business_and_management">
+    <rdfs:label>Business and management</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Business and management</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#communication_and_media_studies">
+    <rdfs:label>Communication and media studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Communication and media studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#film_studies">
+    <rdfs:label>Film studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Film studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#cultural_studies">
+    <rdfs:label>Cultural studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Cultural studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#dance">
+    <rdfs:label>Dance</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Dance</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#design">
+    <rdfs:label>Design</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Design</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#fashion_and_beauty">
+    <rdfs:label>Fashion and beauty</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Fashion and beauty</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#music">
+    <rdfs:label>Music</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Music</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#theatre_and_drama">
+    <rdfs:label>Theatre and drama</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Theatre and drama</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#visual_arts">
+    <rdfs:label>Visual arts</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:prefLabel>Visual arts</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#education_and_research_methods">
+    <rdfs:label>Education and research methods</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Education and research methods</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#research_tools_and_methods">
+    <rdfs:label>Research tools and methods</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#education_and_research_methods"/>
+    <skos:prefLabel>Research tools and methods</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#humanities">
+    <rdfs:label>Humanities</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Humanities</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#archaeology">
+    <rdfs:label>Archaeology</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Archaeology</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#classics">
+    <rdfs:label>Classics</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Classics</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#english">
+    <rdfs:label>English</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>English</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#gender_studies">
+    <rdfs:label>Gender studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Gender studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#history">
+    <rdfs:label>History</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>History</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#history_and_philosophy_of_science">
+    <rdfs:label>History and philosophy of science</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>History and philosophy of science</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#humanities_computing">
+    <rdfs:label>Humanities computing</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Humanities computing</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#islamic_studies">
+    <rdfs:label>Islamic studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Islamic studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#jewish_studies">
+    <rdfs:label>Jewish studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Jewish studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#linguistics">
+    <rdfs:label>Linguistics</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Linguistics</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#manuscript_studies">
+    <rdfs:label>Manuscript studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Manuscript studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#museum_library_and_archive_studies">
+    <rdfs:label>Museum, library and archive studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Museum, library and archive studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#philosophy">
+    <rdfs:label>Philosophy</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Philosophy</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#religion_and_theology">
+    <rdfs:label>Religion and theology</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#humanities"/>
+    <skos:prefLabel>Religion and theology</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#law">
+    <rdfs:label>Law</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Law</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#modern_languages_and_area_studies">
+    <rdfs:label>Modern languages and area studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Modern languages and area studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#modern_languages_and_literature">
+    <rdfs:label>Modern languages and literature</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#modern_languages_and_area_studies"/>
+    <skos:prefLabel>Modern languages and literature</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#social_sciences">
+    <rdfs:label>Social sciences</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Social sciences</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#anthropology">
+    <rdfs:label>Anthropology</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Anthropology</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#economics">
+    <rdfs:label>Economics</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Economics</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#government_policy">
+    <rdfs:label>Government policy</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Government policy</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#hospitality_and_catering">
+    <rdfs:label>Hospitality and catering</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Hospitality and catering</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#politics">
+    <rdfs:label>Politics</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Politics</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#social_welfare">
+    <rdfs:label>Social welfare</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Social welfare</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#sociology">
+    <rdfs:label>Sociology</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Sociology</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#sport_and_leisure_practice">
+    <rdfs:label>Sport and leisure practice</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Sport and leisure practice</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#statistics">
+    <rdfs:label>Statistics</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Statistics</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#travel_and_tourism">
+    <rdfs:label>Travel and tourism</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Travel and tourism</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#womens_studies">
+    <rdfs:label>Women's studies</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#social_sciences"/>
+    <skos:prefLabel>Women's studies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#psychology">
+    <rdfs:label>Psychology</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Psychology</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
 </rdf:RDF>
