@@ -8,87 +8,99 @@
 <%@ page session="true" contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="description" content="Intute - Conferences and events" />
+<meta name="copyright" content="Intute 2009" />
+<meta name="keywords" content="internet; resource; catalogue" />
+<meta name="author" content="intute" />
+<meta http-equiv="content-language" content="en" />
+
     <c:if test="${not empty event}">
         <meta name="caboto-annotation" content="${event.id}"/>
     </c:if>
-    <title><spring:message code="proj.title"/> ${event.title}</title>
-    <style type="text/css"
-           media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    <script type="text/javascript" src="./js/prototype.js"></script>
-    <script type="text/javascript" src="./js/annotations.js"></script>
+<title><spring:message code="proj.title"/> ${event.title}</title>
+<style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/intute.css" />
+<link rel="stylesheet" type="text/css" media="print" href="http://www.intute.ac.uk/intute-print.css" />
+<script type="text/javascript" src="./js/prototype.js"></script>
+<script type="text/javascript" src="./js/annotations.js"></script>
+
+   <%--[if IE]>
+        <link rel="stylesheet" href="http://www.intute.ac.uk/intute-ie.css" type="text/css">
+        <![endif]--%>
+
+<%--myintute code ############################################################## --%>
+<script language="javascript" src="/myintute/scripts/button.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/functions.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/init.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/dosearch.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/shiv.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/prototype.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/scriptaculous.js"
+type="text/javascript"></script>
+<%-- ########################################################################### --%>
+
+<script src="http://www.intute.ac.uk/scripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="utf-8"></scrip$
+<script src="http://www.intute.ac.uk/scripts/mega-dropdown.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
-<body onload="initializeAnnotations();">
-<%--@elvariable id="event" type="org.apache.wml.dom.WMLCardElementImpl"--%>
-<div id="container">
+<body onload="initializeAnnotations();setCookie()">
 
-<%-- banner navigation--%>
-<%@ include file="includes/topNavAll.jsp" %>
+<%@ include file="includes/menu-services.jsp" %>
 
-<%-- the logo banner --%>
-<%--<%@ include file="includes/logo.jsp" %>--%>
+<%--CONTENT CONTAINER--%>
+<div class="content-background">
+<div class="content-container center">
 
-<%-- The main content --%>
-<div id="mainBody">
+<%--breadcrumbs--%>
+<p class="breadcrumbs smalltext">
+<a href="http://www.intute.ac.uk/">Home</a>
+&rsaquo; <a href="http://www.intute.ac.uk/services.html">All services</a>
+&rsaquo;
+   <c:choose>
+       <c:when test="${not empty resultsUrl}">
+           <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
+       </c:when>
+       <c:otherwise>
+           <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+       </c:otherwise>
+   </c:choose>
+&rsaquo;
+   <c:if test="${not empty event.partOf}">
+       <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
+           <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
+           <strong>&gt;</strong>
+       </c:forEach>
+   </c:if>
+${event.title}
+</p>
 
-<%-- The left column: navigation --%>
-<%--
-<div id="leftColumn">
---%>
-    <%-- quick links --%>
-    <%--<%@ include file="includes/quickLinks.jsp" %>--%>
-<%--
-</div>
---%>
-
-<%-- The right column: RSS Feeds etc --%>
-<div id="rightColumn">
-
-    <%-- quick links --%>
-    <%@ include file="includes/box-aboutCrew.jsp" %>
-
-</div>
-
-<!-- Middle column: main content -->
-<div id="detailsColumn">
-
-<%-- BREAD CRUMB --%>
-<div id="event-bread-crumb">
-
-    <p>
-        <c:choose>
-            <c:when test="${not empty resultsUrl}">
-                <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
-            </c:when>
-            <c:otherwise>
-                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-            </c:otherwise>
-        </c:choose>
-
-        <strong>&gt;</strong>
-
-        <c:if test="${not empty event.partOf}">
-            <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
-                <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
-                <strong>&gt;</strong>
-            </c:forEach>
-        </c:if>
-
-        ${event.title}
-    </p>
-
-</div>
-
+<h1><spring:message code="event.details"/></h1>
+<div class="content" id="content-full-width">
 
 <div id="eventDetails">
 
 <c:choose>
 <c:when test="${not empty event}">
-<h3 id="event-title">${event.title}</h3>
-
 
 <fieldset class="fieldSet">
-<legend><strong><spring:message code="event.details"/></strong></legend>
+<%-- <legend><strong><spring:message code="event.details"/></strong></legend> --%>
+
+    <%-- EVENT TITLE --%>
+    <p id="event-title">
+        <strong><spring:message code="event.details.title"/></strong>
+            ${event.title}</p>
+
 
     <%-- EVENT DATES --%>
 <c:if test="${event.startDateTime != null}">
@@ -120,14 +132,12 @@
     <%-- EVENT PLACES --%>
 <c:if test="${not empty event.places}">
     <div id="event-places">
-        <p><strong><spring:message code="event.details.place"/></strong></p>
-        <ul>
+        <p><strong><spring:message code="event.details.place"/></strong>
             <c:forEach var="place" items="${event.places}">
-                <li>
-                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">${place.title}</a>
-                </li>
+                 <%--   <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">${place.title}</a> --%>
+                    ${place.title};
             </c:forEach>
-        </ul>
+	</p>
     </div>
 </c:if>
 
@@ -280,6 +290,8 @@
     response.addCookie(uid);
     response.addCookie(admin);
 %>
+
+<%--
 <div class="annotations">
 
     <fieldset class="fieldSet">
@@ -290,8 +302,9 @@
         <p>Add your own annotation...</p>
 
         <div id="annotation-messages"></div>
-
+--%>
             <%-- show form if they are logged in --%>
+<%--
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
                   action="javascript:processForm('<%=request.getUserPrincipal().getName()%>')"
@@ -311,8 +324,9 @@
                 </p>
             </form>
         </security:authorize>
-
+--%>
             <%-- message if not logged in --%>
+<%--
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
             <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.
                 You can <a href="./registration.do">register</a> if you do not have an account.<br/>
@@ -322,7 +336,7 @@
 
     </fieldset>
 </div>
-
+--%>
 
 </c:when>
 <c:otherwise>
@@ -330,13 +344,37 @@
 </c:otherwise>
 </c:choose>
 
+<%-- end eventDetails --%>
+</div>
 
+<%--MyIntute--%>
+<span id="load"></span>
+<div id="container" class="myintute-container"><noscript>
+<p><img src="/myintute/mockup_files/off.png" alt="tick" /><br/><b><font
+color="red">MyInute functionality requires the use of Javascript and
+cookies.</font></b>
+<br/>To use MyIntute please enable javascript and cookies in your
+browser.</p>
+
+</noscript>
+</div>
+
+<%--end of Myintute--%>
+<%-- end content-container --%>
+</div>
+
+<%--important div to prevent IE guillotine bug--%>
+<div style="clear: both"></div>
+
+<%-- end content container --%>
+</div>
+
+<%-- end content background --%>
 </div>
 
 
-</div>
-</div>
-
-
-<%-- the logo banner --%>
+<%-- FOOTER --%>
 <%@ include file="includes/footer.jsp" %>
+</body>
+</html>
+

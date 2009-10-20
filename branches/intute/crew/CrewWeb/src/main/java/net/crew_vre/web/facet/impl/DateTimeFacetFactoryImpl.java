@@ -204,7 +204,7 @@ public class DateTimeFacetFactoryImpl implements DateTimeFacetFactory {
         // get the keys  in order ... I suspect this is horribly inefficient
         List<String> keys = new ArrayList<String>();
         keys.addAll(countMap.keySet());
-        Collections.sort(keys);
+        Collections.sort(keys, Collections.reverseOrder());
 
         // calculate the refinements and add it to the state
         for (String val : keys) {

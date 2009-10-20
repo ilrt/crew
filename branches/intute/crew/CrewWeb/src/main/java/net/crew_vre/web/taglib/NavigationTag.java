@@ -74,7 +74,7 @@ public class NavigationTag extends TagSupport {
 
             // do we have a prev link
             if (navHelper.hasPrev()) {
-                navAid(navHelper.getPrevious(), "&lt; Prev");
+                navAid(navHelper.getPrevious(), "Prev");
             }
 
             // go through page numberts
@@ -115,7 +115,7 @@ public class NavigationTag extends TagSupport {
 
             // do we have a prev link
             if (navHelper.hasNext()) {
-                navAid(navHelper.getNext(), "Next &gt;");
+                navAid(navHelper.getNext(), "Next");
             }
 
             pageContext.getOut().println("</ul>");
