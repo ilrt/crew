@@ -378,7 +378,7 @@
 
     <!-- ========== PROXY OBJECTS ========== -->
 
-    <bean id="mainEventDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+    <!--<bean id="mainEventDao" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="mainEventDaoTarget"/>
         <property name="proxyInterfaces" value="net.crew_vre.events.dao.MainEventDao"/>
         <property name="interceptorNames">
@@ -446,7 +446,7 @@
                 <value>findAdvisor</value>
             </list>
         </property>
-    </bean>
+    </bean>-->
 
     <!--
     <bean id="refinementDao" class="org.springframework.aop.framework.ProxyFactoryBean">
@@ -546,33 +546,33 @@
         <constructor-arg index="1" value="/annotations.properties" />
     </bean>
 
-    <bean id="roleDaoTarget" class="net.crew_vre.events.dao.impl.RoleDaoImpl">
+    <bean id="roleDao" class="net.crew_vre.events.dao.impl.RoleDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
-    <bean id="placeDaoTarget" class="net.crew_vre.events.dao.impl.PlaceDaoImpl">
+    <bean id="placeDao" class="net.crew_vre.events.dao.impl.PlaceDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
-    <bean id="locationDaoTarget" class="net.crew_vre.events.dao.impl.LocationDaoImpl">
+    <bean id="locationDao" class="net.crew_vre.events.dao.impl.LocationDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
-    <bean id="personDaoTarget" class="net.crew_vre.events.dao.impl.PersonDaoImpl">
+    <bean id="personDao" class="net.crew_vre.events.dao.impl.PersonDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
         <constructor-arg index="1" ref="eventDao"/>
     </bean>
 
-    <bean id="mainEventDaoTarget" class="net.crew_vre.events.dao.impl.MainEventDaoImpl">
+    <bean id="mainEventDao" class="net.crew_vre.events.dao.impl.MainEventDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
         <constructor-arg index="1" ref="locationDao"/>
     </bean>
 
-    <bean id="eventDaoTarget" class="net.crew_vre.events.dao.impl.EventDaoImpl">
+    <bean id="eventDao" class="net.crew_vre.events.dao.impl.EventDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
-    <bean id="paperDaoTarget" class="net.crew_vre.events.dao.impl.PaperDaoImpl">
+    <bean id="paperDao" class="net.crew_vre.events.dao.impl.PaperDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
