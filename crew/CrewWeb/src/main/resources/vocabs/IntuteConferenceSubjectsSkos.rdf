@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pcv="http://jena.hpl.hp.com/2003/04/portal-config-vocab#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:intutesubs="http://www.intute.ac.uk/subjects/#"
+    xml:base="http://www.intute.ac.uk/subjects/#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <foaf:Document rdf:about=""/>
+  <skos:ConceptScheme rdf:about="#scheme">
+    <dc:title>Intute Conference Disciplines Scheme</dc:title>
+    <dc:creator>
+      <foaf:Person>
+        <foaf:name>Phil Cross</foaf:name>
+      </foaf:Person>
+    </dc:creator>
+    <dcterms:issues>2009-09-18</dcterms:issues>
+    <rdfs:comment>Based on the subset of the Intute subject headings used within the Intute Conferences and Events database</rdfs:comment>
+    <skos:hasTopConcept rdf:resource="#Disciplines"/>
+    <rdfs:isDefinedBy rdf:resource=""/>
+  </skos:ConceptScheme>
+  <skos:TopConcept rdf:about="#disciplines">
+    <skos:prefLabel>Disciplines</skos:prefLabel>
+  </skos:TopConcept>  
+  <skos:Concept rdf:about="#cross_disciplinary">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Cross-disciplinary (general)</skos:prefLabel>
+  </skos:Concept>  
+  <skos:Concept rdf:about="#architecture_and_planning">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Architecture and planning</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#business_and_management">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Business and management</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#communication_and_media_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Communication and media studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#film_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Film studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#cultural_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Cultural studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#dance">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Dance</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#design">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Design</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#fashion_and_beauty">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Fashion and beauty</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#music">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Music</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#theatre_and_drama">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Theatre and drama</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#visual_arts">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:prefLabel>Visual arts</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#education_and_research_methods">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Education and research methods</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#research_tools_and_methods">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#education_and_research_methods"/>
+    <skos:prefLabel>Research tools and methods</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#humanities">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Humanities</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#archaeology">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Archaeology</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#classics">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Classics</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#english">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>English</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#gender_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Gender studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#history">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>History</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#history_and_philosophy_of_science">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>History and philosophy of science</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#humanities_computing">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Humanities computing</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#islamic_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Islamic studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#jewish_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Jewish studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#linguistics">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Linguistics</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#manuscript_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Manuscript studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#museum_library_and_archive_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Museum, library and archive studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#philosophy">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Philosophy</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#religion_and_theology">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#humanities"/>
+    <skos:prefLabel>Religion and theology</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#law">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Law</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#modern_languages_and_area_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Modern languages and area studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#modern_languages_and_literature">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#modern_languages_and_area_studies"/>
+    <skos:prefLabel>Modern languages and literature</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#social_sciences">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Social sciences</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#anthropology">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Anthropology</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#economics">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Economics</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#government_policy">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Government policy</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#hospitality_and_catering">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Hospitality and catering</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#politics">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Politics</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#social_welfare">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Social welfare</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#sociology">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Sociology</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#sport_and_leisure_practice">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Sport and leisure practice</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#statistics">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Statistics</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#travel_and_tourism">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Travel and tourism</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#womens_studies">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#social_sciences"/>
+    <skos:prefLabel>Women's studies</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#psychology">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Psychology</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#engineering">
+    <skos:inScheme rdf:resource="#scheme"/>
+	<skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Engineering</skos:prefLabel>
+  </skos:Concept>
+</rdf:RDF>
+
