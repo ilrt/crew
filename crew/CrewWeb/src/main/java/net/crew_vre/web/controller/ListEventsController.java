@@ -33,6 +33,7 @@
  */
 package net.crew_vre.web.controller;
 
+import net.crew_vre.events.domain.EventPart;
 import net.crew_vre.web.facade.ListEventsFacade;
 import net.crew_vre.web.facet.Facet;
 import net.crew_vre.web.facet.FacetService;
@@ -108,7 +109,10 @@ public class ListEventsController implements Controller {
 
         // max number of results available?
         //long startTotal = System.currentTimeMillis();
-        int total = listEventsFacade.totalEventsAvailable(searchFilters);
+        //int total = listEventsFacade.totalEventsAvailable(searchFilters);
+        // We will just grab everything, and reuse it. offset isn't much faster (pldms)
+        List<EventPart> matchingEvents = listEventsFacade.displayEvents(searchFilters);
+        int total = matchingEvents.size();
         //long endTotal = System.currentTimeMillis();
 
         // create nav helper object
@@ -134,7 +138,9 @@ public class ListEventsController implements Controller {
         mov.addObject("nav", navHelper);
         mov.addObject("parameters", request.getParameterMap());
         //long startEventList = System.currentTimeMillis();
-        mov.addObject("listEvents", listEventsFacade.displayEvents(searchFilters, limit, offset));
+        //mov.addObject("listEvents", listEventsFacade.displayEvents(searchFilters, limit, offset));
+        int lastItem = (offset + limit > total) ? total : offset + limit;
+        mov.addObject("listEvents", matchingEvents.subList(offset, lastItem));
         //long endEventList = System.currentTimeMillis();
         mov.addObject("total", total);
         mov.addObject("feedList", feedList);

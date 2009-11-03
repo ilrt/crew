@@ -176,7 +176,7 @@ public class DateTimeFacetFactoryImpl implements DateTimeFacetFactory {
             sparql = sparql + coreFilterFragment.toString();
         }
 
-        //System.out.println("MMMMMM " + sparql);
+        // System.out.println("MMMMMM " + sparql + ": Param name: " + config.get(Facet.PARAM_NAME));
 
         // get the refinements
         List<FacetState> refinements = getYearRefinements(sparql, config.get(Facet.CONSTRAINT_TYPE),
