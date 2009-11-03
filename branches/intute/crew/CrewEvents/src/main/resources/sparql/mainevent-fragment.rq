@@ -12,10 +12,9 @@ WHERE {
         $id rdf:type iugo:MainEvent .
         $id dc:title $title .
         $id crew:hasStartDate $startDate .
-        $id crew:hasEndDate $endDate
+        $id crew:hasEndDate $endDate .
         OPTIONAL {
             $id eswc:hasStartDateTime $startDateTime .
             $id eswc:hasEndDateTime $endDateTime .
         } .
-        OPTIONAL { $id dc:creation-date $creationDate } .
         OPTIONAL { $id dc:description $description } .

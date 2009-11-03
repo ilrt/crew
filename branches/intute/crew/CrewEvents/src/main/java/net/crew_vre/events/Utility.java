@@ -46,6 +46,7 @@ import net.crew_vre.jena.vocabulary.SKOS;
 import org.caboto.CabotoUtility;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
@@ -72,6 +73,8 @@ public class Utility {
     private Utility() {
     }
 
+    final static DateTimeFormatter dtf = ISODateTimeFormat.dateTimeParser().withOffsetParsed();
+    
     /**
      * <p>Utility to convert a date string into a DateTime instance.
      *
@@ -80,12 +83,14 @@ public class Utility {
      * @throws ParseException if there is an error parsing the string
      */
     public static DateTime parseStringToDateTime(String stringDateTime) throws ParseException {
-        return ISODateTimeFormat.dateTimeParser().withOffsetParsed().parseDateTime(stringDateTime);
+        return dtf.parseDateTime(stringDateTime);
     }
+
+    final static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public static LocalDate parseStringToLocalDate(String stringDate) throws ParseException {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date = sdf.parse(stringDate);
         return new LocalDate(date.getTime());
     }

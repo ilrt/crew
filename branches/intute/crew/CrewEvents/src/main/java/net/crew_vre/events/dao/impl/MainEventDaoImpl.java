@@ -159,14 +159,15 @@ public class MainEventDaoImpl implements MainEventDao {
 
     public List<EventPart> findEventsByCreationDate(final DateTime startDate,
                                                 final DateTime endDate) {
-
-        return findEvents(createSparql(createDateFilter(dateTimeType, startDate.toString(),
+        return findEvents(createSparql("$id dc:creation-date $creationDate .",
+                createDateFilter(dateTimeType, startDate.toString(),
                 "$creationDate", endDate.toString(), "$creationDate")));
     }
 
     public List<EventPart> findEventsByCreationDate(DateTime startDate, DateTime endDate,
                                                 int limit, int offset) {
-        return findEvents(createSparql(createDateFilter(dateTimeType, startDate.toString(),
+        return findEvents(createSparql("$id dc:creation-date $creationDate .",
+                createDateFilter(dateTimeType, startDate.toString(),
                 "$creationDate", endDate.toString(), "$creationDate"), limit, offset));
     }
 
@@ -256,13 +257,32 @@ public class MainEventDaoImpl implements MainEventDao {
 
 
         // add the location details -> skos taxonomy
-        event.setLocations(locationDao.findLocationByEvent(event.getId()));
+        //event.setLocations(locationDao.findLocationByEvent(event.getId()));
 
         return event;
     }
 
     private String createSparql() {
         return createSparql(null);
+    }
+
+    // Variant so we can insert something before filter (pldms 2009)
+    private String createSparql(final String clause, final String filter) {
+
+        StringBuffer buffer = new StringBuffer(sparqlEvents);
+
+        if (clause != null) { // Insert before first optional
+            int x = buffer.indexOf("OPTIONAL");
+            buffer.insert(x, clause + "\n\t");
+        }
+
+        if (filter != null) {
+            buffer.append("FILTER (").append(filter).append(")");
+        }
+
+        buffer.append("} }");
+        System.err.println("QUERY IS: " + buffer);
+        return buffer.toString();
     }
 
     private String createSparql(final String filter) {
@@ -304,6 +324,16 @@ public class MainEventDaoImpl implements MainEventDao {
     private String createSparql(final String filter, final int limit, final int offset) {
 
         StringBuffer buffer = new StringBuffer(createSparql(filter));
+        buffer.append("\nLIMIT ").append(limit);
+        buffer.append("\nOFFSET ").append(offset);
+
+        return buffer.toString();
+    }
+
+    // Variant so we can insert something before filter (pldms 2009)
+    private String createSparql(final String clause, final String filter, final int limit, final int offset) {
+
+        StringBuffer buffer = new StringBuffer(createSparql(clause, filter));
         buffer.append("\nLIMIT ").append(limit);
         buffer.append("\nOFFSET ").append(offset);
 
