@@ -265,7 +265,7 @@
   </skos:Concept>
   <skos:Concept rdf:about="#computer_science">
     <skos:inScheme rdf:resource="#scheme"/>
-        <skos:broader rdf:resource="#mathematics_and_computer_science""/>
+        <skos:broader rdf:resource="#mathematics_and_computer_science"/>
     <skos:prefLabel>Computer science</skos:prefLabel>
   </skos:Concept>
 </rdf:RDF>
