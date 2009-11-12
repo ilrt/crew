@@ -7,8 +7,48 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="GLOBAL" />
+<meta name="description" content="Intute - Conferences and events" />
+<meta name="copyright" content="Intute 2009" />
+<meta name="keywords" content="internet; resource; catalogue" />
+<meta name="author" content="intute" />
+<meta http-equiv="content-language" content="en" />
+
     <title><spring:message code="recording.title"/></title>
-    <style type="text/css" media="screen">@import "./style.css";</style>
+<style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/intute.css" />
+<link rel="stylesheet" type="text/css" media="print" href="http://www.intute.ac.uk/intute-print.css" />
+<script type="text/javascript" src="./js/prototype.js"></script>
+<script type="text/javascript" src="./js/annotations.js"></script>
+
+   <%--[if IE]>
+        <link rel="stylesheet" href="http://www.intute.ac.uk/intute-ie.css" type="text/css">
+        <![endif]--%>
+
+<%--myintute code ############################################################## --%>
+<script language="javascript" src="/myintute/scripts/button.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/functions.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/init.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/dosearch.js"
+type="text/javascript"></script>
+<script language="javascript" src="/myintute/scripts/shiv.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/prototype.js"
+type="text/javascript"></script>
+<script src="/myintute/scripts/scriptaculous.js"
+type="text/javascript"></script>
+<%-- ########################################################################### --%>
+
+<script src="http://www.intute.ac.uk/scripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></scri
+pt>
+<script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="ut
+f-8"></scrip$
+<script src="http://www.intute.ac.uk/scripts/mega-dropdown.js" type="text/javascript" charset="utf-8"></script>
 
     <c:if test="${place.latitude != null}">
 
@@ -30,56 +70,22 @@
         </script>
 
     </c:if>
-
 </head>
-<body>
+<body onload="initializeAnnotations();setCookie();">
 
-<div id="container">
+<%@ include file="includes/menu-services.jsp" %>
 
-    <%-- banner navigation--%>
-    <%@ include file="includes/topNavAll.jsp" %>
+<%--CONTENT CONTAINER--%>
+<div class="content-background">
+<div class="content-container center">
 
+<div class="content" id="content-full-width">
 
-    <%-- the logo banner --%>
-    <%--<%@ include file="includes/logo.jsp" %>--%>
-
-    <%-- The main content --%>
-    <div id="mainBody">
-
-
-        <%-- The left column: navigation --%>
-        <!-- <div id="leftColumn"> -->
-
-            <%-- quick links --%>
-            <%--<%@ include file="includes/quickLinks.jsp" %>--%>
-
-        <!-- </div> -->
-
-        <%-- The right column: RSS Feeds etc --%>
-        <div id="rightColumn">
-
-            <%-- quick links --%>
-            <%@ include file="includes/box-aboutCrew.jsp" %>
-
-            <%-- upcoming events --%>
-            <%--
-            <%@ include file="includes/box-upcomingEvents.jsp" %>
-            --%>
-
-            <%-- recently added events --%>
-            <%--
-            <%@ include file="includes/box-recentlyAdded.jsp" %>
-            --%>
-
-        </div>
-
-        <!-- Middle column: main content -->
-        <div id="detailsColumn">
-
+<div id="locationDetails">
 
             <c:if test="${browseHistory[1] != null}">
                 <div id="place-nav">
-                    <p></p><a href="${browseHistory[1].path}"><spring:message
+                    <p class="breadcrumbs smalltext"><a href="${browseHistory[1].path}"><spring:message
                         code="nav.back"/></a></p>
                 </div>
             </c:if>
@@ -95,10 +101,37 @@
 
             </div>
 
+<%-- end locationDetails --%>
+</div>
 
-        </div>
-    </div>
+<%--MyIntute--%>
+<span id="load"></span>
+<div id="container" class="myintute-container"><noscript>
+<p><img src="/myintute/mockup_files/off.png" alt="tick" /><br/><b><font
+color="red">MyInute functionality requires the use of Javascript and
+cookies.</font></b>
+<br/>To use MyIntute please enable javascript and cookies in your
+browser.</p>
+
+</noscript>
+</div>
+
+<%--end of Myintute--%>
+<%-- end content-container --%>
+</div>
+
+<%--important div to prevent IE guillotine bug--%>
+<div style="clear: both"></div>
+
+<%-- end content container --%>
+</div>
+
+<%-- end content background --%>
+</div>
 
 
-    <%-- the logo banner --%>
+<%-- FOOTER --%>
 <%@ include file="includes/footer.jsp" %>
+</body>
+</html>
+
