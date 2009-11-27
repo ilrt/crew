@@ -57,7 +57,6 @@
                 <value>classpath:version.properties</value>
                 <value>classpath:events.properties</value>
                 <value>classpath:caboto.properties</value>
-                <value>classpath:registration.properties</value>
             </list>
         </property>
     </bean>
@@ -68,10 +67,10 @@
     <!-- datasource for the user database -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
-        <property name="driverClassName" value="${registration.db.driver}"/>
-        <property name="url" value="${registration.db.url}"/>
-        <property name="username" value="${registration.db.username}"/>
-        <property name="password" value="${registration.db.password}"/>
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
     </bean>
 
     <bean id="eventsDataSource" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
@@ -101,6 +100,7 @@
         <constructor-arg index="3" value="true"/>
         <!-- cache -->
     </bean>
+
     <bean id="vocabInit" class="net.crew_vre.web.startup.Vocabularies" init-method="init"
           lazy-init="false">
         <constructor-arg index="0" value="rules/crew.rules"/>
@@ -183,10 +183,10 @@
         <property name="enableGroups" value="true"/>
         <property name="enableAuthorities" value="false"/>
         <property name="usersByUsernameQuery"
-                  value="SELECT Email AS USERNAME, Passwd AS PASSWORD, 1 AS ENABLED FROM userregistration WHERE Email = ?"/>
+                  value="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME = ?"/>
         <property name="groupAuthoritiesByUsernameQuery"
-                  value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM events_groups G, events_users_groups UG,
-                  events_groups_roles GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
+                  value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM GROUPS G, USERS_GROUPS UG,
+                  GROUPS_ROLES GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
                   AND G.GROUPID = UG.GROUPID"/>
         <property name="rolePrefix" value="ROLE_"/>
         <property name="dataSource" ref="dataSource"/>
