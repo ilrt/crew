@@ -43,18 +43,16 @@ type="text/javascript"></script>
 type="text/javascript"></script>
 <script language="javascript" src="/myintute/scripts/shiv.js"
 type="text/javascript"></script>
-<script src="/myintute/scripts/prototype.js"
-type="text/javascript"></script>
+<script src="/myintute/scripts/prototype.js" type="text/javascript"></script>
 <script src="/myintute/scripts/scriptaculous.js"
 type="text/javascript"></script>
 <%-- ########################################################################### --%>
 
 <script src="http://www.intute.ac.uk/scripts/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="utf-8"></scrip$
+<script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://www.intute.ac.uk/scripts/mega-dropdown.js" type="text/javascript" charset="utf-8"></script>
-
 </head>
-<body onload="initializeAnnotations();setCookie()">
+<body onload="initializeAnnotations();setCookie();">
 
 <%@ include file="includes/menu-services.jsp" %>
 
@@ -134,8 +132,10 @@ ${event.title}
     <div id="event-places">
         <p><strong><spring:message code="event.details.place"/></strong>
             <c:forEach var="place" items="${event.places}">
-                 <%--   <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">${place.title}</a> --%>
-                    ${place.title};
+                 ${place.title}
+<%-- <c:if test="${place.latitude != null}"> This is not possible as events.domain.PlacePart only provides title and id --%>
+                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">(see map)</a>
+<%-- </c:if> --%>
             </c:forEach>
 	</p>
     </div>
@@ -291,7 +291,6 @@ ${event.title}
     response.addCookie(admin);
 %>
 
-<%--
 <div class="annotations">
 
     <fieldset class="fieldSet">
@@ -302,9 +301,7 @@ ${event.title}
         <p>Add your own annotation...</p>
 
         <div id="annotation-messages"></div>
---%>
             <%-- show form if they are logged in --%>
-<%--
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
                   action="javascript:processForm('<%=request.getUserPrincipal().getName()%>')"
@@ -324,9 +321,7 @@ ${event.title}
                 </p>
             </form>
         </security:authorize>
---%>
             <%-- message if not logged in --%>
-<%--
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
             <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.
                 You can <a href="./registration.do">register</a> if you do not have an account.<br/>
@@ -336,7 +331,6 @@ ${event.title}
 
     </fieldset>
 </div>
---%>
 
 </c:when>
 <c:otherwise>
