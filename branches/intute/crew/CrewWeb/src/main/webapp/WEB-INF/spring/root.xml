@@ -57,6 +57,7 @@
                 <value>classpath:version.properties</value>
                 <value>classpath:events.properties</value>
                 <value>classpath:caboto.properties</value>
+                <!-- <value>classpath:registration.properties</value> -->
             </list>
         </property>
     </bean>
@@ -71,6 +72,12 @@
         <property name="url" value="${database.url}"/>
         <property name="username" value="${database.username}"/>
         <property name="password" value="${database.password}"/>
+<!-- Set up for Intute
+        <property name="driverClassName" value="${registration.db.driver}"/>
+        <property name="url" value="${registration.db.url}"/>
+        <property name="username" value="${registration.db.username}"/>
+        <property name="password" value="${registration.db.password}"/>
+-->
     </bean>
 
     <bean id="eventsDataSource" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
@@ -100,7 +107,6 @@
         <constructor-arg index="3" value="true"/>
         <!-- cache -->
     </bean>
-
     <bean id="vocabInit" class="net.crew_vre.web.startup.Vocabularies" init-method="init"
           lazy-init="false">
         <constructor-arg index="0" value="rules/crew.rules"/>
@@ -182,8 +188,18 @@
     <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
         <property name="enableGroups" value="true"/>
         <property name="enableAuthorities" value="false"/>
+<!-- Set for MyIntute
+        <property name="usersByUsernameQuery"
+                  value="SELECT Email AS USERNAME, Passwd AS PASSWORD, 1 AS ENABLED FROM userregistration WHERE Email = ?"/>
+-->
         <property name="usersByUsernameQuery"
                   value="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME = ?"/>
+<!-- Set for MyIntute
+        <property name="groupAuthoritiesByUsernameQuery"
+                  value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM events_groups G, events_users_groups UG,
+                  events_groups_roles GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
+                  AND G.GROUPID = UG.GROUPID"/>
+-->
         <property name="groupAuthoritiesByUsernameQuery"
                   value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM GROUPS G, USERS_GROUPS UG,
                   GROUPS_ROLES GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
