@@ -53,7 +53,7 @@
     <repositories>
         <repository>
             <id>jena-hp</id>
-            <url>http://jena.hpl.hp.com/repo/</url>
+            <url>http://openjena.org/repo/</url>
         </repository>
         <repository>
             <id>ilrt-maven-repo</id>
