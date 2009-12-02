@@ -281,7 +281,6 @@ public class MainEventDaoImpl implements MainEventDao {
         }
 
         buffer.append("} }");
-        System.err.println("QUERY IS: " + buffer);
         return buffer.toString();
     }
 
