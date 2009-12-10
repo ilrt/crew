@@ -298,7 +298,8 @@ ${event.title}
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
 
-        <p>Add your own annotation...</p>
+        <p>Add your own annotation...<br />
+	(Use wiki notation to add links, e.g. [Intute|http://www.intute.ac.uk])</p>
 
         <div id="annotation-messages"></div>
             <%-- show form if they are logged in --%>
