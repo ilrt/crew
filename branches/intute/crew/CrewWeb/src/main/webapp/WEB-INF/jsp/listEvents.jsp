@@ -72,8 +72,9 @@ type="text/javascript"></script>
 <h1><spring:message code="event.page.title"/></h1>
 <div class="content" id="content-full-width">
 <p>
-Some text here about the database
-</p>
+The Conferences and events database currently only covers the Social Sciences and Arts and Humanities subjects. 
+If you want to find details of a conference or event in these areas, search here. If you have a conference or 
+event you would like publicised please send the details through our helpdesk.</p>
 
 <p>Log in to your MyIntute account if you have any conferences or events you wish to add to the database.</p> 
 
