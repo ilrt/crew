@@ -134,7 +134,7 @@ ${event.title}
             <c:forEach var="place" items="${event.places}">
                  ${place.title}
 <%-- <c:if test="${place.latitude != null}"> This is not possible as events.domain.PlacePart only provides title and id --%>
-                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">(see map)</a>
+        <%--            <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">(see map)</a> --%>
 <%-- </c:if> --%>
             </c:forEach>
 	</p>
@@ -341,6 +341,9 @@ ${event.title}
 <%-- end eventDetails --%>
 </div>
 
+<%-- end content --%>
+</div>
+
 <%--MyIntute--%>
 <span id="load"></span>
 <div id="container" class="myintute-container"><noscript>
@@ -352,10 +355,7 @@ browser.</p>
 
 </noscript>
 </div>
-
 <%--end of Myintute--%>
-<%-- end content-container --%>
-</div>
 
 <%--important div to prevent IE guillotine bug--%>
 <div style="clear: both"></div>
