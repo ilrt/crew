@@ -299,7 +299,8 @@ ${event.title}
 
 
         <p>Add your own annotation...<br />
-	(Use wiki notation to add links, e.g. [Intute|http://www.intute.ac.uk])</p>
+	- use wiki style notation to add links, e.g. [Go to Intute|http://www.intute.ac.uk]
+        or [http://www.intute.ac.uk]</p>
 
         <div id="annotation-messages"></div>
             <%-- show form if they are logged in --%>
