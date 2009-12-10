@@ -735,9 +735,9 @@
     <!-- list of facet configurations: events -->
     <util:list id="eventFacets" list-class="java.util.ArrayList">
         <ref bean="event-text-search"/>
+        <ref bean="subjects"/>
         <ref bean="eventDate"/>
         <ref bean="locations"/>
-        <ref bean="subjects"/>
         <!-- <ref bean="eventTitles"/> -->
         <!-- <ref bean="eventTypes" /> -->
     </util:list>
