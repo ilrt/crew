@@ -66,8 +66,12 @@ type="text/javascript"></script>
 <div class="content-container center">
            
 <%--breadcrumbs--%>
-<p class="breadcrumbs smalltext"><a href="http://www.intute.ac.uk/">Home</a> 
-&rsaquo; <a href="http://www.intute.ac.uk/services.html">All services</a> &rsaquo; <spring:message code="event.page.title"/></p>
+<p class="breadcrumbs smalltext">
+<a href="http://www.intute.ac.uk/">Home</a> 
+&rsaquo; <a href="http://www.intute.ac.uk/services.html">All services</a> 
+&rsaquo; <spring:message code="event.page.title"/>
+&rsaquo; <a href="listEvents.do">All events</a>
+</p>
 
 <h1><spring:message code="event.page.title"/></h1>
 <div class="content" id="content-full-width">
@@ -106,10 +110,13 @@ event you would like publicised please send the details through our helpdesk.</p
     <%-- upcoming events --%>
     <%@ include file="includes/box-upcomingEvents.jsp" %>
 </div>
-<div class="services-box" id="services-box-recent-events-rss">
     <%-- recently added events --%>
-    <%@ include file="includes/box-recentlyAdded.jsp" %>
+<%-- No last mod dates in Intute data --%>
+<%--
+<div class="services-box" id="services-box-recent-events-rss">
+    <%@ include file="includes/box-recentlyAdded.jsp" %> 
 </div>
+--%>
 
 <%-- end left hand column --%>
 </div>
