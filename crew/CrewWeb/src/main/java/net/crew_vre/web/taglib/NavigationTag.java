@@ -113,7 +113,7 @@ public class NavigationTag extends TagSupport {
             }
 
 
-            // do we have a prev link
+            // do we have a next link
             if (navHelper.hasNext()) {
                 navAid(navHelper.getNext(), "Next");
             }
@@ -152,6 +152,21 @@ public class NavigationTag extends TagSupport {
         // item content
         pageContext.getOut().print("<a href=\"?page=");
         pageContext.getOut().print(pageNumber);
+
+	// get the keys for the parameter values
+	Set<String> keys = params.keySet();
+	
+	// go through each key
+	for (String key : keys) {
+	// ignore the page parameter
+		if (!key.equals("page")) {
+		    // parameter values are string arrays so check each element
+		    for (String value : params.get(key)) {
+			pageContext.getOut().print("&amp;" + key + "=" + value);
+		    }
+		}
+	}
+                    
         pageContext.getOut().print("\">");
         pageContext.getOut().print(linkText);
         pageContext.getOut().print("</a>");
