@@ -29,6 +29,15 @@
                 <filter.location>src/main/filters/deployment.properties</filter.location>
             </properties>
         </profile>
+        <profile>
+            <id>live</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <filter.location>src/main/filters/live.properties</filter.location>
+            </properties>
+        </profile>
     </profiles>
     <repositories>
         <!-- ILRT maven repo -->
@@ -221,7 +230,7 @@
         <dependency>
             <groupId>rome</groupId>
             <artifactId>rome</artifactId>
-            <version>0.9</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
