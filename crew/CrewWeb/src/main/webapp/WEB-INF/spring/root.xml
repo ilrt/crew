@@ -178,6 +178,8 @@
     </bean>
 
     <!-- the provider of the user details -->
+<!-- Myintute registration version -->
+<!--
     <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
         <property name="enableGroups" value="true"/>
         <property name="enableAuthorities" value="false"/>
@@ -186,6 +188,20 @@
         <property name="groupAuthoritiesByUsernameQuery"
                   value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM events_groups G, events_users_groups UG,
                   events_groups_roles GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
+                  AND G.GROUPID = UG.GROUPID"/>
+        <property name="rolePrefix" value="ROLE_"/>
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+-->
+<!-- Standard version -->
+    <bean id="userDetailsService" class="org.springframework.security.userdetails.jdbc.JdbcDaoImpl">
+        <property name="enableGroups" value="true"/>
+        <property name="enableAuthorities" value="false"/>
+        <property name="usersByUsernameQuery"
+                  value="SELECT USERNAME, PASSWORD, ENABLED FROM USERS WHERE USERNAME = ?"/>
+        <property name="groupAuthoritiesByUsernameQuery"
+                  value="SELECT G.GROUPID, G.NAME, GR.ROLEID FROM GROUPS G, USERS_GROUPS UG,
+                  GROUPS_ROLES GR WHERE UG.USERNAME = ? AND G.GROUPID = GR.GROUPID
                   AND G.GROUPID = UG.GROUPID"/>
         <property name="rolePrefix" value="ROLE_"/>
         <property name="dataSource" ref="dataSource"/>
