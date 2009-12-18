@@ -80,7 +80,7 @@ The Conferences and events database currently only covers the Social Sciences an
 If you want to find details of a conference or event in these areas, search here. If you have a conference or 
 event you would like publicised please send the details through our helpdesk.</p>
 
-<p>Log in to your MyIntute account if you have any conferences or events you wish to add to the database.</p> 
+<%-- <p>Log in to your MyIntute account if you have any conferences or events you wish to add to the database.</p> --%>
 
 <%-- Column container --%>
 <div class="col-3366percent-container">
