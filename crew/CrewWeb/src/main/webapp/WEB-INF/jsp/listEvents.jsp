@@ -12,7 +12,7 @@
 <meta name="resource-type" content="document" />
 <meta name="distribution" content="GLOBAL" />
 <meta name="description" content="Intute - Conferences and events" />
-<meta name="copyright" content="Intute 2009" />
+<meta name="copyright" content="Intute 2010" />
 <meta name="keywords" content="internet; resource; catalogue" />
 <meta name="author" content="intute" />
 <meta http-equiv="content-language" content="en" />
@@ -26,7 +26,7 @@
         </c:forEach>
     </c:if>
 
-<style type="text/css" media="screen">@import "./style.css";</style>
+<style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
 <link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/reset.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/intute.css" />
 <link rel="stylesheet" type="text/css" media="print" href="http://www.intute.ac.uk/intute-print.css" />
