@@ -12,7 +12,7 @@
 <meta name="resource-type" content="document" />
 <meta name="distribution" content="GLOBAL" />
 <meta name="description" content="Intute - Conferences and events" />
-<meta name="copyright" content="Intute 2009" />
+<meta name="copyright" content="Intute 2010" />
 <meta name="keywords" content="internet; resource; catalogue" />
 <meta name="author" content="intute" />
 <meta http-equiv="content-language" content="en" />
@@ -25,8 +25,6 @@
 <link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/reset.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="http://www.intute.ac.uk/intute.css" />
 <link rel="stylesheet" type="text/css" media="print" href="http://www.intute.ac.uk/intute-print.css" />
-<script type="text/javascript" src="./js/prototype.js"></script>
-<script type="text/javascript" src="./js/annotations.js"></script>
 
    <%--[if IE]>
         <link rel="stylesheet" href="http://www.intute.ac.uk/intute-ie.css" type="text/css">
@@ -43,7 +41,8 @@ type="text/javascript"></script>
 type="text/javascript"></script>
 <script language="javascript" src="/myintute/scripts/shiv.js"
 type="text/javascript"></script>
-<script src="/myintute/scripts/prototype.js" type="text/javascript"></script>
+<script src="/myintute/scripts/prototype.js" 
+type="text/javascript"></script>
 <script src="/myintute/scripts/scriptaculous.js"
 type="text/javascript"></script>
 <%-- ########################################################################### --%>
@@ -227,6 +226,7 @@ ${event.title}
 </c:if>
 
     <%-- EVENT TAGS--%>
+<%-- disabling as not being used by intute
 <c:if test="${not empty event.tags}">
     <p id="event-tags">
         <strong><spring:message code="event.details.tags"/></strong>
@@ -235,6 +235,7 @@ ${event.title}
         </c:forEach>
     </p>
 </c:if>
+--%>
 
     <%-- EVENT EXTERNAL LINKS --%>
 <c:if test="${not empty event.programme || not empty event.proceedings}">
@@ -291,6 +292,7 @@ ${event.title}
     response.addCookie(admin);
 %>
 
+<%-- Disabling annotations 
 <div class="annotations">
 
     <fieldset class="fieldSet">
@@ -303,7 +305,9 @@ ${event.title}
         or [http://www.intute.ac.uk]</p>
 
         <div id="annotation-messages"></div>
+--%>
             <%-- show form if they are logged in --%>
+<%--
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
                   action="javascript:processForm('<%=request.getUserPrincipal().getName()%>')"
@@ -323,7 +327,9 @@ ${event.title}
                 </p>
             </form>
         </security:authorize>
+--%>
             <%-- message if not logged in --%>
+<%--
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
             <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.
                 You can <a href="./registration.do">register</a> if you do not have an account.<br/>
@@ -333,6 +339,8 @@ ${event.title}
 
     </fieldset>
 </div>
+--%>
+
 
 </c:when>
 <c:otherwise>
