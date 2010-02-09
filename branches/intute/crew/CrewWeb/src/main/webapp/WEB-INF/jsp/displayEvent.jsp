@@ -51,7 +51,8 @@ type="text/javascript"></script>
 <script src="http://www.intute.ac.uk/scripts/jquery.hoverIntent.minified.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://www.intute.ac.uk/scripts/mega-dropdown.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body onload="initializeAnnotations();setCookie();">
+<%-- <body onload="initializeAnnotations();setCookie();"> --%>
+<body onload="setCookie();">
 
 <%@ include file="includes/menu-services.jsp" %>
 
