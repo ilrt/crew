@@ -246,5 +246,3 @@ browser.</p>
    <%--FOOTER--%>
 
 <%@ include file="includes/footer.jsp" %>
-</body>
-</html>
