@@ -3,6 +3,13 @@ body {
     font-size: 76%;
     padding: 0px;
     margin: 0px;
+/* for IE margin auto centreing bug - see content-container style below */
+    text-align: center;
+}
+
+/* Adding text-align left to intute style due to IE centring bug fix above */
+.content-container {
+    text-align: left;
 }
 
 /* MyIntute container also has this ID
