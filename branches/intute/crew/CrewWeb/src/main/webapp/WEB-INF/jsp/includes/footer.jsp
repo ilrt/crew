@@ -2,7 +2,7 @@
    <div id="footer" class="center smalltext">
 
 <ul>
-<li><a href="http://www.intute.ac.uk/copyright.html">Copyright 2006-2009</a></li>
+<li><a href="http://www.intute.ac.uk/copyright.html">Copyright 2006-2010</a></li>
 <li>|</li>
 <li><a href="http://www.intute.ac.uk/terms.html">Terms of use</a></li>
 <li>|</li>
