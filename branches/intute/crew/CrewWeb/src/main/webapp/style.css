@@ -8,7 +8,7 @@ body {
 }
 
 /* Adding text-align left to intute style due to IE centring bug fix above */
-.content-container {
+.content-container, #main-navigation-container, #header-container, #footer-container {
     text-align: left;
 }
 
