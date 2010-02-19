@@ -10,7 +10,7 @@
 <meta name="resource-type" content="document" />
 <meta name="distribution" content="GLOBAL" />
 <meta name="description" content="Intute - Conferences and events" />
-<meta name="copyright" content="Intute 2009" />
+<meta name="copyright" content="Intute 2010" />
 <meta name="keywords" content="internet; resource; catalogue" />
 <meta name="author" content="intute" />
 <meta http-equiv="content-language" content="en" />
