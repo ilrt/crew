@@ -101,16 +101,15 @@ ${event.title}
 
 
     <%-- EVENT DATES --%>
-<c:if test="${event.startDateTime != null}">
+<c:if test="${event.startDate != null}">
     <p id="event-dates"><strong><spring:message code="event.details.date"/></strong>
         <c:choose>
             <c:when test="${event.singleDay == true}">
-                <joda:format value="${event.startDateTime}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDateTime}" pattern=" HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/>
             </c:when>
             <c:otherwise>
-                <joda:format value="${event.startDateTime}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDateTime}" pattern="dd MMMM yyyy, HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/> -
+                <joda:format value="${event.endDate}" pattern="dd MMMM yyyy"/>
             </c:otherwise>
         </c:choose>
         <a href="./eventCalendar.do?eventId=<crew:uri uri='${event.id}'/>"><img
