@@ -124,7 +124,7 @@ public class EventPart extends EventParent implements Comparable<EventPart> {
                 return endDateTime.toLocalDate();
             }
         }
-        return startDate;
+        return endDate;
     }
 
     public void setEndDate(LocalDate endDate) {
