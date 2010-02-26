@@ -74,7 +74,6 @@ type="text/javascript"></script>
 </p>
 
 <h1><spring:message code="event.page.title"/></h1>
-<div class="content" id="content-full-width">
 <p>
 The Conferences and events database currently only covers the Social Sciences and Arts and Humanities subjects. 
 If you want to find details of a conference or event in these areas, search here. If you have a conference or 
@@ -82,11 +81,8 @@ event you would like publicised please send the details through our helpdesk.</p
 
 <%-- <p>Log in to your MyIntute account if you have any conferences or events you wish to add to the database.</p> --%>
 
-<%-- Column container --%>
-<div class="col-3366percent-container">
-
 <%--left hand column--%>
-<div class="col-33percent-left">
+<div id="leftColumn">
 
 <div class="services-box" id="services-box-conferences">
     <%-- the facets ---%>
@@ -106,23 +102,23 @@ event you would like publicised please send the details through our helpdesk.</p
         </div>
     </div>
 </div>
-<div class="services-box" id="services-box-forthcoming-events-rss">
-    <%-- upcoming events --%>
-    <%@ include file="includes/box-upcomingEvents.jsp" %>
-</div>
-    <%-- recently added events --%>
-<%-- No last mod dates in Intute data --%>
-<%--
-<div class="services-box" id="services-box-recent-events-rss">
-    <%@ include file="includes/box-recentlyAdded.jsp" %> 
-</div>
---%>
 
 <%-- end left hand column --%>
 </div>
 
-<%--right hand column--%>
-<div class="col-66percent-right">
+
+<%-- The right column --%>
+<div id="rightColumn">
+<div class="services-box" id="services-box-forthcoming-events-rss">
+    <%-- upcoming events --%>
+    <%@ include file="includes/box-upcomingEvents.jsp" %>
+</div>
+<%-- end of right column --%>
+</div>
+
+
+<%--middle column--%>
+<div id="middleColumn">
 
 <div class="services-box" id="events-results">
 
@@ -177,12 +173,12 @@ event you would like publicised please send the details through our helpdesk.</p
                         <c:choose>
                             <c:when test="${event.singleDay == true}">
                                 <joda:format value="${event.startDate}"
-                                             pattern="dd MMMM yyyy"/>
+                                             pattern="dd MMMM yyyy"/> 
                             </c:when>
                             <c:otherwise>
                                 <joda:format value="${event.startDate}"
                                              pattern="dd MMMM yyyy"/> -
-                                <joda:format value="${event.endDateTime}"
+                                <joda:format value="${event.endDate}"
                                              pattern="dd MMMM yyyy"/>
                             </c:otherwise>
                         </c:choose>
@@ -212,28 +208,10 @@ event you would like publicised please send the details through our helpdesk.</p
 <%-- end services box --%>
 </div>
 
-<%--end of right col--%>
+<%--end of middle col--%>
 </div>
 
-<%-- end of column container --%>
-</div>
 
-<%--end of content--%>
-</div>
-
-<%--MyIntute--%>
-<span id="load"></span>
-<div id="container" class="myintute-container"><noscript>
-<p><img src="/myintute/mockup_files/off.png" alt="tick" /><br/><b><font
-color="red">MyInute functionality requires the use of Javascript and
-cookies.</font></b>
-<br/>To use MyIntute please enable javascript and cookies in your
-browser.</p>
-
-</noscript>
-</div>
-
-<%--end of Myintute--%>
 <%--end of content-container--%>
 
 <%--important div to prevent IE guillotine bug--%>

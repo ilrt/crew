@@ -221,10 +221,10 @@ public class MainEventDaoImpl implements MainEventDao {
         if (qs.getLiteral("startDateTime") != null) {
             try {
                 startDateTime =
-                        Utility.parseStringToDateTime(qs.getLiteral("startDate")
+                        Utility.parseStringToDateTime(qs.getLiteral("startDateTime")
                                 .getLexicalForm());
                 endDateTime =
-                        Utility.parseStringToDateTime(qs.getLiteral("endDate")
+                        Utility.parseStringToDateTime(qs.getLiteral("endDateTime")
                                 .getLexicalForm());
             } catch (ParseException e) {
                 logger.error(e.getMessage());

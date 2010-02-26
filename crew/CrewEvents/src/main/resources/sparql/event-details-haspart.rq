@@ -1,7 +1,7 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX eswc: <http://www.eswc2006.org/technologies/ontology#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-SELECT $graph $id $name $startDateTime $endDateTime $description
+SELECT $graph $id $name $startDateTime $endDateTime $startDate $endDate $description
 WHERE {
     GRAPH $graph {
         $eventId eswc:hasPart $id .
@@ -9,7 +9,10 @@ WHERE {
         $id rdf:type eswc:Event .
         OPTIONAL { $id dc:description $description } .
         OPTIONAL { $id eswc:hasStartDateTime $startDateTime .
-                   $id eswc:hasEndDateTime $endDateTime  } .
+                   $id eswc:hasEndDateTime $endDateTime .
+		   $id eswc:hasStartDate $startDate .
+                   $id eswc:hasEndDate $endDate
+                 } .
     }
 }
 ORDER BY $startDateTime $name

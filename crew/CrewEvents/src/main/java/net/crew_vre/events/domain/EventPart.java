@@ -144,7 +144,7 @@ public class EventPart extends EventParent implements Comparable<EventPart> {
      */
     public boolean isSingleDay() {
 
-        Period period = new Period(startDateTime, endDateTime);
+        Period period = new Period(startDate, endDate);
 
         /**
          * I need to relook at this - zero also indicates "not supported"
