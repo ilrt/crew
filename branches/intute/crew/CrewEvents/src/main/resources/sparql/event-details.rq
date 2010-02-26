@@ -1,13 +1,16 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX eswc: <http://www.eswc2006.org/technologies/ontology#>
 PREFIX crew: <http://www.crew-vre.net/ontology#>
-SELECT $graph $id $title $description $startDateTime $endDateTime $locationId $locationName
+SELECT $graph $id $title $description $startDateTime $endDateTime $startDate $endDate $locationId $locationName
 $proceedings $programme $recordingId
 WHERE {
     GRAPH $graph {
         $id dc:title $title .
+        $id crew:hasStartDate $startDate .
+        $id crew:hasEndDate $endDate .
         OPTIONAL { $id eswc:hasStartDateTime $startDateTime .
-                   $id eswc:hasEndDateTime $endDateTime } .
+                   $id eswc:hasEndDateTime $endDateTime .
+                 } .
         OPTIONAL { $id dc:description $description } .
         OPTIONAL { $id eswc:hasProgramme $programme } .
         OPTIONAL { $id eswc:hasProceedings $proceedings }
