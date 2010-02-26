@@ -188,18 +188,18 @@ h1#header-title span {
 
 #leftColumn {
     float: left;
-    width: 20em;
+    width: 16em;
 }
 
 #rightColumn {
     float: right;
-    width: 19em;
+    width: 16em;
     margin: 0em;
 }
 
 #middleColumn {
     margin: 0em;
-    padding: 0.3em 20em 0.3em 21em;
+    padding: 0.2em 17em 0.2em 17em;
 }
 
 #detailsColumn {
@@ -224,7 +224,7 @@ h1#header-title span {
 }
 
 .box {
-    margin: 1em 1em 1em 1em;
+    margin: 1em 0.5em 1em 0.5em;
 }
 
 .box-header {
@@ -256,7 +256,7 @@ h1#header-title span {
 
 .box-list-item a:hover {
     color: #0B6D95;
-    text-decoration: underline;
+/*    text-decoration: underline; */
 }
 
 
@@ -297,7 +297,7 @@ h1#header-title span {
 
 .resultHeader a:hover {
     color: #0B6D95;
-    text-decoration: underline;
+/*    text-decoration: underline; */
 }
 
 
@@ -378,13 +378,13 @@ h1#header-title span {
 
 .crew-facet {
     font-size: 0.9em;
-    margin: 1em;
+    margin: 1em 1em 1em 0;
 }
 
 .crew-facet-list {
     padding: 0em;
     margin: 0.5em;
-    margin-left: 0em;
+    margin-left: -1.0em;
 
 }
 
@@ -401,11 +401,11 @@ h1#header-title span {
 
 .crew-facet-list-item a:hover {
     color: #0B6D95;
-    text-decoration: underline;
+/*    text-decoration: underline; */
 }
 
 .crew-facet form {
-	padding-left: 1.5em;
+	padding-left: 0;
 }
 
 .crew-facet input {
@@ -445,6 +445,7 @@ ul.pagination {
 }
 
 li.pagination {
+    float: left;
     list-style: none;
     display: inline;
     padding: 0.1em 0.2em 3em 0.2em;

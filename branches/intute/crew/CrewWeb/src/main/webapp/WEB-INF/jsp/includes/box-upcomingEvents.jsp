@@ -8,9 +8,9 @@
             <div class="tr">
                 <div class="box" id="upcomingEvents">
                     <h4 class="box-header"><fmt:message key="box.upcoming.title"/>
-                        <a href="${pageContext.request.contextPath}/feeds/upcomingEvents.xml"><img
-                                class="feedImage"
-                                alt="<fmt:message key='image.alt.feed'/>"
+                        <a href="${pageContext.request.contextPath}/feeds/upcomingEvents.xml" style="border-bottom:0;">
+				<img class="feedImage" 
+				alt="<fmt:message key='image.alt.feed'/>"
                                 src="${pageContext.request.contextPath}/images/feed-icon-14x14.png"/></a>
                     </h4>
                     <c:choose>
@@ -22,12 +22,20 @@
                                            value="/displayEvent.do">
                                         <c:param name="eventId">${event.id}</c:param>
                                     </c:url>
-                                    <li class="box-list-item"><a
-                                            href="${upcoming}">${event.title}</a><br/>
-                                        <joda:format value="${event.startDate}"
-                                                     pattern="dd MMMM yyyy"/> -
-                                        <joda:format value="${event.endDate}"
-                                                     pattern="dd MMMM yyyy"/>
+                                    <li class="box-list-item">
+					<a href="${upcoming}">${event.title}</a><br/>
+					<c:choose>
+		                            <c:when test="${event.singleDay == true}">
+                		                <joda:format value="${event.startDate}"
+                                	             pattern="dd MMMM yyyy"/>
+		                            </c:when>
+                		            <c:otherwise>
+                               			 <joda:format value="${event.startDate}"
+                                         	    pattern="dd MMMM yyyy"/> -
+		                                <joda:format value="${event.endDate}"
+                	                             pattern="dd MMMM yyyy"/>
+                        		    </c:otherwise>
+		                        </c:choose>                                        
                                     </li>
                                 </c:forEach>
                             </ul>
