@@ -178,7 +178,7 @@ public class FacetTag extends BodyTagSupport {
 		out.print("  <input name=\"");
 		out.print(facetState.getParamName());
 		out.println("\" type=\"text\" value=\"\" />");
-		out.println("  <input type=\"submit\" value=\"search...\" />");
+		out.println("  <input type=\"submit\" value=\"search\" />");
 		if (parameters != null) {
 			for (Map.Entry<String, String[]> entry: parameters.entrySet()) {
 				for (String paramValue: entry.getValue()) {
