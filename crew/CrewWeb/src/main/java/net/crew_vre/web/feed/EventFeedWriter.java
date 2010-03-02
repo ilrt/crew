@@ -104,8 +104,9 @@ public class EventFeedWriter {
             item.setLink(url);
             item.setUri(url);
             item.setTitle(event.getTitle());
-            item.setPublishedDate(new Date());
-            item.setUpdatedDate(new Date());
+	    // Sets dc:date in feed item
+            item.setPublishedDate(event.getStartDate().toDateTimeAtStartOfDay().toDate());
+            // item.setUpdatedDate(new Date());
             SyndContent content = new SyndContentImpl();
             content.setValue(event.getDescription());
             item.setDescription(content);
