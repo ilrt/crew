@@ -72,6 +72,11 @@ public interface MainEventDao {
     List<EventPart> findEventsByDate(final LocalDate startDate, final LocalDate endDate,
                                  final int limit, final int offset);
 
+    List<EventPart> findEventsByDateAsc(final LocalDate startDate, final LocalDate endDate);
+
+    List<EventPart> findEventsByDateAsc(final LocalDate startDate, final LocalDate endDate,
+                                 final int limit, final int offset);
+
     List<EventPart> findEventsWithConstraint(final String constraint);
 
     List<EventPart> findEventsWithConstraint(final String constraint, final int limit, int offset);

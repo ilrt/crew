@@ -57,6 +57,11 @@ public interface MainEventService {
     List<EventPart> getEventsByDate(final LocalDate startDate, final LocalDate endDate, final int limit,
                                 final int offset);
 
+    List<EventPart> getEventsByDateAsc(final LocalDate startDate, final LocalDate endDate);
+
+    List<EventPart> getEventsByDateAsc(final LocalDate startDate, final LocalDate endDate, final int limit,
+                                final int offset);
+
     List<EventPart> getEventsByCreationDate(final DateTime startDate, final DateTime endDate);
 
     List<EventPart> getEventsByCreationDate(final DateTime startDate, final DateTime endDate,

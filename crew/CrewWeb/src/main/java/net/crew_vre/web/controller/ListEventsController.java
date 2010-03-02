@@ -145,7 +145,7 @@ public class ListEventsController implements Controller {
         mov.addObject("total", total);
         mov.addObject("feedList", feedList);
         //long startUpcoming = System.currentTimeMillis();
-        mov.addObject("upcomingEvents", listEventsFacade.displayUpcomingEvents(5, 0));
+        mov.addObject("upcomingEvents", listEventsFacade.displayUpcomingEvents(10, 0));
         //long endUpcoming = System.currentTimeMillis();
         //long startRecent = System.currentTimeMillis();
         mov.addObject("recentlyAddedEvents", listEventsFacade.displayRecentlyAddedEvents(31, 5, 0));
