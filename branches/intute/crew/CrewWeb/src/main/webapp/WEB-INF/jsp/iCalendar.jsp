@@ -8,13 +8,13 @@ PRODID:-//Universities of Bristol and Manchester//NONSGML CREW//EN
 BEGIN:VEVENT
 UID:${event.id}
 <c:if test="${not empty event}">
-<fmt:parseDate var="sdate" pattern="yyyy-MM-dd'T'HH:mm:ss" value="${event.startDate}"/>
-<fmt:parseDate var="edate" pattern="yyyy-MM-dd'T'HH:mm:ss" value="${event.endDate}"/>
+<fmt:parseDate var="sdate" pattern="yyyy-MM-dd" value="${event.startDate}"/>
+<fmt:parseDate var="edate" pattern="yyyy-MM-dd" value="${event.endDate}"/>
 <c:if test="${not empty event.locations}">
 LOCATION:<c:forEach items="${event.places}" var="place" varStatus="status">${place.title}<c:if test="${not status.last}">,</c:if></c:forEach>
 </c:if>
-DTSTART:<fmt:formatDate pattern="yyyyMMdd'T'HHmmss" value="${sdate}"/>
-DTEND:<fmt:formatDate pattern="yyyyMMdd'T'HHmmss" value="${edate}"/>
+DTSTART:<fmt:formatDate pattern="yyyyMMdd" value="${sdate}"/>
+DTEND:<fmt:formatDate pattern="yyyyMMdd" value="${edate}"/>
 SUMMARY:${event.title}
 DESCRIPTION:${event.description}
 </c:if>
