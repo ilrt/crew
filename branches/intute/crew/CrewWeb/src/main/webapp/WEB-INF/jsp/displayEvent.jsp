@@ -149,9 +149,14 @@ ${event.title}
         <tr valign="top">
         <th><spring:message code="event.details.locations"/></th>
         <td>
+        <c:forEach var="tag" items="${event.tags}" varStatus="rowNo">
+            ${tag}<c:if test="${not rowNo.last}">;</c:if>
+        </c:forEach>
+<%-- Using tags to show location to avoid random ordering of location hierachy - Intute exporting locations as tags
         <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
             <c:if test="${location.name != 'Locations'}">${location.name};</c:if>
         </c:forEach>
+--%>
 	</td>
 	</tr>
 </c:if>
@@ -169,7 +174,7 @@ ${event.title}
 </c:if>
 
     <%-- EVENT TAGS--%>
-<%-- disabling as not being used by intute
+<%--
 <c:if test="${not empty event.tags}">
     <p id="event-tags">
         <strong><spring:message code="event.details.tags"/></strong>
