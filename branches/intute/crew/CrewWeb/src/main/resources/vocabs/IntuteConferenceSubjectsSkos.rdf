@@ -28,11 +28,6 @@
   <skos:TopConcept rdf:about="#disciplines">
     <skos:prefLabel>Disciplines</skos:prefLabel>
   </skos:TopConcept>  
-  <skos:Concept rdf:about="#cross_disciplinary">
-    <skos:inScheme rdf:resource="#scheme"/>
-	<skos:broader rdf:resource="#disciplines"/>
-    <skos:prefLabel>Cross-disciplinary (general)</skos:prefLabel>
-  </skos:Concept>  
   <skos:Concept rdf:about="#architecture_and_planning">
     <skos:inScheme rdf:resource="#scheme"/>
 	<skos:broader rdf:resource="#disciplines"/>
@@ -53,39 +48,49 @@
     <skos:broader rdf:resource="#communication_and_media_studies"/>
     <skos:prefLabel>Film studies</skos:prefLabel>
   </skos:Concept>
+  <skos:Concept rdf:about="#creative_and_performing_arts">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#disciplines"/>
+    <skos:prefLabel>Creative and performing arts</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="#cross_disciplinary">
+    <skos:inScheme rdf:resource="#scheme"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
+    <skos:prefLabel>Cross-disciplinary arts</skos:prefLabel>
+  </skos:Concept>  
   <skos:Concept rdf:about="#cultural_studies">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Cultural studies</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#dance">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Dance</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#design">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Design</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#fashion_and_beauty">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Fashion and beauty</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#music">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Music</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#theatre_and_drama">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Theatre and drama</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#visual_arts">
     <skos:inScheme rdf:resource="#scheme"/>
-    <skos:broader rdf:resource="#communication_and_media_studies"/>
+    <skos:broader rdf:resource="#creative_and_performing_arts"/>
     <skos:prefLabel>Visual arts</skos:prefLabel>
   </skos:Concept>
   <skos:Concept rdf:about="#education_and_research_methods">
