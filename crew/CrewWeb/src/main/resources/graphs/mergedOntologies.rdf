@@ -4099,13 +4099,6 @@
     <skos:prefLabel xml:lang="en">Sudan</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#cross_disciplinary">
-    <rdfs:label>Cross-disciplinary (general)</rdfs:label>
-    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
-    <skos:prefLabel>Cross-disciplinary (general)</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>  
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#architecture_and_planning">
     <rdfs:label>Architecture and planning</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
@@ -4123,7 +4116,7 @@
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#communication_and_media_studies">
     <rdfs:label>Communication and media studies</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
     <skos:prefLabel>Communication and media studies</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
@@ -4134,59 +4127,73 @@
     <skos:prefLabel>Film studies</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#creative_and_performing_arts">
+    <rdfs:label>Creative and performing arts</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Creative and performing arts</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#cross_disciplinary">
+    <rdfs:label>Cross-disciplinary arts</rdfs:label>
+    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
+    <skos:prefLabel>Cross-disciplinary arts</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  </rdf:Description>  
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#cultural_studies">
     <rdfs:label>Cultural studies</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Cultural studies</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#dance">
     <rdfs:label>Dance</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Dance</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#design">
     <rdfs:label>Design</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Design</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#fashion_and_beauty">
     <rdfs:label>Fashion and beauty</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Fashion and beauty</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#music">
     <rdfs:label>Music</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Music</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#theatre_and_drama">
     <rdfs:label>Theatre and drama</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Theatre and drama</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#visual_arts">
     <rdfs:label>Visual arts</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#communication_and_media_studies"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#creative_and_performing_arts"/>
     <skos:prefLabel>Visual arts</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#education_and_research_methods">
     <rdfs:label>Education and research methods</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
     <skos:prefLabel>Education and research methods</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
@@ -4414,18 +4421,11 @@
     <skos:prefLabel>Psychology</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#mathematics_and_computer_science">  
-    <rdfs:label>Mathematics and computer science</rdfs:label>
+  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#engineering">
+    <rdfs:label>Engineering</rdfs:label>
     <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-        <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
-    <skos:prefLabel>Mathematics and computer science</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.intute.ac.uk/subjects/#computer_science">
-    <rdfs:label>Computer science</rdfs:label>
-    <skos:inScheme rdf:resource="http://www.intute.ac.uk/subjects/#scheme"/>
-        <skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#mathematics_and_computer_science"/>
-    <skos:prefLabel>Computer science</skos:prefLabel>
+	<skos:broader rdf:resource="http://www.intute.ac.uk/subjects/#disciplines"/>
+    <skos:prefLabel>Engineering</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
   </rdf:Description>
 </rdf:RDF>
