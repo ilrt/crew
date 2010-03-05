@@ -191,7 +191,7 @@ ${event.title}
         <th><spring:message code="event.details.external"/></th>
         <td>
         <c:if test="${not empty event.programme}">
-            <a href="${event.programme}"><spring:message code="event.details.programme"/></a>
+            <a href="${event.programme}" target="_blank"><spring:message code="event.details.programme"/></a>
             <img class="externalLink" src="./images/web.png" alt="External Link" width="16"
                  height="16"/>
         </c:if>
