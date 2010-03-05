@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layouts>
+    <layout name="CrewDefault">
+	    <element name="Video" x="30" y="30" width="240" height="196"/>
+	    <element name="Screen" x="285" y="30" width="720" height="540"/>
+	    <element name="Annotation" x="30" y="245" width="240" height="325" assignable="false"/>
+	    <element name="Slider" x="120" y="580" width="885" height="175" assignable="false"/>
+	    <element name="Controls" x="30" y="580" width="100" height="20" assignable="false"/>
+	</layout>
+</layouts>

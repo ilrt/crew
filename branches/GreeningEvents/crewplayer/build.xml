@@ -1,0 +1,80 @@
+<!--
+/**
+ * Copyright (c) 2008, University of Bristol
+ * Copyright (c) 2008, University of Manchester
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1) Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ *
+ * 2) Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * 3) Neither the names of the University of Bristol and the
+ *    University of Manchester nor the names of their
+ *    contributors may be used to endorse or promote products derived from this
+ *    software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+-->
+<project name="Plone MediaPlayer" default="all" basedir=".">
+
+	<!-- build property file -->
+	<property file="build.properties"/>
+
+    <!-- the following properties are defined in build.properties
+    <property name="MTASC_BIN" location="bin/mtasc/mtasc.exe"/>
+    <property name="SWFMILL_BIN" location="bin/swfmill/swfmill.exe"/>
+    -->
+
+    <property name="src.dir" location="src"/>
+    <property name="lib.dir" location="lib"/>
+    <property name="build.dir" location="build"/>
+
+    <property name="std_lib.dir" location="lib/as/std"/>
+    <property name="std_lib_v8.dir" location="lib/as/std8"/>
+    <property name="luminicBox.dir" location="lib/as/LuminicboxLog"/>
+    <property name="as2lib.dir" location="lib/as2lib/src"/>
+
+    <taskdef name="swf" classname="org.as2lib.ant.Swf" classpath="lib/as2ant.jar"/>
+    <taskdef name="mtasc" classname="org.as2lib.ant.Mtasc" classpath="lib/as2ant.jar"/>
+    <taskdef name="swfmill" classname="org.as2lib.ant.Swfmill" classpath="lib/as2ant.jar"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <target name="all">
+        <antcall target="crewPlayer"></antcall>
+    </target>
+
+    <target name="crewPlayer" depends="init">
+        <mtasc mtasc="${MTASC_BIN}"
+              src="${src.dir}/org/crew/CrewPlayer.as"
+              header="1:1:12"
+              classpath="${src.dir};${as2lib.dir};${std_lib.dir};${std_lib_v8.dir};${luminicBox.dir}"
+              swf="CrewPlayerClasses.swf"
+              version="8"/>
+        <swfmill swfmill="${SWFMILL_BIN}"
+            src="${src.dir}/CrewPlayer.xml"
+            dest="${build.dir}/CrewPlayer.swf"
+            cmd="simple"/>
+        <delete file="CrewPlayerClasses.swf"/>
+    </target>
+</project>
