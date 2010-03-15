@@ -39,6 +39,8 @@ import org.ilrt.green_repository.dao.RepositoryDao;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import java.util.List;
+
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
@@ -49,14 +51,46 @@ public class RepositoryDaoImpl extends HibernateDaoSupport implements Repository
         setHibernateTemplate(hibernateRepositoryTemplate);
     }
 
-    public RepositoryEvent createRepositoryEvent(RepositoryEventForm repositoryEventForm) {
+    public void createRepositoryEvent(RepositoryEventForm repositoryEventForm) {
+
         RepositoryEvent event = new RepositoryEvent(repositoryEventForm);
         this.getHibernateTemplate().save(event);
+
+    }
+
+    public void updateRepositoryEvent(RepositoryEventForm repositoryEventForm) {
+
+        RepositoryEvent event = new RepositoryEvent(repositoryEventForm);
+        this.getHibernateTemplate().saveOrUpdate(event);
+
+    }
+
+    public RepositoryEvent findRepositoryEvent(String eventId) {
+
+        List results =
+                this.getHibernateTemplate().find("from RepositoryEvent re where re.evenId = ?", eventId);
+
+        RepositoryEvent event = null;
+        if (results.size() == 1) {
+            event = (RepositoryEvent) results.get(0);
+        }
+
         return event;
     }
 
-    public void updateRepositoryEvent(RepositoryEvent event) {
-        this.getHibernateTemplate().saveOrUpdate(event);
+    public List<RepositoryEvent> findAllRepositoryEvents() {
+
+        List results =
+                this.getHibernateTemplate().find("from RepositoryEvent");
+
+        return results;
+    }
+
+    public void deleteRepositoryEvent(String eventId) {
+
+        RepositoryEvent event = findRepositoryEvent(eventId);
+        this.getHibernateTemplate().delete(event);
+
     }
 
 }
