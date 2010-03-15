@@ -33,6 +33,8 @@
 
 package org.ilrt.green_repository;
 
+import org.ilrt.green_repository.dao.RepositoryDao;
+import org.ilrt.green_repository.domain.RepositoryEvent;
 import java.util.List;
 import java.util.Date;
 
@@ -48,11 +50,11 @@ public class RepositoryEventManagementFacade {
         this.repositoryDao = repositoryDao;
     }
 
-    public RepositoryEventForm getRepositoryEvent(String id) {
+    public RepositoryEvent getRepositoryEvent(String id) {
         return repositoryDao.findRepositoryEvent(id);
     }
 
-    public List<RepositoryEventForm> getAllRepositoryEvents() {
+    public List<RepositoryEvent> getAllRepositoryEvents() {
         return repositoryDao.findAllRepositoryEvents();
     }
 
@@ -62,6 +64,7 @@ public class RepositoryEventManagementFacade {
         String timeNow = Long.toString(new Date().getTime());
         repositoryEventForm.setEventId("GE_" + timeNow);
         repositoryDao.createRepositoryEvent(repositoryEventForm);
+
     }
 
     public void updateRepositoryEvent(RepositoryEventForm repositoryEventForm) {
@@ -72,7 +75,6 @@ public class RepositoryEventManagementFacade {
 
         if (getRepositoryEvent(eventId) != null) {
             repositoryDao.deleteRepositoryEvent(eventId);
-
         }
     }
 

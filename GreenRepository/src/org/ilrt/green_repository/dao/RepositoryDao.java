@@ -36,13 +36,21 @@ package org.ilrt.green_repository.dao;
 import org.ilrt.green_repository.domain.RepositoryEvent;
 import org.ilrt.green_repository.RepositoryEventForm;
 
+import java.util.List;
+
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 public interface RepositoryDao {
 
-    RepositoryEvent createRepositoryEvent(RepositoryEventForm repositoryEventForm);
+    void createRepositoryEvent(RepositoryEventForm repositoryEventForm);
 
-    void updateRepositoryEvent(RepositoryEvent repositoryEvent);
+    void updateRepositoryEvent(RepositoryEventForm repositoryEventForm);
+
+    RepositoryEvent findRepositoryEvent(String eventId);
+
+    List<RepositoryEvent> findAllRepositoryEvents();
+
+    void deleteRepositoryEvent(String eventId);
 }
