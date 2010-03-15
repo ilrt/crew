@@ -31,49 +31,18 @@
  *
  */
 
-package org.ilrt.green_repository;
+package org.ilrt.green_repository.dao;
 
-import java.util.List;
-import java.util.Date;
+import org.ilrt.green_repository.domain.RepositoryEvent;
+import org.ilrt.green_repository.RepositoryEventForm;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class RepositoryEventManagementFacade {
-    
-    private final RepositoryDao repositoryDao;
+public interface RepositoryDao {
 
-    public RepositoryEventManagementFacade(RepositoryDao repositoryDao) {        
-        this.repositoryDao = repositoryDao;
-    }
+    RepositoryEvent createRepositoryEvent(RepositoryEventForm repositoryEventForm);
 
-    public RepositoryEventForm getRepositoryEvent(String id) {
-        return repositoryDao.findRepositoryEvent(id);
-    }
-
-    public List<RepositoryEventForm> getAllRepositoryEvents() {
-        return repositoryDao.findAllRepositoryEvents();
-    }
-
-    public void addRepositoryEvent(RepositoryEventForm repositoryEventForm) {
-
-        // Create and add unique eventId on form, as this is a new event
-        String timeNow = Long.toString(new Date().getTime());
-        repositoryEventForm.setEventId("GE_" + timeNow);
-        repositoryDao.createRepositoryEvent(repositoryEventForm);
-    }
-
-    public void updateRepositoryEvent(RepositoryEventForm repositoryEventForm) {
-        repositoryDao.updateRepositoryEvent(repositoryEventForm);
-    }
-
-    public void removeRepositoryEvent(String eventId) {
-
-        if (getRepositoryEvent(eventId) != null) {
-            repositoryDao.deleteRepositoryEvent(eventId);
-
-        }
-    }
-
+    void updateRepositoryEvent(RepositoryEvent repositoryEvent);
 }

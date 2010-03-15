@@ -31,57 +31,32 @@
  *
  */
 
-package org.ilrt.green_repository.web;
+package org.ilrt.green_repository.dao.hibernate;
 
-import org.ilrt.green_repository.RepositoryEventManagementFacade;
 import org.ilrt.green_repository.RepositoryEventForm;
-import org.springframework.validation.BindException;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import org.ilrt.green_repository.domain.RepositoryEvent;
+import org.ilrt.green_repository.dao.RepositoryDao;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
+public class RepositoryDaoImpl extends HibernateDaoSupport implements RepositoryDao {
 
-public class AddRepositoryEventController extends SimpleFormController {
-
-
-    private final RepositoryEventManagementFacade facade;
-    private final String VIEW_NAME = "addRepositoryEvent";
-
-    public AddRepositoryEventController(RepositoryEventManagementFacade facade) {
-        this.facade = facade;
+    public RepositoryDaoImpl(HibernateTemplate hibernateRepositoryTemplate) {
+        setHibernateTemplate(hibernateRepositoryTemplate);
     }
 
-    @Override
-    public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response,
-                                 BindException errors) {
-
-        ModelAndView mav = new ModelAndView(VIEW_NAME);
-        RepositoryEventForm repositoryEvent = new RepositoryEventForm();
-        mav.addObject("repositoryEvent", repositoryEvent);
-        return mav;
+    public RepositoryEvent createRepositoryEvent(RepositoryEventForm repositoryEventForm) {
+        RepositoryEvent event = new RepositoryEvent(repositoryEventForm);
+        this.getHibernateTemplate().save(event);
+        return event;
     }
 
-    @Override
-    protected ModelAndView processFormSubmission(HttpServletRequest request,
-                                                 HttpServletResponse response,
-                                                 Object command, BindException errors) {
-
-        // get the command object - using RepositoryEvent object
-        RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
-
-        // only add if the add button is pressed ...
-        if (repositoryEventForm.getAddButton() != null) {
-            // save the repository event
-            facade.addRepositoryEvent(repositoryEventForm);
-        }
-
-        return new ModelAndView("redirect:./listRepositoryEvents.do");
+    public void updateRepositoryEvent(RepositoryEvent event) {
+        this.getHibernateTemplate().saveOrUpdate(event);
     }
 
 }
