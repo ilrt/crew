@@ -476,7 +476,6 @@
         </property>
     </bean>
 
-
     <!-- ========== CABOTO INTEGRATION ========== -->
 
     <!-- scan for caboto classes -->
@@ -1004,5 +1003,57 @@
     </bean>
 
     <context:component-scan base-package="net.crew_vre.events"/>
+
+
+    <!-- ================ Local Event Repository configuration ================ -->
+
+    <!-- datasource for the local event repository -->
+    <bean id="repositoryDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${database.driver}"/>
+        <property name="url" value="${repository.db.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+
+    <!-- SessionFactory for Repository -->
+    <bean id="repositorySessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="repositoryDataSource"/>
+        <property name="configLocation" value="/WEB-INF/hibernate_repository.cfg.xml"/>
+        <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Repository HibernateTemplate -->
+    <bean id="hibernateRepositoryTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="repositorySessionFactory"/>
+    </bean>
+
+    <!-- transaction manager for repository - spring hibernate support -->
+    <bean id="repositoryTransactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="repositoryDataSource"/>
+        <property name="sessionFactory" ref="repositorySessionFactory"/>
+    </bean>
+
+    <!-- Greening Events repository DAO -->
+    <bean id="repositoryDao" class="org.ilrt.green_repository.dao.hibernate.RepositoryDaoImpl">
+        <constructor-arg index="0" ref="hibernateRepositoryTemplate"/>
+    </bean>
+
+    <!-- Greening Events repository facade -->
+
+    <bean id="repositoryEventManagementFacade"
+          class="org.ilrt.green_repository.RepositoryEventManagementFacade">
+        <constructor-arg index="0" ref="repositoryDao"/>
+    </bean>
+
 
 </beans>

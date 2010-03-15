@@ -369,6 +369,24 @@
         <property name="successView" value="redirect:./listHarvestSources.do"/>
     </bean>
 
+    <!-- =============== Greening Events repository configuration ================= -->
+
+    <bean id="repositoryEventValidator" class="org.ilrt.green_repository.web.RepositoryEventValidator">
+        <constructor-arg index="0" ref="repositoryEventManagementFacadeTarget"/>
+    </bean>
+
+    <bean name="/secured/repository/addRepositoryEvent.do"
+          class="org.ilrt.green_repository.web.AddRepositoryEventController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <property name="sessionForm" value="true"/>
+        <property name="commandClass"
+                  value="org.ilrt.green_repository.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEvent"/>
+        <property name="formView" value="addRepositoryEvent"/>
+        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
+        <property name="validator" ref="repositoryEventValidator"/>
+    </bean>
+
     <bean name="/secured/admin/sparql.do" class="net.crew_vre.web.controller.SparqlQueryController">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
         <property name="commandClass" value="net.crew_vre.web.form.SparqlQueryForm"/>
