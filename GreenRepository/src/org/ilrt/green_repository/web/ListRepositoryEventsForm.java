@@ -31,26 +31,53 @@
  *
  */
 
-package org.ilrt.green_repository.dao;
-
-import org.ilrt.green_repository.domain.RepositoryEvent;
-import org.ilrt.green_repository.web.RepositoryEventForm;
-
-import java.util.List;
+package org.ilrt.green_repository.web;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public interface RepositoryDao {
+public class ListRepositoryEventsForm {
 
-    void createRepositoryEvent(RepositoryEventForm repositoryEventForm);
+    private String eventId;
+    private String deleteButton;
+    private String editButton;
+    private String addButton;
 
-    void updateRepositoryEvent(RepositoryEventForm repositoryEventForm);
 
-    RepositoryEvent findRepositoryEvent(String eventId);
+    public ListRepositoryEventsForm() {
+    }
 
-    List<RepositoryEvent> findAllRepositoryEvents();
+    public String getEventId() {
+        return eventId;
+    }
 
-    void deleteRepositoryEvent(String eventId);
+    public void setEventId(String eventId) {
+        this.eventId = eventId;
+    }
+
+    public String getDeleteButton() {
+        return deleteButton;
+    }
+
+    public void setDeleteButton(String deleteButton) {
+        this.deleteButton = deleteButton;
+    }
+
+    public String getEditButton() {
+        return editButton;
+    }
+
+    public void setEditButton(String editButton) {
+        this.editButton = editButton;
+    }
+
+    public String getAddButton() {
+        return addButton;
+    }
+
+    public void setAddButton(String addButton) {
+        this.addButton = addButton;
+    }
+
 }

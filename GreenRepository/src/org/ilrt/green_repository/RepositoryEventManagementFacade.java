@@ -33,6 +33,7 @@
 
 package org.ilrt.green_repository;
 
+import org.ilrt.green_repository.web.RepositoryEventForm;
 import org.ilrt.green_repository.dao.RepositoryDao;
 import org.ilrt.green_repository.domain.RepositoryEvent;
 import java.util.List;

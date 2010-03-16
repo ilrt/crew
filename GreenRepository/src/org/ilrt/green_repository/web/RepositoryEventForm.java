@@ -31,9 +31,8 @@
  *
  */
 
-package org.ilrt.green_repository;
+package org.ilrt.green_repository.web;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Date;
