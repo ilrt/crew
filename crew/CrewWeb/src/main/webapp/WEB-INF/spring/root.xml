@@ -56,6 +56,7 @@
                 <value>classpath:crew.properties</value>
                 <value>classpath:version.properties</value>
                 <value>classpath:events.properties</value>
+                <value>classpath:repository.properties</value>
                 <value>classpath:caboto.properties</value>
             </list>
         </property>
@@ -84,7 +85,6 @@
         <property name="maxWait" value="10000"/>
         <property name="maxIdle" value="5000"/>
     </bean>
-
 
     <bean id="db" class="org.caboto.jena.db.impl.DatasourceDatabase">
         <constructor-arg index="0" ref="eventsDataSource"/>
@@ -1008,12 +1008,13 @@
     <!-- ================ Local Event Repository configuration ================ -->
 
     <!-- datasource for the local event repository -->
+
     <bean id="repositoryDataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
-        <property name="driverClassName" value="${database.driver}"/>
-        <property name="url" value="${repository.db.url}"/>
-        <property name="username" value="${database.username}"/>
-        <property name="password" value="${database.password}"/>
+        <property name="driverClassName" value="${repository.database.driver}"/>
+        <property name="url" value="${repository.database.url}"/>
+        <property name="username" value="${repository.database.username}"/>
+        <property name="password" value="${repository.database.password}"/>
     </bean>
 
     <!-- SessionFactory for Repository -->
