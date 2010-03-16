@@ -33,7 +33,6 @@
 
 package org.ilrt.green_repository.web;
 
-import org.ilrt.green_repository.RepositoryEventForm;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

@@ -33,7 +33,7 @@
 
 package org.ilrt.green_repository.dao.hibernate;
 
-import org.ilrt.green_repository.RepositoryEventForm;
+import org.ilrt.green_repository.web.RepositoryEventForm;
 import org.ilrt.green_repository.domain.RepositoryEvent;
 import org.ilrt.green_repository.dao.RepositoryDao;
 import org.springframework.orm.hibernate3.HibernateTemplate;

@@ -34,7 +34,7 @@
 
 package org.ilrt.green_repository.domain;
 
-import org.ilrt.green_repository.RepositoryEventForm;
+import org.ilrt.green_repository.web.RepositoryEventForm;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

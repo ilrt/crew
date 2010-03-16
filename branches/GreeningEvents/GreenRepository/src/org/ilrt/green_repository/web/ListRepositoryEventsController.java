@@ -38,6 +38,7 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -45,42 +46,58 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
+public class ListRepositoryEventsController extends SimpleFormController {
 
-public class AddRepositoryEventController extends SimpleFormController {
+    private RepositoryEventManagementFacade facade;
+    private final String VIEW_NAME = "listRepositoryEvents";
 
-
-    private final RepositoryEventManagementFacade facade;
-    private final String VIEW_NAME = "addRepositoryEvent";
-
-    public AddRepositoryEventController(RepositoryEventManagementFacade facade) {
+    public ListRepositoryEventsController(RepositoryEventManagementFacade facade) {
         this.facade = facade;
     }
+
+
+    @Override
+    public ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
+                                 Object command, BindException errors) throws ServletException {
+
+        ListRepositoryEventsForm listForm = (ListRepositoryEventsForm) command;
+
+        // add a new event
+        if (listForm.getAddButton() != null) {
+            return new ModelAndView("redirect:./addRepositoryEvent.do");
+        } else {
+
+            if (listForm.getEventId() != null) { // anything else needs an id
+
+                if (listForm.getDeleteButton() != null) { // delete
+                    facade.removeRepositoryEvent(listForm.getEventId());
+                } else if (listForm.getEditButton() != null) { // edit
+                    return new ModelAndView("redirect:./editRepositoryEvent.do?eventId="
+                            + listForm.getEventId());
+                }
+            }
+        }
+
+        // defaults to just showing the list of events
+        return listRepositoryEvents();
+    }
+
 
     @Override
     public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response,
                                  BindException errors) {
 
-        ModelAndView mav = new ModelAndView(VIEW_NAME);
-        RepositoryEventForm repositoryEventForm = new RepositoryEventForm();
-        mav.addObject("repositoryEventForm", repositoryEventForm);
-        return mav;
+        return listRepositoryEvents();
     }
 
-    @Override
-    protected ModelAndView processFormSubmission(HttpServletRequest request,
-                                                 HttpServletResponse response,
-                                                 Object command, BindException errors) {
 
-        // get the command object - using RepositoryEvent object
-        RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
+    private ModelAndView listRepositoryEvents() {
 
-        // only add if the add button is pressed ...
-        if (repositoryEventForm.getAddButton() != null) {
-            // save the repository event
-            facade.addRepositoryEvent(repositoryEventForm);
-        }
-
-        return new ModelAndView("redirect:./listRepositoryEvents.do");
+        // display a list of harvester sources
+        ModelAndView mav = new ModelAndView(VIEW_NAME);
+        mav.addObject("events", facade.getAllRepositoryEvents());
+        mav.addObject("listRepositoryEventsForm", new ListRepositoryEventsForm());
+        return mav;
     }
 
 }
