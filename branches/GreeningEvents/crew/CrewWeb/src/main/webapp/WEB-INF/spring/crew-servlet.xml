@@ -378,7 +378,7 @@
     <bean name="/secured/repository/listRepositoryEvents.do"
           class="org.ilrt.green_repository.web.ListRepositoryEventsController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
-        <property name="commandClass" value="org.ilrt.green_repository.ListRepositoryEventsForm"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.ListRepositoryEventsForm"/>
         <property name="commandName" value="listRepositoryEventsForm"/>
         <property name="formView" value="listRepositoryEvents"/>
     </bean>
@@ -387,7 +387,7 @@
           class="org.ilrt.green_repository.web.AddRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
         <property name="sessionForm" value="true"/>
-        <property name="commandClass" value="org.ilrt.green_repository.RepositoryEventForm"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
         <property name="commandName" value="repositoryEvent"/>
         <property name="formView" value="addRepositoryEvent"/>
         <property name="successView" value="redirect:./listRepositoryEvents.do"/>
