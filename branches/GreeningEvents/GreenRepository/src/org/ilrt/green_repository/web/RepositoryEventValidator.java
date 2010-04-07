@@ -85,7 +85,9 @@ public class RepositoryEventValidator implements Validator {
             }
 
             // check enddate is same as or after startdate
-            if (obj.getStartDateObj().compareTo(obj.getEndDateObj()) > 0) {
+            if (obj.getStartDateObj() != null 
+                    && obj.getEndDateObj() != null
+                    && obj.getStartDateObj().compareTo(obj.getEndDateObj()) > 0) {
                 errors.rejectValue("endDate", "repository.endDate.notafter");
             }
 

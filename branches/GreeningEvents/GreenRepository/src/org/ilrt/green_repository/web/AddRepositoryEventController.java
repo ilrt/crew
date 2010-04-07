@@ -71,7 +71,7 @@ public class AddRepositoryEventController extends SimpleFormController {
                                                  HttpServletResponse response,
                                                  Object command, BindException errors) {
 
-        // get the command object - using RepositoryEvent object
+        // get the command object - using RepositoryEventForm object
         RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
 
         // only add if the add button is pressed ...
