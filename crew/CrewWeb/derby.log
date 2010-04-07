@@ -1,0 +1,36 @@
+----------------------------------------------------------------
+2010-04-07 16:26:52.572 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance c013800d-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/DB/CrewEvents  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2010-04-07 16:26:56.709 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance 610e402f-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/Users  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2010-04-07 16:26:57.036 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance 018f0039-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/DB/Caboto  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2010-04-07 16:26:57.527 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance 82080041-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/DB/Recordings  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2010-04-07 16:26:58.241 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance 5e838074-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/DB/Annotations  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2010-04-07 16:26:58.638 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.2.1 - (599110): instance 67d0407f-0127-d918-7add-00001e9bced8
+on database directory /home/phil/NetBeansProjects/GreeningEvents/crew/CrewWeb/target/Repository  
+
+Database Class Loader started - derby.database.classpath=''

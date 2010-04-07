@@ -424,6 +424,12 @@
             <artifactId>ehcache</artifactId>
             <version>1.5.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>GreeningEvents</groupId>
+            <artifactId>GreenRepository</artifactId>
+            <version>0.1</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 </project>
+

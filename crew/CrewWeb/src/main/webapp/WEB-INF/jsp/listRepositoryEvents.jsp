@@ -50,7 +50,9 @@
                                     <tr>
                                         <td>
                                             <c:out value="${event.title}"/>
-                                            <form:hidden path="eventId" value="${event.eventId}"/>
+                                            <input type="hidden" value="${event.eventId}"/>
+                                            <%-- The line below should work according to the online doc - but doesn't!
+                                            <form:hidden path="eventId" value="${event.eventId}"/> --%>
                                         </td>
                                         <td><c:out value="${event.startDate}"/></td>
                                         <td><c:out value="${event.endDate}"/></td>
