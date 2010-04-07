@@ -372,7 +372,7 @@
     <!-- =============== Greening Events repository configuration ================= -->
 
     <bean id="repositoryEventValidator" class="org.ilrt.green_repository.web.RepositoryEventValidator">
-        <constructor-arg index="0" ref="repositoryEventManagementFacadeTarget"/>
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
     </bean>
 
     <bean name="/secured/repository/listRepositoryEvents.do"
@@ -388,7 +388,7 @@
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
         <property name="sessionForm" value="true"/>
         <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
-        <property name="commandName" value="repositoryEvent"/>
+        <property name="commandName" value="repositoryEventForm"/>
         <property name="formView" value="addRepositoryEvent"/>
         <property name="successView" value="redirect:./listRepositoryEvents.do"/>
         <property name="validator" ref="repositoryEventValidator"/>
