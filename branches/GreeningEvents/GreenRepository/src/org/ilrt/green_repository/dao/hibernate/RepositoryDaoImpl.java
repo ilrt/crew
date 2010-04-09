@@ -68,7 +68,7 @@ public class RepositoryDaoImpl extends HibernateDaoSupport implements Repository
     public RepositoryEvent findRepositoryEvent(String eventId) {
 
         List results =
-                this.getHibernateTemplate().find("from RepositoryEvent re where re.evenId = ?", eventId);
+                this.getHibernateTemplate().find("from RepositoryEvent re where re.eventId = ?", eventId);
 
         RepositoryEvent event = null;
         if (results.size() == 1) {

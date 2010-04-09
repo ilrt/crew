@@ -43,16 +43,16 @@ import java.util.Date;
  */
 public class RepositoryEventForm {
 
-    private String eventId;
-    private String title;
-    private String startDate;
-    private String endDate;
-    private String description;
-    private String location;
-    private String eventUrl;
-    private String addButton;
-    private String updateButton;
-    private String cancelButton;
+    private String eventId = null;
+    private String title = null;
+    private String startDate = null;
+    private String endDate = null;
+    private String description = null;
+    private String location = null;
+    private String eventUrl = null;
+    private String addButton = null;
+    private String updateButton = null;
+    private String cancelButton = null;
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
