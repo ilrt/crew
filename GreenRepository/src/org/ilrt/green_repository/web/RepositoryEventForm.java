@@ -33,6 +33,8 @@
 
 package org.ilrt.green_repository.web;
 
+import org.ilrt.green_repository.domain.RepositoryEvent;
+
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Date;
@@ -55,6 +57,18 @@ public class RepositoryEventForm {
     private String cancelButton = null;
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+    public RepositoryEventForm() {}
+
+    public RepositoryEventForm(RepositoryEvent event) {
+        this.eventId = event.getEventId();
+        this.title = event.getTitle();
+        this.startDate = event.getStartDate();
+        this.endDate = event.getEndDate();
+        this.description = event.getDescription();
+        this.location = event.getLocation();
+        this.eventUrl = event.getEventUrl();
+    }
 
     // Will only exist for existing events
     public String getEventId() {
