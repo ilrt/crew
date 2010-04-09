@@ -66,8 +66,8 @@
                         </tr>
                     </table>
                     <p>
-                        <input type="submit" name="addRepositoryEvent" value='<fmt:message key="repository.add"/>'/>
-                        <input type="submit" value='<fmt:message key="repository.cancel"/>'/>
+                        <input type="submit" name="addButton" value='<fmt:message key="repository.add"/>'/>
+                        <input type="submit" name="cancelButton" value='<fmt:message key="repository.cancel"/>'/>
                     </p>
                 </form:form>
 

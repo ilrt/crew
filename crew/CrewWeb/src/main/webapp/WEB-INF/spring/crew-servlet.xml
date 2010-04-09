@@ -386,10 +386,21 @@
     <bean name="/secured/repository/addRepositoryEvent.do"
           class="org.ilrt.green_repository.web.AddRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
-        <property name="sessionForm" value="true"/>
+        <!-- <property name="sessionForm" value="true"/> -->
         <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
         <property name="commandName" value="repositoryEventForm"/>
         <property name="formView" value="addRepositoryEvent"/>
+        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
+        <property name="validator" ref="repositoryEventValidator"/>
+    </bean>
+
+    <bean name="/secured/repository/editRepositoryEvent.do"
+          class="org.ilrt.green_repository.web.EditRepositoryEventController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <!-- <property name="sessionForm" value="true"/> -->
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEventForm"/>
+        <property name="formView" value="editRepositoryEvent"/>
         <property name="successView" value="redirect:./listRepositoryEvents.do"/>
         <property name="validator" ref="repositoryEventValidator"/>
     </bean>
