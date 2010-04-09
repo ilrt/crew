@@ -46,14 +46,10 @@
                                 </tr>
                             </thead>
                             <tbody class="list-body">
-                                <c:forEach var="events" items="${events}" varStatus="status">
+                                <c:forEach var="event" items="${events}" varStatus="status">
                                     <tr>
-                                        <td>
-                                            <c:out value="${event.title}"/>
-                                            <input type="hidden" value="${event.eventId}"/>
-                                            <%-- The line below should work according to the online doc - but doesn't!
-                                            <form:hidden path="eventId" value="${event.eventId}"/> --%>
-                                        </td>
+                                        <td><form:radiobutton path="eventId" value="${event.eventId}"/></td>
+                                        <td><c:out value="${event.title}"/></td>
                                         <td><c:out value="${event.startDate}"/></td>
                                         <td><c:out value="${event.endDate}"/></td>
                                         <td><c:out value="${event.description}"/></td>
