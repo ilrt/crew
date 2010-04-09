@@ -31,66 +31,42 @@
  *
  */
 
-package org.ilrt.green_repository.dao.hibernate;
+package org.ilrt.green_repository.web;
 
-import org.ilrt.green_repository.web.RepositoryEventForm;
-import org.ilrt.green_repository.domain.RepositoryEvent;
-import org.ilrt.green_repository.dao.RepositoryDao;
-import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.ilrt.green_repository.RepositoryEventManagementFacade;
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class RepositoryDaoImpl extends HibernateDaoSupport implements RepositoryDao {
 
-    public RepositoryDaoImpl(HibernateTemplate hibernateRepositoryTemplate) {
-        setHibernateTemplate(hibernateRepositoryTemplate);
+public class EditRepositoryEventController extends SimpleFormController {
+
+
+    private final RepositoryEventManagementFacade facade;
+
+    public EditRepositoryEventController(RepositoryEventManagementFacade facade) {
+        this.facade = facade;
     }
 
-    public void createRepositoryEvent(RepositoryEventForm repositoryEventForm) {
+    @Override
+    protected ModelAndView onSubmit(Object command, BindException errors) {
 
-        RepositoryEvent event = new RepositoryEvent(repositoryEventForm);
-        this.getHibernateTemplate().save(event);
+        // get the command object - RepositoryEventForm
+        RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
 
-    }
-
-    public void updateRepositoryEvent(RepositoryEventForm repositoryEventForm) {
-
-        RepositoryEvent event = new RepositoryEvent(repositoryEventForm);
-        this.getHibernateTemplate().update(event);
-
-    }
-
-    public RepositoryEvent findRepositoryEvent(String eventId) {
-
-        List results =
-                this.getHibernateTemplate().find("from RepositoryEvent re where re.eventId = ?", eventId);
-
-        RepositoryEvent event = null;
-        if (results.size() == 1) {
-            event = (RepositoryEvent) results.get(0);
+        // only add if the add button is pressed ...
+        if (repositoryEventForm.getUpdateButton() != null) {
+            // update the repository event
+            facade.updateRepositoryEvent(repositoryEventForm);
         }
 
-        return event;
+        return new ModelAndView("redirect:./listRepositoryEvents.do");
     }
-
-    public List<RepositoryEvent> findAllRepositoryEvents() {
-
-        List results =
-                this.getHibernateTemplate().find("from RepositoryEvent"); 
-
-        return results;
-    }
-
-    public void deleteRepositoryEvent(String eventId) {
-
-        RepositoryEvent event = findRepositoryEvent(eventId);
-        this.getHibernateTemplate().delete(event);
-
-    }
-
 }
