@@ -53,41 +53,41 @@ public class RepositoryEventValidator implements Validator {
     }
 
     public boolean supports(Class clazz) {
-        return RepositoryEventForm.class.equals(clazz);
+        return clazz.equals(RepositoryEventForm.class);
     }
 
-    public void validate(Object target, Errors errors) {
+    public void validate(Object command, Errors errors) {
 
-        RepositoryEventForm obj = (RepositoryEventForm) target;
+        RepositoryEventForm form = (RepositoryEventForm) command;
 
         // only validate if the cancel button is *NOT* selected
 
-        if (obj.getCancelButton() == null) {
+        if (form.getCancelButton() == null) {
 
-            // error obj, field name, error code
+            // error form, field name, error code
             // Fields that shouldn't be empty
-            ValidationUtils.rejectIfEmpty(errors, "title", "repository.title.missing");
-            ValidationUtils.rejectIfEmpty(errors, "location", "repository.location.missing");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "title", "repository.title.missing");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "location", "repository.location.missing");
 
             // check the protocol
-            if (!(obj.getEventUrl().startsWith("http://")
-                    || obj.getEventUrl().startsWith("https://"))) {
+            if (!(form.getEventUrl().startsWith("http://")
+                    || form.getEventUrl().startsWith("https://"))) {
                 errors.rejectValue("eventUrl", "repository.eventUrl.protocol");
             }
 
             // check date formats are yyyy-MM-dd
             Perl5Util perl5Util = new Perl5Util();
-            if (!perl5Util.match(DATE_REGEXP, obj.getStartDate())) {
+            if (!perl5Util.match(DATE_REGEXP, form.getStartDate())) {
                 errors.rejectValue("startDate", "repository.startDate.format");
             }
-            if (!perl5Util.match(DATE_REGEXP, obj.getEndDate())) {
+            if (!perl5Util.match(DATE_REGEXP, form.getEndDate())) {
                 errors.rejectValue("endDate", "repository.endDate.format");
             }
 
             // check enddate is same as or after startdate
-            if (obj.getStartDateObj() != null 
-                    && obj.getEndDateObj() != null
-                    && obj.getStartDateObj().compareTo(obj.getEndDateObj()) > 0) {
+            if (form.getStartDateObj() != null
+                    && form.getEndDateObj() != null
+                    && form.getStartDateObj().compareTo(form.getEndDateObj()) > 0) {
                 errors.rejectValue("endDate", "repository.endDate.notafter");
             }
 

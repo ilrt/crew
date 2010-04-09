@@ -67,11 +67,9 @@ public class AddRepositoryEventController extends SimpleFormController {
     }
 
     @Override
-    protected ModelAndView processFormSubmission(HttpServletRequest request,
-                                                 HttpServletResponse response,
-                                                 Object command, BindException errors) {
+    protected ModelAndView onSubmit(Object command, BindException errors) {
 
-        // get the command object - using RepositoryEventForm object
+        // get the command object - RepositoryEventForm
         RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
 
         // only add if the add button is pressed ...
@@ -82,5 +80,4 @@ public class AddRepositoryEventController extends SimpleFormController {
 
         return new ModelAndView("redirect:./listRepositoryEvents.do");
     }
-
 }
