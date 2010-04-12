@@ -383,6 +383,11 @@
         <property name="formView" value="listRepositoryEvents"/>
     </bean>
 
+    <bean name="/repository/localEvents.rdf"
+          class="org.ilrt.green_repository.web.LocalEventsRDFExportController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+    </bean>
+
     <bean name="/secured/repository/addRepositoryEvent.do"
           class="org.ilrt.green_repository.web.AddRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
