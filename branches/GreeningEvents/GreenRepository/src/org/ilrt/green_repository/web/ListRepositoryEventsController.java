@@ -35,7 +35,6 @@ package org.ilrt.green_repository.web;
 
 import org.ilrt.green_repository.RepositoryEventManagementFacade;
 import org.ilrt.green_repository.domain.RepositoryEvent;
-import org.ilrt.green_repository.web.RepositoryEventForm;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;

@@ -34,36 +34,41 @@
 package org.ilrt.green_repository.web;
 
 import org.ilrt.green_repository.RepositoryEventManagementFacade;
-import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.mvc.AbstractController;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 
-public class EditRepositoryEventController extends SimpleFormController {
+public class LocalEventsRDFExportController extends AbstractController {
 
+    private RepositoryEventManagementFacade repositoryFacade;
+    private final String VIEW_NAME = "localEventsRDFExport";
 
-    private final RepositoryEventManagementFacade facade;
-
-    public EditRepositoryEventController(RepositoryEventManagementFacade facade) {
-        this.facade = facade;
+    public LocalEventsRDFExportController(RepositoryEventManagementFacade repositoryFacade) {
+        this.repositoryFacade = repositoryFacade;
     }
+
 
     @Override
-    protected ModelAndView onSubmit(Object command, BindException errors) {
+    public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 
-        // get the command object - RepositoryEventForm
-        RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
-
-        // only add if the add button is pressed ...
-        if (repositoryEventForm.getUpdateButton() != null) {
-            // update the repository event
-            facade.updateRepositoryEvent(repositoryEventForm);
-        }
-
-        return new ModelAndView("redirect:./listRepositoryEvents.do");
+        return listRepositoryEventsRDF();
     }
+
+
+    private ModelAndView listRepositoryEventsRDF() {
+
+        // display a list of harvester sources
+        ModelAndView mav = new ModelAndView(VIEW_NAME);
+        mav.addObject("events", repositoryFacade.getAllRepositoryEvents());
+        return mav;
+    }
+
 }

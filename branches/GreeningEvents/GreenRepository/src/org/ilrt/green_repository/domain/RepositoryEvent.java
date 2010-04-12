@@ -41,6 +41,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.security.*;
 
 
 /**
@@ -108,6 +109,14 @@ public class RepositoryEvent implements Serializable {
         return location;
     }
 
+    public String getLocationHash() {
+        String locationHash = "";
+        if (this.getLocation() != null) {
+            locationHash = md5Hash(this.getLocation());
+        }
+        return locationHash;
+    }
+
     public void setLocation(String location) {
         this.location = location;
     }
@@ -135,6 +144,29 @@ public class RepositoryEvent implements Serializable {
         result = eventId.hashCode();
         result = 31 * result + title.hashCode();
         return result;
+    }
+
+    private String md5Hash(String input) {
+        String digestString = "";
+        if (input != null) {
+            byte[] bytes = input.getBytes();
+            try {
+                MessageDigest algorithm = MessageDigest.getInstance("md5");
+                algorithm.reset();
+                algorithm.update(bytes);
+                byte[] messageDigest = algorithm.digest();
+                StringBuffer digestBuffer = new StringBuffer();
+                for (int i=0;i < messageDigest.length; i++) {
+                    digestBuffer.append(Integer.toHexString((messageDigest[i] >>> 4) & 0x0F));
+                    digestBuffer.append(Integer.toHexString(0x0F & messageDigest[i]));
+                }
+                digestString = digestBuffer.toString();
+            }
+            catch (NoSuchAlgorithmException nsae) {
+                return digestString;
+            }
+        }
+        return digestString;
     }
 
     @Id
