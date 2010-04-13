@@ -63,17 +63,7 @@ public class AddRepositoryEventController extends SimpleFormController {
         this.harvesterFacade = harvesterFacade;
         this.config = config;
     }
-
-    @Override
-    public ModelAndView showForm(HttpServletRequest request, HttpServletResponse response,
-                                 BindException errors) {
-
-        ModelAndView mav = new ModelAndView(VIEW_NAME);
-        RepositoryEventForm repositoryEventForm = new RepositoryEventForm();
-        mav.addObject("repositoryEventForm", repositoryEventForm);
-        return mav;
-    }
-
+    
     @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
             Object command, BindException errors) {
@@ -98,6 +88,6 @@ public class AddRepositoryEventController extends SimpleFormController {
                     request.getContextPath() + "/" + repositoryLocation);
         }
 
-        return new ModelAndView("redirect:./listRepositoryEvents.do");
+       return new ModelAndView("redirect:./listRepositoryEvents.do");
     }
 }
