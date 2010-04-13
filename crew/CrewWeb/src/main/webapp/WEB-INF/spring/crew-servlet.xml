@@ -371,6 +371,10 @@
 
     <!-- =============== Greening Events repository configuration ================= -->
 
+    <util:map id="localRepositoryDetails" map-class="java.util.HashMap">
+        <entry key="location" value="repository/localEvents.rdf"/>
+    </util:map>
+
     <bean id="repositoryEventValidator" class="org.ilrt.green_repository.web.RepositoryEventValidator">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
     </bean>
@@ -378,6 +382,8 @@
     <bean name="/secured/repository/listRepositoryEvents.do"
           class="org.ilrt.green_repository.web.ListRepositoryEventsController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
         <property name="commandClass" value="org.ilrt.green_repository.web.ListRepositoryEventsForm"/>
         <property name="commandName" value="listRepositoryEventsForm"/>
         <property name="formView" value="listRepositoryEvents"/>
@@ -391,7 +397,8 @@
     <bean name="/secured/repository/addRepositoryEvent.do"
           class="org.ilrt.green_repository.web.AddRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
-        <!-- <property name="sessionForm" value="true"/> -->
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
         <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
         <property name="commandName" value="repositoryEventForm"/>
         <property name="formView" value="addRepositoryEvent"/>
@@ -402,7 +409,8 @@
     <bean name="/secured/repository/editRepositoryEvent.do"
           class="org.ilrt.green_repository.web.EditRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
-        <!-- <property name="sessionForm" value="true"/> -->
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
         <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
         <property name="commandName" value="repositoryEventForm"/>
         <property name="formView" value="editRepositoryEvent"/>
