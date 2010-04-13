@@ -34,9 +34,14 @@
 package org.ilrt.green_repository.web;
 
 import org.ilrt.green_repository.RepositoryEventManagementFacade;
+import net.crew_vre.harvester.HarvesterSourceManagementFacade;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 /**
  *
@@ -45,15 +50,21 @@ import org.springframework.web.servlet.mvc.SimpleFormController;
 
 public class EditRepositoryEventController extends SimpleFormController {
 
+    private final String DEFAULT_REPOSITORY_LOCATION = "repository/localEvents.rdf";
+    private Map<String, String> config;
+    private final RepositoryEventManagementFacade repositoryFacade;
+    private HarvesterSourceManagementFacade harvesterFacade;
 
-    private final RepositoryEventManagementFacade facade;
-
-    public EditRepositoryEventController(RepositoryEventManagementFacade facade) {
-        this.facade = facade;
+    public EditRepositoryEventController(RepositoryEventManagementFacade repositoryFacade,
+            HarvesterSourceManagementFacade harvesterFacade, final Map<String, String> config) {
+        this.repositoryFacade = repositoryFacade;
+        this.harvesterFacade = harvesterFacade;
+        this.config = config;
     }
 
     @Override
-    protected ModelAndView onSubmit(Object command, BindException errors) {
+    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
+            Object command, BindException errors) {
 
         // get the command object - RepositoryEventForm
         RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
@@ -61,7 +72,18 @@ public class EditRepositoryEventController extends SimpleFormController {
         // only add if the add button is pressed ...
         if (repositoryEventForm.getUpdateButton() != null) {
             // update the repository event
-            facade.updateRepositoryEvent(repositoryEventForm);
+            repositoryFacade.updateRepositoryEvent(repositoryEventForm);
+
+            // Re-harvest from the local repository
+            String repositoryLocation = config.get("location");
+            if (repositoryLocation == null)
+                repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
+
+            String msg = harvesterFacade.harvestSource(
+                    request.getScheme() + "://" +
+                    request.getServerName() + ":" +
+                    request.getServerPort() +
+                    request.getContextPath() + "/" + repositoryLocation);
         }
 
         return new ModelAndView("redirect:./listRepositoryEvents.do");
