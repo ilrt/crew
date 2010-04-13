@@ -42,6 +42,9 @@ import org.springframework.web.servlet.mvc.SimpleFormController;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+
+import net.crew_vre.harvester.HarvesterSourceManagementFacade;
 
 /**
  *
@@ -49,11 +52,17 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class ListRepositoryEventsController extends SimpleFormController {
 
-    private RepositoryEventManagementFacade facade;
+    private RepositoryEventManagementFacade repositoryFacade;
+    private HarvesterSourceManagementFacade harvesterFacade;
     private final String VIEW_NAME = "listRepositoryEvents";
+    private Map<String, String> config;
+    private final String DEFAULT_REPOSITORY_LOCATION = "repository/localEvents.rdf";
 
-    public ListRepositoryEventsController(RepositoryEventManagementFacade facade) {
-        this.facade = facade;
+    public ListRepositoryEventsController(RepositoryEventManagementFacade repositoryFacade,
+            HarvesterSourceManagementFacade harvesterFacade, final Map<String, String> config) {
+        this.repositoryFacade = repositoryFacade;
+        this.harvesterFacade = harvesterFacade;
+        this.config = config;
     }
 
 
@@ -71,10 +80,21 @@ public class ListRepositoryEventsController extends SimpleFormController {
             if (listForm.getEventId() != null) { // anything else needs an id
 
                 if (listForm.getDeleteButton() != null) { // delete
-                    facade.removeRepositoryEvent(listForm.getEventId());
+                    repositoryFacade.removeRepositoryEvent(listForm.getEventId());
+                    // Re-harvest from the local repository
+                    String repositoryLocation = config.get("location");
+                    if (repositoryLocation == null)
+                        repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
+
+                    String msg = harvesterFacade.harvestSource(
+                            request.getScheme() + "://" +
+                            request.getServerName() + ":" +
+                            request.getServerPort() +
+                            request.getContextPath() + "/" + repositoryLocation);
+                    
                 } else if (listForm.getEditButton() != null) { // we want to edit an existing role - redirect to correct view
                     if (listForm.getEventId() != null) {
-                        RepositoryEvent event = facade.getRepositoryEvent(listForm.getEventId());
+                        RepositoryEvent event = repositoryFacade.getRepositoryEvent(listForm.getEventId());
                         RepositoryEventForm form = new RepositoryEventForm(event);
                         ModelAndView mav = new ModelAndView("editRepositoryEvent");
                         mav.addObject("repositoryEventForm", form);
@@ -101,7 +121,7 @@ public class ListRepositoryEventsController extends SimpleFormController {
 
         // display a list of harvester sources
         ModelAndView mav = new ModelAndView(VIEW_NAME);
-        mav.addObject("events", facade.getAllRepositoryEvents());
+        mav.addObject("events", repositoryFacade.getAllRepositoryEvents());
         mav.addObject("listRepositoryEventsForm", new ListRepositoryEventsForm());
         return mav;
     }
