@@ -36,9 +36,6 @@ body {
 }
 
 #headerLinks {
-    position: absolute;
-    top: 25px;
-    left: 162px;
 }
 
 #headerLinks a:link, #headerLinks a:visited, #headerLinks a:active {
@@ -52,10 +49,12 @@ body {
 }
 
 #headerBrowse {
+    /*
     display: inline;
     position: absolute;
     left: 160px;
     bottom: 3px;
+    */
 }
 
 #headerBrowse a:link, #headerBrowse a:hover, #headerBrowse a:visited, #headerBrowse a:active {
@@ -94,9 +93,6 @@ body {
 }
 
 #headerMessage {
-    position: absolute;
-    right: 0px;
-    top: 14px;
 }
 
 #breaker {
@@ -567,4 +563,25 @@ li.pagination {
 
 .search-hit {
     font-weight: bold;
+}
+
+/* Jisc Digital Media style */
+#peopleBtn {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#D43C00 url(http://www.jiscdigitalmedia.ac.uk/images/site/adviceHdr.gif) repeat-x scroll 0 0;
+}
+#peopleBtn:hover {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#FE6D01 url(/images/site/adviceHdron.gif) repeat-x scroll 0 0;
+}
+.jdmResultDetails p {
+    float:left;
+    font-size:1.1em;
+    height:2em;
+    padding-left:1.3em;
+    padding-top:0.4em;
 }
