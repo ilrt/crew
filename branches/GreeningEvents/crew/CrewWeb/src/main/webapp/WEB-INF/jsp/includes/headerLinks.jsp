@@ -17,12 +17,8 @@
 
         <%-- admin link --%>
         <authz:authorize ifAnyGranted="ROLE_ADMIN,ROLE_HARVESTER_ADMIN">
-            <li><a href="${pageContext.request.contextPath}/adminActions.do"><fmt:message key="topNav.admin"/></a>&nbsp;|</li>
+            <li><a href="${pageContext.request.contextPath}/adminActions.do"><fmt:message key="topNav.admin"/></a></li>
         </authz:authorize>
-
-        <%-- see links these whatever --%>
-        <li><a href="${pageContext.request.contextPath}/help.html"><fmt:message key="topNav.help"/></a>&nbsp;|</li>
-        <li><a href="${pageContext.request.contextPath}/about.html"><fmt:message key="topNav.about"/></a></li>
 
     </ul>
 
