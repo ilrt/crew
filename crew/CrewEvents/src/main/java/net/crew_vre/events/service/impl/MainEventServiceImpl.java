@@ -78,6 +78,15 @@ public class MainEventServiceImpl implements MainEventService {
         return mainEventDao.findEventsByCreationDate(startDate, endDate);
     }
 
+    public List<EventPart> getEventsByDateAsc(final LocalDate startDate, final LocalDate endDate) {
+        return mainEventDao.findEventsByDateAsc(startDate, endDate);
+    }
+
+    public List<EventPart> getEventsByDateAsc(final LocalDate startDate, final LocalDate endDate,
+                                       final int limit, final int offset) {
+        return mainEventDao.findEventsByDateAsc(startDate, endDate, limit, offset);
+    }
+
     public List<EventPart> getEventsByCreationDate(DateTime startDate, DateTime endDate, int limit,
                                                int offset) {
         return mainEventDao.findEventsByCreationDate(startDate, endDate, limit, offset);

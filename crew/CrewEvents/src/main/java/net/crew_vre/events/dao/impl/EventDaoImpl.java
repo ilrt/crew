@@ -161,18 +161,18 @@ public class EventDaoImpl implements EventDao {
             // get the start and end dates -> xsd:date (needed for Intute data)
             LocalDate startDate = null;
             LocalDate endDate = null;
-/**
+
             if (qs.getLiteral("startDate") != null) {
                 try {
-                    startDate = Utility.parseStringToDateTime(qs.getLiteral("startDateTime").getLexicalForm());
-                    endDate = Utility.parseStringToDateTime(qs.getLiteral("endDateTime").getLexicalForm());
+                    startDate = Utility.parseStringToLocalDate(qs.getLiteral("startDate").getLexicalForm());
+                    endDate = Utility.parseStringToLocalDate(qs.getLiteral("endDate").getLexicalForm());
                 } catch (ParseException e) {
                     logger.error(e.getMessage());
                 }
             }
-            event.setStartDateTime(startDateTime);
-            event.setEndDateTime(endDateTime);
-**/
+            event.setStartDate(startDate);
+            event.setEndDate(endDate);
+
 
             // get the event venue (place)
             event.setPlaces(findEventPlaces(event.getId()));
