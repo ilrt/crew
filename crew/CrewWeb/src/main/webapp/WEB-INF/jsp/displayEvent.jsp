@@ -138,7 +138,7 @@
         ${event.title}
 </div>
 
-        <div><h1 id="event-title">${event.title}</h1></div>
+        <div><h1>${event.title}</h1></div>
 
 <div class="contentBlock">
 
@@ -339,12 +339,13 @@
 
 <div class="contentBlock">
 
-        <h2>Annotations</h2>
+        <div id="annotations-title">Comments</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
-        <p>Add your own annotation...<br />
-        - use wiki style notation to add links, e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
-        or [http://www.jiscdigitalmedia.ac.uk]</p>
+        <div id="annotation-note">Add your own annotation...<br />
+        - use wiki style notation to add links, <br />
+        e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
+        or [http://www.jiscdigitalmedia.ac.uk]</div>
 
         <div id="annotation-messages"></div>
 

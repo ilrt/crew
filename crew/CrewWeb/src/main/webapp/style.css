@@ -444,6 +444,18 @@ li.pagination {
     text-align: center;
 }
 
+#annotations-title {
+    color: #F57B20;
+    clear:both;
+    display:inline;
+    float:left;
+    font-size:1.375em;
+    font-weight:bold;
+    margin:0;
+    padding:1em 0 0;
+    width:100%;
+}
+
 .annotation-entry {
     padding-top: 0.4em;
     padding-bottom: 1.5em;
@@ -451,34 +463,37 @@ li.pagination {
 }
 
 #annotations-results {
-    border-bottom: darkgray dashed 1px;
+    /* border-bottom: darkgray dashed 1px; */
 }
 
 .annotation-entry-title-public {
-    padding: 0.4em;
-    background-color: bisque;
     font-weight: bold;
-    border-top: darkgray solid 1px;
-    border-bottom: darkgray solid 1px;
 }
 
 .annotation-entry-title-private {
-    padding: 0.4em;
-    background-color: tan;
     font-weight: bold;
-    border-top: darkgray solid 1px;
-    border-bottom: darkgray solid 1px;
 }
 
 .annotation-entry-description {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
+    font-size:0.85em;
+    line-height:1.5em;
 }
 
 .annotation-entry-created {
     font-style: italic;
-    color: #008b8b;
+    font-size:0.8em;
     float: left;
+}
+
+#annotation-note {
+    clear:both;
+    float:left;
+    font-size:0.8em;
+    line-height:1.5em;
+    padding:2em 0 2em 0;
+    width:100%;
 }
 
 .fieldSet {
