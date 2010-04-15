@@ -52,7 +52,7 @@ public class ListEventsFacadeImpl implements ListEventsFacade {
         LocalDate future = today.plusMonths(1);
 
         List<EventPart> results =
-            mainEventService.getEventsByDate(today, future);
+            mainEventService.getEventsByDateAsc(today, future);
         filterEmptyEvents(results);
         return results;
     }
@@ -63,7 +63,7 @@ public class ListEventsFacadeImpl implements ListEventsFacade {
         LocalDate future = today.plusMonths(1);
 
         List<EventPart> results = 
-            mainEventService.getEventsByDate(today, future, limit, offset);
+            mainEventService.getEventsByDateAsc(today, future, limit, offset);
         filterEmptyEvents(results);
         return results;
     }
