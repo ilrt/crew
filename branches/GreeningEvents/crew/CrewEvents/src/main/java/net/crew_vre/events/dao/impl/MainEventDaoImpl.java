@@ -149,6 +149,23 @@ public class MainEventDaoImpl implements MainEventDao {
                 "$startDate", endDate.toString(), "$endDate"), limit, offset));
     }
 
+    public List<EventPart> findEventsByDateAsc(final LocalDate startDate, final LocalDate endDate) {
+	StringBuffer buffer = new StringBuffer(createSparql(createDateFilter(dateType, startDate.toString(),
+                "$startDate", endDate.toString(), "$endDate")))
+		.append("\nORDER BY ASC(?startDate)\n");
+        return findEvents(buffer.toString());
+    }
+
+    public List<EventPart> findEventsByDateAsc(final LocalDate startDate, final LocalDate endDate,
+                                        final int limit, final int offset) {
+	StringBuffer buffer = new StringBuffer(createSparql(createDateFilter(dateType, startDate.toString(),
+                "$startDate", endDate.toString(), "$endDate")))
+		.append("\nORDER BY ASC(?startDate)")
+                .append("\nLIMIT ").append(limit)
+                .append("\nOFFSET ").append(offset);
+        return findEvents(buffer.toString());
+    }
+
     public List<EventPart> findEventsWithConstraint(String constraint) {
         return findEvents(createConstraint(constraint));
     }
@@ -220,10 +237,10 @@ public class MainEventDaoImpl implements MainEventDao {
         if (qs.getLiteral("startDateTime") != null) {
             try {
                 startDateTime =
-                        Utility.parseStringToDateTime(qs.getLiteral("startDate")
+                        Utility.parseStringToDateTime(qs.getLiteral("startDateTime")
                                 .getLexicalForm());
                 endDateTime =
-                        Utility.parseStringToDateTime(qs.getLiteral("endDate")
+                        Utility.parseStringToDateTime(qs.getLiteral("endDateTime")
                                 .getLexicalForm());
             } catch (ParseException e) {
                 logger.error(e.getMessage());
