@@ -88,6 +88,11 @@ function formatAnnotation(annotation, uid, admin) {
     var date = parseDate(annotation.created);
     var author = parseAuthor(annotation.author);
     var body = annotation.body.description.replace(/\n|\r/g, "<br />\n");
+    /* Decode user entered urls in wiki format */
+    /* Single url in brackets e.g. [http://link.com] */
+    body = body.replace(/\[([^\|\]]+)\]/g, "<a href=\"$1\">$1</a>");
+    /* Url in brackets with link text e.g. [link text|http://link.com] */
+    body = body.replace(/\[([^\|]+)\|([^\]]+)\]/g, "<a href=\"$2\">$1</a>");
     var type = findType(annotation.id);
 
     var output = "<div class='annotation-entry'>";
