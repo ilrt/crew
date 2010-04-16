@@ -163,15 +163,15 @@ public class PlaceDaoImpl implements PlaceDao {
             place.setTitle(qs.getLiteral("name").getLexicalForm());
         }
 
-        if (qs.getLiteral("longitude") != null) {
+        if (qs.getLiteral("longitude") != null && !qs.getLiteral("longitude").getLexicalForm().equals("")) {
             place.setLongitude(Float.valueOf(qs.getLiteral("longitude").getLexicalForm()));
         }
 
-        if (qs.getLiteral("latitude") != null) {
+        if (qs.getLiteral("latitude") != null && !qs.getLiteral("latitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("latitude").getLexicalForm()));
         }
 
-        if (qs.getLiteral("altitude") != null) {
+        if (qs.getLiteral("altitude") != null && !qs.getLiteral("altitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("altitude").getLexicalForm()));
         }
 
