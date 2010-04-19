@@ -62,6 +62,8 @@ public class RepositoryEvent implements Serializable {
         this.endDate = form.getEndDate();
         this.description = form.getDescription();
         this.location = form.getLocation();
+        this.latitude = form.getLatitude();
+        this.longitude = form.getLongitude();
         this.eventUrl = form.getEventUrl();
     }
 
@@ -119,6 +121,22 @@ public class RepositoryEvent implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public String getEventUrl() {
@@ -187,6 +205,12 @@ public class RepositoryEvent implements Serializable {
 
     @Column(name = "LOCATION", nullable = true)
     private String location;
+
+    @Column(name = "LATITUDE", nullable = true)
+    private String latitude;
+
+    @Column(name = "LONGITUDE", nullable = true)
+    private String longitude;
 
     @Column(name = "EVENTURL", nullable = true)
     private String eventUrl;
