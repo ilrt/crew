@@ -61,6 +61,16 @@
                             <td><form:errors path="location"/></td>
                         </tr>
                         <tr>
+                            <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
+                            <td><form:input path="latitude"/></td>
+                            <td><form:errors path="latitude"/></td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventLongitude"/></strong></td>
+                            <td><form:input path="longitude"/></td>
+                            <td><form:errors path="longitude"/></td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="repository.eventUrl"/></strong></td>
                             <td><form:input path="eventUrl"/></td>
                             <td><form:errors path="eventUrl"/></td>

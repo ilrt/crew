@@ -27,8 +27,8 @@
             <eswc:hasLocation>
              <rdf:Description rdf:about="${event.locationHash}">
                 <dc:title>${event.location}</dc:title>
-                <pos:lat/>
-                <pos:long/>
+                <pos:lat>${event.latitude}</pos:lat>
+                <pos:long>${event.longitude}</pos:long>
              </rdf:Description>
             </eswc:hasLocation>
             <eswc:hasProgramme rdf:resource="${event.eventUrl}"/>
