@@ -51,6 +51,8 @@ public class RepositoryEventForm {
     private String endDate = null;
     private String description = null;
     private String location = null;
+    private String latitude = null;
+    private String longitude = null;
     private String eventUrl = null;
     private String addButton = null;
     private String updateButton = null;
@@ -67,6 +69,8 @@ public class RepositoryEventForm {
         this.endDate = event.getEndDate();
         this.description = event.getDescription();
         this.location = event.getLocation();
+        this.latitude = event.getLatitude();
+        this.longitude = event.getLongitude();
         this.eventUrl = event.getEventUrl();
     }
 
@@ -143,6 +147,22 @@ public class RepositoryEventForm {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public String getEventUrl() {
