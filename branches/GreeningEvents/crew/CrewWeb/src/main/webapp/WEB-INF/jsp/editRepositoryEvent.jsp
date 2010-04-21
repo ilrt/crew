@@ -55,21 +55,58 @@
                             <td><form:input path="description"/></td>
                             <td><form:errors path="description"/></td>
                         </tr>
+                    </table>
+                    <table class="details-table">
                         <tr>
                             <td><strong><fmt:message key="repository.eventLocation"/></strong></td>
                             <td><form:input path="location"/></td>
-                            <td><form:errors path="location"/></td>
-                        </tr>
-                        <tr>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input path="latitude"/></td>
-                            <td><form:errors path="latitude"/></td>
-                        </tr>
-                        <tr>
                             <td><strong><fmt:message key="repository.eventLongitude"/></strong></td>
                             <td><form:input path="longitude"/></td>
-                            <td><form:errors path="longitude"/></td>
+                            <td><form:errors path="location"/>
+                                <form:errors path="latitude"/>
+                                <form:errors path="longitude"/>
+                            </td>
                         </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td><form:input path="startPoint1"/></td>
+                            <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
+                            <td><form:input path="startPointLat1"/></td>
+                            <td><strong><fmt:message key="repository.eventLongitude"/></strong></td>
+                            <td><form:input path="startPointLong1"/></td>
+                            <td><form:errors path="startPoint1"/>
+                                <form:errors path="startPointLat1"/>
+                                <form:errors path="startPointLong1"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td><form:input path="startPoint2"/></td>
+                            <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
+                            <td><form:input path="startPointLat2"/></td>
+                            <td><strong><fmt:message key="repository.eventLongitude"/></strong></td>
+                            <td><form:input path="startPointLong2"/></td>
+                            <td><form:errors path="startPoint2"/>
+                                <form:errors path="startPointLat2"/>
+                                <form:errors path="startPointLong2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td><form:input path="startPoint3"/></td>
+                            <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
+                            <td><form:input path="startPointLat3"/></td>
+                            <td><strong><fmt:message key="repository.eventLongitude"/></strong></td>
+                            <td><form:input path="startPointLong3"/></td>
+                            <td><form:errors path="startPoint3"/>
+                                <form:errors path="startPointLat3"/>
+                                <form:errors path="startPointLong3"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="details-table">
                         <tr>
                             <td><strong><fmt:message key="repository.eventUrl"/></strong></td>
                             <td><form:input path="eventUrl"/></td>

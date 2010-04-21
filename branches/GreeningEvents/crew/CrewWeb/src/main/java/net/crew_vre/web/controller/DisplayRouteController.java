@@ -35,7 +35,7 @@ package net.crew_vre.web.controller;
 
 import java.util.List;
 import net.crew_vre.events.domain.Place;
-import net.crew_vre.web.facade.DisplayPlaceFacade;
+import net.crew_vre.web.facade.DisplayRouteFacade;
 import net.crew_vre.web.history.BrowseHistory;
 import net.crew_vre.events.domain.StartPoint;
 import org.springframework.web.servlet.ModelAndView;
@@ -45,14 +45,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author Mike Jones (mike.a.jones@bristol.ac.uk)
- * @version $Id: DisplayPlaceController.java 1191 2009-03-31 13:38:51Z cmmaj $
+ * @author Pihl Cross (phil.cross@bristol.ac.uk)
  */
-public class DisplayPlaceController implements Controller {
+public class DisplayRouteController implements Controller {
 
-    public DisplayPlaceController(DisplayPlaceFacade displayPlaceFacade, BrowseHistory
-            browseHistory, String googleMapKey) {
-        this.displayPlaceFacade = displayPlaceFacade;
+    public DisplayRouteController(DisplayRouteFacade displayRouteFacade, BrowseHistory
+            browseHistory) {
+        this.displayRouteFacade = displayRouteFacade;
         this.browseHistory = browseHistory;
     }
 
@@ -60,31 +59,28 @@ public class DisplayPlaceController implements Controller {
             throws Exception {
 
         Place place = null;
-        List<StartPoint> startPoints = null;
+        StartPoint startPoint = null;
 
         if (request.getParameter("placeId") != null) {
-            place = displayPlaceFacade.displayPlace(request.getParameter("placeId"));
+            place = displayRouteFacade.displayPlace(request.getParameter("placeId"));
         }
 
-        if (request.getParameter("eventId") != null) {
-            startPoints = displayPlaceFacade.getStartPoints(request.getParameter("eventId"));
+        if (request.getParameter("startPointId") != null) {
+            startPoint = displayRouteFacade.displayStartPoint(request.getParameter("startPointId"));
         }
 
-        if (place != null) {
-            browseHistory.addHistory(request, place.getTitle());
+        if (startPoint != null) {
+            browseHistory.addHistory(request, startPoint.getTitle());
         }
 
-        ModelAndView mov = new ModelAndView("displayPlace");
+        ModelAndView mov = new ModelAndView("displayRoute");
         mov.addObject("place", place);
-        if (startPoints != null)
-            mov.addObject("startPointList", startPoints);
+        mov.addObject("startPoint", startPoint);
 
         return mov;
     }
 
-    private DisplayPlaceFacade displayPlaceFacade;
-
-    private String googleMapKey;
+    private DisplayRouteFacade displayRouteFacade;
 
     private BrowseHistory browseHistory;
 
