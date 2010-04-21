@@ -1,0 +1,10 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT $graph $startpoint $name $latitude $longitude
+WHERE {
+    GRAPH $graph {
+        $startpoint dc:title $name .
+        OPTIONAL { $startpoint pos:lat $latitude .
+                   $startpoint pos:long $longitude } .
+    }
+}
