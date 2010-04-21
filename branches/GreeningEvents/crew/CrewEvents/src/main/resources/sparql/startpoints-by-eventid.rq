@@ -1,0 +1,12 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ge: <http://www.ilrt.bris.ac.uk/GreeningEvents/ontology#>
+SELECT $graph $id $startPoint $name $latitude $longitude
+WHERE {
+    GRAPH $graph {
+        $id ge:startPoint $startPoint .
+        $startPoint dc:title $name .
+        OPTIONAL { $startPoint pos:lat $latitude .
+                   $startPoint pos:long $longitude } .
+    }
+}
