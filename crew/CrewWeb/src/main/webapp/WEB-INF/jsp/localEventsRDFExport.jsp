@@ -12,7 +12,8 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:eswc="http://www.eswc2006.org/technologies/ontology#">
+         xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+         xmlns:ge="http://www.ilrt.bris.ac.uk/GreeningEvents/ontology#">
 
     <c:forEach var="event" items="${events}" varStatus="status">
         <rdf:Description rdf:about="http://www.jiscdigitalmedia.ac.uk/events/${event.eventId}">
@@ -31,6 +32,33 @@
                 <pos:long>${event.longitude}</pos:long>
              </rdf:Description>
             </eswc:hasLocation>
+        <c:if test="${not empty event.startPointLat1}">
+             <ge:startPoint>
+                 <rdf:Description rdf:about="${event.startPointHash1}">
+                    <dc:title>${event.startPoint1}</dc:title>
+                    <pos:lat>${event.startPointLat1}</pos:lat>
+                    <pos:long>${event.startPointLong1}</pos:long>
+                 </rdf:Description>
+             </ge:startPoint>
+        </c:if>
+        <c:if test="${not empty event.startPointLat2}">
+             <ge:startPoint>
+                 <rdf:Description rdf:about="${event.startPointHash2}">
+                    <dc:title>${event.startPoint2}</dc:title>
+                    <pos:lat>${event.startPointLat2}</pos:lat>
+                    <pos:long>${event.startPointLong2}</pos:long>
+                 </rdf:Description>
+             </ge:startPoint>
+        </c:if>
+        <c:if test="${not empty event.startPointLat3}">
+             <ge:startPoint>
+                 <rdf:Description rdf:about="${event.startPointHash3}">
+                    <dc:title>${event.startPoint3}</dc:title>
+                    <pos:lat>${event.startPointLat3}</pos:lat>
+                    <pos:long>${event.startPointLong3}</pos:long>
+                 </rdf:Description>
+             </ge:startPoint>
+        </c:if>
             <eswc:hasProgramme rdf:resource="${event.eventUrl}"/>
         </rdf:Description>
     </c:forEach>

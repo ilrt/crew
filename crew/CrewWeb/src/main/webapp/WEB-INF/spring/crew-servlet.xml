@@ -79,6 +79,13 @@
         <constructor-arg index="2" value="${google.map.key}"/>
     </bean>
 
+    <!-- display route -->
+    <bean name="/displayRoute.do" id="displayRouteController"
+          class="net.crew_vre.web.controller.DisplayRouteController">
+        <constructor-arg index="0" ref="displayRouteFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
+    </bean>
+
     <!-- display person -->
     <bean name="/displayPerson.do" id="displayPersonController"
           class="net.crew_vre.web.controller.DisplayPersonController">

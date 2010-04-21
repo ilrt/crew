@@ -418,6 +418,16 @@
         </property>
     </bean>
 
+    <bean id="startPointDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="startPointDaoTarget"/>
+        <property name="proxyInterfaces" value="net.crew_vre.events.dao.StartPointDao"/>
+        <property name="interceptorNames">
+            <list>
+                <value>findAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
     <bean id="locationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="locationDaoTarget"/>
         <property name="proxyInterfaces" value="net.crew_vre.events.dao.LocationDao"/>
@@ -553,6 +563,10 @@
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
+    <bean id="startPointDaoTarget" class="net.crew_vre.events.dao.impl.StartPointDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
     <bean id="locationDaoTarget" class="net.crew_vre.events.dao.impl.LocationDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
@@ -648,6 +662,12 @@
 
     <bean id="displayPlaceFacade" class="net.crew_vre.web.facade.impl.DisplayPlaceFacadeImpl">
         <constructor-arg index="0" ref="placeDao"/>
+        <constructor-arg index="1" ref="startPointDao"/>
+    </bean>
+
+    <bean id="displayRouteFacade" class="net.crew_vre.web.facade.impl.DisplayRouteFacadeImpl">
+        <constructor-arg index="0" ref="placeDao"/>
+        <constructor-arg index="1" ref="startPointDao"/>
     </bean>
 
     <bean id="displayPersonFacade" class="net.crew_vre.web.facade.impl.DisplayPersonFacadeImpl">
