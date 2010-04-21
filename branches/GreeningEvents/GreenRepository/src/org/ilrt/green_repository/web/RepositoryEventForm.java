@@ -51,8 +51,17 @@ public class RepositoryEventForm {
     private String endDate = null;
     private String description = null;
     private String location = null;
+    private String startPoint1 = null;
+    private String startPoint2 = null;
+    private String startPoint3 = null;
     private String latitude = null;
+    private String startPointLat1 = null;
+    private String startPointLat2 = null;
+    private String startPointLat3 = null;
     private String longitude = null;
+    private String startPointLong1 = null;
+    private String startPointLong2 = null;
+    private String startPointLong3 = null;
     private String eventUrl = null;
     private String addButton = null;
     private String updateButton = null;
@@ -69,8 +78,17 @@ public class RepositoryEventForm {
         this.endDate = event.getEndDate();
         this.description = event.getDescription();
         this.location = event.getLocation();
+        this.startPoint1 = event.getStartPoint1();
+        this.startPoint2 = event.getStartPoint2();
+        this.startPoint3 = event.getStartPoint3();
         this.latitude = event.getLatitude();
+        this.startPointLat1 = event.getStartPointLat1();
+        this.startPointLat2 = event.getStartPointLat2();
+        this.startPointLat3 = event.getStartPointLat3();
         this.longitude = event.getLongitude();
+        this.startPointLong1 = event.getStartPointLong1();
+        this.startPointLong2 = event.getStartPointLong2();
+        this.startPointLong3 = event.getStartPointLong3();
         this.eventUrl = event.getEventUrl();
     }
 
@@ -149,6 +167,30 @@ public class RepositoryEventForm {
         this.location = location;
     }
 
+    public String getStartPoint1() {
+        return startPoint1;
+    }
+
+    public void setStartPoint1(String startPoint1) {
+        this.startPoint1 = startPoint1;
+    }
+
+    public String getStartPoint2() {
+        return startPoint2;
+    }
+
+    public void setStartPoint2(String startPoint2) {
+        this.startPoint2 = startPoint2;
+    }
+
+    public String getStartPoint3() {
+        return startPoint3;
+    }
+
+    public void setStartPoint3(String startPoint3) {
+        this.startPoint3 = startPoint3;
+    }
+
     public String getLatitude() {
         return latitude;
     }
@@ -157,12 +199,60 @@ public class RepositoryEventForm {
         this.latitude = latitude;
     }
 
+    public String getStartPointLat1() {
+        return startPointLat1;
+    }
+
+    public void setStartPointLat1(String startPointLat1) {
+        this.startPointLat1 = startPointLat1;
+    }
+
+    public String getStartPointLat2() {
+        return startPointLat2;
+    }
+
+    public void setStartPointLat2(String startPointLat2) {
+        this.startPointLat2 = startPointLat2;
+    }
+
+    public String getStartPointLat3() {
+        return startPointLat3;
+    }
+
+    public void setStartPointLat3(String startPointLat3) {
+        this.startPointLat3 = startPointLat3;
+    }
+
     public String getLongitude() {
         return longitude;
     }
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getStartPointLong1() {
+        return startPointLong1;
+    }
+
+    public void setStartPointLong1(String startPointLong1) {
+        this.startPointLong1 = startPointLong1;
+    }
+
+    public String getStartPointLong2() {
+        return startPointLong2;
+    }
+
+    public void setStartPointLong2(String startPointLong2) {
+        this.startPointLong2 = startPointLong2;
+    }
+
+    public String getStartPointLong3() {
+        return startPointLong3;
+    }
+
+    public void setStartPointLong3(String startPointLong3) {
+        this.startPointLong3 = startPointLong3;
     }
 
     public String getEventUrl() {

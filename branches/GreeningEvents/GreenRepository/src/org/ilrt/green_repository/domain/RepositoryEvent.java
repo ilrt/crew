@@ -62,8 +62,17 @@ public class RepositoryEvent implements Serializable {
         this.endDate = form.getEndDate();
         this.description = form.getDescription();
         this.location = form.getLocation();
+        this.startPoint1 = form.getStartPoint1();
+        this.startPoint2 = form.getStartPoint2();
+        this.startPoint3 = form.getStartPoint3();
         this.latitude = form.getLatitude();
+        this.startPointLat1 = form.getStartPointLat1();
+        this.startPointLat2 = form.getStartPointLat2();
+        this.startPointLat3 = form.getStartPointLat3();
         this.longitude = form.getLongitude();
+        this.startPointLong1 = form.getStartPointLong1();
+        this.startPointLong2 = form.getStartPointLong2();
+        this.startPointLong3 = form.getStartPointLong3();
         this.eventUrl = form.getEventUrl();
     }
 
@@ -123,6 +132,56 @@ public class RepositoryEvent implements Serializable {
         this.location = location;
     }
 
+    public String getStartPoint1() {
+        return startPoint1;
+    }
+
+    public void setStartPoint1(String startPoint1) {
+        this.startPoint1 = startPoint1;
+    }
+
+    public String getStartPointHash1() {
+        String startPointHash1 = "";
+        if (this.getStartPoint1() != null) {
+            startPointHash1 = md5Hash(this.getStartPoint1());
+            startPointHash1 = "SPT_" + startPointHash1;
+        }
+        return startPointHash1;
+    }
+
+    public String getStartPoint2() {
+        return startPoint2;
+    }
+
+    public void setStartPoint2(String startPoint2) {
+        this.startPoint2 = startPoint2;
+    }
+
+    public String getStartPointHash2() {
+        String startPointHash2 = "";
+        if (this.getStartPoint2() != null) {
+            startPointHash2 = md5Hash(this.getStartPoint2());
+            startPointHash2 = "SPT_" + startPointHash2;        }
+        return startPointHash2;
+    }
+
+    public String getStartPoint3() {
+        return startPoint3;
+    }
+
+    public void setStartPoint3(String startPoint3) {
+        this.startPoint3 = startPoint3;
+    }
+
+    public String getStartPointHash3() {
+        String startPointHash3 = "";
+        if (this.getStartPoint3() != null) {
+            startPointHash3 = md5Hash(this.getStartPoint3());
+            startPointHash3 = "SPT_" + startPointHash3;
+        }
+        return startPointHash3;
+    }
+
     public String getLatitude() {
         return latitude;
     }
@@ -131,12 +190,60 @@ public class RepositoryEvent implements Serializable {
         this.latitude = latitude;
     }
 
+    public String getStartPointLat1() {
+        return startPointLat1;
+    }
+
+    public void setStartPointLat1(String startPointLat1) {
+        this.startPointLat1 = startPointLat1;
+    }
+
+    public String getStartPointLat2() {
+        return startPointLat2;
+    }
+
+    public void setStartPointLat2(String startPointLat2) {
+        this.startPointLat2 = startPointLat2;
+    }
+
+    public String getStartPointLat3() {
+        return startPointLat3;
+    }
+
+    public void setStartPointLat3(String startPointLat3) {
+        this.startPointLat3 = startPointLat3;
+    }
+
     public String getLongitude() {
         return longitude;
     }
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getStartPointLong1() {
+        return startPointLong1;
+    }
+
+    public void setStartPointLong1(String startPointLong1) {
+        this.startPointLong1 = startPointLong1;
+    }
+
+    public String getStartPointLong2() {
+        return startPointLong2;
+    }
+
+    public void setStartPointLong2(String startPointLong2) {
+        this.startPointLong2 = startPointLong2;
+    }
+
+    public String getStartPointLong3() {
+        return startPointLong3;
+    }
+
+    public void setStartPointLong3(String startPointLong3) {
+        this.startPointLong3 = startPointLong3;
     }
 
     public String getEventUrl() {
@@ -206,11 +313,38 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "LOCATION", nullable = true)
     private String location;
 
+    @Column(name = "STARTPOINT1", nullable = true)
+    private String startPoint1;
+
+    @Column(name = "STARTPOINT2", nullable = true)
+    private String startPoint2;
+
+    @Column(name = "STARTPOINT3", nullable = true)
+    private String startPoint3;
+
     @Column(name = "LATITUDE", nullable = true)
     private String latitude;
 
+    @Column(name = "STARTPOINTLAT1", nullable = true)
+    private String startPointLat1;
+
+    @Column(name = "STARTPOINTLAT2", nullable = true)
+    private String startPointLat2;
+
+    @Column(name = "STARTPOINTLAT3", nullable = true)
+    private String startPointLat3;
+
     @Column(name = "LONGITUDE", nullable = true)
     private String longitude;
+
+    @Column(name = "STARTPOINTLONG1", nullable = true)
+    private String startPointLong1;
+
+    @Column(name = "STARTPOINTLONG2", nullable = true)
+    private String startPointLong2;
+
+    @Column(name = "STARTPOINTLONG3", nullable = true)
+    private String startPointLong3;
 
     @Column(name = "EVENTURL", nullable = true)
     private String eventUrl;
