@@ -52,7 +52,7 @@
                         </tr>
                         <tr>
                             <td><strong><fmt:message key="repository.eventDescription"/></strong></td>
-                            <td><form:input path="description"/></td>
+                            <td><form:textarea path="description" rows="4" cols="60"/></td>
                             <td><form:errors path="description"/></td>
                         </tr>
                     </table>
