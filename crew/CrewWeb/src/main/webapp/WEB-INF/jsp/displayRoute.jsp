@@ -110,11 +110,9 @@
         <!-- Middle column: main content -->
         <div id="detailsColumn">
 
-
             <c:if test="${browseHistory[1] != null}">
-                <div id="place-nav">
-                    <p></p><a href="${browseHistory[1].path}"><spring:message
-                        code="nav.back"/></a></p>
+                <div id="breadCrumb">
+                    <a href="${browseHistory[1].path}"><spring:message code="nav.back2"/>&nbsp;${place.title}</a>
                 </div>
             </c:if>
 

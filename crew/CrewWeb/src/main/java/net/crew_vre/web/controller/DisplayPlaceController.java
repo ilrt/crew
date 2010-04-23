@@ -75,6 +75,9 @@ public class DisplayPlaceController implements Controller {
         }
 
         ModelAndView mov = new ModelAndView("displayPlace");
+        // Pass event details back for use in nav link
+        mov.addObject("eventId", request.getParameter("eventId"));
+        mov.addObject("eventTitle", request.getParameter("eventTitle"));
         mov.addObject("place", place);
         if (startPoints != null)
             mov.addObject("startPointList", startPoints);

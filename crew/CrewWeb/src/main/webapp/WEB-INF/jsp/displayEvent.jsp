@@ -178,7 +178,7 @@
         <ul>
             <c:forEach var="place" items="${event.places}">
                 <li>
-                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>&amp;eventId=<crew:uri uri='${event.id}'/>">${place.title}</a>
+                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>&amp;eventId=<crew:uri uri='${event.id}'/>&amp;eventTitle=${event.title}">${place.title}</a>
                 </li>
             </c:forEach>
         </ul>

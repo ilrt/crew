@@ -33,7 +33,6 @@
  */
 package net.crew_vre.web.controller;
 
-import java.util.List;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.web.facade.DisplayRouteFacade;
 import net.crew_vre.web.history.BrowseHistory;

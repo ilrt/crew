@@ -85,12 +85,11 @@
         <div id="detailsColumn">
 
 
-            <c:if test="${browseHistory[1] != null}">
-                <div id="place-nav">
-                    <p></p><a href="${browseHistory[1].path}"><spring:message
-                        code="nav.back"/></a></p>
-                </div>
-            </c:if>
+            <div id="breadCrumb">
+                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+                <strong>&gt;</strong>
+                <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
+            </div>
 
             <div id="place-details">
 
