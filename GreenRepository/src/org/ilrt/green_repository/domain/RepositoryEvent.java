@@ -307,7 +307,7 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "ENDDATE", nullable = true)
     private String endDate;
 
-    @Column(name = "DESCRIPTION", nullable = true)
+    @Column(name = "DESCRIPTION", columnDefinition="LONG VARCHAR", nullable = true)
     private String description;
 
     @Column(name = "LOCATION", nullable = true)
