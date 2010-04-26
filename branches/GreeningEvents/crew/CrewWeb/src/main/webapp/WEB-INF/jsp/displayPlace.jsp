@@ -122,7 +122,7 @@
 
                 <fieldset>
                     <legend><strong><spring:message code="place.details"/></strong></legend>
-                    <div id="map" style="width: 600px; height: 400px; float: left"></div>
+                    <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px; float: left"></div>
                     <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
                         <h4>Routes to ${place.title}</h4>
                         <c:if test="${startPointList != null}">

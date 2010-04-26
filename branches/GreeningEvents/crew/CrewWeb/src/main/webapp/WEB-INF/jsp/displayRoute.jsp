@@ -32,6 +32,7 @@
                   }
                   map = new google.maps.Map(document.getElementById("map"), mapOptions);
                   directionsDisplay.setMap(map);
+                  directionsDisplay.setPanel(document.getElementById("routeDirections"));
 
                   var route = {
                     origin: startpoint,
@@ -139,25 +140,26 @@
 <!--start of Middle content-->
     <div id="midCol" class="genericContent midColWide">
 
-            <c:if test="${browseHistory[1] != null}">
-                <div id="breadCrumb">
-                    <a href="${browseHistory[1].path}"><spring:message code="nav.back2"/>&nbsp;${place.title}</a>
-                </div>
-            </c:if>
+        <c:if test="${browseHistory[1] != null}">
+            <div id="breadCrumb">
+                <a href="${browseHistory[1].path}"><spring:message code="nav.back2"/>&nbsp;${place.title}</a>
+            </div>
+        </c:if>
 
-                <h1>Route from ${startPoint.title} to ${place.title}</h1>
+        <h1>Route from ${startPoint.title} to ${place.title}</h1>
 
-                <fieldset>
-                    <legend><strong><spring:message code="route.details"/></strong></legend>
-                    <div id="map" style="width: 600px; height: 400px; float: left"></div>
-                    <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
-                        <strong><spring:message code="route.mode"/></strong><br/>
-                        <select id="mode" onchange="calcRoute();">
-                          <option value="WALKING">Walking</option>
-                          <option value="DRIVING">Driving</option>
-                        </select>
-                    </div>
-                </fieldset>
+        <fieldset>
+            <legend><strong><spring:message code="route.details"/></strong></legend>
+            <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px; float: left"></div>
+            <div id="routeDirections" style="width: 600px; float: left; margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
+            <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
+                <strong><spring:message code="route.mode"/></strong><br/>
+                <select id="mode" onchange="calcRoute();">
+                  <option value="WALKING">Walking</option>
+                  <option value="DRIVING">Driving</option>
+                </select>
+            </div>
+        </fieldset>
     </div>
     <!--End of Middle content-->
     <div class="clearDiv" style="height:2em;"></div>
@@ -165,20 +167,19 @@
 <!-- End of content2 -->
 </div>
 
-		</div>
-<!--end of wrqpper-->
+</div>
+<!--end of wrapper-->
 </div>
 <!--start of footer-->
 
-<!--<div id="survey2"><a href="http://www.surveymonkey.com/s.aspx?sm=OKJIQzf8G0oeXKpzq63NTA_3d_3d">Website feedback</a></div>-->
-    <div class="footer">
+<div class="footer">
             <div class="footerInner">
                     <ul><li class="diamond" id="sitemapdiamond"><a href="/site-map/">Sitemap</a></li><li class="diamond" id="glossary"><a href="/glossary/">Glossary</a></li><li class="diamond" id="newsletter"><a href="/newsletter/">Newsletter</a></li><li class="diamond" id="mailinglist"><a href="/mailing-list/">Mailing list</a></li><li class="diamond" id="disclaimer"><a href="/disclaimer/">Disclaimer</a></li> <li class="copyright"><a href="/copyright/">Copyright &copy; 2010 JISC Digital Media</a></li></ul>
                     <span class="advancelogo"><a href="http://www.jiscadvance.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/jisc-advance-logo.png" border="0" width="150" height="43" alt="JISC Advance" /></a></span>
 
             </div>
 <span class="printlogo"><a href="http://www.jiscdigitalmedia.ac.uk/"><img src="/images/site/print-logo.jpg" border="0" width="666" height="212" alt="JISC Digital Media" /></a></span>
-    </div>
+</div>
 
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -191,4 +192,4 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
 					<!--end of footer-->
 	</body>
-</html>>
+</html>
