@@ -21,7 +21,7 @@
 
     <style type="text/css" media="screen">@import "./style.css";</style>
     <link rel='stylesheet' type='text/css' media='screen'
-          href='http://www.jiscdigitalmedia.ac.uk/?css=jdm/master.v.1267190280' />
+          href='http://www.jiscdigitalmedia.ac.uk/?css=jdm/master.v.1271248856' />
 </head>	<body class="bodybg2">
 <div id="topbg"></div>
 
@@ -58,7 +58,9 @@
 
 
 <div>
-<input type="text" name="keywords" id="search" value=""  /> <input type="submit" name="searchBtn" id="searchBtn" value="Search" title="Search" />
+<input type="text" name="keywords" id="search" value=""  /> <input type
+
+Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" value="Search" title="Search" />
 </div>
 </form>
 			<!--end of search form-->
@@ -117,7 +119,7 @@
 
 <!--start of Middle content-->
 <div id="midCol" class="genericContent traininglist">
-    <h1>Green Events</h1>
+    <h1>Greening Events</h1>
     <div class="contentBlock">
     <%-- display info about the number of results --%>
     <div class="jdmResultDetails">
@@ -165,7 +167,7 @@
                             <c:otherwise>
                                 <joda:format value="${event.startDate}"
                                              pattern="dd MMMM yyyy"/> -
-                                <joda:format value="${event.endDateTime}"
+                                <joda:format value="${event.endDate}"
                                              pattern="dd MMMM yyyy"/>
                             </c:otherwise>
                         </c:choose>
@@ -205,12 +207,15 @@
 <!--start of Right content-->
 <div id="rightCol">
 
-
+    <div class="calloutBox trainingBlock accountLinksBox">
     <%-- the header links --%>
+    <ul id="accountLinks">
     <%@ include file="includes/headerLinks.jsp" %>
 
     <%-- register message --%>
     <%@ include file="includes/headerMessage.jsp" %>
+    </ul>
+    </div>
 
 </div>
     <!--End of Right content-->

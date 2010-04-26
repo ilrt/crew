@@ -288,15 +288,11 @@
     <ul>
 
         <c:if test="${not empty event.programme}">
-            <li><a href="${event.programme}"><spring:message code="event.details.programme"/></a>
-            <img class="externalLink" src="./images/web.png" alt="External Link" width="16"
-                 height="16"/></li>
+            <li><a href="${event.programme}"><spring:message code="event.details.programme"/></a></li>
         </c:if>
 
         <c:if test="${not empty event.proceedings}">
-            <li><a href="${event.proceedings}"><spring:message code="event.details.proceedings"/></a>
-            <img class="externalLink" src="./images/web.png" alt="External Link" width="16"
-                 height="16"/></li>
+            <li><a href="${event.proceedings}"><spring:message code="event.details.proceedings"/></a></li>
         </c:if>
     </ul>
 </c:if>
@@ -396,8 +392,15 @@
 <!--start of Right content-->
 <div id="rightCol">
 
-    <%-- quick links --%>
-    <%@ include file="includes/box-aboutCrew.jsp" %>
+    <div class="calloutBox trainingBlock accountLinksBox">
+    <%-- the header links --%>
+    <ul id="accountLinks">
+    <%@ include file="includes/headerLinks.jsp" %>
+
+    <%-- register message --%>
+    <%@ include file="includes/headerMessage.jsp" %>
+    </ul>
+    </div>
 
 </div>
     <!--End of Right content-->
