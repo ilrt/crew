@@ -139,7 +139,7 @@
         <constructor-arg index="1" ref="listEventsFacade"/>
     </bean>
 
-    <!-- feed - upcoming events -->
+    <!-- feed - recently added events -->
     <bean name="/feeds/recentlyAdded.xml" id="recentlyCreatedFeedController"
           class="net.crew_vre.web.controller.feeds.RecentlyCreatedEventsFeedController">
         <constructor-arg index="0" ref="recentlyAddedEvents"/>
