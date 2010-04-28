@@ -112,26 +112,29 @@
 <!--start of Middle content-->
     <div id="midCol" class="genericContent midColWide">
 
-            <div id="breadCrumb">
-                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-                <strong>&gt;</strong>
-                <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
+        <div id="breadCrumb">
+            <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+            <strong>&gt;</strong>
+            <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
+        </div>
+        <div style="float:left">
+            <h1>${place.title}</h1>
+            <h3><spring:message code="place.details"/></h3>
+        </div>
+        <div class="clearDiv"></div>
+        <div>
+            <div style="float: left">
+                <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px;"></div>
             </div>
-
-                <h1>${place.title}</h1>
-
-                <fieldset>
-                    <legend><strong><spring:message code="place.details"/></strong></legend>
-                    <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px; float: left"></div>
-                    <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
-                        <h4>Routes to ${place.title}</h4>
-                        <c:if test="${startPointList != null}">
-                            <c:forEach var="startPoint" items="${startPointList}">
-                                <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a><br />
-                            </c:forEach>
-                        </c:if>
-                    </div>
-                </fieldset>
+            <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px;">
+                <h4>Routes to ${place.title}</h4>
+                <c:if test="${startPointList != null}">
+                    <c:forEach var="startPoint" items="${startPointList}">
+                        <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a><br />
+                    </c:forEach>
+                </c:if>
+            </div>
+        </div>
     </div>
     <!--End of Middle content-->
     <div class="clearDiv" style="height:2em;"></div>
