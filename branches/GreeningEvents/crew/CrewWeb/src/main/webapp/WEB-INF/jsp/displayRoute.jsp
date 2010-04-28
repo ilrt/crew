@@ -146,12 +146,16 @@
             </div>
         </c:if>
 
-        <h1>Route from ${startPoint.title} to ${place.title}</h1>
-
-        <fieldset>
-            <legend><strong><spring:message code="route.details"/></strong></legend>
-            <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px; float: left"></div>
-            <div id="routeDirections" style="width: 600px; float: left; margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
+        <div style="float:left">
+            <h1>Route from ${startPoint.title} to ${place.title}</h1>
+            <h3><spring:message code="route.details"/></h3>
+        </div>
+        <div class="clearDiv"></div>
+        <div>
+            <div style="float: left">
+                <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px;"></div>
+                <div id="routeDirections" style="width: 600px; margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
+            </div>
             <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
                 <strong><spring:message code="route.mode"/></strong><br/>
                 <select id="mode" onchange="calcRoute();">
@@ -159,7 +163,7 @@
                   <option value="DRIVING">Driving</option>
                 </select>
             </div>
-        </fieldset>
+        </div>
     </div>
     <!--End of Middle content-->
     <div class="clearDiv" style="height:2em;"></div>
