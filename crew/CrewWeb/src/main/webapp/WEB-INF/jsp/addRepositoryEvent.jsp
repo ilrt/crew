@@ -81,6 +81,22 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td>Lat: <form:input path="waypointLat1_1"/><br/>
+                            Long: <form:input path="waypointLong1_1"/><br/><br/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>Lat: <form:input path="waypointLat1_2"/><br/>
+                            Long: <form:input path="waypointLong1_2"/><br/><br/></td>
+                            <td>
+                                <form:errors path="waypointLat1_1"/>
+                                <form:errors path="waypointLong1_1"/>
+                                <form:errors path="waypointLat1_2"/>
+                                <form:errors path="waypointLong1_2"/>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
                             <td><form:input path="startPoint2"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
@@ -93,6 +109,22 @@
                             </td>
                         </tr>
                         <tr>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td>Lat: <form:input path="waypointLat2_1"/><br/>
+                            Long: <form:input path="waypointLong2_1"/><br/><br/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>Lat: <form:input path="waypointLat2_2"/><br/>
+                            Long: <form:input path="waypointLong2_2"/><br/><br/></td>
+                            <td>
+                                <form:errors path="waypointLat2_1"/>
+                                <form:errors path="waypointLong2_1"/>
+                                <form:errors path="waypointLat2_2"/>
+                                <form:errors path="waypointLong2_2"/>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
                             <td><form:input path="startPoint3"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
@@ -102,6 +134,22 @@
                             <td><form:errors path="startPoint3"/>
                                 <form:errors path="startPointLat3"/>
                                 <form:errors path="startPointLong3"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td>Lat: <form:input path="waypointLat3_1"/><br/>
+                            Long: <form:input path="waypointLong3_1"/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>Lat: <form:input path="waypointLat3_2"/><br/>
+                            Long: <form:input path="waypointLong3_2"/></td>
+                            <td>
+                                <form:errors path="waypointLat3_1"/>
+                                <form:errors path="waypointLong3_1"/>
+                                <form:errors path="waypointLat3_2"/>
+                                <form:errors path="waypointLong3_2"/>
                             </td>
                         </tr>
                     </table>
