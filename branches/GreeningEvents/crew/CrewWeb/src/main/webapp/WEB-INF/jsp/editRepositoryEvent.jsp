@@ -70,7 +70,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong>
+                                <form:hidden path="startPointId1"/></td>
                             <td><form:input path="startPoint1"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input path="startPointLat1"/></td>
@@ -82,7 +83,26 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td><form:hidden path="waypointId1_1"/>
+                                Lat: <form:input path="waypointLat1_1"/><br/>
+                                Long: <form:input path="waypointLong1_1"/><br/><br/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><form:hidden path="waypointId1_2"/>
+                                Lat: <form:input path="waypointLat1_2"/><br/>
+                                Long: <form:input path="waypointLong1_2"/><br/><br/></td>
+                            <td>
+                                <form:errors path="waypointLat1_1"/>
+                                <form:errors path="waypointLong1_1"/>
+                                <form:errors path="waypointLat1_2"/>
+                                <form:errors path="waypointLong1_2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong>
+                                <form:hidden path="startPointId2"/></td>
                             <td><form:input path="startPoint2"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input path="startPointLat2"/></td>
@@ -94,7 +114,26 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td><form:hidden path="waypointId2_1"/>
+                                Lat: <form:input path="waypointLat2_1"/><br/>
+                                Long: <form:input path="waypointLong2_1"/><br/><br/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><form:hidden path="waypointId2_2"/>
+                                Lat: <form:input path="waypointLat2_2"/><br/>
+                                Long: <form:input path="waypointLong2_2"/><br/><br/></td>
+                            <td>
+                                <form:errors path="waypointLat2_1"/>
+                                <form:errors path="waypointLong2_1"/>
+                                <form:errors path="waypointLat2_2"/>
+                                <form:errors path="waypointLong2_2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong>
+                                <form:hidden path="startPointId3"/></td>
                             <td><form:input path="startPoint3"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input path="startPointLat3"/></td>
@@ -103,6 +142,24 @@
                             <td><form:errors path="startPoint3"/>
                                 <form:errors path="startPointLat3"/>
                                 <form:errors path="startPointLong3"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td>&nbsp;</td>
+                            <td><form:hidden path="waypointId3_1"/>
+                                Lat: <form:input path="waypointLat3_1"/><br/>
+                                Long: <form:input path="waypointLong3_1"/></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><form:hidden path="waypointId3_2"/>
+                                Lat: <form:input path="waypointLat3_2"/><br/>
+                                Long: <form:input path="waypointLong3_2"/></td>
+                            <td>
+                                <form:errors path="waypointLat3_1"/>
+                                <form:errors path="waypointLong3_1"/>
+                                <form:errors path="waypointLat3_2"/>
+                                <form:errors path="waypointLong3_2"/>
                             </td>
                         </tr>
                     </table>
