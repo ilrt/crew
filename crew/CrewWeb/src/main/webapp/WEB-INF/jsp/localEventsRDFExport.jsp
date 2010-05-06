@@ -32,33 +32,23 @@
                 <pos:long>${event.longitude}</pos:long>
              </rdf:Description>
             </eswc:hasLocation>
-        <c:if test="${not empty event.startPointLat1}">
+        <c:forEach var="startPoint" items="${event.startPoints}" varStatus="status">
              <ge:startPoint>
-                 <rdf:Description rdf:about="${event.startPointHash1}">
-                    <dc:title>${event.startPoint1}</dc:title>
-                    <pos:lat>${event.startPointLat1}</pos:lat>
-                    <pos:long>${event.startPointLong1}</pos:long>
+                 <rdf:Description rdf:about="${startPoint.startPointId}">
+                    <dc:title>${startPoint.title}</dc:title>
+                    <pos:lat>${startPoint.latitude}</pos:lat>
+                    <pos:long>${startPoint.longitude}</pos:long>
+                    <c:forEach var="waypoint" items="${startPoint.waypoints}" varStatus="status">
+                        <ge:waypoint>
+                            <rdf:Description rdf:about="${waypoint.waypointId}">
+                                <pos:lat>${waypoint.latitude}</pos:lat>
+                                <pos:long>${waypoint.longitude}</pos:long>
+                            </rdf:Description>
+                        </ge:waypoint>
+                    </c:forEach>
                  </rdf:Description>
              </ge:startPoint>
-        </c:if>
-        <c:if test="${not empty event.startPointLat2}">
-             <ge:startPoint>
-                 <rdf:Description rdf:about="${event.startPointHash2}">
-                    <dc:title>${event.startPoint2}</dc:title>
-                    <pos:lat>${event.startPointLat2}</pos:lat>
-                    <pos:long>${event.startPointLong2}</pos:long>
-                 </rdf:Description>
-             </ge:startPoint>
-        </c:if>
-        <c:if test="${not empty event.startPointLat3}">
-             <ge:startPoint>
-                 <rdf:Description rdf:about="${event.startPointHash3}">
-                    <dc:title>${event.startPoint3}</dc:title>
-                    <pos:lat>${event.startPointLat3}</pos:lat>
-                    <pos:long>${event.startPointLong3}</pos:long>
-                 </rdf:Description>
-             </ge:startPoint>
-        </c:if>
+        </c:forEach> 
             <eswc:hasProgramme rdf:resource="${event.eventUrl}"/>
         </rdf:Description>
     </c:forEach>
