@@ -38,6 +38,10 @@ import org.ilrt.green_repository.domain.RepositoryEvent;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.Set;
+import org.ilrt.green_repository.domain.RepositoryEventStartPoint;
+import org.ilrt.green_repository.domain.RepositoryEventWaypoint;
 
 /**
  *
@@ -51,21 +55,50 @@ public class RepositoryEventForm {
     private String endDate = null;
     private String description = null;
     private String location = null;
-    private String startPoint1 = null;
-    private String startPoint2 = null;
-    private String startPoint3 = null;
     private String latitude = null;
-    private String startPointLat1 = null;
-    private String startPointLat2 = null;
-    private String startPointLat3 = null;
     private String longitude = null;
+
+    private String startPoint1 = null;
+    private String startPointId1 = null;
+    private String startPointLat1 = null;
     private String startPointLong1 = null;
+
+    private String startPoint2 = null;
+    private String startPointId2 = null;
+    private String startPointLat2 = null;
     private String startPointLong2 = null;
+
+    private String startPoint3 = null;
+    private String startPointId3 = null;
+    private String startPointLat3 = null;
     private String startPointLong3 = null;
+
+    private String waypointId1_1 = null;
+    private String waypointLat1_1 = null;
+    private String waypointLong1_1 = null;
+    private String waypointId1_2 = null;
+    private String waypointLat1_2 = null;
+    private String waypointLong1_2 = null;
+
+    private String waypointId2_1 = null;
+    private String waypointLat2_1 = null;
+    private String waypointLong2_1 = null;
+    private String waypointId2_2 = null;
+    private String waypointLat2_2 = null;
+    private String waypointLong2_2 = null;
+
+    private String waypointId3_1 = null;
+    private String waypointLat3_1 = null;
+    private String waypointLong3_1 = null;
+    private String waypointId3_2 = null;
+    private String waypointLat3_2 = null;
+    private String waypointLong3_2 = null;
+
     private String eventUrl = null;
     private String addButton = null;
     private String updateButton = null;
     private String cancelButton = null;
+    private Set<RepositoryEventStartPoint> startPoints = null;
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -78,18 +111,94 @@ public class RepositoryEventForm {
         this.endDate = event.getEndDate();
         this.description = event.getDescription();
         this.location = event.getLocation();
-        this.startPoint1 = event.getStartPoint1();
-        this.startPoint2 = event.getStartPoint2();
-        this.startPoint3 = event.getStartPoint3();
         this.latitude = event.getLatitude();
-        this.startPointLat1 = event.getStartPointLat1();
-        this.startPointLat2 = event.getStartPointLat2();
-        this.startPointLat3 = event.getStartPointLat3();
         this.longitude = event.getLongitude();
-        this.startPointLong1 = event.getStartPointLong1();
-        this.startPointLong2 = event.getStartPointLong2();
-        this.startPointLong3 = event.getStartPointLong3();
         this.eventUrl = event.getEventUrl();
+        startPoints = (Set)event.getStartPoints();
+        if (startPoints != null) {
+            Iterator iter = startPoints.iterator();
+            RepositoryEventStartPoint startPoint;
+            int count = 0;
+            while (iter.hasNext()) {
+                count++;
+                startPoint = (RepositoryEventStartPoint)iter.next();
+                if (count == 1) {
+                    this.setStartPoint1(startPoint.getTitle());
+                    this.setStartPointId1(startPoint.getStartPointId());
+                    this.setStartPointLat1(startPoint.getLatitude());
+                    this.setStartPointLong1(startPoint.getLongitude());
+                    Set<RepositoryEventWaypoint>waypoints = startPoint.getWaypoints();
+                    if (waypoints != null) {
+                        Iterator witer = waypoints.iterator();
+                        RepositoryEventWaypoint waypoint;
+                        int waycount = 0;
+                        while (witer.hasNext()) {
+                            waycount++;
+                            waypoint = (RepositoryEventWaypoint)witer.next();
+                            if (waycount == 1) {
+                                this.setWaypointId1_1(waypoint.getWaypointId());
+                                this.setWaypointLat1_1(waypoint.getLatitude());
+                                this.setWaypointLong1_1(waypoint.getLongitude());
+                            } else if (waycount == 2) {
+                                this.setWaypointId1_2(waypoint.getWaypointId());
+                                this.setWaypointLat1_2(waypoint.getLatitude());
+                                this.setWaypointLong1_2(waypoint.getLongitude());
+                            }
+                        }
+                    }
+                } else if (count == 2) {
+                    this.setStartPoint2(startPoint.getTitle());
+                    this.setStartPointId2(startPoint.getStartPointId());
+                    this.setStartPointLat2(startPoint.getLatitude());
+                    this.setStartPointLong2(startPoint.getLongitude());
+                    Set<RepositoryEventWaypoint>waypoints = startPoint.getWaypoints();
+                    if (waypoints != null) {
+                        Iterator witer = waypoints.iterator();
+                        RepositoryEventWaypoint waypoint;
+                        int waycount = 0;
+                        while (witer.hasNext()) {
+                            waycount++;
+                            waypoint = (RepositoryEventWaypoint)witer.next();
+                            if (waycount == 1) {
+                                this.setWaypointId2_1(waypoint.getWaypointId());
+                                this.setWaypointLat2_1(waypoint.getLatitude());
+                                this.setWaypointLong2_1(waypoint.getLongitude());
+                            } else if (waycount == 2) {
+                                this.setWaypointId2_2(waypoint.getWaypointId());
+                                this.setWaypointLat2_2(waypoint.getLatitude());
+                                this.setWaypointLong2_2(waypoint.getLongitude());
+                            }
+                        }
+                    }
+                } else if (count == 3) {
+                    this.setStartPoint3(startPoint.getTitle());
+                    this.setStartPointId3(startPoint.getStartPointId());
+                    this.setStartPointLat3(startPoint.getLatitude());
+                    this.setStartPointLong3(startPoint.getLongitude());
+                    Set<RepositoryEventWaypoint>waypoints = startPoint.getWaypoints();
+                    if (waypoints != null) {
+                        Iterator witer = waypoints.iterator();
+                        RepositoryEventWaypoint waypoint;
+                        int waycount = 0;
+                        while (witer.hasNext()) {
+                            waycount++;
+                            waypoint = (RepositoryEventWaypoint)witer.next();
+                            if (waycount == 1) {
+                                this.setWaypointId3_1(waypoint.getWaypointId());
+                                this.setWaypointLat3_1(waypoint.getLatitude());
+                                this.setWaypointLong3_1(waypoint.getLongitude());
+                            } else if (waycount == 2) {
+                                this.setWaypointId3_2(waypoint.getWaypointId());
+                                this.setWaypointLat3_2(waypoint.getLatitude());
+                                this.setWaypointLong3_2(waypoint.getLongitude());
+                            }
+                        }
+                    }
+                } else if (count > 3) {
+                    break;
+                }
+            }
+        }
     }
 
     // Will only exist for existing events
@@ -167,6 +276,25 @@ public class RepositoryEventForm {
         this.location = location;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+    
+    
+    // Up to 3 startPoints: each with id, title, lat and long
+
     public String getStartPoint1() {
         return startPoint1;
     }
@@ -175,28 +303,12 @@ public class RepositoryEventForm {
         this.startPoint1 = startPoint1;
     }
 
-    public String getStartPoint2() {
-        return startPoint2;
+    public String getStartPointId1() {
+        return startPointId1;
     }
 
-    public void setStartPoint2(String startPoint2) {
-        this.startPoint2 = startPoint2;
-    }
-
-    public String getStartPoint3() {
-        return startPoint3;
-    }
-
-    public void setStartPoint3(String startPoint3) {
-        this.startPoint3 = startPoint3;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(String latitude) {
-        this.latitude = latitude;
+    public void setStartPointId1(String startPointId1) {
+        this.startPointId1 = startPointId1;
     }
 
     public String getStartPointLat1() {
@@ -207,36 +319,28 @@ public class RepositoryEventForm {
         this.startPointLat1 = startPointLat1;
     }
 
+    public String getStartPoint2() {
+        return startPoint2;
+    }
+
+    public void setStartPoint2(String startPoint2) {
+        this.startPoint2 = startPoint2;
+    }
+
+    public String getStartPointId2() {
+        return startPointId2;
+    }
+
+    public void setStartPointId2(String startPointId2) {
+        this.startPointId2 = startPointId2;
+    }
+
     public String getStartPointLat2() {
         return startPointLat2;
     }
 
     public void setStartPointLat2(String startPointLat2) {
         this.startPointLat2 = startPointLat2;
-    }
-
-    public String getStartPointLat3() {
-        return startPointLat3;
-    }
-
-    public void setStartPointLat3(String startPointLat3) {
-        this.startPointLat3 = startPointLat3;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(String longitude) {
-        this.longitude = longitude;
-    }
-
-    public String getStartPointLong1() {
-        return startPointLong1;
-    }
-
-    public void setStartPointLong1(String startPointLong1) {
-        this.startPointLong1 = startPointLong1;
     }
 
     public String getStartPointLong2() {
@@ -247,6 +351,38 @@ public class RepositoryEventForm {
         this.startPointLong2 = startPointLong2;
     }
 
+    public String getStartPointLong1() {
+        return startPointLong1;
+    }
+
+    public void setStartPointLong1(String startPointLong1) {
+        this.startPointLong1 = startPointLong1;
+    }
+
+    public String getStartPoint3() {
+        return startPoint3;
+    }
+
+    public void setStartPoint3(String startPoint3) {
+        this.startPoint3 = startPoint3;
+    }
+
+    public String getStartPointId3() {
+        return startPointId3;
+    }
+
+    public void setStartPointId3(String startPointId3) {
+        this.startPointId3 = startPointId3;
+    }
+
+    public String getStartPointLat3() {
+        return startPointLat3;
+    }
+
+    public void setStartPointLat3(String startPointLat3) {
+        this.startPointLat3 = startPointLat3;
+    }
+
     public String getStartPointLong3() {
         return startPointLong3;
     }
@@ -254,6 +390,156 @@ public class RepositoryEventForm {
     public void setStartPointLong3(String startPointLong3) {
         this.startPointLong3 = startPointLong3;
     }
+
+
+    // Waypoints: 2 for each of 3 StartPoints for now: each with id, lat and long (not title)
+
+    public String getWaypointId1_1() {
+        return waypointId1_1;
+    }
+
+    public void setWaypointId1_1(String waypointId1_1) {
+        this.waypointId1_1 = waypointId1_1;
+    }
+
+    public String getWaypointLat1_1() {
+        return waypointLat1_1;
+    }
+
+    public void setWaypointLat1_1(String waypointLat1_1) {
+        this.waypointLat1_1 = waypointLat1_1;
+    }
+
+    public String getWaypointLong1_1() {
+        return waypointLong1_1;
+    }
+
+    public void setWaypointLong1_1(String waypointLong1_1) {
+        this.waypointLong1_1 = waypointLong1_1;
+    }
+
+
+    public String getWaypointId1_2() {
+        return waypointId1_2;
+    }
+
+    public void setWaypointId1_2(String waypointId1_2) {
+        this.waypointId1_2 = waypointId1_2;
+    }
+
+    public String getWaypointLat1_2() {
+        return waypointLat1_2;
+    }
+
+    public void setWaypointLat1_2(String waypointLat1_2) {
+        this.waypointLat1_2 = waypointLat1_2;
+    }
+
+    public String getWaypointLong1_2() {
+        return waypointLong1_2;
+    }
+
+    public void setWaypointLong1_2(String waypointLong1_2) {
+        this.waypointLong1_2 = waypointLong1_2;
+    }
+
+    public String getWaypointId2_1() {
+        return waypointId2_1;
+    }
+
+    public void setWaypointId2_1(String waypointId2_1) {
+        this.waypointId2_1 = waypointId2_1;
+    }
+
+    public String getWaypointLat2_1() {
+        return waypointLat2_1;
+    }
+
+    public void setWaypointLat2_1(String waypointLat2_1) {
+        this.waypointLat2_1 = waypointLat2_1;
+    }
+
+    public String getWaypointLong2_1() {
+        return waypointLong2_1;
+    }
+
+    public void setWaypointLong2_1(String waypointLong2_1) {
+        this.waypointLong2_1 = waypointLong2_1;
+    }
+
+    public String getWaypointId2_2() {
+        return waypointId2_2;
+    }
+
+    public void setWaypointId2_2(String waypointId2_2) {
+        this.waypointId2_2 = waypointId2_2;
+    }
+
+    public String getWaypointLat2_2() {
+        return waypointLat2_2;
+    }
+
+    public void setWaypointLat2_2(String waypointLat2_2) {
+        this.waypointLat2_2 = waypointLat2_2;
+    }
+
+    public String getWaypointLong2_2() {
+        return waypointLong2_2;
+    }
+
+    public void setWaypointLong2_2(String waypointLong2_2) {
+        this.waypointLong2_2 = waypointLong2_2;
+    }
+
+    public String getWaypointId3_1() {
+        return waypointId3_1;
+    }
+
+    public void setWaypointId3_1(String waypointId3_1) {
+        this.waypointId3_1 = waypointId3_1;
+    }
+
+    public String getWaypointLat3_1() {
+        return waypointLat3_1;
+    }
+
+    public void setWaypointLat3_1(String waypointLat3_1) {
+        this.waypointLat3_1 = waypointLat3_1;
+    }
+
+    public String getWaypointLong3_1() {
+        return waypointLong3_1;
+    }
+
+    public void setWaypointLong3_1(String waypointLong3_1) {
+        this.waypointLong3_1 = waypointLong3_1;
+    }
+
+
+    public String getWaypointId3_2() {
+        return waypointId3_2;
+    }
+
+    public void setWaypointId3_2(String waypointId3_2) {
+        this.waypointId3_2 = waypointId3_2;
+    }
+
+    public String getWaypointLat3_2() {
+        return waypointLat3_2;
+    }
+
+    public void setWaypointLat3_2(String waypointLat3_2) {
+        this.waypointLat3_2 = waypointLat3_2;
+    }
+
+    public String getWaypointLong3_2() {
+        return waypointLong3_2;
+    }
+
+    public void setWaypointLong3_2(String waypointLong3_2) {
+        this.waypointLong3_2 = waypointLong3_2;
+    }
+
 
     public String getEventUrl() {
         return eventUrl;
