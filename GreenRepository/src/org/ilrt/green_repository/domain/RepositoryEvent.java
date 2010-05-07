@@ -34,6 +34,7 @@
 
 package org.ilrt.green_repository.domain;
 
+import javax.persistence.OneToMany;
 import org.ilrt.green_repository.web.RepositoryEventForm;
 
 import javax.persistence.Column;
@@ -42,6 +43,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.security.*;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 
 
 /**
@@ -62,18 +67,143 @@ public class RepositoryEvent implements Serializable {
         this.endDate = form.getEndDate();
         this.description = form.getDescription();
         this.location = form.getLocation();
-        this.startPoint1 = form.getStartPoint1();
-        this.startPoint2 = form.getStartPoint2();
-        this.startPoint3 = form.getStartPoint3();
-        this.latitude = form.getLatitude();
-        this.startPointLat1 = form.getStartPointLat1();
-        this.startPointLat2 = form.getStartPointLat2();
-        this.startPointLat3 = form.getStartPointLat3();
-        this.longitude = form.getLongitude();
-        this.startPointLong1 = form.getStartPointLong1();
-        this.startPointLong2 = form.getStartPointLong2();
-        this.startPointLong3 = form.getStartPointLong3();
         this.eventUrl = form.getEventUrl();
+        this.latitude = form.getLatitude();
+        this.longitude = form.getLongitude();
+
+        RepositoryEventStartPoint startPoint = null;
+        if (form.getStartPoint1() != null && !form.getStartPoint1().equals("")
+                && form.getStartPointLat1() != null && !form.getStartPointLat1().equals("")
+                && form.getStartPointLong1() != null && !form.getStartPointLong1().equals("")){
+            if (form.getStartPointId1() != null && !form.getStartPointId1().equals("")) {
+                // Existing startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPointId1(),form.getStartPoint1(),form.getStartPointLat1(),form.getStartPointLong1()
+                        );
+            } else {
+                // New startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPoint1(),form.getStartPointLat1(),form.getStartPointLong1()
+                        );
+            }
+            if (form.getWaypointLat1_1() != null && !form.getWaypointLat1_1().equals("")
+                && form.getWaypointLong1_1() != null && !form.getWaypointLong1_1().equals("")) {
+                if (form.getWaypointId1_1() != null && !form.getWaypointId1_1().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId1_1(),form.getWaypointLat1_1(),form.getWaypointLong1_1()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat1_1(),form.getWaypointLong1_1()
+                            ));
+                }
+            }
+            if (form.getWaypointLat1_2() != null && !form.getWaypointLat1_2().equals("")
+                && form.getWaypointLong1_2() != null && !form.getWaypointLong1_2().equals("")) {
+                if (form.getWaypointId1_2() != null && !form.getWaypointId1_2().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId1_2(),form.getWaypointLat1_2(),form.getWaypointLong1_2()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat1_2(),form.getWaypointLong1_2()
+                            ));
+                }
+            }
+            startPoints.add(startPoint);
+        }
+        if (form.getStartPoint2() != null && !form.getStartPoint2().equals("")
+                && form.getStartPointLat2() != null && !form.getStartPointLat2().equals("")
+                && form.getStartPointLong2() != null && !form.getStartPointLong2().equals("")){
+            if (form.getStartPointId2() != null && !form.getStartPointId2().equals("")) {
+                // Existing startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPointId2(),form.getStartPoint2(),form.getStartPointLat2(),form.getStartPointLong2()
+                        );
+            } else {
+                // New startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPoint2(),form.getStartPointLat2(),form.getStartPointLong2()
+                        );
+            }
+            if (form.getWaypointLat2_1() != null && !form.getWaypointLat2_1().equals("")
+                && form.getWaypointLong2_1() != null && !form.getWaypointLong2_1().equals("")) {
+                if (form.getWaypointId2_1() != null && !form.getWaypointId2_1().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId2_1(),form.getWaypointLat2_1(),form.getWaypointLong2_1()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat2_1(),form.getWaypointLong2_1()
+                            ));
+                }
+            }
+            if (form.getWaypointLat2_2() != null && !form.getWaypointLat2_2().equals("")
+                && form.getWaypointLong2_2() != null && !form.getWaypointLong2_2().equals("")) {
+                if (form.getWaypointId2_2() != null && !form.getWaypointId2_2().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId2_2(),form.getWaypointLat2_2(),form.getWaypointLong2_2()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat2_2(),form.getWaypointLong2_2()
+                            ));
+                }
+            }
+            startPoints.add(startPoint);
+        }
+        if (form.getStartPoint3() != null && !form.getStartPoint3().equals("")
+                && form.getStartPointLat3() != null && !form.getStartPointLat3().equals("")
+                && form.getStartPointLong3() != null && !form.getStartPointLong3().equals("")){
+            if (form.getStartPointId3() != null && !form.getStartPointId3().equals("")) {
+                // Existing startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPointId3(),form.getStartPoint3(),form.getStartPointLat3(),form.getStartPointLong3()
+                        );
+            } else {
+                // New startPoint
+                startPoint = new RepositoryEventStartPoint(
+                        form.getStartPoint3(),form.getStartPointLat3(),form.getStartPointLong3()
+                        );
+            }
+            if (form.getWaypointLat3_1() != null && !form.getWaypointLat3_1().equals("")
+                && form.getWaypointLong3_1() != null && !form.getWaypointLong3_1().equals("")) {
+                if (form.getWaypointId3_1() != null && !form.getWaypointId3_1().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId3_1(),form.getWaypointLat3_1(),form.getWaypointLong3_1()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat3_1(),form.getWaypointLong3_1()
+                            ));
+                }
+            }
+            if (form.getWaypointLat3_2() != null && !form.getWaypointLat3_2().equals("")
+                && form.getWaypointLong3_2() != null && !form.getWaypointLong3_2().equals("")) {
+                if (form.getWaypointId3_2() != null && !form.getWaypointId3_2().equals("")) {
+                    // Existing waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointId3_2(),form.getWaypointLat3_2(),form.getWaypointLong3_2()
+                            ));
+                } else {
+                    // New waypoint
+                    startPoint.setWaypoint(new RepositoryEventWaypoint(
+                            form.getWaypointLat3_2(),form.getWaypointLong3_2()
+                            ));
+                }
+            }
+            startPoints.add(startPoint);
+        }
     }
 
     public void setEventId(String eventId) {
@@ -132,86 +262,12 @@ public class RepositoryEvent implements Serializable {
         this.location = location;
     }
 
-    public String getStartPoint1() {
-        return startPoint1;
-    }
-
-    public void setStartPoint1(String startPoint1) {
-        this.startPoint1 = startPoint1;
-    }
-
-    public String getStartPointHash1() {
-        String startPointHash1 = "";
-        if (this.getStartPoint1() != null) {
-            startPointHash1 = md5Hash(this.getStartPoint1());
-            startPointHash1 = "SPT_" + startPointHash1;
-        }
-        return startPointHash1;
-    }
-
-    public String getStartPoint2() {
-        return startPoint2;
-    }
-
-    public void setStartPoint2(String startPoint2) {
-        this.startPoint2 = startPoint2;
-    }
-
-    public String getStartPointHash2() {
-        String startPointHash2 = "";
-        if (this.getStartPoint2() != null) {
-            startPointHash2 = md5Hash(this.getStartPoint2());
-            startPointHash2 = "SPT_" + startPointHash2;        }
-        return startPointHash2;
-    }
-
-    public String getStartPoint3() {
-        return startPoint3;
-    }
-
-    public void setStartPoint3(String startPoint3) {
-        this.startPoint3 = startPoint3;
-    }
-
-    public String getStartPointHash3() {
-        String startPointHash3 = "";
-        if (this.getStartPoint3() != null) {
-            startPointHash3 = md5Hash(this.getStartPoint3());
-            startPointHash3 = "SPT_" + startPointHash3;
-        }
-        return startPointHash3;
-    }
-
     public String getLatitude() {
         return latitude;
     }
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
-    }
-
-    public String getStartPointLat1() {
-        return startPointLat1;
-    }
-
-    public void setStartPointLat1(String startPointLat1) {
-        this.startPointLat1 = startPointLat1;
-    }
-
-    public String getStartPointLat2() {
-        return startPointLat2;
-    }
-
-    public void setStartPointLat2(String startPointLat2) {
-        this.startPointLat2 = startPointLat2;
-    }
-
-    public String getStartPointLat3() {
-        return startPointLat3;
-    }
-
-    public void setStartPointLat3(String startPointLat3) {
-        this.startPointLat3 = startPointLat3;
     }
 
     public String getLongitude() {
@@ -222,30 +278,6 @@ public class RepositoryEvent implements Serializable {
         this.longitude = longitude;
     }
 
-    public String getStartPointLong1() {
-        return startPointLong1;
-    }
-
-    public void setStartPointLong1(String startPointLong1) {
-        this.startPointLong1 = startPointLong1;
-    }
-
-    public String getStartPointLong2() {
-        return startPointLong2;
-    }
-
-    public void setStartPointLong2(String startPointLong2) {
-        this.startPointLong2 = startPointLong2;
-    }
-
-    public String getStartPointLong3() {
-        return startPointLong3;
-    }
-
-    public void setStartPointLong3(String startPointLong3) {
-        this.startPointLong3 = startPointLong3;
-    }
-
     public String getEventUrl() {
         return eventUrl;
     }
@@ -253,6 +285,15 @@ public class RepositoryEvent implements Serializable {
     public void setEventUrl(String eventUrl) {
         this.eventUrl = eventUrl;
     }
+
+    public Set<RepositoryEventStartPoint> getStartPoints(){
+        return startPoints;
+    }
+    
+    public void setStartPoints(Set<RepositoryEventStartPoint> startPoints){
+        this.startPoints = startPoints;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -268,6 +309,8 @@ public class RepositoryEvent implements Serializable {
         int result;
         result = eventId.hashCode();
         result = 31 * result + title.hashCode();
+        result = 31 * result + latitude.hashCode();
+        result = 31 * result + longitude.hashCode();
         return result;
     }
 
@@ -294,6 +337,10 @@ public class RepositoryEvent implements Serializable {
         return digestString;
     }
 
+    // Optional collection of route startPoints connecting to the location associated with the event
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<RepositoryEventStartPoint> startPoints = new HashSet<RepositoryEventStartPoint>();
+
     @Id
     @Column(name = "EVENTID")
     private String eventId;
@@ -313,38 +360,11 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "LOCATION", nullable = true)
     private String location;
 
-    @Column(name = "STARTPOINT1", nullable = true)
-    private String startPoint1;
-
-    @Column(name = "STARTPOINT2", nullable = true)
-    private String startPoint2;
-
-    @Column(name = "STARTPOINT3", nullable = true)
-    private String startPoint3;
-
     @Column(name = "LATITUDE", nullable = true)
     private String latitude;
 
-    @Column(name = "STARTPOINTLAT1", nullable = true)
-    private String startPointLat1;
-
-    @Column(name = "STARTPOINTLAT2", nullable = true)
-    private String startPointLat2;
-
-    @Column(name = "STARTPOINTLAT3", nullable = true)
-    private String startPointLat3;
-
     @Column(name = "LONGITUDE", nullable = true)
     private String longitude;
-
-    @Column(name = "STARTPOINTLONG1", nullable = true)
-    private String startPointLong1;
-
-    @Column(name = "STARTPOINTLONG2", nullable = true)
-    private String startPointLong2;
-
-    @Column(name = "STARTPOINTLONG3", nullable = true)
-    private String startPointLong3;
 
     @Column(name = "EVENTURL", nullable = true)
     private String eventUrl;
