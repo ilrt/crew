@@ -49,6 +49,7 @@ import org.caboto.jena.db.Utils;
 
 import java.util.List;
 import java.util.ArrayList;
+import net.crew_vre.events.domain.Waypoint;
 
 /**
  * <p>This is an implementation of <code>StartPointDao</code> that uses the Jena
@@ -68,6 +69,7 @@ public class StartPointDaoImpl implements StartPointDao {
         this.database = database;
         sparqFindStartPointsByEventId = Utils.loadSparql("/sparql/startpoints-by-eventid.rq");
         sparqFindStartPointById = Utils.loadSparql("/sparql/startpoint-by-id.rq");
+        sparqFindWaypointsById = Utils.loadSparql("/sparql/waypoints-by-startpointid.rq");
     }
 
 
@@ -82,51 +84,110 @@ public class StartPointDaoImpl implements StartPointDao {
         List<StartPoint> startPoints = new ArrayList<StartPoint>();
 
         // create the bindings
-        QuerySolutionMap initialBindings = new QuerySolutionMap();
-        initialBindings.add("id", ModelFactory.createDefaultModel().createResource(EventId));
+        QuerySolutionMap findStartPointInitialBindings = new QuerySolutionMap();
+        findStartPointInitialBindings.add("id", ModelFactory.createDefaultModel().createResource(EventId));
 
         if (logger.isDebugEnabled()) {
             logger.debug("SPARQL used to find startpoint details:");
             logger.debug(sparqFindStartPointsByEventId);
         }
 
-        Results res = database.executeSelectQuery(sparqFindStartPointsByEventId,
-                initialBindings);
-        ResultSet rs = res.getResults();
+        Results spt_res = database.executeSelectQuery(sparqFindStartPointsByEventId,
+                findStartPointInitialBindings);
+        ResultSet spt_rs = spt_res.getResults();
 
         // there may be multiple start points
-        while (rs.hasNext()) {
-            StartPoint startPoint = getStartPointDetails(rs.nextSolution());
+        // Create the bindings
+        QuerySolutionMap findWaypointInitialBindings;
+        StartPoint startPoint = null;
+        while (spt_rs.hasNext()) {
+            if (logger.isDebugEnabled())
+                logger.debug("Got result ...");
+            startPoint = getStartPointDetails(spt_rs.nextSolution());
             if (startPoint != null) {
-                logger.debug("Found startPoint: " + startPoint.getTitle());
+                if (logger.isDebugEnabled())
+                    logger.debug("Found startPoint (from eventId): " + startPoint.getId() + " : " + startPoint.getTitle());
+                // Look for any associated Waypoints
+                if (logger.isDebugEnabled()) {
+                    logger.debug("SPARQL used to find waypoint details:");
+                    logger.debug(sparqFindWaypointsById);
+                }
+                findWaypointInitialBindings = new QuerySolutionMap();
+                findWaypointInitialBindings.add("id", ModelFactory.createDefaultModel().createResource(startPoint.getId()));
+                Results wpt_res = database.executeSelectQuery(sparqFindWaypointsById, findWaypointInitialBindings);
+                ResultSet wpt_rs = wpt_res.getResults();
+                while (wpt_rs.hasNext()){
+                    Waypoint waypoint = getWaypointDetails(wpt_rs.nextSolution());
+                    if (waypoint != null) {
+                        if (logger.isDebugEnabled())
+                            logger.debug("Found waypoint (from eventId): " + waypoint.getId());
+                        startPoint.setWaypoint(waypoint);
+                    }
+                }
+                wpt_res.close();
                 startPoints.add(startPoint);
             }
         }
-
-        res.close();
+        spt_res.close();
 
         return startPoints;
     }
 
     public StartPoint findStartPointById(final String StartPointId) {
-        StartPoint startPoint = null;
+        StartPoint startPoint = new StartPoint();
+        startPoint.setId(StartPointId);
 
         // create the bindings
-        QuerySolutionMap initialBindings = new QuerySolutionMap();
-        initialBindings.add("startpoint", ModelFactory.createDefaultModel().createResource(StartPointId));
+        QuerySolutionMap findStartPointInitialBindings = new QuerySolutionMap();
+        findStartPointInitialBindings.add("startpoint", ModelFactory.createDefaultModel().createResource(StartPointId));
 
         if (logger.isDebugEnabled()) {
             logger.debug("SPARQL used to find startpoint details:");
             logger.debug(sparqFindStartPointById);
         }
 
-        Results res = database.executeSelectQuery(sparqFindStartPointById,
-                initialBindings);
+        Results res = database.executeSelectQuery(sparqFindStartPointById, findStartPointInitialBindings);
         ResultSet rs = res.getResults();
 
         // should only be one
+        // Create the bindings
+        QuerySolutionMap findWaypointInitialBindings;
         while (rs.hasNext()) {
-            startPoint = getStartPointDetails(rs.nextSolution());
+            
+            QuerySolution qs = rs.nextSolution();
+
+            if (qs.getResource("graph") != null) {
+                startPoint.setGraph(qs.getResource("graph").getURI());
+            }
+            if (qs.getLiteral("name") != null) {
+                startPoint.setTitle(qs.getLiteral("name").getLexicalForm());
+            }
+            if (qs.getLiteral("longitude") != null && !qs.getLiteral("longitude").getLexicalForm().equals("")) {
+                startPoint.setLongitude(Float.valueOf(qs.getLiteral("longitude").getLexicalForm()));
+            }
+            if (qs.getLiteral("latitude") != null && !qs.getLiteral("latitude").getLexicalForm().equals("")) {
+                startPoint.setLatitude(Float.valueOf(qs.getLiteral("latitude").getLexicalForm()));
+            }
+
+            // Look for any associated Waypoints
+            if (logger.isDebugEnabled()) {
+                logger.debug("SPARQL used to find waypoint details:");
+                logger.debug(sparqFindWaypointsById);
+            }
+            findWaypointInitialBindings = new QuerySolutionMap();
+            if (logger.isDebugEnabled())
+                logger.debug("Searching for waypoints for startPoint: " + StartPointId + " : " + startPoint.getTitle());
+            findWaypointInitialBindings.add("id", ModelFactory.createDefaultModel().createResource(StartPointId));
+            res = database.executeSelectQuery(sparqFindWaypointsById, findWaypointInitialBindings);
+            rs = res.getResults();
+            while (rs.hasNext()){
+                Waypoint waypoint = getWaypointDetails(rs.nextSolution());
+                if (waypoint != null) {
+                    if (logger.isDebugEnabled())
+                        logger.debug("Found waypoint (from startPointId): " + waypoint.getId());
+                    startPoint.setWaypoint(waypoint);
+                }
+            }
             if (startPoint != null) {
                 logger.debug("Found startPoint: " + startPoint.getTitle());
             }
@@ -173,10 +234,42 @@ public class StartPointDaoImpl implements StartPointDao {
 
 
     /**
+     * <p>Get the details of a waypoint and create a <code>waypoint</code> object.</p>
+     *
+     * @param qs the Jena query solution with the results of a sparql query
+     * @return a Waypoint
+     */
+    private Waypoint getWaypointDetails(final QuerySolution qs) {
+
+        Waypoint waypoint = new Waypoint();
+
+        if (qs.getResource("waypoint") != null) {
+            Resource resource = qs.getResource("waypoint");
+            waypoint.setId(resource.getURI());
+        }
+
+        if (qs.getResource("graph") != null) {
+            waypoint.setGraph(qs.getResource("graph").getURI());
+        }
+
+        if (qs.getLiteral("longitude") != null && !qs.getLiteral("longitude").getLexicalForm().equals("")) {
+            waypoint.setLongitude(Float.valueOf(qs.getLiteral("longitude").getLexicalForm()));
+        }
+
+        if (qs.getLiteral("latitude") != null && !qs.getLiteral("latitude").getLexicalForm().equals("")) {
+            waypoint.setLatitude(Float.valueOf(qs.getLiteral("latitude").getLexicalForm()));
+        }
+
+        return waypoint;
+    }
+
+
+    /**
      * SPARQL to find a stratPoints
      */
     private String sparqFindStartPointsByEventId;
     private String sparqFindStartPointById;
+    private String sparqFindWaypointsById;
 
     // Logger
     private final Logger logger = Logger.getLogger(this.getClass().getName());
