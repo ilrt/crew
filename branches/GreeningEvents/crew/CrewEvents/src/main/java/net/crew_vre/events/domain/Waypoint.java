@@ -33,20 +33,13 @@
  */
 package net.crew_vre.events.domain;
 
-import java.util.HashSet;
-import java.util.Set;
 import net.crew_vre.domain.DomainObject;
 /**
- * <p>The StartPoint object represents a start point for a Google Maps API route.</p>
+ * <p>The Waypoint object represents a waypoint in a Google Maps API route.</p>
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class StartPoint extends DomainObject {
-
-    /**
-     * The name of the place.
-     */
-    private String title;
+public class Waypoint extends DomainObject {
 
     /**
      * The latitude value (decimal).
@@ -58,13 +51,8 @@ public class StartPoint extends DomainObject {
      */
     private Float longitude;
 
-    /**
-     * A collection of waypoints associated with the route between the start point and the location
-     */
-    private Set<Waypoint> waypoints = new HashSet<Waypoint>();
 
-
-    public StartPoint() { }
+    public Waypoint() { }
 
     public String getId() {
         return getUri();
@@ -72,14 +60,6 @@ public class StartPoint extends DomainObject {
 
     public void setId(final String id) {
         setUri(id);
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(final String title) {
-        this.title = title;
     }
 
     public Float getLatitude() {
@@ -98,18 +78,6 @@ public class StartPoint extends DomainObject {
         this.longitude = longitude;
     }
 
-    public Set<Waypoint> getWaypoints() {
-        return waypoints;
-    }
-
-    public void setWaypoints(final Set<Waypoint> waypoints) {
-        this.waypoints = waypoints;
-    }
-
-    public void setWaypoint(final Waypoint waypoint) {
-        waypoints.add(waypoint);
-    }
-
     @Override
     public boolean equals(Object o) {
 
@@ -117,11 +85,11 @@ public class StartPoint extends DomainObject {
             return true;
         }
 
-        if (o == null || !(o instanceof StartPoint)) {
+        if (o == null || !(o instanceof Waypoint)) {
             return false;
         }
 
-        StartPoint other = (StartPoint) o;
+        Waypoint other = (Waypoint) o;
 
         return this.getId().equals(other.getId());
 
@@ -129,7 +97,7 @@ public class StartPoint extends DomainObject {
 
     @Override
     public int hashCode() {
-        return this.getId().hashCode();
+        return this.getUri().hashCode();
     }
-    
+
 }
