@@ -34,9 +34,22 @@
                   directionsDisplay.setMap(map);
                   directionsDisplay.setPanel(document.getElementById("routeDirections"));
 
+                  var waypoints = [];
+                  var waypointLatLng;
+                  <c:if test="${startPoint.waypoints != null}">
+                     <c:forEach var="waypoint" items="${startPoint.waypoints}">
+                        waypointLatLng = new google.maps.LatLng(${waypoint.latitude},${waypoint.longitude});
+                        waypoints.push({
+                          location:waypointLatLng,
+                          stopover:false
+                        });
+                     </c:forEach>
+                  </c:if>
                   var route = {
                     origin: startpoint,
                     destination: destination,
+                    waypoints: waypoints,
+                    optimizeWaypoints: true,
                     travelMode: google.maps.DirectionsTravelMode.WALKING
                   };
                   directionsService.route(route, function(response, status) {
@@ -156,6 +169,7 @@
                 <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px;"></div>
                 <div id="routeDirections" style="width: 600px; margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
             </div>
+                <%--
             <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
                 <strong><spring:message code="route.mode"/></strong><br/>
                 <select id="mode" onchange="calcRoute();">
@@ -163,6 +177,7 @@
                   <option value="DRIVING">Driving</option>
                 </select>
             </div>
+                --%>
         </div>
     </div>
     <!--End of Middle content-->
