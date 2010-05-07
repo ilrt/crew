@@ -33,6 +33,7 @@
  */
 package net.crew_vre.web.controller;
 
+import java.util.Set;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.web.facade.DisplayRouteFacade;
 import net.crew_vre.web.history.BrowseHistory;
@@ -42,6 +43,7 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.crew_vre.events.domain.Waypoint;
 
 /**
  * @author Pihl Cross (phil.cross@bristol.ac.uk)
@@ -66,10 +68,9 @@ public class DisplayRouteController implements Controller {
 
         if (request.getParameter("startPointId") != null) {
             startPoint = displayRouteFacade.displayStartPoint(request.getParameter("startPointId"));
-        }
-
-        if (startPoint != null) {
-            browseHistory.addHistory(request, startPoint.getTitle());
+            if (startPoint != null) {
+                browseHistory.addHistory(request, startPoint.getTitle());
+            }
         }
 
         ModelAndView mov = new ModelAndView("displayRoute");
