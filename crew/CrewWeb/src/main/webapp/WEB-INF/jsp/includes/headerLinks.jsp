@@ -16,3 +16,5 @@
 <authz:authorize ifAnyGranted="ROLE_ADMIN,ROLE_HARVESTER_ADMIN">
     <li><a href="${pageContext.request.contextPath}/adminActions.do"><fmt:message key="topNav.admin"/></a></li>
 </authz:authorize>
+
+    <li id="linkBtn"><a href="http://greeningevents.ilrt.bris.ac.uk/">Greening Events Project</a></li>
