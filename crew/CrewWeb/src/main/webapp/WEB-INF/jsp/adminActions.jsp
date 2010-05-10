@@ -34,6 +34,7 @@
             <security:authorize ifAllGranted="ROLE_ADMIN">
                 <p><fmt:message key="admin.nav.msg"/></p>
                 <ul>
+                    <li><a href="./registration.do">Register new user</a></li>
                     <li><a href="./secured/admin/listUsers.do"><fmt:message key="admin.nav.list.users"/></a></li>
                     <li><a href="./secured/admin/listRoles.do"><fmt:message key="admin.nav.list.roles"/></a></li>
                     <li><a href="./secured/admin/listGroups.do"><fmt:message key="admin.nav.list.groups"/></a></li>

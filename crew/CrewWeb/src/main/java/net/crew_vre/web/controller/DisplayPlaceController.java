@@ -87,8 +87,6 @@ public class DisplayPlaceController implements Controller {
 
     private DisplayPlaceFacade displayPlaceFacade;
 
-    private String googleMapKey;
-
     private BrowseHistory browseHistory;
 
 }

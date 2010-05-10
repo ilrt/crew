@@ -213,7 +213,7 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
     <%@ include file="includes/headerLinks.jsp" %>
 
     <%-- register message --%>
-    <%@ include file="includes/headerMessage.jsp" %>
+    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
     </ul>
     </div>
 
@@ -227,27 +227,8 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
 		</div>
 <!--end of wrqpper-->
 </div>
-<!--start of footer-->
 
-<!--<div id="survey2"><a href="http://www.surveymonkey.com/s.aspx?sm=OKJIQzf8G0oeXKpzq63NTA_3d_3d">Website feedback</a></div>-->
-    <div class="footer">
-            <div class="footerInner">
-                    <ul><li class="diamond" id="sitemapdiamond"><a href="/site-map/">Sitemap</a></li><li class="diamond" id="glossary"><a href="/glossary/">Glossary</a></li><li class="diamond" id="newsletter"><a href="/newsletter/">Newsletter</a></li><li class="diamond" id="mailinglist"><a href="/mailing-list/">Mailing list</a></li><li class="diamond" id="disclaimer"><a href="/disclaimer/">Disclaimer</a></li> <li class="copyright"><a href="/copyright/">Copyright &copy; 2010 JISC Digital Media</a></li></ul>
-                    <span class="advancelogo"><a href="http://www.jiscadvance.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/jisc-advance-logo.png" border="0" width="150" height="43" alt="JISC Advance" /></a></span>
+<%@ include file="includes/jdm_footer.jsp" %>
 
-            </div>
-<span class="printlogo"><a href="http://www.jiscdigitalmedia.ac.uk/"><img src="/images/site/print-logo.jpg" border="0" width="666" height="212" alt="JISC Digital Media" /></a></span>
-    </div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7006779-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-					<!--end of footer-->
 	</body>
 </html>
