@@ -165,9 +165,9 @@
         </div>
         <div class="clearDiv"></div>
         <div>
-            <div style="float: left">
-                <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px;"></div>
-                <div id="routeDirections" style="width: 600px; margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
+            <div style="float: left; width: 600px">
+                <div id="map" style="border: solid grey; border-width: 1px; height: 400px;"></div>
+                <div id="routeDirections" style="margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
             </div>
                 <%--
             <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
@@ -189,26 +189,6 @@
 </div>
 <!--end of wrapper-->
 </div>
-<!--start of footer-->
-
-<div class="footer">
-            <div class="footerInner">
-                    <ul><li class="diamond" id="sitemapdiamond"><a href="/site-map/">Sitemap</a></li><li class="diamond" id="glossary"><a href="/glossary/">Glossary</a></li><li class="diamond" id="newsletter"><a href="/newsletter/">Newsletter</a></li><li class="diamond" id="mailinglist"><a href="/mailing-list/">Mailing list</a></li><li class="diamond" id="disclaimer"><a href="/disclaimer/">Disclaimer</a></li> <li class="copyright"><a href="/copyright/">Copyright &copy; 2010 JISC Digital Media</a></li></ul>
-                    <span class="advancelogo"><a href="http://www.jiscadvance.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/jisc-advance-logo.png" border="0" width="150" height="43" alt="JISC Advance" /></a></span>
-
-            </div>
-<span class="printlogo"><a href="http://www.jiscdigitalmedia.ac.uk/"><img src="/images/site/print-logo.jpg" border="0" width="666" height="212" alt="JISC Digital Media" /></a></span>
-</div>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7006779-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-					<!--end of footer-->
+<%@ include file="includes/jdm_footer.jsp" %>
 	</body>
 </html>

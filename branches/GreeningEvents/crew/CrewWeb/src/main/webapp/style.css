@@ -107,7 +107,7 @@ body {
 }
 
 #navLinks {
-# position : absolute;
+/* position : absolute; */
     top: 0em;
     right: 0em;
     font-size: 1.3em;

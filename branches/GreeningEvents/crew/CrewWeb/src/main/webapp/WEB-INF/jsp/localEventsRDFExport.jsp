@@ -30,6 +30,12 @@
                 <dc:title>${event.location}</dc:title>
                 <pos:lat>${event.latitude}</pos:lat>
                 <pos:long>${event.longitude}</pos:long>
+                <dc:description>
+                    <c:out value="${event.locationDescription}" escapeXml="true"/>
+                </dc:description>
+                <ge:locationUrl>${event.locationUrl}</ge:locationUrl>
+                <ge:locationThumbSrc>${event.locationThumbUrl}</ge:locationThumbSrc>
+                <ge:locationImagesSrc>${event.locationImagesUrl}</ge:locationImagesSrc>
              </rdf:Description>
             </eswc:hasLocation>
         <c:forEach var="startPoint" items="${event.startPoints}" varStatus="status">
