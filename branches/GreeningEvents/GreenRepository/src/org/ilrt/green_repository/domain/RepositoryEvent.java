@@ -70,6 +70,10 @@ public class RepositoryEvent implements Serializable {
         this.eventUrl = form.getEventUrl();
         this.latitude = form.getLatitude();
         this.longitude = form.getLongitude();
+        this.locationDescription = form.getLocationDescription();
+        this.locationUrl = form.getLocationUrl();
+        this.locationThumbUrl = form.getLocationThumbUrl();
+        this.locationImagesUrl = form.getLocationImagesUrl();
 
         RepositoryEventStartPoint startPoint = null;
         if (form.getStartPoint1() != null && !form.getStartPoint1().equals("")
@@ -246,6 +250,15 @@ public class RepositoryEvent implements Serializable {
         this.description = description;
     }
 
+    public String getEventUrl() {
+        return eventUrl;
+    }
+
+    public void setEventUrl(String eventUrl) {
+        this.eventUrl = eventUrl;
+    }
+    
+    // Location data
     public String getLocation() {
         return location;
     }
@@ -278,14 +291,39 @@ public class RepositoryEvent implements Serializable {
         this.longitude = longitude;
     }
 
-    public String getEventUrl() {
-        return eventUrl;
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
     }
 
-    public void setEventUrl(String eventUrl) {
-        this.eventUrl = eventUrl;
+    public String getLocationDescription() {
+        return locationDescription;
     }
 
+    public void setLocationUrl(String locationUrl) {
+        this.locationUrl = locationUrl;
+    }
+
+    public String getLocationUrl() {
+        return locationUrl;
+    }
+
+    public void setLocationThumbUrl(String locationThumbUrl) {
+        this.locationThumbUrl = locationThumbUrl;
+    }
+
+    public String getLocationThumbUrl() {
+        return locationThumbUrl;
+    }
+
+    public void setLocationImagesUrl(String locationImagesUrl) {
+        this.locationImagesUrl = locationImagesUrl;
+    }
+
+    public String getLocationImagesUrl() {
+        return locationImagesUrl;
+    }
+
+    // Startpoint data for Google map directions
     public Set<RepositoryEventStartPoint> getStartPoints(){
         return startPoints;
     }
@@ -357,6 +395,11 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "DESCRIPTION", columnDefinition="LONG VARCHAR", nullable = true)
     private String description;
 
+    @Column(name = "EVENTURL", nullable = true)
+    private String eventUrl;
+
+    // Location details
+    // Location name
     @Column(name = "LOCATION", nullable = true)
     private String location;
 
@@ -366,8 +409,17 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "LONGITUDE", nullable = true)
     private String longitude;
 
-    @Column(name = "EVENTURL", nullable = true)
-    private String eventUrl;
+    // Information below goes into Google map InfoWindow
+    @Column(name = "LOCATIONDESCRIPTION", columnDefinition="LONG VARCHAR", nullable = true)
+    private String locationDescription;
 
+    @Column(name = "LOCATIONURL", nullable = true)
+    private String locationUrl;
+
+    @Column(name = "LOCATIONTHUMBURL", nullable = true)
+    private String locationThumbUrl;
+
+    @Column(name = "LOCATIONIMAGESURL", nullable = true)
+    private String locationImagesUrl;
 
 }

@@ -57,6 +57,10 @@ public class RepositoryEventForm {
     private String location = null;
     private String latitude = null;
     private String longitude = null;
+    private String locationDescription = null;
+    private String locationUrl = null;
+    private String locationThumbUrl = null;
+    private String locationImagesUrl = null;
 
     private String startPoint1 = null;
     private String startPointId1 = null;
@@ -110,10 +114,14 @@ public class RepositoryEventForm {
         this.startDate = event.getStartDate();
         this.endDate = event.getEndDate();
         this.description = event.getDescription();
+        this.eventUrl = event.getEventUrl();
         this.location = event.getLocation();
         this.latitude = event.getLatitude();
         this.longitude = event.getLongitude();
-        this.eventUrl = event.getEventUrl();
+        this.locationDescription = event.getLocationDescription();
+        this.locationUrl = event.getLocationUrl();
+        this.locationThumbUrl = event.getLocationThumbUrl();
+        this.locationImagesUrl = event.getLocationImagesUrl();
         startPoints = (Set)event.getStartPoints();
         if (startPoints != null) {
             Iterator iter = startPoints.iterator();
@@ -268,6 +276,7 @@ public class RepositoryEventForm {
         this.description = description;
     }
 
+    // Location data
     public String getLocation() {
         return location;
     }
@@ -290,6 +299,38 @@ public class RepositoryEventForm {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
+    }
+
+    public String getLocationDescription() {
+        return locationDescription;
+    }
+
+    public void setLocationUrl(String locationUrl) {
+        this.locationUrl = locationUrl;
+    }
+
+    public String getLocationUrl() {
+        return locationUrl;
+    }
+
+    public void setLocationThumbUrl(String locationThumbUrl) {
+        this.locationThumbUrl = locationThumbUrl;
+    }
+
+    public String getLocationThumbUrl() {
+        return locationThumbUrl;
+    }
+
+    public void setLocationImagesUrl(String locationImagesUrl) {
+        this.locationImagesUrl = locationImagesUrl;
+    }
+
+    public String getLocationImagesUrl() {
+        return locationImagesUrl;
     }
     
     
