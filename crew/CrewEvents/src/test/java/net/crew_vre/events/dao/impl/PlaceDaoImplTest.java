@@ -75,7 +75,7 @@ public class PlaceDaoImplTest extends TestCase {
                 place.getLocations().size() > 0);
 
         for (Place p : place.getLocations()) {
-            assertNotNull("The graph should not be null", place.getGraph());
+            assertNotNull("The graph should not be null", p.getGraph());
         }
 
     }
