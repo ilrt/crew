@@ -134,6 +134,9 @@ public class PlaceDaoImpl implements PlaceDao {
 
         while (rs.hasNext()) {
             Place place = getPlaceDetails(rs.nextSolution());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Found place with title: " + place.getTitle() + " latitude: " + place.getLatitude());
+            }
             parts.add(place);
         }
 
@@ -159,7 +162,7 @@ public class PlaceDaoImpl implements PlaceDao {
             place.setGraph(qs.getResource("graph").getURI());
         }
 
-        if (qs.getLiteral("name") != null) {
+        if (qs.getLiteral("name") != null && !qs.getLiteral("name").getLexicalForm().equals("")) {
             place.setTitle(qs.getLiteral("name").getLexicalForm());
         }
 
@@ -170,9 +173,25 @@ public class PlaceDaoImpl implements PlaceDao {
         if (qs.getLiteral("latitude") != null && !qs.getLiteral("latitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("latitude").getLexicalForm()));
         }
-
+/*
         if (qs.getLiteral("altitude") != null && !qs.getLiteral("altitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("altitude").getLexicalForm()));
+        }
+ */
+        if (qs.getLiteral("locationDescription") != null && !qs.getLiteral("locationDescription").getLexicalForm().equals("")) {
+            place.setLocationDescription(qs.getLiteral("locationDescription").getLexicalForm());
+        }
+
+        if (qs.getLiteral("locationUrl") != null && !qs.getLiteral("locationUrl").getLexicalForm().equals("")) {
+            place.setLocationUrl(qs.getResource("locationUrl").getURI());
+        }
+
+        if (qs.getLiteral("locationThumbUrl") != null && !qs.getLiteral("locationThumbUrl").getLexicalForm().equals("")) {
+            place.setLocationThumbUrl(qs.getResource("locationThumbUrl").getURI());
+        }
+
+        if (qs.getLiteral("locationImagesUrl") != null && !qs.getLiteral("locationImagesUrl").getLexicalForm().equals("")) {
+            place.setLocationImagesUrl(qs.getResource("locationImagesUrl").getURI());
         }
 
         return place;
