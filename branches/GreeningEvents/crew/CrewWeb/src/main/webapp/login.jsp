@@ -57,7 +57,7 @@
 
             <p><input type="submit" value="Log In"/></p>
 
-            <p>If you don't have an account, please <a href="registration.do">register</a>.</p>
+            <%-- <p>If you don't have an account, please <a href="registration.do">register</a>.</p> --%>
 
             <p><a href="forgottenPassword.do">Forgotten your password?</a></p>
 
