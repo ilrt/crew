@@ -98,6 +98,9 @@ public class PlaceDaoImpl implements PlaceDao {
         // there should only be one...
         while (rs.hasNext()) {
             place = getPlaceDetails(rs.nextSolution());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Found place with title: " + place.getTitle() + " latitude: " + place.getLatitude());
+            }
             place.setLocations(findPartsForPlace(place.getId()));
         }
 
@@ -163,6 +166,9 @@ public class PlaceDaoImpl implements PlaceDao {
         }
 
         if (qs.getLiteral("name") != null && !qs.getLiteral("name").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location name: " + qs.getLiteral("name"));
+            }
             place.setTitle(qs.getLiteral("name").getLexicalForm());
         }
 
@@ -179,19 +185,34 @@ public class PlaceDaoImpl implements PlaceDao {
         }
  */
         if (qs.getLiteral("locationDescription") != null && !qs.getLiteral("locationDescription").getLexicalForm().equals("")) {
-            place.setLocationDescription(qs.getLiteral("locationDescription").getLexicalForm());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location description: " + qs.getLiteral("locationDescription"));
+            }
+            // Remove any line breaks which will break the javascript output
+            String description = qs.getLiteral("locationDescription").getLexicalForm();
+            description = description.replaceAll("[\\n\\r]", " ");
+            place.setLocationDescription(description);
         }
 
         if (qs.getLiteral("locationUrl") != null && !qs.getLiteral("locationUrl").getLexicalForm().equals("")) {
-            place.setLocationUrl(qs.getResource("locationUrl").getURI());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location URL: " + qs.getLiteral("locationUrl"));
+            }
+            place.setLocationUrl(qs.getLiteral("locationUrl").getLexicalForm());
         }
 
         if (qs.getLiteral("locationThumbUrl") != null && !qs.getLiteral("locationThumbUrl").getLexicalForm().equals("")) {
-            place.setLocationThumbUrl(qs.getResource("locationThumbUrl").getURI());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location thumbnail URL: " + qs.getLiteral("locationThumbUrl"));
+            }
+            place.setLocationThumbUrl(qs.getLiteral("locationThumbUrl").getLexicalForm());
         }
 
         if (qs.getLiteral("locationImagesUrl") != null && !qs.getLiteral("locationImagesUrl").getLexicalForm().equals("")) {
-            place.setLocationImagesUrl(qs.getResource("locationImagesUrl").getURI());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location images URL: " + qs.getLiteral("locationImagesUrl"));
+            }
+            place.setLocationImagesUrl(qs.getLiteral("locationImagesUrl").getLexicalForm());
         }
 
         return place;
