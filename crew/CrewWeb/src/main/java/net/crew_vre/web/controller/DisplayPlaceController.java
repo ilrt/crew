@@ -51,7 +51,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DisplayPlaceController implements Controller {
 
     public DisplayPlaceController(DisplayPlaceFacade displayPlaceFacade, BrowseHistory
-            browseHistory, String googleMapKey) {
+            browseHistory) {
         this.displayPlaceFacade = displayPlaceFacade;
         this.browseHistory = browseHistory;
     }
