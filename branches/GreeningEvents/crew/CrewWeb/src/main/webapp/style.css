@@ -615,3 +615,37 @@ li.pagination {
 #accountLinks {
 
 }
+
+#mapCol {
+    float: left;
+}
+
+.map h1 {
+    color: #FFFFFF;
+    float: left;
+    font-size: 1.6em;
+    font-weight: normal;
+    padding: 0.3em 0 0.5em 1em;
+    width: 750px;
+}
+
+#mapDiv {
+    border: solid grey;
+    border-width: 1px;
+    width: 750px;
+    height: 600px;
+}
+
+#routeLinks {
+    border: solid grey;
+    border-width: 1px;
+    padding: 2px;
+    margin-left: 755px;
+}
+
+#routeDirections {
+    margin-top: 2em;
+    border: solid grey;
+    border-width: 1px;
+    padding: 2px;
+}

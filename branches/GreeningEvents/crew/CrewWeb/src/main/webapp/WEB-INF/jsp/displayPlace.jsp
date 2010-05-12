@@ -25,24 +25,29 @@
                   center: latlng,
                   mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                var map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
                 var marker = new google.maps.Marker({
                     position: latlng,
                     map: map,
                     title:"${place.title}"
                 });
                 var contentString;
-                <c:if test="${place.title != null}">
-                    contentString = "<strong>${place.title}</strong>";
-                </c:if>
+                <c:choose>
+                    <c:when test="${place.title != null && place.locationUrl != null}">
+                        contentString = '<a href="${place.locationUrl}">${place.title}</a>';
+                    </c:when>
+                    <c:when test="${place.title != null}">
+                        contentString = '${place.locationUrl}';
+                    </c:when>
+                </c:choose>
                 <c:if test="${place.locationDescription != null}">
-                    contentString += "${place.locationDescription}";
+                    contentString += '<br/>${place.locationDescription}';
                 </c:if>
-                <c:if test="${place.locationUrl != null}">
-                    contentString += "<br/><a href=\"${place.locationUrl}\">link</a>";
+                <c:if test="${place.locationImagesUrl != null}">
+                    contentString += '<br/><a href="${place.locationImagesUrl}">Location images</a>';
                 </c:if>
                 <c:if test="${place.locationThumbUrl != null}">
-                    contentString += "<img src=\"${place.locationThumbUrl}\"/>";
+                    contentString += '<br/><img src="${place.locationThumbUrl}"/>';
                 </c:if>
                 var infowindow = new google.maps.InfoWindow({
                     content: contentString
@@ -120,15 +125,15 @@
                 <div class="clearDiv"></div>
 
 <div class="content content2">
-        <!--start of Left content-->
-
+  <%--
+<!--start of Left content-->
     <div id="leftCol">
         <%@ include file="includes/headerBrowse.jsp" %>
     </div>
 <!--end of Left content-->
-
+--%>
 <!--start of Middle content-->
-    <div id="midCol" class="genericContent midColWide">
+    <div id="mapCol" class="traininglist map">
 
         <div id="breadCrumb">
             <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
@@ -142,9 +147,9 @@
         <div class="clearDiv"></div>
         <div>
             <div style="float: left">
-                <div id="map" style="border: solid grey; border-width: 1px; width: 600px; height: 400px;"></div>
+                <div id="mapDiv"></div>
             </div>
-            <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px;">
+            <div id="routeLinks">
                 <h4>Routes to ${place.title}</h4>
                 <c:if test="${startPointList != null}">
                     <c:forEach var="startPoint" items="${startPointList}">

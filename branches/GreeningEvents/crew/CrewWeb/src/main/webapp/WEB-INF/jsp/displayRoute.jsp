@@ -30,7 +30,7 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     center: startpoint
                   }
-                  map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                  map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
                   directionsDisplay.setMap(map);
                   directionsDisplay.setPanel(document.getElementById("routeDirections"));
 
@@ -143,15 +143,15 @@
                 <div class="clearDiv"></div>
 
 <div class="content content2">
-        <!--start of Left content-->
-
+    <%--
+<!--start of Left content-->
     <div id="leftCol">
         <%@ include file="includes/headerBrowse.jsp" %>
     </div>
 <!--end of Left content-->
-
+--%>
 <!--start of Middle content-->
-    <div id="midCol" class="genericContent midColWide">
+    <div id="mapCol" class="traininglist map">
 
         <c:if test="${browseHistory[1] != null}">
             <div id="breadCrumb">
@@ -160,14 +160,14 @@
         </c:if>
 
         <div style="float:left">
-            <h1>Route from ${startPoint.title} to ${place.title}</h1>
+            <h2>Route from ${startPoint.title} to ${place.title}</h2>
             <h3><spring:message code="route.details"/></h3>
         </div>
         <div class="clearDiv"></div>
         <div>
-            <div style="float: left; width: 600px">
-                <div id="map" style="border: solid grey; border-width: 1px; height: 400px;"></div>
-                <div id="routeDirections" style="margin-top: 2em; border: solid grey; border-width: 1px; padding: 2px;"></div>
+            <div style="float: left;">
+                <div id="mapDiv"></div>
+                <div id="routeDirections"></div>
             </div>
                 <%--
             <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
