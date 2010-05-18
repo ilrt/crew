@@ -23,7 +23,7 @@
             <crew:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">${event.startDate}</crew:hasStartDate>
             <crew:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">${event.endDate}</crew:hasEndDate>
             <dc:description>
-                ${event.description}
+                <c:out value="${event.description}" escapeXml="true"/>
             </dc:description>
             <eswc:hasLocation>
              <rdf:Description rdf:about="${event.locationHash}">
