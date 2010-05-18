@@ -29,6 +29,15 @@
                 <filter.location>src/main/filters/deployment.properties</filter.location>
             </properties>
         </profile>
+        <profile>
+            <id>tc-prod0</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <filter.location>src/main/filters/tc-prod0.properties</filter.location>
+            </properties>
+        </profile>
     </profiles>
     <repositories>
         <!-- ILRT maven repo -->
