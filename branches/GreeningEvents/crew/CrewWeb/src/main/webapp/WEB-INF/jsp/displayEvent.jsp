@@ -334,7 +334,7 @@
 
 
 <div class="contentBlock">
-
+<%--
         <div id="annotations-title">Comments</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
@@ -344,8 +344,9 @@
         or [http://www.jiscdigitalmedia.ac.uk]</div>
 
         <div id="annotation-messages"></div>
-
+--%>
             <%-- show form if they are logged in --%>
+<%--
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
                   action="javascript:processForm('<%=request.getUserPrincipal().getName()%>')"
@@ -365,8 +366,9 @@
                 </p>
             </form>
         </security:authorize>
-
+--%>
             <%-- message if not logged in --%>
+<%--
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
             <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.
                 You can <a href="./registration.do">register</a> if you do not have an account.<br/>
@@ -374,7 +376,7 @@
 
         </security:authorize>
 
-
+--%>
 
 </c:when>
 <c:otherwise>

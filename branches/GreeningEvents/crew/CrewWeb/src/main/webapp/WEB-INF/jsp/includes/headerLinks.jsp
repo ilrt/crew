@@ -2,9 +2,12 @@
 <%@ taglib prefix="authz" uri="http://www.springframework.org/security/tags" %>
 
 <%-- anonymous user - see a login link --%>
+<%--
+Remove login option for now
 <authz:authorize ifAllGranted="ROLE_ANONYMOUS">
     <li><a href="${pageContext.request.contextPath}/secured/displayProfile.do"><fmt:message key="topNav.login"/></a></li>
 </authz:authorize>
+--%>
 
 <%-- authenticated - see a logout link and profile links --%>
 <authz:authorize ifNotGranted="ROLE_ANONYMOUS">

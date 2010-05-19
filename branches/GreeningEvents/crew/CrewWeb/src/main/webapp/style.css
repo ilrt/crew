@@ -626,7 +626,16 @@ li.pagination {
     font-size: 1.6em;
     font-weight: normal;
     padding: 0.3em 0 0.5em 1em;
-    width: 750px;
+    width: 725px;
+}
+
+#mapContainer {
+    margin-top: 1em;
+}
+
+#routeContainer {
+    float: left;
+    margin-top: 1em;
 }
 
 #mapDiv {
@@ -644,8 +653,8 @@ li.pagination {
 }
 
 #routeDirections {
-    margin-top: 2em;
-    border: solid grey;
-    border-width: 1px;
+    margin-top: 1em;
+    /*border: solid grey;
+    border-width: 1px;*/
     padding: 2px;
 }
