@@ -155,29 +155,22 @@
 
         <c:if test="${browseHistory[1] != null}">
             <div id="breadCrumb">
+                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+                <strong>&gt;</strong>
                 <a href="${browseHistory[1].path}"><spring:message code="nav.back2"/>&nbsp;${place.title}</a>
             </div>
         </c:if>
 
         <div style="float:left">
-            <h2>Route from ${startPoint.title} to ${place.title}</h2>
-            <h3><spring:message code="route.details"/></h3>
+            <h1>Route from ${startPoint.title} to ${place.title}</h1>
+            <%--<h3><spring:message code="route.details"/></h3>--%>
         </div>
         <div class="clearDiv"></div>
         <div>
-            <div style="float: left;">
+            <div id="routeContainer">
                 <div id="mapDiv"></div>
                 <div id="routeDirections"></div>
             </div>
-                <%--
-            <div id="routeLinks" style="border: solid grey; border-width: 1px; padding: 2px; margin-left: 605px">
-                <strong><spring:message code="route.mode"/></strong><br/>
-                <select id="mode" onchange="calcRoute();">
-                  <option value="WALKING">Walking</option>
-                  <option value="DRIVING">Driving</option>
-                </select>
-            </div>
-                --%>
         </div>
     </div>
     <!--End of Middle content-->

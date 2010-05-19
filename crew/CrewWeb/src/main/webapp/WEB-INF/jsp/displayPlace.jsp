@@ -142,10 +142,10 @@
         </div>
         <div style="float:left">
             <h1>${place.title}</h1>
-            <h3><spring:message code="place.details"/></h3>
+            <%--<h3><spring:message code="place.details"/></h3>--%>
         </div>
         <div class="clearDiv"></div>
-        <div>
+        <div id="mapContainer">
             <div style="float: left">
                 <div id="mapDiv"></div>
             </div>
