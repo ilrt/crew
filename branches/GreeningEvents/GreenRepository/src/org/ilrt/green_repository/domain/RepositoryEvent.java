@@ -75,6 +75,56 @@ public class RepositoryEvent implements Serializable {
         this.locationThumbUrl = form.getLocationThumbUrl();
         this.locationImagesUrl = form.getLocationImagesUrl();
 
+        RepositoryEventKml kml = null;
+        if (form.getKmlTitle1() != null && !form.getKmlTitle1().equals("")
+                && form.getKmlType1() != null && !form.getKmlType1().equals("")
+                && form.getKmlXml1() != null && !form.getKmlXml1().equals("")) {
+            if (form.getKmlId1() != null && !form.getKmlId1().equals("")) {
+                // Existing kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlId1(),form.getKmlTitle1(),form.getKmlType1(),form.getKmlXml1()
+                       );
+            } else {
+                // New kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlTitle1(),form.getKmlType1(),form.getKmlXml1()
+                       );
+            }
+            kmlObjects.add(kml);
+        }
+        if (form.getKmlTitle2() != null && !form.getKmlTitle2().equals("")
+                && form.getKmlType2() != null && !form.getKmlType2().equals("")
+                && form.getKmlXml2() != null && !form.getKmlXml2().equals("")) {
+            if (form.getKmlId2() != null && !form.getKmlId2().equals("")) {
+                // Existing kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlId2(),form.getKmlTitle2(),form.getKmlType2(),form.getKmlXml2()
+                       );
+            } else {
+                // New kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlTitle2(),form.getKmlType2(),form.getKmlXml2()
+                       );
+            }
+            kmlObjects.add(kml);
+        }
+        if (form.getKmlTitle3() != null && !form.getKmlTitle3().equals("")
+                && form.getKmlType3() != null && !form.getKmlType3().equals("")
+                && form.getKmlXml3() != null && !form.getKmlXml3().equals("")) {
+            if (form.getKmlId3() != null && !form.getKmlId3().equals("")) {
+                // Existing kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlId3(),form.getKmlTitle3(),form.getKmlType3(),form.getKmlXml3()
+                       );
+            } else {
+                // New kml object
+                kml = new RepositoryEventKml(
+                       form.getKmlTitle3(),form.getKmlType3(),form.getKmlXml3()
+                       );
+            }
+            kmlObjects.add(kml);
+        }
+
         RepositoryEventStartPoint startPoint = null;
         if (form.getStartPoint1() != null && !form.getStartPoint1().equals("")
                 && form.getStartPointLat1() != null && !form.getStartPointLat1().equals("")
@@ -332,6 +382,15 @@ public class RepositoryEvent implements Serializable {
         this.startPoints = startPoints;
     }
 
+    // KML objects for Google map overlays
+    public Set<RepositoryEventKml> getKmlObjects(){
+        return kmlObjects;
+    }
+
+    public void setKmlObjects(Set<RepositoryEventKml> kmlObjects){
+        this.kmlObjects = kmlObjects;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -378,6 +437,10 @@ public class RepositoryEvent implements Serializable {
     // Optional collection of route startPoints connecting to the location associated with the event
     @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private Set<RepositoryEventStartPoint> startPoints = new HashSet<RepositoryEventStartPoint>();
+
+    // Optional collection of KML objects associated with the event location
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<RepositoryEventKml> kmlObjects = new HashSet<RepositoryEventKml>();
 
     @Id
     @Column(name = "EVENTID")
