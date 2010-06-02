@@ -40,6 +40,7 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
+import org.ilrt.green_repository.domain.RepositoryEventKml;
 import org.ilrt.green_repository.domain.RepositoryEventStartPoint;
 import org.ilrt.green_repository.domain.RepositoryEventWaypoint;
 
@@ -98,11 +99,27 @@ public class RepositoryEventForm {
     private String waypointLat3_2 = null;
     private String waypointLong3_2 = null;
 
+    private String kmlId1 = null;
+    private String kmlTitle1 = null;
+    private String kmlType1 = null;
+    private String kmlXml1 = null;
+
+    private String kmlId2 = null;
+    private String kmlTitle2 = null;
+    private String kmlType2 = null;
+    private String kmlXml2 = null;
+
+    private String kmlId3 = null;
+    private String kmlTitle3 = null;
+    private String kmlType3 = null;
+    private String kmlXml3 = null;
+
     private String eventUrl = null;
     private String addButton = null;
     private String updateButton = null;
     private String cancelButton = null;
     private Set<RepositoryEventStartPoint> startPoints = null;
+    private Set<RepositoryEventKml> kmlObjects = null;
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -202,6 +219,34 @@ public class RepositoryEventForm {
                             }
                         }
                     }
+                } else if (count > 3) {
+                    break;
+                }
+            }
+        }
+        kmlObjects = (Set)event.getKmlObjects();
+        if (kmlObjects != null) {
+            Iterator iter = kmlObjects.iterator();
+            RepositoryEventKml kmlObject;
+            int count = 0;
+            while (iter.hasNext()) {
+                count++;
+                kmlObject = (RepositoryEventKml)iter.next();
+                if (count == 1) {
+                    this.setKmlId1(kmlObject.getKmlId());
+                    this.setKmlTitle1(kmlObject.getTitle());
+                    this.setKmlType1(kmlObject.getType());
+                    this.setKmlXml1(kmlObject.getXml());
+                } else if (count == 2) {
+                    this.setKmlId2(kmlObject.getKmlId());
+                    this.setKmlTitle2(kmlObject.getTitle());
+                    this.setKmlType2(kmlObject.getType());
+                    this.setKmlXml2(kmlObject.getXml());
+                } else if (count == 3) {
+                    this.setKmlId3(kmlObject.getKmlId());
+                    this.setKmlTitle3(kmlObject.getTitle());
+                    this.setKmlType3(kmlObject.getType());
+                    this.setKmlXml3(kmlObject.getXml());
                 } else if (count > 3) {
                     break;
                 }
@@ -581,6 +626,104 @@ public class RepositoryEventForm {
         this.waypointLong3_2 = waypointLong3_2;
     }
 
+    // Up to 3 kml objects
+    public String getKmlId1() {
+        return kmlId1;
+    }
+
+    public void setKmlId1(String kmlId1) {
+        this.kmlId1 = kmlId1;
+    }
+
+    public String getKmlTitle1() {
+        return kmlTitle1;
+    }
+
+    public void setKmlTitle1(String kmlTitle1) {
+        this.kmlTitle1 = kmlTitle1;
+    }
+
+    public String getKmlType1() {
+        return kmlType1;
+    }
+
+    public void setKmlType1(String kmlType1) {
+        this.kmlType1 = kmlType1;
+    }
+
+    public String getKmlXml1() {
+        return kmlXml1;
+    }
+
+    public void setKmlXml1(String kmlXml1) {
+        this.kmlXml1 = kmlXml1;
+    }
+
+    public String getKmlId2() {
+        return kmlId2;
+    }
+
+    public void setKmlId2(String kmlId2) {
+        this.kmlId2 = kmlId2;
+    }
+
+    public String getKmlTitle2() {
+        return kmlTitle2;
+    }
+
+    public void setKmlTitle2(String kmlTitle2) {
+        this.kmlTitle2 = kmlTitle2;
+    }
+
+    public String getKmlType2() {
+        return kmlType2;
+    }
+
+    public void setKmlType2(String kmlType2) {
+        this.kmlType2 = kmlType2;
+    }
+
+    public String getKmlXml2() {
+        return kmlXml2;
+    }
+
+    public void setKmlXml2(String kmlXml2) {
+        this.kmlXml2 = kmlXml2;
+    }
+
+    public String getKmlId3() {
+        return kmlId3;
+    }
+
+    public void setKmlId3(String kmlId3) {
+        this.kmlId3 = kmlId3;
+    }
+
+    public String getKmlTitle3() {
+        return kmlTitle3;
+    }
+
+    public void setKmlTitle3(String kmlTitle3) {
+        this.kmlTitle3 = kmlTitle3;
+    }
+
+    public String getKmlType3() {
+        return kmlType3;
+    }
+
+    public void setKmlType3(String kmlType3) {
+        this.kmlType3 = kmlType3;
+    }
+
+    public String getKmlXml3() {
+        return kmlXml3;
+    }
+
+    public void setKmlXml3(String kmlXml3) {
+        this.kmlXml3 = kmlXml3;
+    }
+
+    
 
     public String getEventUrl() {
         return eventUrl;
