@@ -14,7 +14,7 @@
     <link rel='stylesheet' type='text/css' media='screen'
           href='http://www.jiscdigitalmedia.ac.uk/?css=jdm/master.v.1267190280' />
     <c:choose>
-        <c:when test="${place != null && startPoint != null}">
+        <c:when test="${place != null && (startPoint != null || kml != null)}">
             <script type="text/javascript"
                 src="http://maps.google.com/maps/api/js?sensor=false"></script>
             <script type="text/javascript">
@@ -23,17 +23,29 @@
                 var map;
               var destination = new google.maps.LatLng(${place.latitude}, ${place.longitude});
               var startpoint = new google.maps.LatLng(${startPoint.latitude}, ${startPoint.longitude});
+              var centrepoint;
+              <c:choose>
+                <c:when test="${kml != null}">
+                  centrepoint = destination;
+                </c:when>
+                <c:otherwise>
+                  centrepoint = startpiont;
+                </c:otherwise>
+              </c:choose>
               function initialize() {
                   directionsDisplay = new google.maps.DirectionsRenderer();
                   var mapOptions = {
                     zoom:14,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: startpoint
+                    center: centrepoint
                   }
                   map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
+
+          <c:choose>
+              <c:when test="${startPoint != null}">
+                  <%-- We have a start point for a route --%>
                   directionsDisplay.setMap(map);
                   directionsDisplay.setPanel(document.getElementById("routeDirections"));
-
                   var waypoints = [];
                   var waypointLatLng;
                   <c:if test="${startPoint.waypoints != null}">
@@ -57,6 +69,15 @@
                       directionsDisplay.setDirections(response);
                     }
                   });
+              </c:when>
+              <c:otherwise>
+                <%-- We have a KML file url for a KML overlay --%>
+               <%-- var ctaLayer = new google.maps.KmlLayer('${kml.url}'); --%>
+                var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml');
+                ctaLayer.setMap(map);
+              </c:otherwise>
+          </c:choose>
+              
               }
 
                 function calcRoute() {

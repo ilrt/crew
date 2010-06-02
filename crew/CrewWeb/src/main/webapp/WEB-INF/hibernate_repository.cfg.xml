@@ -8,5 +8,6 @@
         <mapping class="org.ilrt.green_repository.domain.RepositoryEvent"/>
         <mapping class="org.ilrt.green_repository.domain.RepositoryEventStartPoint"/>
         <mapping class="org.ilrt.green_repository.domain.RepositoryEventWaypoint"/>
+        <mapping class="org.ilrt.green_repository.domain.RepositoryEventKml"/>
     </session-factory>
 </hibernate-configuration>

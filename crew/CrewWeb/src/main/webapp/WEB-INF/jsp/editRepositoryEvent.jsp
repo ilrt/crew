@@ -56,7 +56,7 @@
                             <td><form:errors path="description"/></td>
                         </tr>
                     </table>
-                    <table class="details-table">
+                    <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr>
                             <td><strong><fmt:message key="repository.eventLocation"/></strong></td>
                             <td><form:input size="30" path="location"/></td>
@@ -70,7 +70,8 @@
                             </td>
                         </tr>
                     </table>
-                    <table class="details-table">
+                        <%-- Location information --%>
+                    <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr>
                             <td><strong><fmt:message key="repository.eventLocationDescription"/></strong></td>
                             <td><form:textarea path="locationDescription" rows="5" cols="60"/></td>
@@ -92,7 +93,8 @@
                             <td><form:errors path="locationImagesUrl"/></td>
                         </tr>
                     </table>
-                    <table class="details-table">
+                        <%-- Startpoint details --%>
+                        <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr>
                             <td><strong><fmt:message key="repository.eventStartPoint"/></strong>
                                 <form:hidden path="startPointId1"/></td>
@@ -187,6 +189,64 @@
                             </td>
                         </tr>
                     </table>
+                        <%-- KML files --%>
+                    <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
+                        <tr>
+                            <td><strong>Route title</strong>
+                                <form:hidden path="kmlId1"/></td>
+                            <td><form:input size="30" path="kmlTitle1"/></td>
+                            <td>Type:
+                                <form:select path="kmlType1">
+                                    <form:option value="walking" label="Walking"/>
+                                    <form:option value="cycling" label="Cycling"/>
+                                    <form:option value="other" label="Other"/>
+                                </form:select>
+                            </td>
+                            <td><strong>Copy 'n' Paste KML file</strong>: <form:textarea path="kmlXml1" rows="5" cols="60"/></td>
+                            <td>
+                                <form:errors path="kmlType1"/>
+                                <form:errors path="kmlType1"/>
+                                <form:errors path="kmlXml1"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Route title</strong>
+                                <form:hidden path="kmlId2"/></td>
+                            <td><form:input size="30" path="kmlTitle2"/></td>
+                            <td>Type:
+                                <form:select path="kmlType2">
+                                    <form:option value="walking" label="Walking"/>
+                                    <form:option value="cycling" label="Cycling"/>
+                                    <form:option value="other" label="Other"/>
+                                </form:select>
+                            </td>
+                            <td><strong>Copy 'n' Paste KML file</strong>: <form:textarea path="kmlXml2" rows="5" cols="60"/></td>
+                            <td>
+                                <form:errors path="kmlType2"/>
+                                <form:errors path="kmlType2"/>
+                                <form:errors path="kmlXml2"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Route title</strong>
+                                <form:hidden path="kmlId3"/></td>
+                            <td><form:input size="30" path="kmlTitle3"/></td>
+                            <td>Type:
+                                <form:select path="kmlType3">
+                                    <form:option value="walking" label="Walking"/>
+                                    <form:option value="cycling" label="Cycling"/>
+                                    <form:option value="other" label="Other"/>
+                                </form:select>
+                            </td>
+                            <td><strong>Copy 'n' Paste KML file</strong>: <form:textarea path="kmlXml3" rows="5" cols="60"/></td>
+                            <td>
+                                <form:errors path="kmlType3"/>
+                                <form:errors path="kmlType3"/>
+                                <form:errors path="kmlXml3"/>
+                            </td>
+                        </tr>
+                    </table>
+
                     <table class="details-table">
                         <tr>
                             <td><strong><fmt:message key="repository.eventUrl"/></strong></td>
