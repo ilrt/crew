@@ -38,23 +38,32 @@
                 <ge:locationImagesSrc>${event.locationImagesUrl}</ge:locationImagesSrc>
              </rdf:Description>
             </eswc:hasLocation>
-        <c:forEach var="startPoint" items="${event.startPoints}" varStatus="status">
-             <ge:startPoint>
-                 <rdf:Description rdf:about="${startPoint.startPointId}">
-                    <dc:title>${startPoint.title}</dc:title>
-                    <pos:lat>${startPoint.latitude}</pos:lat>
-                    <pos:long>${startPoint.longitude}</pos:long>
-                    <c:forEach var="waypoint" items="${startPoint.waypoints}" varStatus="status">
-                        <ge:waypoint>
-                            <rdf:Description rdf:about="${waypoint.waypointId}">
-                                <pos:lat>${waypoint.latitude}</pos:lat>
-                                <pos:long>${waypoint.longitude}</pos:long>
-                            </rdf:Description>
-                        </ge:waypoint>
-                    </c:forEach>
-                 </rdf:Description>
-             </ge:startPoint>
-        </c:forEach> 
+            <c:forEach var="startPoint" items="${event.startPoints}" varStatus="status">
+                 <ge:startPoint>
+                     <rdf:Description rdf:about="${startPoint.startPointId}">
+                        <dc:title>${startPoint.title}</dc:title>
+                        <pos:lat>${startPoint.latitude}</pos:lat>
+                        <pos:long>${startPoint.longitude}</pos:long>
+                        <c:forEach var="waypoint" items="${startPoint.waypoints}" varStatus="status">
+                            <ge:waypoint>
+                                <rdf:Description rdf:about="${waypoint.waypointId}">
+                                    <pos:lat>${waypoint.latitude}</pos:lat>
+                                    <pos:long>${waypoint.longitude}</pos:long>
+                                </rdf:Description>
+                            </ge:waypoint>
+                        </c:forEach>
+                     </rdf:Description>
+                 </ge:startPoint>
+            </c:forEach>
+            <c:forEach var="kml" items="${event.kmlObjects}" varStatus="status">
+                 <ge:kmlObject>
+                     <rdf:Description rdf:about="${kml.kmlId}">
+                        <dc:title>${kml.title}</dc:title>
+                        <dc:type>${kml.type}</dc:type>
+                        <ge:kml><c:out value="${kml.xml}" escapeXml="true"/></ge:kml>
+                     </rdf:Description>
+                 </ge:kmlObject>
+            </c:forEach>
             <eswc:hasProgramme rdf:resource="${event.eventUrl}"/>
         </rdf:Description>
     </c:forEach>
