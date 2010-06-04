@@ -98,28 +98,30 @@ public class AnnotationFeedWriter {
         ArrayList<SyndEntry> items = new ArrayList<SyndEntry>();
 
         // iterate over the events
-        for (HashMap<String,String> annotation : annotations) {
+        if (annotations != null) {
+            for (HashMap<String,String> annotation : annotations) {
 
-            SyndEntry item = new SyndEntryImpl();
-            String url = annotation.get("annotationUrl");
-            item.setLink(url);
-            item.setUri(url);
-            item.setTitle(annotation.get("commentTitle"));
+                SyndEntry item = new SyndEntryImpl();
+                String url = annotation.get("annotationUrl");
+                item.setLink(url);
+                item.setUri(url);
+                item.setTitle(annotation.get("commentTitle"));
 
-            // Sets dc:date in feed item      
-            Date publishedDate = null;
-            try {
-                publishedDate = DateFormat.getDateTimeInstance().parse(annotation.get("createdDateTime"));
-                item.setPublishedDate(publishedDate);
-            } catch (ParseException pe) {
-                // Incorrect date format - just add current date
-                item.setPublishedDate(new Date());
+                // Sets dc:date in feed item
+                Date publishedDate = null;
+                try {
+                    publishedDate = DateFormat.getDateTimeInstance().parse(annotation.get("createdDateTime"));
+                    item.setPublishedDate(publishedDate);
+                } catch (ParseException pe) {
+                    // Incorrect date format - just add current date
+                    item.setPublishedDate(new Date());
+                }
+
+                SyndContent content = new SyndContentImpl();
+                content.setValue(annotation.get("commentDescription"));
+                item.setDescription(content);
+                items.add(item);
             }
-
-            SyndContent content = new SyndContentImpl();
-            content.setValue(annotation.get("commentDescription"));
-            item.setDescription(content);
-            items.add(item);
         }
 
         feed.setEntries(items);

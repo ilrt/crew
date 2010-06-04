@@ -174,12 +174,7 @@
         <servlet-name>crew</servlet-name>
         <url-pattern>/feeds/recentlyAdded.xml</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>crew</servlet-name>
-        <url-pattern>/feeds/comments/*</url-pattern>
-    </servlet-mapping>
-
+    
     <!-- jersey - annotation mappings -->
     <servlet-mapping>
         <servlet-name>Caboto Jersey Spring Integration</servlet-name>
