@@ -125,9 +125,22 @@
         <entry key="feedUrl" value="feeds/recentlyAdded.xml"/>
     </util:map>
 
+    <!-- feed - annotations -->
+    <util:map id="eventAnnotations" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0"/>
+        <entry key="language" value="en"/>
+        <entry key="title" value="Recently added comments"/>
+        <entry key="description" value="Comments added to a CREW event"/>
+        <entry key="commentUrlFragment" value="displayComments.do?commentId="/>
+        <entry key="contentType" value="application/atom+xml"/>
+        <entry key="periodInDays" value="31"/>
+        <entry key="feedUrl" value="feeds/comments.xml"/>
+    </util:map>
+
     <util:list id="feedList" list-class="java.util.ArrayList">
         <ref bean="upcomingEvents"/>
         <ref bean="recentlyAddedEvents"/>
+        <ref bean="eventAnnotations"/>
     </util:list>
 
     <!-- feed - upcoming events -->
@@ -142,6 +155,11 @@
           class="net.crew_vre.web.controller.feeds.RecentlyCreatedEventsFeedController">
         <constructor-arg index="0" ref="recentlyAddedEvents"/>
         <constructor-arg index="1" ref="listEventsFacade"/>
+    </bean>
+
+    <bean name="/feeds/comments.xml" id="annotationsFeedController"
+          class="net.crew_vre.web.controller.feeds.AnnotationsFeedController">
+        <constructor-arg index="0" ref="eventAnnotations"/>
     </bean>
 
     <!-- ========== USER MANAGEMENT ========== -->
@@ -396,6 +414,11 @@
 
     <bean name="/repository/localEvents.rdf"
           class="org.ilrt.green_repository.web.LocalEventsRDFExportController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+    </bean>
+
+    <bean name="/repository/route.kml"
+          class="org.ilrt.green_repository.web.LocalEventsKmlExportController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
     </bean>
 

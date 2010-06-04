@@ -158,16 +158,26 @@
         <url-pattern>/repository/localEvents.rdf</url-pattern>
     </servlet-mapping>
 
+    <!-- mappings for local repository kml output -->
+    <servlet-mapping>
+        <servlet-name>crew</servlet-name>
+        <url-pattern>/repository/route.kml</url-pattern>
+    </servlet-mapping>
+
     <!-- mappings for RSS feeds -->
     <servlet-mapping>
         <servlet-name>crew</servlet-name>
         <url-pattern>/feeds/upcomingEvents.xml</url-pattern>
     </servlet-mapping>
 
-    <!-- mappings for RSS feeds -->
     <servlet-mapping>
         <servlet-name>crew</servlet-name>
         <url-pattern>/feeds/recentlyAdded.xml</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>crew</servlet-name>
+        <url-pattern>/feeds/comments/*</url-pattern>
     </servlet-mapping>
 
     <!-- jersey - annotation mappings -->
