@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -90,10 +91,10 @@ public class AnnotationsFeedController implements Controller {
         String annotationsRequest = baseUrl + "annotation/about?id=" + eventId;
         String annotationsResponse = fetchUrl(annotationsRequest);
 
-        List<HashMap<String,String>> annotations = null;
+        List<HashMap<String,String>> annotations = new ArrayList<HashMap<String,String>>();
         if (annotationsResponse != null && !annotationsResponse.equals("")) {
             // Parse response
-            annotations = parseAnnotations(annotationsResponse);
+            annotations = parseAnnotations(annotations,annotationsResponse);
         }
 
         // write the feed
@@ -135,8 +136,7 @@ public class AnnotationsFeedController implements Controller {
           return content.toString();
     }
 
-    private List<HashMap<String,String>> parseAnnotations (String rdf) {
-        List<HashMap<String,String>> annotations = null;
+    private List<HashMap<String,String>> parseAnnotations (List<HashMap<String,String>> annotations, String rdf) {
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();

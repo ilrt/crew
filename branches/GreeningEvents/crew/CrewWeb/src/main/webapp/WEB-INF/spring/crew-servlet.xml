@@ -134,7 +134,7 @@
         <entry key="commentUrlFragment" value="displayComments.do?commentId="/>
         <entry key="contentType" value="application/atom+xml"/>
         <entry key="periodInDays" value="31"/>
-        <entry key="feedUrl" value="feeds/comments.xml"/>
+        <entry key="feedUrl" value="feeds/comments.do"/>
     </util:map>
 
     <util:list id="feedList" list-class="java.util.ArrayList">
@@ -157,7 +157,7 @@
         <constructor-arg index="1" ref="listEventsFacade"/>
     </bean>
 
-    <bean name="/feeds/comments.xml" id="annotationsFeedController"
+    <bean name="/feeds/comments.do" id="annotationsFeedController"
           class="net.crew_vre.web.controller.feeds.AnnotationsFeedController">
         <constructor-arg index="0" ref="eventAnnotations"/>
     </bean>
