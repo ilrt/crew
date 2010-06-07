@@ -33,6 +33,8 @@
  */
 package net.crew_vre.web.controller.feeds;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -90,6 +92,10 @@ public class AnnotationsFeedController implements Controller {
         // Generate a request to Coboto
         String annotationsRequest = baseUrl + "annotation/about?id=" + eventId;
         String annotationsResponse = fetchUrl(annotationsRequest);
+
+        if (logger.isDebugEnabled()) {
+                logger.debug("Get annotations response: \\n\\n" + annotationsResponse);
+        }
 
         List<HashMap<String,String>> annotations = new ArrayList<HashMap<String,String>>();
         if (annotationsResponse != null && !annotationsResponse.equals("")) {
@@ -155,6 +161,9 @@ public class AnnotationsFeedController implements Controller {
                     // Get annotation URI
                     String annotationUrl = commentElement.getAttribute("about");
                     annotation.put("annotationUrl", annotationUrl);
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("annotation url: " + annotationUrl);
+                    }
 
                     // Get created dateTime
                     NodeList createdNodeList = commentElement.getElementsByTagNameNS("*","created");
@@ -162,6 +171,9 @@ public class AnnotationsFeedController implements Controller {
                     NodeList createdDateList = createdElement.getChildNodes();
                     String createdDateTime = ((Node)createdDateList.item(0)).getNodeValue();
                     annotation.put("createdDateTime", createdDateTime);
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("createdDateTime: " + createdDateTime);
+                    }
 
                     // Get author URI
                     NodeList authorNodeList = commentElement.getElementsByTagNameNS("*","author");
@@ -169,6 +181,9 @@ public class AnnotationsFeedController implements Controller {
                     NodeList authorList = authorElement.getChildNodes();
                     String authorUri = ((Node)authorList.item(0)).getNodeValue();
                     annotation.put("authorUri", authorUri);
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("authorUri: " + authorUri);
+                    }
 
                     // Get title
                     NodeList titleNodeList = commentElement.getElementsByTagNameNS("*", "title");
@@ -176,13 +191,19 @@ public class AnnotationsFeedController implements Controller {
                     NodeList titleList = titleElement.getChildNodes();
                     String commentTitle = ((Node)titleList.item(0)).getNodeValue();
                     annotation.put("commentTitle", commentTitle);
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("commentTitle: " + commentTitle);
+                    }
 
                     // Get comment description
                     NodeList descriptionNodeList = commentElement.getElementsByTagNameNS("*", "description");
                     Element descriptionElement = (Element)descriptionNodeList.item(0);
                     NodeList descList = descriptionElement.getChildNodes();
                     String commentDescription = ((Node)descList.item(0)).getNodeValue();
-                    annotation.put("commentDescription", commentDescription);                    
+                    annotation.put("commentDescription", commentDescription);
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("commentDescription: " + commentDescription);
+                    }
                 }
                 annotations.add(annotation);
             }
@@ -191,5 +212,5 @@ public class AnnotationsFeedController implements Controller {
         }
         return annotations;
     }
-
+    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.feeds.AnnotationsFeedController");
 }
