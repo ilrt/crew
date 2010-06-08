@@ -33,6 +33,8 @@
 
 package org.ilrt.green_repository.dao.hibernate;
 
+import org.apache.log4j.Logger;
+
 import org.ilrt.green_repository.web.RepositoryEventForm;
 import org.ilrt.green_repository.domain.RepositoryEvent;
 import org.ilrt.green_repository.dao.RepositoryDao;
@@ -47,6 +49,8 @@ import org.ilrt.green_repository.domain.RepositoryEventKml;
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 public class RepositoryDaoImpl extends HibernateDaoSupport implements RepositoryDao {
+
+    private Logger logger = Logger.getLogger("org.ilrt.green_repository.dao.hibernate.RepositoryDaoImpl");
 
     public RepositoryDaoImpl(HibernateTemplate hibernateRepositoryTemplate) {
         setHibernateTemplate(hibernateRepositoryTemplate);
@@ -97,6 +101,10 @@ public class RepositoryDaoImpl extends HibernateDaoSupport implements Repository
     public RepositoryEventKml findKmlObject(String id){
 
         RepositoryEventKml kml = null;
+
+        if (logger.isDebugEnabled()) {
+            logger.debug("Searching for KML object with id: " + id);
+        }
         List results =
                 this.getHibernateTemplate().find("from RepositoryEventKml k where k.kmlId = ?", id);
         if (results.size() >= 1) {
