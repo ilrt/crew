@@ -31,29 +31,43 @@
  *
  */
 
-package org.ilrt.green_repository.dao;
+package org.ilrt.green_repository.web;
 
-import org.ilrt.green_repository.domain.RepositoryEvent;
-import org.ilrt.green_repository.web.RepositoryEventForm;
+import org.ilrt.green_repository.RepositoryEventManagementFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractController;
 
-import java.util.List;
-import org.ilrt.green_repository.domain.RepositoryEventKml;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public interface RepositoryDao {
 
-    void createRepositoryEvent(RepositoryEventForm repositoryEventForm);
+public class LocalEventsKmlExportController extends AbstractController {
 
-    void updateRepositoryEvent(RepositoryEventForm repositoryEventForm);
+    private RepositoryEventManagementFacade repositoryFacade;
+    private final String VIEW_NAME = "localEventsKmlExport";
 
-    RepositoryEvent findRepositoryEvent(String eventId);
+    public LocalEventsKmlExportController(RepositoryEventManagementFacade repositoryFacade) {
+        this.repositoryFacade = repositoryFacade;
+    }
 
-    List<RepositoryEvent> findAllRepositoryEvents();
 
-    void deleteRepositoryEvent(String eventId);
+    @Override
+    public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        return exportKml((String)request.getAttribute("id"));
+    }
 
-    RepositoryEventKml findKmlObject(String id);
+
+    private ModelAndView exportKml(String id) {
+
+        // Output a KML file
+        ModelAndView mav = new ModelAndView(VIEW_NAME);
+        mav.addObject("kml", repositoryFacade.getRepositoryEventKmlObject(id));
+        return mav;
+    }
+
 }
