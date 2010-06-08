@@ -434,14 +434,6 @@ public class RepositoryEvent implements Serializable {
         return digestString;
     }
 
-    // Optional collection of route startPoints connecting to the location associated with the event
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    private Set<RepositoryEventStartPoint> startPoints = new HashSet<RepositoryEventStartPoint>();
-
-    // Optional collection of KML objects associated with the event location
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    private Set<RepositoryEventKml> kmlObjects = new HashSet<RepositoryEventKml>();
-
     @Id
     @Column(name = "EVENTID")
     private String eventId;
@@ -485,4 +477,21 @@ public class RepositoryEvent implements Serializable {
     @Column(name = "LOCATIONIMAGESURL", nullable = true)
     private String locationImagesUrl;
 
+    // Optional collection of route startPoints connecting to the location associated with the event
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<RepositoryEventStartPoint> startPoints = new HashSet<RepositoryEventStartPoint>();
+
+    // Optional collection of KML objects associated with the event location
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    private Set<RepositoryEventKml> kmlObjects = new HashSet<RepositoryEventKml>();
+
+    // Making many-to-many to allow a kml object to be associated with more than one event
+   /* @ManyToMany(targetEntity = RepositoryEventKml.class, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "EVENTS_KMLS",
+            joinColumns = {@JoinColumn(name = "EVENTID")},
+            inverseJoinColumns = {@JoinColumn(name = "KMLID")}
+    )
+    private Set<RepositoryEventKml> kmlObjects = new HashSet<RepositoryEventKml>();
+*/
 }

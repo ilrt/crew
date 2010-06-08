@@ -40,6 +40,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import java.util.List;
+import org.ilrt.green_repository.domain.RepositoryEventKml;
 
 /**
  *
@@ -71,7 +72,7 @@ public class RepositoryDaoImpl extends HibernateDaoSupport implements Repository
                 this.getHibernateTemplate().find("from RepositoryEvent re where re.eventId = ?", eventId);
 
         RepositoryEvent event = null;
-        if (results.size() == 1) {
+        if (results.size() >= 1) {
             event = (RepositoryEvent) results.get(0);
         }
 
@@ -91,6 +92,17 @@ public class RepositoryDaoImpl extends HibernateDaoSupport implements Repository
         RepositoryEvent event = findRepositoryEvent(eventId);
         this.getHibernateTemplate().delete(event);
 
+    }
+
+    public RepositoryEventKml findKmlObject(String id){
+
+        RepositoryEventKml kml = null;
+        List results =
+                this.getHibernateTemplate().find("from RepositoryEventKml k where k.kmlId = ?", id);
+        if (results.size() >= 1) {
+            kml = (RepositoryEventKml) results.get(0);
+        }
+        return kml;
     }
 
 }

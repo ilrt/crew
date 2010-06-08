@@ -105,6 +105,14 @@ public class RepositoryEventKml implements Serializable {
         this.kxml = kxml;
     }
 
+ //   public Set<RepositoryEvent> getAssociatedEvents() {
+ //       return associatedEvents;
+ //   }
+
+ //   public void setAssociatedEvents(Set<RepositoryEvent> associatedEvents) {
+ //       this.associatedEvents = associatedEvents;
+ //   }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -153,11 +161,14 @@ public class RepositoryEventKml implements Serializable {
     @Column(name = "TITLE", nullable = false)
     private String title;
 
-    @Column(name = "TYPE", nullable = true)
+    @Column(name = "TYPE", nullable = false)
     private String type;
 
-    @Column(name = "KXML", columnDefinition="LONG VARCHAR", nullable = true)
+    @Column(name = "KXML", columnDefinition="LONG VARCHAR", nullable = false)
     private String kxml;
+
+    //@ManyToMany(mappedBy = "kmlObjects", fetch = FetchType.EAGER)
+   // private Set<RepositoryEvent> associatedEvents = new HashSet<RepositoryEvent>();
 
 
 }

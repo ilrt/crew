@@ -38,6 +38,7 @@ import org.ilrt.green_repository.dao.RepositoryDao;
 import org.ilrt.green_repository.domain.RepositoryEvent;
 import java.util.List;
 import java.util.Date;
+import org.ilrt.green_repository.domain.RepositoryEventKml;
 
 /**
  *
@@ -77,6 +78,10 @@ public class RepositoryEventManagementFacade {
         if (getRepositoryEvent(eventId) != null) {
             repositoryDao.deleteRepositoryEvent(eventId);
         }
+    }
+
+    public RepositoryEventKml getRepositoryEventKmlObject(String id) {
+        return repositoryDao.findKmlObject(id);
     }
 
 }
