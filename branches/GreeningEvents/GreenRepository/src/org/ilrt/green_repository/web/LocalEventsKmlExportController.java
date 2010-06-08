@@ -33,41 +33,59 @@
 
 package org.ilrt.green_repository.web;
 
+import org.apache.log4j.Logger;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 import org.ilrt.green_repository.RepositoryEventManagementFacade;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
+import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.ilrt.green_repository.domain.RepositoryEventKml;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 
-public class LocalEventsKmlExportController extends AbstractController {
+public class LocalEventsKmlExportController implements Controller {
+
+    private Logger logger = Logger.getLogger("org.ilrt.green_repository.web.LocalEventsKmlExportController");
 
     private RepositoryEventManagementFacade repositoryFacade;
-    private final String VIEW_NAME = "localEventsKmlExport";
 
     public LocalEventsKmlExportController(RepositoryEventManagementFacade repositoryFacade) {
         this.repositoryFacade = repositoryFacade;
     }
 
 
-    @Override
-    public ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        return exportKml((String)request.getAttribute("id"));
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+
+       String kmlId = (String)request.getParameter("id");
+
+       if (logger.isDebugEnabled()) {
+           logger.debug("Got request for KML with id: " + kmlId);
+       }
+       
+       response.setContentType("text/xml");
+       PrintWriter writer = response.getWriter();
+       if (kmlId != null && !kmlId.equals("")) {
+           RepositoryEventKml kml = repositoryFacade.getRepositoryEventKmlObject(kmlId);
+           writer.print(kml.getXml());
+       } else {
+           // Return empty KML object
+           writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+           writer.println("<kml xmlns=\"http://earth.google.com/kml/2.0\">");
+           writer.println("<Document/>");
+           writer.println("</kml>");
+       }
+
+       return null;
     }
 
-
-    private ModelAndView exportKml(String id) {
-
-        // Output a KML file
-        ModelAndView mav = new ModelAndView(VIEW_NAME);
-        mav.addObject("kml", repositoryFacade.getRepositoryEventKmlObject(id));
-        return mav;
-    }
 
 }
