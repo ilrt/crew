@@ -60,7 +60,6 @@
                      <rdf:Description rdf:about="${kml.kmlId}">
                         <dc:title>${kml.title}</dc:title>
                         <dc:type>${kml.type}</dc:type>
-                        <ge:kml><c:out value="${kml.xml}" escapeXml="true"/></ge:kml>
                      </rdf:Description>
                  </ge:kmlObject>
             </c:forEach>
