@@ -1,0 +1,8 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+SELECT $graph $kmlId $title $type
+WHERE {
+    GRAPH $graph {
+        $kmlId dc:title $title .
+        OPTIONAL { $kmlId dc:type $type } .
+    }
+}
