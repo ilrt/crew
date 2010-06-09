@@ -1,6 +1,7 @@
 package net.crew_vre.web.facade;
 
 import java.util.List;
+import net.crew_vre.events.domain.KmlObject;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.events.domain.StartPoint;
 
@@ -11,5 +12,6 @@ import net.crew_vre.events.domain.StartPoint;
 public interface DisplayPlaceFacade {
 
     Place displayPlace(String placeId);
-    List<StartPoint> getStartPoints(String placeId);
+    List<StartPoint> getStartPoints(String eventId);
+    List<KmlObject> getKmlObjects(String eventId);
 }

@@ -161,7 +161,7 @@
     <!-- mappings for local repository kml output -->
     <servlet-mapping>
         <servlet-name>crew</servlet-name>
-        <url-pattern>/repository/route.kml</url-pattern>
+        <url-pattern>*.kml</url-pattern>
     </servlet-mapping>
 
     <!-- mappings for RSS feeds -->

@@ -1,5 +1,6 @@
 package net.crew_vre.web.facade;
 
+import net.crew_vre.events.domain.KmlObject;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.events.domain.StartPoint;
 
@@ -11,4 +12,5 @@ public interface DisplayRouteFacade {
 
     Place displayPlace(String placeId);
     StartPoint displayStartPoint(String startPointId);
+    KmlObject displayKmlObject(String kmlId);
 }

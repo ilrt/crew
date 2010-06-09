@@ -22,7 +22,9 @@
                 var directionsService = new google.maps.DirectionsService();
                 var map;
               var destination = new google.maps.LatLng(${place.latitude}, ${place.longitude});
-              var startpoint = new google.maps.LatLng(${startPoint.latitude}, ${startPoint.longitude});
+              <c:if test="${startPoint != null}">
+                  var startpoint = new google.maps.LatLng(${startPoint.latitude}, ${startPoint.longitude});
+              </c:if>
               var centrepoint;
               <c:choose>
                 <c:when test="${kml != null}">
@@ -72,8 +74,8 @@
               </c:when>
               <c:otherwise>
                 <%-- We have a KML file url for a KML overlay --%>
-               <%-- var ctaLayer = new google.maps.KmlLayer('${kml.url}'); --%>
-                var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml');
+                var ctaLayer = new google.maps.KmlLayer('${kmlUrl}');
+                <%-- var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml'); --%>
                 ctaLayer.setMap(map);
               </c:otherwise>
           </c:choose>

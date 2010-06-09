@@ -33,7 +33,6 @@
  */
 package net.crew_vre.web.controller;
 
-import java.util.Set;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.web.facade.DisplayRouteFacade;
 import net.crew_vre.web.history.BrowseHistory;
@@ -43,12 +42,14 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import net.crew_vre.events.domain.Waypoint;
+import net.crew_vre.events.domain.KmlObject;
 
 /**
  * @author Pihl Cross (phil.cross@bristol.ac.uk)
  */
 public class DisplayRouteController implements Controller {
+
+    private static String DISPLAY_ROUTE = "displayroute.do";
 
     public DisplayRouteController(DisplayRouteFacade displayRouteFacade, BrowseHistory
             browseHistory) {
@@ -61,6 +62,7 @@ public class DisplayRouteController implements Controller {
 
         Place place = null;
         StartPoint startPoint = null;
+        KmlObject kmlObject = null;
 
         if (request.getParameter("placeId") != null) {
             place = displayRouteFacade.displayPlace(request.getParameter("placeId"));
@@ -73,9 +75,41 @@ public class DisplayRouteController implements Controller {
             }
         }
 
+        if (request.getParameter("kml") != null) {
+            kmlObject = displayRouteFacade.displayKmlObject(request.getParameter("kml"));
+            if (kmlObject != null) {
+                browseHistory.addHistory(request, kmlObject.getTitle());
+            }
+        }
+
         ModelAndView mov = new ModelAndView("displayRoute");
         mov.addObject("place", place);
-        mov.addObject("startPoint", startPoint);
+        if (startPoint != null)
+            mov.addObject("startPoint", startPoint);
+        if (kmlObject != null) {
+            mov.addObject("kml", kmlObject);
+            
+            /* See if there is a url available from the object
+             * - this would be where an existing online kml file was
+             * used as opposed to one generated within the local repository 
+             * from a kml file. Not used at present.
+            */
+            String kmlUrl;
+            if (kmlObject.getUrl() != null && !kmlObject.getUrl().equals("")) {
+                kmlUrl = kmlObject.getUrl();
+            } else {
+                String requestURL = request.getRequestURL().toString();
+                String baseURL = requestURL.substring(0,requestURL.length() - DISPLAY_ROUTE.length());
+                // De-URI the kml id
+                String kmlId = kmlObject.getId();
+                String id = "";
+                if (kmlId != null ) {
+                    id = kmlId.substring(kmlId.indexOf("KML"), kmlId.length());
+                }
+                kmlUrl = baseURL + "repository/route_" + id + ".kml";
+            }
+            mov.addObject("kmlUrl", kmlUrl);
+        }
 
         return mov;
     }

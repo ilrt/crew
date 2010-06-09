@@ -156,6 +156,11 @@
                         <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a><br />
                     </c:forEach>
                 </c:if>
+                <c:if test="${kmlList != null}">
+                    <c:forEach var="kml" items="${kmlList}">
+                        <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a><br />
+                    </c:forEach>
+                </c:if>
             </div>
         </div>
     </div>
