@@ -1,0 +1,10 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX ge: <http://www.ilrt.bris.ac.uk/GreeningEvents/ontology#>
+SELECT $graph $id $kmlId $title $type
+WHERE {
+    GRAPH $graph {
+        $id ge:kmlObject $kmlId .
+        $kmlId dc:title $title .
+        OPTIONAL { $kmlId dc:type $type } .
+    }
+}
