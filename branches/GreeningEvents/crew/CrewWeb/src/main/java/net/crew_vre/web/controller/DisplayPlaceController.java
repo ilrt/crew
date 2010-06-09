@@ -43,6 +43,7 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.crew_vre.events.domain.KmlObject;
 
 /**
  * @author Mike Jones (mike.a.jones@bristol.ac.uk)
@@ -61,6 +62,7 @@ public class DisplayPlaceController implements Controller {
 
         Place place = null;
         List<StartPoint> startPoints = null;
+        List<KmlObject> kmlObjects = null;
 
         if (request.getParameter("placeId") != null) {
             place = displayPlaceFacade.displayPlace(request.getParameter("placeId"));
@@ -68,6 +70,7 @@ public class DisplayPlaceController implements Controller {
 
         if (request.getParameter("eventId") != null) {
             startPoints = displayPlaceFacade.getStartPoints(request.getParameter("eventId"));
+            kmlObjects = displayPlaceFacade.getKmlObjects(request.getParameter("eventId"));
         }
 
         if (place != null) {
@@ -81,6 +84,8 @@ public class DisplayPlaceController implements Controller {
         mov.addObject("place", place);
         if (startPoints != null)
             mov.addObject("startPointList", startPoints);
+        if (kmlObjects != null)
+            mov.addObject("kmlList", kmlObjects);
 
         return mov;
     }

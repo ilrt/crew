@@ -417,7 +417,7 @@
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
     </bean>
 
-    <bean name="/repository/route.kml"
+    <bean name="/repository/route_*.kml"
           class="org.ilrt.green_repository.web.LocalEventsKmlExportController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
     </bean>
