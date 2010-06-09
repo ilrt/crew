@@ -65,17 +65,35 @@ public class LocalEventsKmlExportController implements Controller {
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
 
-       String kmlId = (String)request.getParameter("id");
+       // String kmlId = (String)request.getParameter("id");
+        
+        // Request now takes the form /repository/route_<kmlID>.kml
+        String servletName = request.getServletPath();
+        String kmlId = servletName.substring(servletName.indexOf("KML_"), servletName.indexOf("."));
+
 
        if (logger.isDebugEnabled()) {
            logger.debug("Got request for KML with id: " + kmlId);
        }
+
+       response.setContentType("application/vnd.google-earth.kml+xml");
        
-       response.setContentType("text/xml");
        PrintWriter writer = response.getWriter();
        if (kmlId != null && !kmlId.equals("")) {
+           // kmlId may be in the form of a URI, from which the id will need extracting
+           if (kmlId.startsWith("http")) {
+               kmlId = kmlId.substring(kmlId.indexOf("KML_"));
+           }
            RepositoryEventKml kml = repositoryFacade.getRepositoryEventKmlObject(kmlId);
-           writer.print(kml.getXml());
+           if (kml != null) {
+               writer.print(kml.getXml());
+           } else {
+               // Return empty KML object
+               writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+               writer.println("<kml xmlns=\"http://earth.google.com/kml/2.0\">");
+               writer.println("<Document/>");
+               writer.println("</kml>");
+           }
        } else {
            // Return empty KML object
            writer.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
