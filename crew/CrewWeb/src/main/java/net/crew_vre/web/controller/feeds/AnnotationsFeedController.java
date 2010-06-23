@@ -35,12 +35,7 @@ package net.crew_vre.web.controller.feeds;
 
 import org.apache.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.springframework.web.servlet.ModelAndView;
@@ -58,6 +53,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -68,7 +64,7 @@ public class AnnotationsFeedController implements Controller {
 
 
     private Map<String, String> config;
-    private static final String COMMENTS = "feeds/comments.xml";
+    private static final String COMMENTS = "feeds/comments.do";
 
     public AnnotationsFeedController(final Map<String, String> config) {
         this.config = config;
@@ -78,37 +74,38 @@ public class AnnotationsFeedController implements Controller {
                                       HttpServletResponse response) throws Exception {
 
         // get the request url
-        String requestUrl = request.getRequestURI();
+        String requestUrl = request.getRequestURL().toString();
+        if (logger.isDebugEnabled())
+                logger.debug("requestUrl: " + requestUrl);
 
         // get event id
         String eventId = request.getParameter("eventId");
 
         // create the base URI
         String baseUrl = requestUrl.substring(0, requestUrl.length() - COMMENTS.length());
+        if (logger.isDebugEnabled())
+                logger.debug("baseUrl: " + baseUrl);
 
         // Get a List of annotations using eventId; parse response and insert
         // into a List of Annotation objects
 
         // Generate a request to Coboto
         String annotationsRequest = baseUrl + "annotation/about?id=" + eventId;
-        String annotationsResponse = fetchUrl(annotationsRequest);
-
-        if (logger.isDebugEnabled()) {
-                logger.debug("Get annotations response: \\n\\n" + annotationsResponse);
-        }
+        if (logger.isDebugEnabled())
+                logger.debug("Requesting annotations from: " + annotationsRequest);
 
         List<HashMap<String,String>> annotations = new ArrayList<HashMap<String,String>>();
-        if (annotationsResponse != null && !annotationsResponse.equals("")) {
-            // Parse response
-            annotations = parseAnnotations(annotations,annotationsResponse);
-        }
+        annotations = parseAnnotations(annotations,annotationsRequest);
+
+        if (logger.isDebugEnabled() && annotations != null)
+                logger.debug("Found: " + annotations.size() + " annotations");
 
         // write the feed
         response.setContentType(config.get("contentType"));
 
         AnnotationFeedWriter annotationFeedWriter = new AnnotationFeedWriter();
         try {
-            annotationFeedWriter.write(response.getWriter(), annotations,
+            annotationFeedWriter.write(response.getWriter(), eventId, annotations,
                     baseUrl, requestUrl, config);
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,40 +114,25 @@ public class AnnotationsFeedController implements Controller {
         return null;
     }
 
-    private String fetchUrl (String urlRequest) {
-        BufferedReader in = null;
-        StringBuffer content = new StringBuffer();
-        try {
-            URL url = new URL(urlRequest);
-            in = new BufferedReader(new InputStreamReader(url.openStream()));
-            String line=null;
-            while ((line=in.readLine()) != null)
-              content.append(line);
-          }
-          catch (MalformedURLException ex) {
-            return "";
-          }
-          catch (FileNotFoundException ex) {
-            return "";
-          }
-          catch (IOException ex) {
-            return "";
-          }
-          if (in != null)
-            try {in.close();} catch (IOException ex) {return "";}
-
-          return content.toString();
-    }
-
-    private List<HashMap<String,String>> parseAnnotations (List<HashMap<String,String>> annotations, String rdf) {
+    private List<HashMap<String,String>> parseAnnotations (List<HashMap<String,String>> annotations, String URI)
+        throws Exception {
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.parse(rdf);
-            doc.getDocumentElement().normalize();
+            if (logger.isDebugEnabled())
+                    logger.debug("Fetching feed from: " + URI);
+            Document doc = db.parse(URI);
+
+            Element root = doc.getDocumentElement();
+
+            if (logger.isDebugEnabled())
+                    logger.debug("Have root element: " + root.getTagName());
 
             // Get comments
-            NodeList comments = doc.getElementsByTagNameNS("*","SimpleComment");
+            NodeList comments = doc.getElementsByTagName("caboto:SimpleComment");
+
+            if (logger.isDebugEnabled())
+                    logger.debug("Found: " + comments.getLength() + " SimpleComments");
 
             for (int i = 0; i < comments.getLength(); i++) {
                 HashMap<String,String> annotation = new HashMap<String,String>();
@@ -159,14 +141,14 @@ public class AnnotationsFeedController implements Controller {
                     Element commentElement = (Element) commentNode;
 
                     // Get annotation URI
-                    String annotationUrl = commentElement.getAttribute("about");
+                    String annotationUrl = commentElement.getAttribute("rdf:about");
                     annotation.put("annotationUrl", annotationUrl);
                     if (logger.isDebugEnabled()) {
                             logger.debug("annotation url: " + annotationUrl);
                     }
 
                     // Get created dateTime
-                    NodeList createdNodeList = commentElement.getElementsByTagNameNS("*","created");
+                    NodeList createdNodeList = commentElement.getElementsByTagName("annotea:created");
                     Element createdElement = (Element) createdNodeList.item(0);
                     NodeList createdDateList = createdElement.getChildNodes();
                     String createdDateTime = ((Node)createdDateList.item(0)).getNodeValue();
@@ -176,17 +158,16 @@ public class AnnotationsFeedController implements Controller {
                     }
 
                     // Get author URI
-                    NodeList authorNodeList = commentElement.getElementsByTagNameNS("*","author");
+                    NodeList authorNodeList = commentElement.getElementsByTagName("annotea:author");
                     Element authorElement = (Element) authorNodeList.item(0);
-                    NodeList authorList = authorElement.getChildNodes();
-                    String authorUri = ((Node)authorList.item(0)).getNodeValue();
+                    String authorUri = authorElement.getAttribute("rdf:resource");
                     annotation.put("authorUri", authorUri);
                     if (logger.isDebugEnabled()) {
                             logger.debug("authorUri: " + authorUri);
                     }
 
                     // Get title
-                    NodeList titleNodeList = commentElement.getElementsByTagNameNS("*", "title");
+                    NodeList titleNodeList = commentElement.getElementsByTagName("dc:title");
                     Element titleElement = (Element)titleNodeList.item(0);
                     NodeList titleList = titleElement.getChildNodes();
                     String commentTitle = ((Node)titleList.item(0)).getNodeValue();
@@ -196,7 +177,7 @@ public class AnnotationsFeedController implements Controller {
                     }
 
                     // Get comment description
-                    NodeList descriptionNodeList = commentElement.getElementsByTagNameNS("*", "description");
+                    NodeList descriptionNodeList = commentElement.getElementsByTagName("dc:description");
                     Element descriptionElement = (Element)descriptionNodeList.item(0);
                     NodeList descList = descriptionElement.getChildNodes();
                     String commentDescription = ((Node)descList.item(0)).getNodeValue();
@@ -207,8 +188,13 @@ public class AnnotationsFeedController implements Controller {
                 }
                 annotations.add(annotation);
             }
+        } catch (IOException ioe) {
+            throw new Exception(ioe.getClass().toString() + ": " + ioe.getMessage());
+        } catch (SAXException se) {
+            throw new Exception(se.getClass().toString() + ": " + se.getMessage());
         } catch (Exception e) {
-            return null;
+            e.printStackTrace();
+            // throw new Exception(e.getClass().toString() + ": " + e.getMessage());
         }
         return annotations;
     }
