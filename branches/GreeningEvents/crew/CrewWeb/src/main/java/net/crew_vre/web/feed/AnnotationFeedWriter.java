@@ -74,7 +74,8 @@ public class AnnotationFeedWriter {
      * @throws FeedException    if there is an error.
      * @throws IOException      if there is an error.
      */
-    public void write(Writer writer, List<HashMap<String,String>> annotations, String baseUrl,
+
+    public void write(Writer writer, String eventId, List<HashMap<String,String>> annotations, String baseUrl,
             String feedUrl, Map<String, String> config)
             throws FeedException, IOException {
 
@@ -102,9 +103,14 @@ public class AnnotationFeedWriter {
             for (HashMap<String,String> annotation : annotations) {
 
                 SyndEntry item = new SyndEntryImpl();
-                String url = annotation.get("annotationUrl");
-                item.setLink(url);
-                item.setUri(url);
+                String annotationUrl = annotation.get("annotationUrl");
+                item.setUri(annotationUrl);
+                
+                // annotation url returns RDF so not suitable for link - use a link to the web site event page
+                // (which may not work very well in the mobile browser!)
+                String eventUrl = baseUrl + "displayEvent.do?eventId=" + eventId;
+                item.setLink(eventUrl);
+
                 item.setTitle(annotation.get("commentTitle"));
 
                 // Sets dc:date in feed item
@@ -115,6 +121,16 @@ public class AnnotationFeedWriter {
                 } catch (ParseException pe) {
                     // Incorrect date format - just add current date
                     item.setPublishedDate(new Date());
+                }
+
+                // Set author
+                String authorURI = annotation.get("authorUri");
+                if (authorURI != null && !authorURI.equals("")) {
+                    //URI takes the form: http://localhost:9090/CrewWeb/annotation/person/phil/
+                    // Remove final forward slash
+                    String author = authorURI.substring(0, authorURI.length()-1);
+                    author = author.substring(author.lastIndexOf("/")+1, author.length());
+                    item.setAuthor(author);
                 }
 
                 SyndContent content = new SyndContentImpl();
