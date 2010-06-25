@@ -40,6 +40,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.security.*;
+import java.util.Date;
 
 
 /**
@@ -83,7 +84,8 @@ public class RepositoryEventKml implements Serializable {
     public String getKmlHash() {
         String kmlHash = "";
         if (this.getTitle() != null) {
-            kmlHash = md5Hash(this.getTitle());
+            String time = new Date().toString();
+            kmlHash = md5Hash(this.getTitle() + time);
             kmlHash = "KML_" + kmlHash;
         }
         return kmlHash;
