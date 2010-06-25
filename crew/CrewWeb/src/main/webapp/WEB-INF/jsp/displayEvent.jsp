@@ -334,10 +334,10 @@
 
 
 <div class="contentBlock">
-        <div id="annotations-title">Comments</div>
+        <div id="annotations-title">Comments about this event</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
-        <div id="annotation-note">Add your own annotation...<br />
+        <div id="annotation-note"><strong>Add your own comment or question about this event ...</strong><br />
         - use wiki style notation to add links, <br />
         e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
         or [http://www.jiscdigitalmedia.ac.uk]</div>
