@@ -45,6 +45,7 @@ import java.security.*;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.OneToMany;
+import java.util.Date;
 
 
 /**
@@ -88,7 +89,8 @@ public class RepositoryEventStartPoint implements Serializable {
     public String getStartPointHash() {
         String startPointHash = "";
         if (this.getTitle() != null) {
-            startPointHash = md5Hash(this.getTitle());
+            String time = new Date().toString();
+            startPointHash = md5Hash(this.getTitle() + time);
             startPointHash = "SPT_" + startPointHash;
         }
         return startPointHash;
