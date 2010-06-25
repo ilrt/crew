@@ -49,12 +49,14 @@ import java.io.IOException;
 import java.io.Writer;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.Logger;
 
 /**
  * @author Mike Jones (mike.a.jones@bristol.ac.uk)
@@ -74,6 +76,7 @@ public class AnnotationFeedWriter {
      * @throws FeedException    if there is an error.
      * @throws IOException      if there is an error.
      */
+    private Logger logger = Logger.getLogger("net.crew_vre.web.feed.AnnotationFeedWriter");
 
     public void write(Writer writer, String eventId, List<HashMap<String,String>> annotations, String baseUrl,
             String feedUrl, Map<String, String> config)
@@ -116,10 +119,21 @@ public class AnnotationFeedWriter {
                 // Sets dc:date in feed item
                 Date publishedDate = null;
                 try {
-                    publishedDate = DateFormat.getDateTimeInstance().parse(annotation.get("createdDateTime"));
+                    //DateFormat df = DateFormat.getDateTimeInstance();
+                    //df.setLenient(true);
+                    //DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssz");
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+                    String createdDateTime = annotation.get("createdDateTime");
+
+                    // Having problems parsing date - removing time zone pattern ("+01:00")
+                    createdDateTime = createdDateTime.substring(0, createdDateTime.lastIndexOf("+"));
+                    publishedDate = df.parse(createdDateTime);
                     item.setPublishedDate(publishedDate);
                 } catch (ParseException pe) {
                     // Incorrect date format - just add current date
+                    if (logger.isDebugEnabled()) {
+                            logger.debug("Error parsing creation date: " + pe.getMessage());
+                    }
                     item.setPublishedDate(new Date());
                 }
 
