@@ -146,17 +146,16 @@
 <c:when test="${not empty event}">
 
     <%-- EVENT DATES --%>
-<c:if test="${event.startDate != null}">
+<c:if test="${not empty event.startDate}">
     <h2><spring:message code="event.details.date"/></h2>
     <p>
         <c:choose>
             <c:when test="${event.singleDay == true}">
-                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDate}" pattern=" HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/>
             </c:when>
             <c:otherwise>
-                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDate}" pattern="dd MMMM yyyy, HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/> -
+                <joda:format value="${event.endDate}" pattern="dd MMMM yyyy"/>
             </c:otherwise>
         </c:choose>
         <a href="./eventCalendar.do?eventId=<crew:uri uri='${event.id}'/>"><img
