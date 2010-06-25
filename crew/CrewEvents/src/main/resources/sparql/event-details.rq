@@ -6,6 +6,8 @@ $proceedings $programme $recordingId
 WHERE {
     GRAPH $graph {
         $id dc:title $title .
+        OPTIONAL { $id crew:hasStartDate $startDate .
+                   $id crew:hasEndDate $endDate } .
         OPTIONAL { $id eswc:hasStartDateTime $startDateTime .
                    $id eswc:hasEndDateTime $endDateTime } .
         OPTIONAL { $id dc:description $description } .
