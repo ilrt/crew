@@ -33,19 +33,29 @@
                 });
                 var contentString;
                 <c:choose>
+			<%--
                     <c:when test="${place.title != null && place.locationUrl != null}">
                         contentString = '<a href="${place.locationUrl}">${place.title}</a>';
                     </c:when>
                     <c:when test="${place.title != null}">
-                        contentString = '${place.locationUrl}';
+                        contentString = '${place.title}';
+                    </c:when>
+			--%>
+                    <c:when test="${place.title != null && place.locationImagesUrl != null}">
+                        contentString = '<a href="${place.locationImagesUrl}">Route images</a> to ${place.title}';
+                    </c:when>
+                    <c:when test="${place.title != null}">
+                        contentString = '${place.title}';
                     </c:when>
                 </c:choose>
                 <c:if test="${place.locationDescription != null}">
                     contentString += '<br/>${place.locationDescription}';
                 </c:if>
+			<%--
                 <c:if test="${place.locationImagesUrl != null}">
                     contentString += '<br/><a href="${place.locationImagesUrl}">Location images</a>';
                 </c:if>
+			--%>
                 <c:if test="${place.locationThumbUrl != null}">
                     contentString += '<br/><img src="${place.locationThumbUrl}"/>';
                 </c:if>
