@@ -152,14 +152,18 @@
             <div id="routeLinks">
                 <h4>Routes to ${place.title}</h4>
                 <c:if test="${startPointList != null}">
+			<ul>
                     <c:forEach var="startPoint" items="${startPointList}">
-                        <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a><br />
+                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
                     </c:forEach>
+			</ul>
                 </c:if>
                 <c:if test="${kmlList != null}">
+			<ul>
                     <c:forEach var="kml" items="${kmlList}">
-                        <a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a><br />
+                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
                     </c:forEach>
+			</ul>
                 </c:if>
             </div>
         </div>
