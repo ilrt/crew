@@ -22,9 +22,9 @@ function annotationFailure(fail) {
     var error;
 
     if (fail.status == 404) {
-        error = "<p>There are currently no annotations.</p>";
+        error = "<p>There are currently no comments.</p>";
     } else if (fail.status == 401) {
-        error = "<p>You are not authorized to view the annotations.</p>";
+        error = "<p>You are not authorized to view the comments.</p>";
     } else {
         error = "<p>" + fail.status + " - something has gone wrong!";
     }
