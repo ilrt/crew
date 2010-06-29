@@ -162,14 +162,14 @@
             <div id="routeLinks">
                 <h4>Routes to ${place.title}</h4>
                 <c:if test="${startPointList != null}">
-			<ul>
+			<ul style="list-style-type: square; margin-left: 1em">
                     <c:forEach var="startPoint" items="${startPointList}">
                         <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
                     </c:forEach>
 			</ul>
                 </c:if>
                 <c:if test="${kmlList != null}">
-			<ul>
+			<ul style="list-style-type: square; margin-left: 1em">
                     <c:forEach var="kml" items="${kmlList}">
                         <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
                     </c:forEach>
