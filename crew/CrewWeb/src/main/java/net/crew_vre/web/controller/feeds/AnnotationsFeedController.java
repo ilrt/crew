@@ -188,13 +188,18 @@ public class AnnotationsFeedController implements Controller {
                 }
                 annotations.add(annotation);
             }
+
+            // If any exceptions, just return current annotations list 
         } catch (IOException ioe) {
-            throw new Exception(ioe.getClass().toString() + ": " + ioe.getMessage());
+            // throw new Exception(ioe.getClass().toString() + ": " + ioe.getMessage());
+            return annotations;
         } catch (SAXException se) {
-            throw new Exception(se.getClass().toString() + ": " + se.getMessage());
+            // throw new Exception(se.getClass().toString() + ": " + se.getMessage());
+            return annotations;
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             // throw new Exception(e.getClass().toString() + ": " + e.getMessage());
+            return annotations;
         }
         return annotations;
     }
