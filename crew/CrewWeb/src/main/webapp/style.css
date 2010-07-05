@@ -652,6 +652,12 @@ li.pagination {
     margin-left: 670px;
 }
 
+#travelfootprintMsg {
+    border-width: 1px;
+    padding: 2px;
+    margin-left: 670px;
+}
+
 #routeDirections {
     margin-top: 1em;
     /*border: solid grey;
