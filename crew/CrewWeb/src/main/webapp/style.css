@@ -641,8 +641,8 @@ li.pagination {
 #mapDiv {
     border: solid grey;
     border-width: 1px;
-    width: 750px;
-    height: 665px;
+    width: 665px;
+    height: 600px;
 }
 
 #routeLinks {

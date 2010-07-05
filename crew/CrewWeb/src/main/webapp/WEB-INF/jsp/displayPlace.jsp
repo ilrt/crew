@@ -176,6 +176,14 @@
 			</ul>
                 </c:if>
             </div>
+            <div id="travelfootprintMsg">
+		<p><spring:message code="place.footprint.message"/></p>
+            </div>
+	    <!-- Travelfootprint panel -->
+	    <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
+		style="margin-height:0px;padding-left: 3px; padding-top: 4px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+	    <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
+
         </div>
     </div>
     <!--End of Middle content-->
