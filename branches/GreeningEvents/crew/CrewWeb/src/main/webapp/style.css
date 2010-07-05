@@ -626,7 +626,7 @@ li.pagination {
     font-size: 1.6em;
     font-weight: normal;
     padding: 0.3em 0 0.5em 1em;
-    width: 725px;
+    width: 642px;
 }
 
 #mapContainer {
@@ -642,14 +642,14 @@ li.pagination {
     border: solid grey;
     border-width: 1px;
     width: 750px;
-    height: 600px;
+    height: 665px;
 }
 
 #routeLinks {
     border: solid grey;
     border-width: 1px;
     padding: 2px;
-    margin-left: 755px;
+    margin-left: 670px;
 }
 
 #routeDirections {
