@@ -42,7 +42,7 @@
                     </c:when>
 			--%>
                     <c:when test="${place.title != null && place.locationImagesUrl != null}">
-                        contentString = '<a href="${place.locationImagesUrl}">Route images</a> to ${place.title}';
+                        contentString = '<a href="${place.locationImagesUrl}">Images</a> of route to ${place.title}';
                     </c:when>
                     <c:when test="${place.title != null}">
                         contentString = '${place.title}';
