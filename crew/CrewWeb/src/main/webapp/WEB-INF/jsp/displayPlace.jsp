@@ -160,7 +160,7 @@
                 <div id="mapDiv"></div>
             </div>
             <div id="routeLinks">
-                <h4>Routes to ${place.title}</h4>
+                <h4>Routes to ${place.title} from:</h4>
                 <c:if test="${startPointList != null}">
 			<ul style="list-style-type: square; margin-left: 1em">
                     <c:forEach var="startPoint" items="${startPointList}">
