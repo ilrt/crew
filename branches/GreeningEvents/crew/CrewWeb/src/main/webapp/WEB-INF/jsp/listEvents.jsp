@@ -86,8 +86,17 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
 <div class="content content2">
         <!--start of Left content-->
 
-        <div id="leftCol">
+        <div class="leftMargin">
 
+    <div class="geCalloutBox trainingBlock accountLinksBox">
+    <%-- the header links --%>
+    <ul id="accountLinks">
+    <%@ include file="includes/headerLinks.jsp" %>
+
+    <%-- register message --%>
+    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
+    </ul>
+    </div>
 
     <%-- quick links --%>
     <%-- <%@ include file="includes/quickLinks.jsp" %> --%>
@@ -118,11 +127,11 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
 <!--end of Left content-->
 
 <!--start of Middle content-->
-<div id="midCol" class="genericContent traininglist">
-    <h1>Greening Events</h1>
-    <div class="contentBlock">
+<div class="colRight genericContent traininglist">
+    <h1 style="width:100%; padding: 0.3em 0 0.5em 1em">Greening Events</h1>
+    <div class="contentBlock" style="width:100%; padding: 1em 0.5em 0 1em">
     <%-- display info about the number of results --%>
-    <div class="jdmResultDetails">
+        <div class="jdmResultDetails">
             <c:choose>
                 <c:when test="${total == 1}">
                     <spring:message code="event.total.one"/>
@@ -157,8 +166,8 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
 
             <c:choose>
                 <c:when test="${not empty event.id}">
-                    <div class="row">
-                        <div class="rowleft">                            
+                    <div class="row" style="width:100%; padding: 1em 0.9em 0 1em">
+                        <div class="rowleft"style="width:13em;">
                         <c:choose>
                             <c:when test="${event.singleDay == true}">
                                 <joda:format value="${event.startDate}"
@@ -204,21 +213,6 @@ Creating all files for displayRoute.do="submit" name="searchBtn" id="searchBtn" 
     </div>
 <!--End of Middle content-->
 
-<!--start of Right content-->
-<div id="rightCol">
-
-    <div class="calloutBox trainingBlock accountLinksBox">
-    <%-- the header links --%>
-    <ul id="accountLinks">
-    <%@ include file="includes/headerLinks.jsp" %>
-
-    <%-- register message --%>
-    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
-    </ul>
-    </div>
-
-</div>
-    <!--End of Right content-->
 	<div class="clearDiv" style="height:2em;"></div>
 
 <!-- End of content2 -->

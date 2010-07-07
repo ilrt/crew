@@ -149,7 +149,7 @@
     <div class="travelfootprint">
         <!-- Travelfootprint panel -->
         <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
-            style="margin-top:5px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+            style="margin-top:0; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
         <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
     </div>
 
@@ -161,7 +161,7 @@
 
 <div><h1 style="width:100%; padding: 0.3em 0 0.5em 1em">${event.title}</h1></div>
 
-<div class="contentBlock" style="width:100%; padding: 1em 0 0 1em">
+<div class="contentBlock" style="width:100%; padding: 1em 0.5em 0 1em">
 
 <c:choose>
 <c:when test="${not empty event}">
@@ -407,7 +407,6 @@
 </div>
 <!--End of Middle content-->
 
-    <!--End of Right content-->
 	<div class="clearDiv" style="height:2em;"></div>
 
 <!-- End of content2 -->
