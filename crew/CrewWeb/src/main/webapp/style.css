@@ -593,9 +593,11 @@ li.pagination {
     -moz-background-origin:padding;
     background:#FE6D01 url(/images/site/adviceHdron.gif) repeat-x scroll 0 0;
 }
-.jdmResultDetails p {
+.jdmResultDetails {
     float:left;
-    font-size:1.1em;
+    font-family:Arial,Helvetica,Verdana,Geneva,sans-serif;
+    font-size:0.8125em;
+    font-weight: bold;
     height:2em;
     padding-left:1.3em;
     padding-top:0.4em;
