@@ -29,16 +29,15 @@
 
         <!--start of top nav-->
         <div class="mainNav">
-                        <a href="http://www.jiscdigitalmedia.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif" border="0" width="279" height="55" alt="JISC Digital Media" id="logo" /></a>
-                        <ul>
-                        <li class="diamond" id="about"><a href="http://www.jiscdigitalmedia.ac.uk/about/">About</a></li>
-                        <li class="diamond" id="helpdesk"><a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a></li>
-
-                        <li class="diamond" id="news"><a href="http://www.jiscdigitalmedia.ac.uk/news/">News</a></li>
-                        <li class="diamond" id="case"><a href="http://www.jiscdigitalmedia.ac.uk/tags/category/case-studies/">Case Studies</a></li>
-                        <li><a href="http://www.jiscdigitalmedia.ac.uk/contact/" id="contact">Contact</a></li>
-                        </ul>
-                        <!--start of search form-->
+            <a href="http://www.jiscdigitalmedia.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif" border="0" width="279" height="55" alt="JISC Digital Media" id="logo" /></a>
+            <ul>
+                <li class="diamond" id="about"><a href="http://www.jiscdigitalmedia.ac.uk/about/">About</a></li>
+                <li class="diamond" id="helpdesk"><a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a></li>
+                <li class="diamond" id="news"><a href="http://www.jiscdigitalmedia.ac.uk/news/">News</a></li>
+                <li class="diamond" id="case"><a href="http://www.jiscdigitalmedia.ac.uk/tags/category/case-studies/">Case Studies</a></li>
+                <li><a href="http://www.jiscdigitalmedia.ac.uk/contact/" id="contact">Contact</a></li>
+            </ul>
+            <!--start of search form-->
 <form id='searchForm' method="post" action="http://www.jiscdigitalmedia.ac.uk/"  >
 <div class='hiddenFields'>
 <input type="hidden" name="ACT" value="19" />
@@ -80,11 +79,44 @@
                 <div class="clearDiv"></div>
 
 <div class="content content2">
-        <!--start of Left content-->
+<%-- BREAD CRUMB --%>
+<div id="breadCrumb">
+    <c:choose>
+        <c:when test="${not empty resultsUrl}">
+            <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
+        </c:when>
+        <c:otherwise>
+            <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+        </c:otherwise>
+    </c:choose>
 
-        <div id="leftCol">
+    <strong>&gt;</strong>
 
+    <c:if test="${not empty event.partOf}">
+        <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
+            <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
+            <strong>&gt;</strong>
+        </c:forEach>
+    </c:if>
 
+    ${event.title}
+</div>
+
+<div class="clearDiv"></div>
+
+<!--start of Left content-->
+
+<div class="leftMargin">
+
+    <div class="geCalloutBox trainingBlock accountLinksBox">
+    <%-- the header links --%>
+    <ul id="accountLinks">
+    <%@ include file="includes/headerLinks.jsp" %>
+
+    <%-- register message --%>
+    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
+    </ul>
+    </div>
     <%-- quick links --%>
     <%-- <%@ include file="includes/quickLinks.jsp" %> --%>
     <%-- the browser links --%>
@@ -109,38 +141,24 @@
     </div>
     --%>
 
+    <div id="travelfootprint">
+        <h4>What's your carbon footprint?</h4>
+        <p><spring:message code="place.footprint.message"/></p>
+        <!-- Travelfootprint panel -->
+        <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
+            style="margin-top:10px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+        <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
+    </div>
 
 </div>
 <!--end of Left content-->
 
 <!--start of Middle content-->
-<div id="midCol" class="genericContent traininglist">
-<%-- BREAD CRUMB --%>
-<div id="breadCrumb">
-        <c:choose>
-            <c:when test="${not empty resultsUrl}">
-                <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
-            </c:when>
-            <c:otherwise>
-                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-            </c:otherwise>
-        </c:choose>
+<div class="colRight genericContent traininglist">
 
-        <strong>&gt;</strong>
+<div><h1 style="width:100%; padding: 0.3em 0 0.5em 1em">${event.title}</h1></div>
 
-        <c:if test="${not empty event.partOf}">
-            <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
-                <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
-                <strong>&gt;</strong>
-            </c:forEach>
-        </c:if>
-
-        ${event.title}
-</div>
-
-        <div><h1>${event.title}</h1></div>
-
-<div class="contentBlock">
+<div class="contentBlock" style="width:100%; padding: 1em 0 0 1em">
 
 <c:choose>
 <c:when test="${not empty event}">
@@ -332,7 +350,7 @@
 %>
 
 
-<div class="contentBlock">
+<div class="contentBlock" style="width:100%; padding: 1em 0 0 1em">
         <div id="annotations-title">Comments about this event</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
@@ -386,20 +404,6 @@
 </div>
 <!--End of Middle content-->
 
-<!--start of Right content-->
-<div id="rightCol">
-
-    <div class="calloutBox trainingBlock accountLinksBox">
-    <%-- the header links --%>
-    <ul id="accountLinks">
-    <%@ include file="includes/headerLinks.jsp" %>
-
-    <%-- register message --%>
-    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
-    </ul>
-    </div>
-
-</div>
     <!--End of Right content-->
 	<div class="clearDiv" style="height:2em;"></div>
 

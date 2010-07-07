@@ -616,6 +616,19 @@ li.pagination {
 
 }
 
+.colRight {
+    width: 660px;
+    height: 600px;
+    margin-left: 310px;
+}
+
+.geCalloutBox {
+    float:left;
+    padding-bottom:1em;
+    width:268px;
+    margin-bottom: 5px;
+}
+
 #mapCol {
     float: left;
 }
@@ -626,7 +639,8 @@ li.pagination {
     font-size: 1.6em;
     font-weight: normal;
     padding: 0.3em 0 0.5em 1em;
-    width: 642px;
+    margin: 0 auto;
+    width: 37em;
 }
 
 #mapContainer {
@@ -638,24 +652,36 @@ li.pagination {
     margin-top: 1em;
 }
 
-#mapDiv {
+#mapDivRight {
     border: solid grey;
     border-width: 1px;
-    width: 665px;
+    width: 660px;
     height: 600px;
+    margin-left: 310px;
+}
+
+#mapDivLeft {
+    border: solid grey;
+    border-width: 1px;
+    width: 660px;
+    height: 600px;
+}
+
+.leftMargin {
+    float:left;
+    width: 300px;
 }
 
 #routeLinks {
     border: solid grey;
     border-width: 1px;
     padding: 2px;
-    margin-left: 670px;
 }
 
-#travelfootprintMsg {
+#travelfootprint {
+    float: left;
     border-width: 1px;
     padding: 2px;
-    margin-left: 670px;
     margin-top: 1em;
 }
 

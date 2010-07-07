@@ -41,7 +41,7 @@
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     center: centrepoint
                   }
-                  map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
+                  map = new google.maps.Map(document.getElementById("mapDivLeft"), mapOptions);
 
           <c:choose>
               <c:when test="${startPoint != null}">
@@ -185,13 +185,20 @@
         </c:if>
 
         <div style="float:left">
-            <h1>Route from ${startPoint.title} to ${place.title}</h1>
             <%--<h3><spring:message code="route.details"/></h3>--%>
+            <c:choose>
+                <c:when test="${startPoint.title != null}">
+                    <h1>Route from ${startPoint.title} to ${place.title}</h1>
+                </c:when>
+                <c:when test="${kml.title != null}">
+                    <h1>Route from ${kml.title} to ${place.title}</h1>
+                </c:when>
+            </c:choose>
         </div>
         <div class="clearDiv"></div>
         <div>
             <div id="routeContainer">
-                <div id="mapDiv"></div>
+                <div id="mapDivLeft"></div>
                 <div id="routeDirections"></div>
             </div>
         </div>
