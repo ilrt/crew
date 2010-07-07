@@ -25,7 +25,7 @@
                   center: latlng,
                   mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
+                var map = new google.maps.Map(document.getElementById("mapDivRight"), mapOptions);
                 var marker = new google.maps.Marker({
                     position: latlng,
                     map: map,
@@ -150,40 +150,30 @@
             <strong>&gt;</strong>
             <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
         </div>
-        <div style="float:left">
-            <h1>${place.title}</h1>
-            <%--<h3><spring:message code="place.details"/></h3>--%>
-        </div>
+        <h1>${place.title} location information</h1>
+        <%--<h3><spring:message code="place.details"/></h3>--%>
         <div class="clearDiv"></div>
         <div id="mapContainer">
-            <div style="float: left">
-                <div id="mapDiv"></div>
+            <div class="leftMargin">
+                <div id="routeLinks">
+                    <h4>Map routes to ${place.title} from:</h4>
+                    <c:if test="${startPointList != null}">
+                            <ul style="list-style-type: square; margin-left: 1em">
+                        <c:forEach var="startPoint" items="${startPointList}">
+                            <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
+                        </c:forEach>
+                            </ul>
+                    </c:if>
+                    <c:if test="${kmlList != null}">
+                            <ul style="list-style-type: square; margin-left: 1em">
+                        <c:forEach var="kml" items="${kmlList}">
+                            <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
+                        </c:forEach>
+                            </ul>
+                    </c:if>
+                </div>
             </div>
-            <div id="routeLinks">
-                <h4>Routes to ${place.title} from:</h4>
-                <c:if test="${startPointList != null}">
-			<ul style="list-style-type: square; margin-left: 1em">
-                    <c:forEach var="startPoint" items="${startPointList}">
-                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
-                    </c:forEach>
-			</ul>
-                </c:if>
-                <c:if test="${kmlList != null}">
-			<ul style="list-style-type: square; margin-left: 1em">
-                    <c:forEach var="kml" items="${kmlList}">
-                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
-                    </c:forEach>
-			</ul>
-                </c:if>
-            </div>
-            <div id="travelfootprintMsg">
-		<p><spring:message code="place.footprint.message"/></p>
-            </div>
-	    <!-- Travelfootprint panel -->
-	    <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
-		style="margin-height:0px;padding-left: 3px; padding-top: 4px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
-	    <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
-
+            <div id="mapDivRight"></div>
         </div>
     </div>
     <!--End of Middle content-->
