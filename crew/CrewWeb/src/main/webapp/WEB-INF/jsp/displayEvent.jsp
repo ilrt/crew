@@ -141,12 +141,15 @@
     </div>
     --%>
 
-    <div id="travelfootprint">
-        <h4>What's your carbon footprint?</h4>
-        <p><spring:message code="place.footprint.message"/></p>
+  <%--  <div id="travelfootprint"> --%>
+    <div class="trainingBlock travelfootprint">
+        <h3>What's your travel footprint?</h3>
+        <span><spring:message code="place.footprint.message"/></span>
+    </div>
+    <div class="travelfootprint">
         <!-- Travelfootprint panel -->
         <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
-            style="margin-top:10px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+            style="margin-top:5px; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
         <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
     </div>
 
