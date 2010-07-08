@@ -663,10 +663,19 @@ li.pagination {
 }
 
 #mapDivLeft {
+    float: left;
     border: solid grey;
     border-width: 1px;
-    width: 660px;
-    height: 600px;
+    width: 450px;
+    height: 350px;
+}
+
+#streetViewRight {
+    border: solid grey;
+    border-width: 1px;
+    width: 450px;
+    height: 350px;
+    margin-left: 460px;
 }
 
 .leftMargin {

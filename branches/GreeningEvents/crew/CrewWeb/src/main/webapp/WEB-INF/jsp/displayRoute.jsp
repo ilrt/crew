@@ -21,17 +21,20 @@
                 var directionDisplay;
                 var directionsService = new google.maps.DirectionsService();
                 var map;
-              var destination = new google.maps.LatLng(${place.latitude}, ${place.longitude});
+                var destination = new google.maps.LatLng(${place.latitude}, ${place.longitude});
               <c:if test="${startPoint != null}">
-                  var startpoint = new google.maps.LatLng(${startPoint.latitude}, ${startPoint.longitude});
+                var startpoint = new google.maps.LatLng(${startPoint.latitude}, ${startPoint.longitude});
               </c:if>
-              var centrepoint;
+                var centrepoint;
+                var streetViewStartPoint;
               <c:choose>
                 <c:when test="${kml != null}">
-                  centrepoint = destination;
+                centrepoint = destination;
+                streetViewStartPoint = destination;
                 </c:when>
                 <c:otherwise>
-                  centrepoint = startpiont;
+                centrepoint = startpoint;
+                streetViewStartPoint = startpoint;
                 </c:otherwise>
               </c:choose>
               function initialize() {
@@ -39,9 +42,13 @@
                   var mapOptions = {
                     zoom:14,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    center: centrepoint
+                    center: centrepoint,
+                    streetViewControl: true
                   }
                   map = new google.maps.Map(document.getElementById("mapDivLeft"), mapOptions);
+
+
+
 
           <c:choose>
               <c:when test="${startPoint != null}">
@@ -73,13 +80,18 @@
                   });
               </c:when>
               <c:otherwise>
-                <%-- We have a KML file url for a KML overlay --%>
-                var ctaLayer = new google.maps.KmlLayer('${kmlUrl}');
-                <%-- var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml'); --%>
-                ctaLayer.setMap(map);
+                  <%-- We have a KML file url for a KML overlay --%>
+                  var ctaLayer = new google.maps.KmlLayer('${kmlUrl}');
+                  <%-- var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml'); --%>
+                  ctaLayer.setMap(map);
               </c:otherwise>
           </c:choose>
-              
+                <%-- Add streetview --%>
+                  var panoramaOptions = {
+                    position: streetViewStartPoint
+                  };
+                  var panorama = new  google.maps.StreetViewPanorama(document.getElementById("streetViewRight"), panoramaOptions);
+                  map.setStreetView(panorama);
               }
 
                 function calcRoute() {
@@ -199,6 +211,7 @@
         <div>
             <div id="routeContainer">
                 <div id="mapDivLeft"></div>
+                <div id="streetViewRight"></div>
                 <div id="routeDirections"></div>
             </div>
         </div>
