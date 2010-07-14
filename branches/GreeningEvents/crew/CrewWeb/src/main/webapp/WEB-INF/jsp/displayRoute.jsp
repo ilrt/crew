@@ -29,8 +29,17 @@
                 var streetViewStartPoint;
               <c:choose>
                 <c:when test="${kml != null}">
-                centrepoint = destination;
-                streetViewStartPoint = destination;
+                    <c:choose>
+                        <c:when test="${kml.startLat != null && kml.startLong != null}">
+                            var kmlStartPoint = new google.maps.LatLng(${kml.startLat}, ${kml.startLong});
+                            centrepoint = kmlStartPoint;
+                            streetViewStartPoint = kmlStartPoint;
+                        </c:when>
+                        <c:otherwise>
+                            centrepoint = destination;
+                            streetViewStartPoint = destination;
+                        </c:otherwise>
+                    </c:choose>
                 </c:when>
                 <c:otherwise>
                 centrepoint = startpoint;
@@ -46,9 +55,6 @@
                     streetViewControl: true
                   }
                   map = new google.maps.Map(document.getElementById("mapDivLeft"), mapOptions);
-
-
-
 
           <c:choose>
               <c:when test="${startPoint != null}">
