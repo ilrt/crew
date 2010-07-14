@@ -82,12 +82,14 @@ public class RepositoryEvent implements Serializable {
             if (form.getKmlId1() != null && !form.getKmlId1().equals("")) {
                 // Existing kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlId1(),form.getKmlTitle1(),form.getKmlType1(),form.getKmlXml1()
+                       form.getKmlId1(),form.getKmlTitle1(),form.getKmlType1(),
+                       form.getKmlStartLat1(),form.getKmlStartLong1(),form.getKmlXml1()
                        );
             } else {
                 // New kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlTitle1(),form.getKmlType1(),form.getKmlXml1()
+                       form.getKmlTitle1(),form.getKmlType1(),
+                       form.getKmlStartLat1(),form.getKmlStartLong1(),form.getKmlXml1()
                        );
             }
             kmlObjects.add(kml);
@@ -98,12 +100,14 @@ public class RepositoryEvent implements Serializable {
             if (form.getKmlId2() != null && !form.getKmlId2().equals("")) {
                 // Existing kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlId2(),form.getKmlTitle2(),form.getKmlType2(),form.getKmlXml2()
+                       form.getKmlId2(),form.getKmlTitle2(),form.getKmlType2(),
+                       form.getKmlStartLat2(),form.getKmlStartLong2(),form.getKmlXml2()
                        );
             } else {
                 // New kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlTitle2(),form.getKmlType2(),form.getKmlXml2()
+                       form.getKmlTitle2(),form.getKmlType2(),
+                       form.getKmlStartLat2(),form.getKmlStartLong2(),form.getKmlXml2()
                        );
             }
             kmlObjects.add(kml);
@@ -114,12 +118,14 @@ public class RepositoryEvent implements Serializable {
             if (form.getKmlId3() != null && !form.getKmlId3().equals("")) {
                 // Existing kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlId3(),form.getKmlTitle3(),form.getKmlType3(),form.getKmlXml3()
+                       form.getKmlId3(),form.getKmlTitle3(),form.getKmlType3(),
+                       form.getKmlStartLat3(),form.getKmlStartLong3(),form.getKmlXml3()
                        );
             } else {
                 // New kml object
                 kml = new RepositoryEventKml(
-                       form.getKmlTitle3(),form.getKmlType3(),form.getKmlXml3()
+                       form.getKmlTitle3(),form.getKmlType3(),
+                       form.getKmlStartLat3(),form.getKmlStartLong3(),form.getKmlXml3()
                        );
             }
             kmlObjects.add(kml);

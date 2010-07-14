@@ -54,18 +54,24 @@ public class RepositoryEventKml implements Serializable {
     public RepositoryEventKml(){}
 
     // Create new startPoint with new id
-    public RepositoryEventKml(String title, String type, String kxml) {
+    public RepositoryEventKml(String title, String type, String startLat,
+            String startLong, String kxml) {
         this.title = title;
         this.type = type;
+        this.startLat = startLat;
+        this.startLong = startLong;
         this.kxml = kxml;
         kmlId = getKmlHash();
     }
 
     // Re-create existing startPoint object with existing id
-    public RepositoryEventKml(String kmlId, String title, String type, String kxml) {
+    public RepositoryEventKml(String kmlId, String title, String type, String startLat,
+            String startLong, String kxml) {
         this.kmlId = kmlId;
         this.title = title;
         this.type = type;
+        this.startLat = startLat;
+        this.startLong = startLong;
         this.kxml = kxml;
     }
 
@@ -79,6 +85,22 @@ public class RepositoryEventKml implements Serializable {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setStartLat(String startLat) {
+        this.startLat = startLat;
+    }
+
+    public String getStartLat() {
+        return startLat;
+    }
+
+    public void setStartLong(String startLong) {
+        this.startLong = startLong;
+    }
+
+    public String getStartLong() {
+        return startLong;
     }
 
     public String getKmlHash() {
@@ -162,6 +184,12 @@ public class RepositoryEventKml implements Serializable {
 
     @Column(name = "TITLE", nullable = false)
     private String title;
+
+    @Column(name = "STARTLAT")
+    private String startLat;
+
+    @Column(name = "STARTLONG")
+    private String startLong;
 
     @Column(name = "TYPE", nullable = false)
     private String type;
