@@ -102,16 +102,22 @@ public class RepositoryEventForm {
     private String kmlId1 = null;
     private String kmlTitle1 = null;
     private String kmlType1 = null;
+    private String kmlStartLat1 = null;
+    private String kmlStartLong1 = null;
     private String kmlXml1 = null;
 
     private String kmlId2 = null;
     private String kmlTitle2 = null;
     private String kmlType2 = null;
+    private String kmlStartLat2 = null;
+    private String kmlStartLong2 = null;
     private String kmlXml2 = null;
 
     private String kmlId3 = null;
     private String kmlTitle3 = null;
     private String kmlType3 = null;
+    private String kmlStartLat3 = null;
+    private String kmlStartLong3 = null;
     private String kmlXml3 = null;
 
     private String eventUrl = null;
@@ -236,16 +242,22 @@ public class RepositoryEventForm {
                     this.setKmlId1(kmlObject.getKmlId());
                     this.setKmlTitle1(kmlObject.getTitle());
                     this.setKmlType1(kmlObject.getType());
+                    this.setKmlStartLat1(kmlObject.getStartLat());
+                    this.setKmlStartLong1(kmlObject.getStartLong());
                     this.setKmlXml1(kmlObject.getXml());
                 } else if (count == 2) {
                     this.setKmlId2(kmlObject.getKmlId());
                     this.setKmlTitle2(kmlObject.getTitle());
                     this.setKmlType2(kmlObject.getType());
+                    this.setKmlStartLat2(kmlObject.getStartLat());
+                    this.setKmlStartLong2(kmlObject.getStartLong());
                     this.setKmlXml2(kmlObject.getXml());
                 } else if (count == 3) {
                     this.setKmlId3(kmlObject.getKmlId());
                     this.setKmlTitle3(kmlObject.getTitle());
                     this.setKmlType3(kmlObject.getType());
+                    this.setKmlStartLat3(kmlObject.getStartLat());
+                    this.setKmlStartLong3(kmlObject.getStartLong());
                     this.setKmlXml3(kmlObject.getXml());
                 } else if (count > 3) {
                     break;
@@ -651,6 +663,22 @@ public class RepositoryEventForm {
         this.kmlType1 = kmlType1;
     }
 
+    public String getKmlStartLat1() {
+        return kmlStartLat1;
+    }
+
+    public void setKmlStartLat1(String kmlStartLat1) {
+        this.kmlStartLat1 = kmlStartLat1;
+    }
+
+    public String getKmlStartLong1() {
+        return kmlStartLong1;
+    }
+
+    public void setKmlStartLong1(String kmlStartLong1) {
+        this.kmlStartLong1 = kmlStartLong1;
+    }
+
     public String getKmlXml1() {
         return kmlXml1;
     }
@@ -683,6 +711,22 @@ public class RepositoryEventForm {
         this.kmlType2 = kmlType2;
     }
 
+    public String getKmlStartLat2() {
+        return kmlStartLat2;
+    }
+
+    public void setKmlStartLat2(String kmlStartLat2) {
+        this.kmlStartLat2 = kmlStartLat2;
+    }
+
+    public String getKmlStartLong2() {
+        return kmlStartLong2;
+    }
+
+    public void setKmlStartLong2(String kmlStartLong2) {
+        this.kmlStartLong2 = kmlStartLong2;
+    }
+
     public String getKmlXml2() {
         return kmlXml2;
     }
@@ -713,6 +757,22 @@ public class RepositoryEventForm {
 
     public void setKmlType3(String kmlType3) {
         this.kmlType3 = kmlType3;
+    }
+
+    public String getKmlStartLat3() {
+        return kmlStartLat3;
+    }
+
+    public void setKmlStartLat3(String kmlStartLat3) {
+        this.kmlStartLat3 = kmlStartLat3;
+    }
+
+    public String getKmlStartLong3() {
+        return kmlStartLong3;
+    }
+
+    public void setKmlStartLong3(String kmlStartLong3) {
+        this.kmlStartLong3 = kmlStartLong3;
     }
 
     public String getKmlXml3() {
