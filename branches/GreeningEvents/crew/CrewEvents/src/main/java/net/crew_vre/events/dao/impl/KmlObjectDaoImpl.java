@@ -141,8 +141,17 @@ public class KmlObjectDaoImpl implements KmlObjectDao {
             if (qs.getLiteral("type") != null) {
                 kml.setType(qs.getLiteral("type").getLexicalForm());
             }
-            if (kml != null) {
+            if (qs.getLiteral("startLat") != null) {
+                kml.setStartLat(qs.getLiteral("startLat").getLexicalForm());
+            }
+            if (qs.getLiteral("startLong") != null) {
+                kml.setStartLong(qs.getLiteral("startLong").getLexicalForm());
+            }
+            if (logger.isDebugEnabled() && kml != null) {
                 logger.debug("Found kml object: " + kml.getTitle());
+                logger.debug("-> with type: " + kml.getType());
+                logger.debug("-> with startLat: " + kml.getStartLat());
+                logger.debug("-> with startLong: " + kml.getStartLong());
             }
         }
 
@@ -176,6 +185,14 @@ public class KmlObjectDaoImpl implements KmlObjectDao {
 
         if (qs.getLiteral("type") != null) {
             kml.setType(qs.getLiteral("type").getLexicalForm());
+        }
+
+        if (qs.getLiteral("startLat") != null) {
+            kml.setStartLat(qs.getLiteral("startLat").getLexicalForm());
+        }
+
+        if (qs.getLiteral("startLong") != null) {
+            kml.setStartLong(qs.getLiteral("startLong").getLexicalForm());
         }
 
         return kml;
