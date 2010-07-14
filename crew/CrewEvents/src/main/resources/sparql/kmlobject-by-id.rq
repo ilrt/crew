@@ -1,8 +1,11 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
-SELECT $graph $kmlId $title $type
+PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT $graph $kmlId $title $type $startLat $startLong
 WHERE {
     GRAPH $graph {
         $kmlId dc:title $title .
-        OPTIONAL { $kmlId dc:type $type } .
+        OPTIONAL { $kmlId dc:type $type .
+                   $kmlId pos:lat $startLat .
+                   $kmlId pos:long $startLong } .
     }
 }

@@ -52,6 +52,16 @@ public class KmlObject extends DomainObject {
     private String type;
 
     /**
+     * The latitute of the start point for the KML route
+     */
+    private String startLat;
+
+    /**
+     * The longitude of the start point for the KML route
+     */
+    private String startLong;
+
+    /**
      * The url of the KML XML file if an external url has been used
      */
     private String url = null;
@@ -82,6 +92,22 @@ public class KmlObject extends DomainObject {
     public void setType(final String type) {
         this.type = type;
     }
+
+    public String getStartLat() {
+        return startLat;
+    }
+
+    public void setStartLat(String startLat) {
+        this.startLat = startLat;
+    }
+
+    public String getStartLong() {
+        return startLong;
+    }
+
+    public void setStartLong(String startLong) {
+        this.startLong = startLong;
+    }
     
     public String getUrl() {
         return url;
@@ -90,8 +116,6 @@ public class KmlObject extends DomainObject {
     public void setUrl(final String url) {
         this.url = url;
     }
-
-
 
     @Override
     public boolean equals(Object o) {
