@@ -60,6 +60,8 @@
                      <rdf:Description rdf:about="${kml.kmlId}">
                         <dc:title>${kml.title}</dc:title>
                         <dc:type>${kml.type}</dc:type>
+                        <pos:lat>${kml.startLat}</pos:lat>
+                        <pos:long>${kml.startLong}</pos:long>
                      </rdf:Description>
                  </ge:kmlObject>
             </c:forEach>
