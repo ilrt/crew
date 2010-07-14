@@ -27,11 +27,12 @@
               </c:if>
                 var centrepoint;
                 var streetViewStartPoint;
+                var kmlStartPoint;
               <c:choose>
                 <c:when test="${kml != null}">
                     <c:choose>
-                        <c:when test="${kml.startLat != null && kml.startLong != null}">
-                            var kmlStartPoint = new google.maps.LatLng(${kml.startLat}, ${kml.startLong});
+                        <c:when test="${not empty kml.startLat && not empty kml.startLong}">
+                            kmlStartPoint = new google.maps.LatLng(${kml.startLat}, ${kml.startLong});
                             centrepoint = kmlStartPoint;
                             streetViewStartPoint = kmlStartPoint;
                         </c:when>
@@ -88,7 +89,7 @@
               <c:otherwise>
                   <%-- We have a KML file url for a KML overlay --%>
                   var ctaLayer = new google.maps.KmlLayer('${kmlUrl}');
-                  <%-- var ctaLayer = new google.maps.KmlLayer('http://www.ilrt.bris.ac.uk/~cmpac/kml/btm_ilrt.kml'); --%>
+                  <%-- var ctaLayer = new google.maps.KmlLayer('http://tc-greeningevents.ilrt.bris.ac.uk/repository/route_KML_c2e3365f010736c98f03baaeb9ba2947.kml');  --%>
                   ctaLayer.setMap(map);
               </c:otherwise>
           </c:choose>
