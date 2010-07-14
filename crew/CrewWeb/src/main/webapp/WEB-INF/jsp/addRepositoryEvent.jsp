@@ -94,6 +94,7 @@
                     </table>
                         <%-- Startpoint details --%>
                         <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
+                            <tr><td cols="6"><h3>Create route from a start point lat-long</h3></td></tr>
                         <tr>
                             <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
                             <td><form:input size="30" path="startPoint1"/></td>
@@ -181,9 +182,14 @@
                     </table>
                         <%-- KML files --%>
                     <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
+                        <tr><td cols="4"><h3>Create route from a KML file</h3></td></tr>
                         <tr>
-                            <td><strong>Route title</strong></td>
-                            <td><form:input size="30" path="kmlTitle1"/></td>
+                            <td>
+                                <strong>Route title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                                <form:input size="30" path="kmlTitle1"/><br/><br/>
+                                <strong>Route start lat:&nbsp;&nbsp;&nbsp;</strong> <form:input size="15" path="kmlStartLat1"/><br/>
+                                <strong>Route start long:</strong> <form:input size="15" path="kmlStartLong1"/>
+                            </td>
                             <td>Type:
                                 <form:select path="kmlType1">
                                     <form:option value="walking" label="Walking"/>
@@ -199,8 +205,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong>Route title</strong></td>
-                            <td><form:input size="30" path="kmlTitle2"/></td>
+                            <td>
+                                <strong>Route title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                                <form:input size="30" path="kmlTitle2"/><br/><br/>
+                                <strong>Route start lat:&nbsp;&nbsp;&nbsp;</strong> <form:input size="15" path="kmlStartLat2"/><br/>
+                                <strong>Route start long:</strong> <form:input size="15" path="kmlStartLong2"/>
+                            </td>
                             <td>Type:
                                 <form:select path="kmlType2">
                                     <form:option value="walking" label="Walking"/>
@@ -216,8 +226,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong>Route title</strong></td>
-                            <td><form:input size="30" path="kmlTitle3"/></td>
+                            <td>
+                                <strong>Route title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
+                                <form:input size="30" path="kmlTitle3"/><br/><br/>
+                                <strong>Route start lat:&nbsp;&nbsp;&nbsp;</strong> <form:input size="15" path="kmlStartLat3"/><br/>
+                                <strong>Route start long:</strong> <form:input size="15" path="kmlStartLong3"/>
+                            </td>
                             <td>Type:
                                 <form:select path="kmlType3">
                                     <form:option value="walking" label="Walking"/>
