@@ -9,6 +9,5 @@ WHERE {
         OPTIONAL { $kmlId dc:type $type .
                    $kmlId pos:lat $startLat .
                    $kmlId pos:long $startLong } .
-        }
     }
 }
