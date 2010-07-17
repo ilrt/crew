@@ -33,15 +33,13 @@
  */
 package org.ilrt.dibden.web.validator;
 
-import org.ilrt.dibden.facade.UserManagementFacade;
-import org.ilrt.dibden.web.command.RegistrationCommand;
-
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.ilrt.dibden.web.command.UserForm;
 
 /**
  *
@@ -49,76 +47,39 @@ import java.util.regex.Pattern;
  * @version $Id: RegistrationValidator.java 128 2009-03-31 14:09:42Z cmmaj $
  *
  **/
-public class RegistrationValidator implements Validator {
+public class UpdateUserDetailsValidator implements Validator {
 
-    public RegistrationValidator(UserManagementFacade userManagementFacade) {
-        this.userManagementFacade = userManagementFacade;
-    }
+    public UpdateUserDetailsValidator() { }
 
 
     public boolean supports(Class aClass) {
-        return aClass.equals(RegistrationCommand.class);
+        return aClass.equals(UserForm.class);
     }
 
     public void validate(Object o, Errors errors) {
 
-        RegistrationCommand regCommand = (RegistrationCommand) o;
+        UserForm userForm = (UserForm) o;
 
-        if (regCommand == null) {
+        if (userForm == null) {
 
             // ????? DO SOMETHING
 
         } else {
 
             // check that the fields aren't empty
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName",
-                    "register.username.empty");
             ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "register.name.empty");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailOne", "register.email.empty");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailTwo",
-                    "register.email.confirm.empty");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwordOne",
-                    "register.password.empty");
-            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "passwordTwo",
-                    "register.password.confirm.empty");
+            ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "register.email.empty");
 
-            // check the username is alpha numeric characters
-            Matcher userNameMatcher = userNamePattern.matcher(regCommand.getUserName());
-
-            if (!userNameMatcher.matches()) {
-                errors.rejectValue("userName", "register.username.alpha");
-            }
-
-            // check that the username isn't registered
-            if (userManagementFacade.isUsernameRegistered(regCommand.getUserName())) {
-                errors.rejectValue("userName", "register.username.exists");
-            }
-
-            // check that passwords match
-            if (!regCommand.getPasswordOne().equals(regCommand.getPasswordTwo())) {
-                errors.reject("passwordOne", "register.password.match");
-            }
-
-            // check the structure of the emal address
-            Matcher emailMatcher = emailPattern.matcher(regCommand.getEmailOne());
+            // check the structure of the email address
+            Matcher emailMatcher = emailPattern.matcher(userForm.getEmail());
 
             if (!emailMatcher.matches()) {
-                errors.rejectValue("emailOne", "register.email.valid");
-            }
-
-            // check that emails match
-            if (!regCommand.getEmailOne().equals(regCommand.getEmailTwo())) {
-                errors.reject("emailOne", "register.email.match");
-            }
-
-            // check that the email isn't registered
-            if (userManagementFacade.isEmailRegistered(regCommand.getEmailOne())) {
-                errors.rejectValue("emailOne", "register.email.exists");
+                errors.rejectValue("email", "register.email.valid");
             }
 
             // check the structure of the optional post code
-            if (regCommand.getPostcode() != null && !regCommand.getPostcode().isEmpty()) {
-                Matcher postcodeMatcher = postcodePattern.matcher(regCommand.getPostcode());
+            if (userForm.getPostcode() != null && !userForm.getPostcode().isEmpty()) {
+                Matcher postcodeMatcher = postcodePattern.matcher(userForm.getPostcode());
 
                 if (!postcodeMatcher.matches()) {
                     errors.rejectValue("postcode", "register.postcode.valid");
@@ -129,9 +90,6 @@ public class RegistrationValidator implements Validator {
 
     }
 
-    private UserManagementFacade userManagementFacade;
-
-    Pattern userNamePattern = Pattern.compile("^[a-zA-Z0-9]+$");
     Pattern emailPattern = Pattern.compile("^[\\.\\+_a-zA-Z0-9-]+@[a-zA-Z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,6})$");
     Pattern postcodePattern = Pattern.compile("^\\w{2}\\d\\d?\\s\\d\\w{2}$");
 

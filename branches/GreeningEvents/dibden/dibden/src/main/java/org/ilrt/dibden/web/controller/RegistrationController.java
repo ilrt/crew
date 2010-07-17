@@ -63,7 +63,7 @@ public class RegistrationController extends SimpleFormController {
         RegistrationCommand regCommand = (RegistrationCommand) command;
 
         userManagementFacade.registerUser(regCommand.getUserName(), regCommand.getPasswordOne(),
-                regCommand.getName(), regCommand.getEmailOne());
+                regCommand.getName(), regCommand.getEmailOne(), regCommand.getPostcode());
     }
 
 
