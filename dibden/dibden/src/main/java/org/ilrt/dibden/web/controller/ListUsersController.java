@@ -33,7 +33,6 @@
  */
 package org.ilrt.dibden.web.controller;
 
-import org.ilrt.dibden.domain.Role;
 import org.ilrt.dibden.domain.User;
 import org.ilrt.dibden.domain.Group;
 import org.ilrt.dibden.Utility;
@@ -73,7 +72,7 @@ public class ListUsersController extends SimpleFormController {
                 List<Group> groups = userManagementFacade.getGroups();
 
                 UserForm userForm = new UserForm(user.getUsername(), user.getName(),
-                        user.getEmail(), user.getGroups(), groups);
+                        user.getEmail(), user.getPostcode(), user.getGroups(), groups);
 
                 ModelAndView mav = new ModelAndView("editUser");
 
