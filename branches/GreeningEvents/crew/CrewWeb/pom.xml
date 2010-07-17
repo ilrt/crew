@@ -247,7 +247,7 @@
         <dependency>
             <groupId>org.ilrt.dibden</groupId>
             <artifactId>dibden</artifactId>
-            <version>0.4</version>
+            <version>0.5-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>asm</groupId>
@@ -442,4 +442,5 @@
         </dependency>
     </dependencies>
 </project>
+
 
