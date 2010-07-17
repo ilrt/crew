@@ -13,15 +13,30 @@
     <title><fmt:message key="user.edit.title"/></title>
     <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
 </head>
+
 <body>
 
 <div id="container">
 
     <%-- banner navigation--%>
-    <%@ include file="includes/topNavLimited.jsp" %>
+    <%-- <%@ include file="includes/topNavLimited.jsp" %> --%>
 
     <%-- the logo banner --%>
     <%--<%@ include file="includes/logo.jsp" %>--%>
+
+    <%-- the logo banner --%>
+    <%--<%@ include file="includes/logo.jsp" %>--%>
+    <div id="headerContainer">
+
+        <div id="headerLogo">
+            <a href="../"><img
+                    src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif"
+                    alt="JISC Digital Media Logo"
+                    width="279" height="55"
+                    style="margin-bottom: 2em"/></a>
+        </div>
+
+    </div>
 
     <%-- The main content --%>
     <div id="mainBody">
@@ -29,14 +44,12 @@
 
         <div class="user-management-container">
 
-            <%@ include file="includes/adminLinks.jsp" %>
-
-            <form:form action="./editUser.do" method="post" commandName="userForm">
+            <form:form action="./updateUserDetails.do" method="post" commandName="userForm">
 
                 <%-- USER DETAILS --%>
 
                 <fieldset>
-                    <legend><strong>User Details</strong></legend>
+                    <legend><strong>Details for ${userForm.name}</strong></legend>
 
                     <p><fmt:message key="user.edit.details"/></p>
 
@@ -67,45 +80,6 @@
                         <input type="submit" value="Cancel"/>
                     </p>
                 </fieldset>
-
-                <%-- REMOVE GROUPS --%>
-
-                <c:if test="${not empty userForm.userGroups}">
-                    <fieldset>
-                        <legend><strong>Groups assigned to this user</strong></legend>
-                        <table>
-                            <c:forEach var="userGroup" items="${userForm.userGroups}">
-                                <tr>
-                                    <td><form:radiobutton path="userGroupId"
-                                                          value="${userGroup.groupId}"/></td>
-                                    <td>${userGroup.groupId}</td>
-                                </tr>
-                            </c:forEach>
-                        </table>
-                        <p>
-                            <input type="submit" name="removeGroup" value="Remove"/>
-                            <input type="submit" value="Cancel"/>
-                        </p>
-                    </fieldset>
-                </c:if>
-
-
-                <%-- ADD GROUPS --%>
-
-                <c:if test="${not empty userForm.groups}">
-                    <fieldset>
-                        <legend><strong>Assign new groups to this user</strong></legend>
-                        <p>
-                            <form:select path="addGroupId" multiple="false">
-                                <c:forEach var="group" items="${userForm.groups}">
-                                    <form:option value="${group.groupId}"/>
-                                </c:forEach>
-                            </form:select>
-                            <input type="submit" name="addGroup" value="Add"/>
-                            <input type="submit" value="Cancel"/>
-                        </p>
-                    </fieldset>
-                </c:if>
 
             </form:form>
 

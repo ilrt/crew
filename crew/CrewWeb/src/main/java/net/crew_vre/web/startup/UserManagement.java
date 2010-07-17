@@ -106,7 +106,7 @@ public class UserManagement {
         User user = userManagementFacade.getUser("admin");
 
         if (user == null) {
-            userManagementFacade.registerUser("admin", "admin", "Admin user", "admin@example.org");
+            userManagementFacade.registerUser("admin", "admin", "Admin user", "admin@example.org", "");
             userManagementFacade.addUserToGroup("admin", "ADMIN_GROUP");
             userManagementFacade.addUserToGroup("admin", "HARVESTER_GROUP");
         }

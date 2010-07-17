@@ -247,6 +247,19 @@
         <property name="commandName" value="userForm"/>
     </bean>
 
+    <!-- user form to update own user details -->    
+
+    <bean name="/secured/updateUserDetails.do"
+          class="org.ilrt.dibden.web.controller.UpdateUserDetailsController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.UserForm"/>
+        <property name="commandName" value="userForm"/>
+        <property name="successView" value="displayProfile"/>
+        <property name="validator" >
+            <bean class="org.ilrt.dibden.web.validator.UpdateUserDetailsValidator"/>
+        </property>
+    </bean>
+
     <!-- list roles -->
 
     <bean id="listRolesValidator" class="org.ilrt.dibden.web.validator.ListRolesValidator">

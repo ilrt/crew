@@ -49,12 +49,19 @@
 
             <p><strong><fmt:message key="profile.email"/></strong>&nbsp;<c:out
                     value="${profile.email}"/></p>
+
+            <p><strong><fmt:message key="profile.postcode"/></strong>&nbsp;<c:out
+                    value="${profile.postcode}"/></p>
         </fieldset>
 
         <fieldset style="width: 400px">
             <legend><strong><fmt:message key="profile.actions"/></strong></legend>
             <ul>
-                <li><a href="changePassword.do"><fmt:message key="profile.link.changePassword"/></a>
+                <li>
+                    <a href="updateUserDetails.do"><fmt:message key="profile.link.updateDetails"/></a>
+                </li>
+                <li>
+                    <a href="changePassword.do"><fmt:message key="profile.link.changePassword"/></a>
                 </li>
                 <li><a href="${pageContext.request.contextPath}/">Home</a></li>
             </ul>
