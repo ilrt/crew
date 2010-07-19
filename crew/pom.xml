@@ -16,7 +16,7 @@
         <module>CrewEvents</module>
         <module>CrewAnnotations</module>
         <module>CrewAuthorization</module>
-<!--        <module>CrewRecordings</module> -->
+        <module>CrewRecordings</module> 
         <module>CrewHarvester</module>
         <module>CrewWeb</module>
 <!--        <module>CrewRecorder</module> -->
