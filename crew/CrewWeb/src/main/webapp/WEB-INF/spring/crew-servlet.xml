@@ -46,6 +46,13 @@
         <constructor-arg index="3" ref="personFacets"/>
     </bean>
 
+    <!-- find car sharers -->
+    <bean name="/secured/listCarSharers.do" id="listCarSharersController"
+          class="net.crew_vre.web.controller.ListCarSharersController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" value="postcodes"/>
+    </bean>
+
     <!-- display event -->
     <bean name="/displayEvent.do" id="displayEventController"
           class="net.crew_vre.web.controller.DisplayEventController">

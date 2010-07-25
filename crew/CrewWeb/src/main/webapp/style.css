@@ -525,6 +525,11 @@ li.pagination {
     text-align: center;
 }
 
+.carsharers-submission-container {
+    padding: 1em;
+    width: 45em;
+}
+
 .list-table {
     border-collapse: collapse;
     width: 100%;
