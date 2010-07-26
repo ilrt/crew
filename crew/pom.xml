@@ -19,11 +19,11 @@
         <module>CrewRecordings</module> 
         <module>CrewHarvester</module>
         <module>CrewWeb</module>
-<!--        <module>CrewRecorder</module> -->
+        <module>CrewRecorder</module> 
         <module>CrewLiveAnnotations</module>
         <module>CrewAnnotationsStore</module>
-<!--        <module>CrewCodecs</module> -->
-<!--        <module>CrewMedia</module> -->
+        <module>CrewCodecs</module> 
+        <module>CrewMedia</module> 
     </modules>
 
     <!-- properties -->
