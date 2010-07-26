@@ -54,24 +54,24 @@ import org.apache.log4j.Logger;
 /**
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class ListCarSharersController implements Controller {
+public class ListJourneySharersController implements Controller {
 
 
 
-    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.ListCarSharersController");
+    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.ListJourneySharersController");
 
     private UserManagementFacade userManagementFacade;
     private String postcodeMapDirName;
     String postcodesPath;
 
-    private static String SUCCESSFUL_REQ = "redirect:./requestCarSharers.do";
-    private static String LIST_CARSHARERS = "listCarSharers";
+    private static String SUCCESSFUL_REQ = "redirect:./requestJourneySharers.do";
+    private static String LIST_CARSHARERS = "listJourneySharers";
     private static int DEFAULT_DISTANCE = 5;
     private static int MAX_ALLOWED_DISTANCE = 10;
 
     private int maxDistance;
     
-    public ListCarSharersController(UserManagementFacade userManagementFacade, String postcodeMapDirName) {
+    public ListJourneySharersController(UserManagementFacade userManagementFacade, String postcodeMapDirName) {
         this.userManagementFacade = userManagementFacade;
         this.postcodeMapDirName = postcodeMapDirName;
     }
@@ -88,7 +88,7 @@ public class ListCarSharersController implements Controller {
         if (request.getParameter("maxDistance") == null ) {
             // Request for submission form
             mov = new ModelAndView(LIST_CARSHARERS);
-            mov.addObject("message", "<fmt:message key=\"carsharer.message.submit\"/>");
+            mov.addObject("message", "<fmt:message key=\"journeysharer.message.submit\"/>");
         } else {
             // get the full path to the post codes directory
             postcodesPath = new File(this.getClass().getClassLoader()
@@ -101,7 +101,7 @@ public class ListCarSharersController implements Controller {
                 localPostcode = localUser.getPostcode();
 
                 if (logger.isDebugEnabled()) {
-                    logger.debug("Checking for carsharers for user: " + localUser.getName() + " with post code: "
+                    logger.debug("Checking for journeysharers for user: " + localUser.getName() + " with post code: "
                             + localPostcode);
                 }
 
@@ -129,7 +129,7 @@ public class ListCarSharersController implements Controller {
 
                     // Get all users
                     ArrayList<User> allUsers = (ArrayList) userManagementFacade.getUsers();
-                    ArrayList<User> carsharers = new ArrayList<User>();
+                    ArrayList<User> journeysharers = new ArrayList<User>();
                     HashMap<String,Integer> distances = new HashMap<String,Integer>();
 
                     if (logger.isDebugEnabled()) {
@@ -154,24 +154,24 @@ public class ListCarSharersController implements Controller {
                             int distance = calcDistance(localPostcode, remotePostcode);
                             // Returns -1 if error calculating distance
                             if ( distance >= 0 ) {
-                                    carsharers.add(remoteUser);
+                                    journeysharers.add(remoteUser);
                                     distances.put(remoteUser.getUsername(),distance);
                             }
                         }
                     }
-                    if (carsharers.isEmpty()){
+                    if (journeysharers.isEmpty()){
                         mov = new ModelAndView(LIST_CARSHARERS);
-                        mov.addObject("message", "<fmt:message key=\"carsharer.message.nocarsharers\"/>");
+                        mov.addObject("message", "<fmt:message key=\"journeysharer.message.nojourneysharers\"/>");
                     } else {
                         mov = new ModelAndView(SUCCESSFUL_REQ);
-                        mov.addObject("total",carsharers.size());
-                        mov.addObject("carsharers",carsharers);
+                        mov.addObject("total",journeysharers.size());
+                        mov.addObject("journeysharers",journeysharers);
                         mov.addObject("distances",distances);
                     }
                 } else {
                     // No postcode for this user so return error message
                     mov = new ModelAndView(LIST_CARSHARERS);
-                    mov.addObject("message", "<fmt:message key=\"carsharer.message.nopostcode\"/>");
+                    mov.addObject("message", "<fmt:message key=\"journeysharer.message.nopostcode\"/>");
                 }
 
 
