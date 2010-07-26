@@ -87,7 +87,7 @@ public class ListCarSharersController implements Controller {
         if (request.getParameter("maxDistance") == null ) {
             // Request for submission form
             mov = new ModelAndView(LIST_CARSHARERS);
-            mov.addObject("message", "carsharer.message.submit");
+            mov.addObject("message", "<fmt:message key=\"carsharer.message.submit\"/>");
         } else {
             // get the full path to the post codes directory
             postcodesPath = new File(this.getClass().getClassLoader()
@@ -129,6 +129,7 @@ public class ListCarSharersController implements Controller {
                     // Get all users
                     ArrayList<User> allUsers = (ArrayList) userManagementFacade.getUsers();
                     ArrayList<User> carsharers = new ArrayList<User>();
+                    HashMap<String,Integer> distances = new HashMap<String,Integer>();
 
                     if (logger.isDebugEnabled()) {
                         logger.debug("Found " + allUsers.size() + " users in database");
@@ -149,22 +150,27 @@ public class ListCarSharersController implements Controller {
                             if (logger.isDebugEnabled()) {
                                 logger.debug("Checking distance for: " + remoteUser.getName());
                             }
-                            if ( isWithinRange(localPostcode, remotePostcode) ) {
+                            int distance = calcDistance(localPostcode, remotePostcode);
+                            // Returns -1 if error calculating distance
+                            if ( distance >= 0 ) {
                                     carsharers.add(remoteUser);
+                                    distances.put(remoteUser.getUsername(),distance);
                             }
                         }
                     }
                     if (carsharers.isEmpty()){
                         mov = new ModelAndView(LIST_CARSHARERS);
-                        mov.addObject("message", "carsharer.message.nocarsharers");
+                        mov.addObject("message", "<fmt:message key=\"carsharer.message.nocarsharers\"/>");
                     } else {
                         mov = new ModelAndView(SUCCESSFUL_REQ);
+                        mov.addObject("total",carsharers.size());
                         mov.addObject("carsharers",carsharers);
+                        mov.addObject("distances",distances);
                     }
                 } else {
                     // No postcode for this user so return error message
                     mov = new ModelAndView(LIST_CARSHARERS);
-                    mov.addObject("message", "carsharer.message.nopostcode");
+                    mov.addObject("message", "<fmt:message key=\"carsharer.message.nopostcode\"/>");
                 }
 
 
@@ -175,7 +181,10 @@ public class ListCarSharersController implements Controller {
         return mov;
     }
     
-    private boolean isWithinRange ( String postcode1, String postcode2 ) throws URISyntaxException {
+    /*
+     * Returns distance in interger kilometers or -1 if error condition
+    */
+    private int calcDistance ( String postcode1, String postcode2 ) throws URISyntaxException {
     	
     	// Tidy up postcodes
     	postcode1 = postcode1.trim();
@@ -261,16 +270,16 @@ public class ListCarSharersController implements Controller {
             if (logger.isDebugEnabled()) {
                 logger.debug("Error fetching file: " + ex.getMessage());
             }
-            return false;
+            return -1;
         } catch (IOException ex) {
             if (logger.isDebugEnabled()) {
                 logger.debug("Error fetching file: " + ex.getMessage());
             }
-            return false;
+            return -1;
         }
 
         if (northing1 == null || northing2 == null || easting1 == null || easting2 == null ) {
-            return false;
+            return -1;
         }
 
         // Calculate distances from coords
@@ -289,11 +298,13 @@ public class ListCarSharersController implements Controller {
             if (logger.isDebugEnabled()) {
                 logger.debug("Calculated distance: " + distance + " metres");
             }
-
-            return (distance <= (double)maxDistance*1000);
+            
+            int intDistance = (int) distance/1000;
+            
+            return intDistance;
 
         } catch (NumberFormatException nfe) {
-            return false;
+            return -1;
         }
     	
     }

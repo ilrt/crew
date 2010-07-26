@@ -530,6 +530,11 @@ li.pagination {
     width: 45em;
 }
 
+.carsharers-select-container {
+    padding: 1em;
+    width: 45em;
+}
+
 .list-table {
     border-collapse: collapse;
     width: 100%;
