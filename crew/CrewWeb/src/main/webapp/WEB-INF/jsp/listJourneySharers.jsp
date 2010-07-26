@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title><fmt:message key="carsharer.find.title"/></title>
+    <title><fmt:message key="journeysharer.find.title"/></title>
     <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
 </head>
 
@@ -42,7 +42,7 @@
     <div id="mainBody">
 
 
-        <div class="carsharers-submission-container">
+        <div class="journeysharers-submission-container">
 
             <form:form action="./listCarSharers.do" method="post">
 
@@ -51,7 +51,7 @@
                 <fieldset>
                     <legend><strong>Find delegates to car share with</strong></legend>
 
-                    <p><fmt:message key="carsharers.description"/></p>
+                    <p><fmt:message key="journeysharers.description"/></p>
                     
                     <p>
                         <select name="maxDistance">

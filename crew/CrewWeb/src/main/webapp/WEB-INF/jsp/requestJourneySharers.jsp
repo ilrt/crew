@@ -41,7 +41,7 @@
     <div id="mainBody">
 
 
-        <div class="carsharers-select-container">
+        <div class="journeysharers-select-container">
 
             <%-- <%@ include file="includes/adminLinks.jsp" %> --%>
             
@@ -74,7 +74,7 @@
                             </tr>
                         </thead>
                         <tbody class="list-body">
-                            <c:forEach var="person" items="${carsharers}" varStatus="status">
+                            <c:forEach var="person" items="${journeysharers}" varStatus="status">
                                 <c:choose>
                                     <c:when test="${status.count % 2 == 1}"><tr></c:when>
                                     <c:otherwise><tr class="alt-row"></c:otherwise>
@@ -88,14 +88,14 @@
                         </tbody>
                     </table>
                     <p>
-                    	<fmt:message key="carsharer.message.emailmessage"/>
+                    	<fmt:message key="journeysharer.message.emailmessage"/>
                     </p>
                     <p>
-						<td><form:textarea path="message" rows="5" cols="60"/></td>                    
+                        <td><form:textarea path="message" rows="5" cols="60"/></td>
                     </p>
                     <p>
                         <input type="submit" name="sendEmails"
-                               value='<fmt:message key="carsharer.submit"/>'/>
+                               value='<fmt:message key="journeysharer.submit"/>'/>
                         <input type="submit" name="cancelButton"
                                value='Cancel'/>
                     </p>

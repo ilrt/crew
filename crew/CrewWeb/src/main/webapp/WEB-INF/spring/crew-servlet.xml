@@ -47,10 +47,14 @@
     </bean>
 
     <!-- find car sharers -->
-    <bean name="/secured/listCarSharers.do" id="listCarSharersController"
-          class="net.crew_vre.web.controller.ListCarSharersController">
+    <bean name="/secured/listJourneySharers.do" id="listJourneySharersController"
+          class="net.crew_vre.web.controller.ListJourneySharersController">
         <constructor-arg index="0" ref="userManagementFacade"/>
         <constructor-arg index="1" value="postcodes"/>
+    </bean>
+    <bean name="/secured/requestJourneySharers.do" id="RequestJourneySharersController"
+          class="net.crew_vre.web.controller.RequestJourneySharersController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
     </bean>
 
     <!-- display event -->
