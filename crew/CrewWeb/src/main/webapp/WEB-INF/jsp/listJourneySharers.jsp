@@ -44,7 +44,7 @@
 
         <div class="journeysharers-submission-container">
 
-            <form:form action="./listCarSharers.do" method="post">
+            <form:form action="./listJourneySharers.do" method="post">
 
                 <%-- FIND CAR SHARERS --%>
 

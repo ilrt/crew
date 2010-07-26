@@ -64,7 +64,7 @@
 --%>
 
             <c:if test="${total > 0}">
-                <form:form action="requestCarSharers" method="POST">
+                <form:form action="requestJourneySharers" method="POST">
                     <table class="list-table">
                         <thead class="list-header">
                             <tr>
