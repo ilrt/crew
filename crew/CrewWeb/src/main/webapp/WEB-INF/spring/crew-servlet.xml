@@ -46,15 +46,25 @@
         <constructor-arg index="3" ref="personFacets"/>
     </bean>
 
-    <!-- find car sharers -->
-    <bean name="/secured/listJourneySharers.do" id="listJourneySharersController"
-          class="net.crew_vre.web.controller.ListJourneySharersController">
+    <!-- find journey sharers -->
+
+    <bean name="/secured/findJourneySharers.do" id="findJourneySharersController"
+          class="net.crew_vre.web.controller.FindJourneySharersController">
         <constructor-arg index="0" ref="userManagementFacade"/>
         <constructor-arg index="1" value="postcodes"/>
+        <!-- <property name="successView" value="reqJourneySharers"/> -->
     </bean>
-    <bean name="/secured/requestJourneySharers.do" id="RequestJourneySharersController"
-          class="net.crew_vre.web.controller.RequestJourneySharersController">
+
+    <bean name="/secured/reqJourneySharers.do" id="reqJourneySharersController"
+          class="net.crew_vre.web.controller.ReqJourneySharersController">
         <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="net.crew_vre.web.command.JourneySharersForm"/>
+        <property name="commandName" value="journeySharersForm"/>
+        <property name="successView" value="findJourneySharers"/>
+        <property name="formView" value="reqJourneySharers"/>
+  <!--      <property name="validator">
+            <bean class="net.crew_vre.web.validator.JourneySharersValidator" />
+        </property> -->
     </bean>
 
     <!-- display event -->
