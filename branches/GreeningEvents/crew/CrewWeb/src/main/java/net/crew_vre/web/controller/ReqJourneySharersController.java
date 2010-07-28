@@ -34,7 +34,6 @@
 package net.crew_vre.web.controller;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 import org.springframework.web.servlet.ModelAndView;
@@ -42,6 +41,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.crew_vre.web.command.JourneySharersForm;
+import net.crew_vre.web.facade.SendEmailToUsersFacade;
 import org.ilrt.dibden.facade.UserManagementFacade;
 import org.ilrt.dibden.domain.User;
 
@@ -57,17 +57,19 @@ public class ReqJourneySharersController extends SimpleFormController {
 //    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.JourneySharersController");
 
     private UserManagementFacade userManagementFacade;
+    private SendEmailToUsersFacade sendEmailToUsersFacade;
 
     private static String JOURNEY_SHARERS = "findJourneySharers";
     private static String noUserEmailMsg = "Your own email is not set in your profile";
     private static String noUsersMsg = "You need to select at least one other delegate";
     private static String selectRangeMsg = "Select a maximum range in km and submit";
-
-    private static String emailMessageText = " wishes to ask if you would like to share the journey to XXX on XXX.  Please see their message " +
-            "below. If you wish to respond to this request, you can email to: ";
+    private static String errorSendingEmailMsg = "There was an error sending the email(s). Please contact the help desk";
+    private static String successfulEmailMsg = "Your email(s) were successfully sent";
     
-    public ReqJourneySharersController(UserManagementFacade userManagementFacade) {
+    public ReqJourneySharersController(UserManagementFacade userManagementFacade,
+            SendEmailToUsersFacade sendEmailToUsersFacade) {
         this.userManagementFacade = userManagementFacade;
+        this.sendEmailToUsersFacade = sendEmailToUsersFacade;
     }
 
     @Override
@@ -81,11 +83,8 @@ public class ReqJourneySharersController extends SimpleFormController {
         String localUsername;
         String localUserEmailAddress = null;
         String userMessage;
-        ArrayList<String> notFoundUsers = new ArrayList<String>();
-        HashMap<String,String> emailAddressMap = new HashMap<String,String>();
-        HashMap<String,String> nameMap = new HashMap<String,String>();
 
-        String debugOutText = null;  ////  DEBUGGING
+       // String debugOutText = null;  ////  DEBUGGING
 
         ModelAndView mav = null;
 
@@ -116,19 +115,28 @@ public class ReqJourneySharersController extends SimpleFormController {
                 mav.addObject("message", noUserEmailMsg);
                 return mav;
             }
-            String[] remoteUsers = journeySharersForm.getUsernames();
+            String[] remoteUsernames = journeySharersForm.getUsernames();
 
-            if ( remoteUsers == null || remoteUsers.length < 1 ) {
+            if ( remoteUsernames == null || remoteUsernames.length < 1 ) {
                 // No users selected - return form with error message
                 mav = new ModelAndView(getSuccessView());
                 mav.addObject("message", noUsersMsg);
                 return mav;
             }
 
+            ArrayList<User> remoteUsers = new ArrayList<User>();
+            for (String username : remoteUsernames) {
+                remoteUsers.add(userManagementFacade.getUser(username));
+            }
+
+
             userMessage = journeySharersForm.getMessage();
 
+///////////// DEBUGGING /////////////
+/*
+
             // Get user email addresses and names
-            for (String username : remoteUsers) {
+            for (String username : remoteUsernames) {
                 User user = userManagementFacade.getUser(username);
                 if (user == null) {
                     notFoundUsers.add(username);
@@ -138,7 +146,6 @@ public class ReqJourneySharersController extends SimpleFormController {
                 nameMap.put(username, user.getName());
             }
 
-///////////// DEBUGGING /////////////
             StringBuffer debugOutput = new StringBuffer("Will email the following users: <br/>");
             for (String username : nameMap.keySet()) {
                 debugOutput.append( (String)nameMap.get(username) );
@@ -148,11 +155,21 @@ public class ReqJourneySharersController extends SimpleFormController {
             }
             debugOutput.append("with message<br/>" + userMessage);
             debugOutText = debugOutput.toString();
-
+*/
 ///////////////////////////////////////////////////
 
+            // Send off emails
+            sendEmailToUsersFacade.setLocalUser(localUser);
+            sendEmailToUsersFacade.setUserMessage(userMessage);
+            sendEmailToUsersFacade.setUsers(remoteUsers);
+
             mav = new ModelAndView(getSuccessView());
-            mav.addObject("message",debugOutText);
+
+            if (sendEmailToUsersFacade.sendMessages()) {
+                mav.addObject("message",errorSendingEmailMsg);
+            } else {
+                mav.addObject("message", successfulEmailMsg);
+            }
 
         } // end if getUserPrinciple not null
 

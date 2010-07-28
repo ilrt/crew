@@ -1092,5 +1092,34 @@
         <constructor-arg index="0" ref="repositoryDao"/>
     </bean>
 
+    <!-- Email facade used by find journey sharers -->
+    
+    <bean id="sendEmailToUsersFacade" class="net.crew_vre.web.facade.impl.SendEmailToUsersFacadeImpl">
+        <property name="mailSender" ref="mailSender"/>
+        <property name="mailMessage" ref="mailMessage"/>
+    </bean>
+
+    <bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from">
+            <value>
+                <![CDATA[Economics Network <phil.cross@bristol.ac.uk>]]>
+            </value>
+        </property>
+        <property name="subject" value="Economics Network journey share request"/>
+        <property name="text">
+            <value>
+                <![CDATA[
+Dear %RECIPIENTUSERNAME%,
+%LOCALUSERNAME% wishes to ask if you would like to share the journey to the
+Economics Network conference on 9th September. Please see their message
+below. If you wish to respond to this request, you can email %LOCALUSERNAME% at:
+%LOCALUSEREMAIL% or reply to this message.
+
+%USERMESSAGE%
+                ]]>
+            </value>
+        </property>
+    </bean>
+
 
 </beans>
