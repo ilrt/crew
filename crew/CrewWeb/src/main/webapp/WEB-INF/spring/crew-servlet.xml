@@ -58,13 +58,20 @@
     <bean name="/secured/reqJourneySharers.do" id="reqJourneySharersController"
           class="net.crew_vre.web.controller.ReqJourneySharersController">
         <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" ref="sendEmailToUsersFacade"/>
         <property name="commandClass" value="net.crew_vre.web.command.JourneySharersForm"/>
         <property name="commandName" value="journeySharersForm"/>
         <property name="successView" value="findJourneySharers"/>
         <property name="formView" value="reqJourneySharers"/>
-  <!--      <property name="validator">
-            <bean class="net.crew_vre.web.validator.JourneySharersValidator" />
-        </property> -->
+    </bean>
+
+    <!-- email for journey sharing -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="localhost"/>
+        <!--
+        <property name="username" value="username"/>
+        <property name="password" value="password"/>
+        -->
     </bean>
 
     <!-- display event -->
