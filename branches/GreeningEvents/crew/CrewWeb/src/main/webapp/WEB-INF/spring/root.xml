@@ -1100,12 +1100,8 @@
     </bean>
 
     <bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
-        <property name="from">
-            <value>
-                <![CDATA[Economics Network <phil.cross@bristol.ac.uk>]]>
-            </value>
-        </property>
-        <property name="subject" value="Economics Network journey share request"/>
+        <property name="from" value="${mail.from.address}" />
+        <property name="subject" value="${mail.journeyshare.subject}"/>
         <property name="text">
             <value>
                 <![CDATA[

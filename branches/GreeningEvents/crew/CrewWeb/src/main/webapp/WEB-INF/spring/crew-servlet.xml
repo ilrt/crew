@@ -65,15 +65,6 @@
         <property name="formView" value="reqJourneySharers"/>
     </bean>
 
-    <!-- email for journey sharing -->
-    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="host" value="localhost"/>
-        <!--
-        <property name="username" value="username"/>
-        <property name="password" value="password"/>
-        -->
-    </bean>
-
     <!-- display event -->
     <bean name="/displayEvent.do" id="displayEventController"
           class="net.crew_vre.web.controller.DisplayEventController">
