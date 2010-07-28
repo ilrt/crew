@@ -46,55 +46,78 @@ import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.crew_vre.web.command.JourneySharersForm;
+import org.apache.log4j.Logger;
 import org.ilrt.dibden.facade.UserManagementFacade;
 import org.ilrt.dibden.domain.User;
-
-import org.apache.log4j.Logger;
 
 /**
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class ListJourneySharersController implements Controller {
+public class FindJourneySharersController implements Controller {
 
+    /*
+     * The logic in this controller should really be split between two separate controllers!
+     */
 
-
-    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.ListJourneySharersController");
+    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.JourneySharersController");
 
     private UserManagementFacade userManagementFacade;
     private String postcodeMapDirName;
     String postcodesPath;
 
-    private static String SUCCESSFUL_REQ = "redirect:./requestJourneySharers.do";
-    private static String LIST_CARSHARERS = "listJourneySharers";
+    private static String FIND_JOURNEY_SHARERS = "findJourneySharers";
+    private static String REQ_JOURNEY_SHARERS = "reqJourneySharers";
     private static int DEFAULT_DISTANCE = 5;
     private static int MAX_ALLOWED_DISTANCE = 10;
+    private static String noJourneySharersMsg = "There are no other journey sharers within the distance specified";
+    private static String noPostcodeMsg = "You have not set a valid post code in your profile. " +
+            "Go to the My Profile page to update your details.";
+    private static String systemErrorMsg = "There has been an error with the system. Please notify the web site help";
+    private static String selectRangeMsg = "Select a maximum range in km and submit";
 
     private int maxDistance;
     
-    public ListJourneySharersController(UserManagementFacade userManagementFacade, String postcodeMapDirName) {
+    public FindJourneySharersController(UserManagementFacade userManagementFacade, String postcodeMapDirName) {
         this.userManagementFacade = userManagementFacade;
         this.postcodeMapDirName = postcodeMapDirName;
     }
 
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest request,
+                                      HttpServletResponse response) throws Exception {
             	    
         String localUserName = null;
         User localUser = null;
         String localPostcode = null;
+
+        ModelAndView mav = null;
+
+        if ( request.getParameter("cancelButton") != null
+                || request.getParameter("maxDistance") == null
+                || request.getParameter("maxDistance").equals("")) {
+
+            // Just a request for the form
+            mav = new ModelAndView(FIND_JOURNEY_SHARERS);
+            mav.addObject("message", selectRangeMsg);
+            return mav;
+        }
         
-        ModelAndView mov = null;
-
-        if (request.getParameter("maxDistance") == null ) {
-            // Request for submission form
-            mov = new ModelAndView(LIST_CARSHARERS);
-            mov.addObject("message", "<fmt:message key=\"journeysharer.message.submit\"/>");
-        } else {
-            // get the full path to the post codes directory
-            postcodesPath = new File(this.getClass().getClassLoader()
-                    .getResource(postcodeMapDirName).toURI()).getAbsolutePath();
-
+        if (logger.isDebugEnabled()) {
+            logger.debug("Have submit to find journey sharers form");
+        }
+        
+        try {
+            // Do we have the user's username? If not return null ModelAndView
             if (request.getUserPrincipal() != null) {
+
+                if (logger.isDebugEnabled()) {
+                    logger.debug("Have user's username");
+                }
+
+                // get the full path to the post codes directory
+                postcodesPath = new File(this.getClass().getClassLoader()
+                        .getResource(postcodeMapDirName).toURI()).getAbsolutePath();
+
                 localUserName = request.getUserPrincipal().getName();
                 localUser = userManagementFacade.getUser(localUserName);
 
@@ -153,33 +176,40 @@ public class ListJourneySharersController implements Controller {
                             }
                             int distance = calcDistance(localPostcode, remotePostcode);
                             // Returns -1 if error calculating distance
-                            if ( distance >= 0 ) {
+                            if ( distance >= 0 && distance <= maxDistance ) {
                                     journeysharers.add(remoteUser);
                                     distances.put(remoteUser.getUsername(),distance);
                             }
                         }
                     }
                     if (journeysharers.isEmpty()){
-                        mov = new ModelAndView(LIST_CARSHARERS);
-                        mov.addObject("message", "<fmt:message key=\"journeysharer.message.nojourneysharers\"/>");
+                        mav = new ModelAndView(FIND_JOURNEY_SHARERS);
+                        mav.addObject("message", noJourneySharersMsg);
                     } else {
-                        mov = new ModelAndView(SUCCESSFUL_REQ);
-                        mov.addObject("total",journeysharers.size());
-                        mov.addObject("journeysharers",journeysharers);
-                        mov.addObject("distances",distances);
+                        // Successful search - show results
+                        mav = new ModelAndView(REQ_JOURNEY_SHARERS);
+                        mav.addObject("total",journeysharers.size());
+                        mav.addObject("journeysharers",journeysharers);
+                        mav.addObject("distances",distances);
+                        
+                        // Add empty command object
+                        mav.addObject("journeySharersForm", new JourneySharersForm());
                     }
                 } else {
                     // No postcode for this user so return error message
-                    mov = new ModelAndView(LIST_CARSHARERS);
-                    mov.addObject("message", "<fmt:message key=\"journeysharer.message.nopostcode\"/>");
+                    mav = new ModelAndView(FIND_JOURNEY_SHARERS);
+                    mav.addObject("message", noPostcodeMsg);
                 }
 
+            } // end if getUserPrinciple not null
 
+            return mav;
 
-            }
+        } catch (URISyntaxException ue) {
+            mav = new ModelAndView(FIND_JOURNEY_SHARERS);
+            mav.addObject("message", systemErrorMsg);
+            return mav;
         }
-
-        return mov;
     }
     
     /*
@@ -309,5 +339,4 @@ public class ListJourneySharersController implements Controller {
         }
     	
     }
-
 }

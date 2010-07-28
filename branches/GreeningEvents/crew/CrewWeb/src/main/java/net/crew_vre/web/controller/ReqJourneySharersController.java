@@ -33,46 +33,53 @@
  */
 package net.crew_vre.web.controller;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.springframework.validation.BindException;
+import org.springframework.web.servlet.mvc.SimpleFormController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.crew_vre.web.command.JourneySharersForm;
 import org.ilrt.dibden.facade.UserManagementFacade;
 import org.ilrt.dibden.domain.User;
-
-import org.apache.log4j.Logger;
 
 /**
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
-public class RequestJourneySharersController implements Controller {
+public class ReqJourneySharersController extends SimpleFormController {
 
+    /*
+     * The logic in this controller should really be split between two separate controllers!
+     */
 
-
-    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.RequestJourneySharersController");
+//    private Logger logger = Logger.getLogger("net.crew_vre.web.controller.JourneySharersController");
 
     private UserManagementFacade userManagementFacade;
 
-    private static String RETURN_TO_PAGE = "requestJourneySharers";
-    private static String SUCCESS   = "requestSent";
+    private static String JOURNEY_SHARERS = "findJourneySharers";
+    private static String noUserEmailMsg = "Your own email is not set in your profile";
+    private static String noUsersMsg = "You need to select at least one other delegate";
+    private static String selectRangeMsg = "Select a maximum range in km and submit";
 
-    private static String messageText = " wishes to ask if you would like to share the journey to XXX on XXX.  Please see their message " +
+    private static String emailMessageText = " wishes to ask if you would like to share the journey to XXX on XXX.  Please see their message " +
             "below. If you wish to respond to this request, you can email to: ";
     
-    public RequestJourneySharersController(UserManagementFacade userManagementFacade) {
+    public ReqJourneySharersController(UserManagementFacade userManagementFacade) {
         this.userManagementFacade = userManagementFacade;
     }
 
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+    @Override
+    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
+            Object command, BindException errors) {
 
-        String localUserName;
-        User localUser;
-        String[] remoteUsers;
+        // get the command object - RequestJourneySharersForm
+        JourneySharersForm journeySharersForm = (JourneySharersForm) command;
+            	    
+        User localUser = null;
+        String localUsername;
+        String localUserEmailAddress = null;
         String userMessage;
         ArrayList<String> notFoundUsers = new ArrayList<String>();
         HashMap<String,String> emailAddressMap = new HashMap<String,String>();
@@ -80,21 +87,48 @@ public class RequestJourneySharersController implements Controller {
 
         String debugOutText = null;  ////  DEBUGGING
 
-        ModelAndView mov = null;
+        ModelAndView mav = null;
+
+        if ( journeySharersForm.getCancelButton() != null ) {
+            // Send back to original search form with message
+            mav = new ModelAndView(JOURNEY_SHARERS);
+            mav.addObject("message", selectRangeMsg);
+            return mav;
+        }
         
+        if (logger.isDebugEnabled()) {
+            logger.debug("Have submit to journey sharers form");
+        }
+
+        // Do we have the user's username? If not return null
         if (request.getUserPrincipal() != null) {
-            localUserName = request.getUserPrincipal().getName();
-            localUser = userManagementFacade.getUser(localUserName);
-            remoteUsers = request.getParameterValues("username");
-            if ( remoteUsers == null || remoteUsers.length < 1 ) {
-                // No users requested
-                mov = new ModelAndView(RETURN_TO_PAGE);
-                mov.addObject("message", "<fmt:message key=\"journeysharer.message.nousersselected\"/>");
+
+            if (logger.isDebugEnabled()) {
+                logger.debug("Have user's username");
             }
-            userMessage = request.getParameter("message");
+
+            localUsername = request.getUserPrincipal().getName();
+            localUser = userManagementFacade.getUser(localUsername);
+            localUserEmailAddress = localUser.getEmail();
+            if (localUserEmailAddress == null) {
+                // Send back to original search form with message
+                mav = new ModelAndView(JOURNEY_SHARERS);
+                mav.addObject("message", noUserEmailMsg);
+                return mav;
+            }
+            String[] remoteUsers = journeySharersForm.getUsernames();
+
+            if ( remoteUsers == null || remoteUsers.length < 1 ) {
+                // No users selected - return form with error message
+                mav = new ModelAndView(getSuccessView());
+                mav.addObject("message", noUsersMsg);
+                return mav;
+            }
+
+            userMessage = journeySharersForm.getMessage();
 
             // Get user email addresses and names
-            for (String username: remoteUsers) {
+            for (String username : remoteUsers) {
                 User user = userManagementFacade.getUser(username);
                 if (user == null) {
                     notFoundUsers.add(username);
@@ -106,20 +140,23 @@ public class RequestJourneySharersController implements Controller {
 
 ///////////// DEBUGGING /////////////
             StringBuffer debugOutput = new StringBuffer("Will email the following users: <br/>");
-            for (String username: nameMap.keySet()) {
+            for (String username : nameMap.keySet()) {
                 debugOutput.append( (String)nameMap.get(username) );
                 debugOutput.append(" : ");
                 debugOutput.append( (String)emailAddressMap.get(username) );
-                debugOutput.append(" <br/>\\n");
+                debugOutput.append(" <br/>");
             }
+            debugOutput.append("with message<br/>" + userMessage);
             debugOutText = debugOutput.toString();
-        }
 
-        mov = new ModelAndView(SUCCESS);
-        mov.addObject("response",debugOutText);
-        return mov;
+///////////////////////////////////////////////////
 
+            mav = new ModelAndView(getSuccessView());
+            mav.addObject("message",debugOutText);
+
+        } // end if getUserPrinciple not null
+
+        return mav;
     }
     
-
 }

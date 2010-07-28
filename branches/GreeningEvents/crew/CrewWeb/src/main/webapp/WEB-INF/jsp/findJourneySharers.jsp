@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title><fmt:message key="journeysharer.find.title"/></title>
+    <title><fmt:message key="journeysharers.find.title"/></title>
     <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
 </head>
 
@@ -44,7 +44,8 @@
 
         <div class="journeysharers-submission-container">
 
-            <form:form action="./listJourneySharers.do" method="post">
+            <form:form action="./findJourneySharers.do" method="POST">
+                <%-- Show submit form with or without a message --%>
 
                 <%-- FIND CAR SHARERS --%>
 
@@ -52,7 +53,7 @@
                     <legend><strong>Find delegates to car share with</strong></legend>
 
                     <p><fmt:message key="journeysharers.description"/></p>
-                    
+
                     <p>
                         <select name="maxDistance">
                             <option value="1">1</option>
@@ -69,15 +70,13 @@
                     </p>
 
                     <p>
-                        ${message}
+                        <input type="submit" name="findJourneySharers" value="<fmt:message key="journeysharers.submitbutton"/>"/>
+                        <input type="submit" name="cancelButton" value="Reset"/>
                     </p>
-
-                    <p>
-                        <input type="submit" name="findCarsharers" value="Search for car sharers"/>
-                        <input type="submit" value="Cancel"/>
-                    </p>
+                    <c:if test="${not empty message}">
+                        <p>${message}</p>
+                    </c:if>
                 </fieldset>
-
             </form:form>
 
         </div>
