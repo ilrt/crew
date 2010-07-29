@@ -74,7 +74,7 @@
                         <input type="submit" name="cancelButton" value="Reset"/>
                     </p>
                     <c:if test="${not empty message}">
-                        <p>${message}</p>
+                        <p style="font-size: larger; font-weight: bold">${message}</p>
                     </c:if>
                 </fieldset>
             </form:form>
