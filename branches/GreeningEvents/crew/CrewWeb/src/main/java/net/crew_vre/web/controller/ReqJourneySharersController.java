@@ -166,9 +166,9 @@ public class ReqJourneySharersController extends SimpleFormController {
             mav = new ModelAndView(getSuccessView());
 
             if (sendEmailToUsersFacade.sendMessages()) {
-                mav.addObject("message",errorSendingEmailMsg);
+                mav.addObject("message",successfulEmailMsg);
             } else {
-                mav.addObject("message", successfulEmailMsg);
+                mav.addObject("message", errorSendingEmailMsg);
             }
 
         } // end if getUserPrinciple not null

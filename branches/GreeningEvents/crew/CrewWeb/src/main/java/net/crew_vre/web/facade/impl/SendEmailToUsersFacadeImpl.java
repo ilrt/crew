@@ -58,7 +58,15 @@ public class SendEmailToUsersFacadeImpl implements SendEmailToUsersFacade {
     public boolean sendMessages() {
 
         if (mailSender == null || mailMessage == null || localUser == null
-                || localUser.getEmail() == null || users == null || userMessage == null) {
+                || localUser.getEmail() == null || users == null) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Error sending message due to insufficient data:");
+                if (mailSender == null) logger.debug("mailSender object is null");
+                if (mailMessage == null) logger.debug("mailMessage object is null");
+                if (localUser == null) logger.debug("localUser object is null");
+                if (localUser.getEmail() == null) logger.debug("localuser has not email address");
+                if (users == null) logger.debug("There are no users specified");
+            }
             return false;
         }
 
@@ -73,9 +81,11 @@ public class SendEmailToUsersFacadeImpl implements SendEmailToUsersFacade {
         // Fill in blanks
         commonText = StringUtils.replace(commonText, "%LOCALUSERNAME%", localUser.getName());
         commonText = StringUtils.replace(commonText, "%LOCALUSEREMAIL%", localUser.getEmail());
+        if (userMessage == null) userMessage = "";
         commonText = StringUtils.replace(commonText, "%USERMESSAGE%", userMessage);
 
         // Send to each recipient
+        boolean sentMail = false;
 
         String messageText = null;
         for (User user : users) {
@@ -87,13 +97,19 @@ public class SendEmailToUsersFacadeImpl implements SendEmailToUsersFacade {
             smm.setText(messageText);
             try {
                 mailSender.send(smm);
+                sentMail = true;
             } catch (MailException me) {
                 logger.warn("Failed to send email to: " + user.getEmail()
                         + " from: " + localUser.getEmail() + ". Error: " + me.getMessage());
             }
-        }       
+        }
+        if (logger.isDebugEnabled()) {
+            if (sentMail == false) {
+                logger.debug("No emails were successfully sent");
+            }
+        }
 
-        return true;
+        return sentMail;
     }
 
 }
