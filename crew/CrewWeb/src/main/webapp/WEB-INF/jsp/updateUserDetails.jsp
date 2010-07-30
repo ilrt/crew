@@ -70,6 +70,12 @@
                             <td><form:errors path="postcode"/></td>
                         </tr>
                         <tr>
+                            <td>&nbsp;</td>
+                            <td colspan="2">
+                                <strong><fmt:message key="user.postcode.warning"/></strong>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="user.email"/></strong></td>
                             <td><form:input path="email"/></td>
                             <td><form:errors path="email"/></td>

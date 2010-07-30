@@ -14,9 +14,10 @@
     <li><a href="${pageContext.request.contextPath}/secured/displayProfile.do"><fmt:message key="topNav.profile"/></a></li>
 </authz:authorize>
 
-<%-- admin link --%>
+<%-- admin links --%>
 <authz:authorize ifAnyGranted="ROLE_ADMIN,ROLE_HARVESTER_ADMIN">
     <li><a href="${pageContext.request.contextPath}/adminActions.do"><fmt:message key="topNav.admin"/></a></li>
+    <li><a href="${pageContext.request.contextPath}/registration.do"><fmt:message key="topNav.registration"/></a></li>
 </authz:authorize>
 
 <li id="linkBtn"><a href="http://greeningevents.ilrt.bris.ac.uk/">Greening Events Project</a></li>
