@@ -36,6 +36,7 @@ body {
 }
 
 #headerLinks {
+    margin-top: 0.5em;
 }
 
 #headerLinks a:link, #headerLinks a:visited, #headerLinks a:active {
@@ -76,6 +77,8 @@ body {
 #headerLinks ul, #headerLinks li {
     list-style-type: none;
     display: inline;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    margin: 0.1em 0.1em 0.1em 0.1em;
     font-size: 1em;
 }
 
