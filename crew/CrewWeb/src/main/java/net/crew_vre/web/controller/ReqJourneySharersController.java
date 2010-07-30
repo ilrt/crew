@@ -73,6 +73,17 @@ public class ReqJourneySharersController extends SimpleFormController {
     }
 
     @Override
+    protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response,
+            BindException errors)  throws Exception {
+
+        // This is a GET request not a submission from the findJourneySharers page so
+        // ignore and send back findJourneySharers form instead
+        ModelAndView mav = new ModelAndView(JOURNEY_SHARERS);
+        mav.addObject("message", selectRangeMsg);
+        return mav;
+    }
+
+    @Override
     protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
             Object command, BindException errors) {
 
@@ -83,8 +94,6 @@ public class ReqJourneySharersController extends SimpleFormController {
         String localUsername;
         String localUserEmailAddress = null;
         String userMessage;
-
-       // String debugOutText = null;  ////  DEBUGGING
 
         ModelAndView mav = null;
 
@@ -131,32 +140,6 @@ public class ReqJourneySharersController extends SimpleFormController {
 
 
             userMessage = journeySharersForm.getMessage();
-
-///////////// DEBUGGING /////////////
-/*
-
-            // Get user email addresses and names
-            for (String username : remoteUsernames) {
-                User user = userManagementFacade.getUser(username);
-                if (user == null) {
-                    notFoundUsers.add(username);
-                    continue;
-                }
-                emailAddressMap.put(username, user.getEmail());
-                nameMap.put(username, user.getName());
-            }
-
-            StringBuffer debugOutput = new StringBuffer("Will email the following users: <br/>");
-            for (String username : nameMap.keySet()) {
-                debugOutput.append( (String)nameMap.get(username) );
-                debugOutput.append(" : ");
-                debugOutput.append( (String)emailAddressMap.get(username) );
-                debugOutput.append(" <br/>");
-            }
-            debugOutput.append("with message<br/>" + userMessage);
-            debugOutText = debugOutput.toString();
-*/
-///////////////////////////////////////////////////
 
             // Send off emails
             sendEmailToUsersFacade.setLocalUser(localUser);

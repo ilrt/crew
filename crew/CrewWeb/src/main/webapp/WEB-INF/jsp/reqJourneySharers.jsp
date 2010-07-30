@@ -18,9 +18,6 @@
 
 <div id="container">
 
-    <%-- banner navigation--%>
-    <%-- <%@ include file="includes/topNavLimited.jsp" %> --%>
-
     <%-- the logo banner --%>
     <%--<%@ include file="includes/logo.jsp" %>--%>
 
@@ -35,6 +32,9 @@
                     width="279" height="55"
                     style="margin-bottom: 2em"/></a>
         </div>
+
+    <%-- banner navigation--%>
+    <%@ include file="includes/topNavLimited.jsp" %>
 
     </div>
 
