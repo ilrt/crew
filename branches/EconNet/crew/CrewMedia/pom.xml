@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>Crew</artifactId>
+        <groupId>net.crew_vre</groupId>
+        <version>0.6-SNAPSHOT</version>
+      </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>CrewMedia</artifactId>
+    <packaging>jar</packaging>
+    <name>CrewMedia</name>
+    <url>http://maven.apache.org</url>
+    <build>
+        <finalName>CrewMedia</finalName>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>net.crew_vre</groupId>
+            <artifactId>CrewCommons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>pag</groupId>
+            <artifactId>ag3</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.media</groupId>
+            <artifactId>jmf-cross-platform</artifactId>
+            <version>2.1.1f</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf</groupId>
+            <artifactId>fmj-nojmf</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.lti</groupId>
+            <artifactId>civil-no-swt</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,78 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#william-clocksin">
+    <eswc:holdsRole rdf:resource="http://www.crew-vre.net/events#presenter-william-clocksin"/>
+    <foaf:family_name>Clocksin</foaf:family_name>
+    <foaf:givenName>William</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#sigraph-2007-11-30">
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-19T15:30:12+00:00</dc:creation-date>
+    <dc:description>TI will describe the VideoTrace system developed in a collaboration between Oxford Brookes University 
+            and the University of Adelaide. VideoTrace interactively generates realistic 3D models of objects from video—models 
+            that might be inserted into a video game, a simulation environment, or another video sequence.
+
+            The user interacts with VideoTrace by tracing the shape of the object to be modelled over one or more frames of the 
+            video. By interpreting the sketch drawn by the user in light of 3D information obtained from computer vision techniques, 
+            a small number of simple 2D interactions can be used to generate a realistic 3D model.
+
+            Each of the sketching operations in VideoTrace provides an intuitive and powerful means of modelling shape from video, 
+            and executes quickly enough to be used interactively. Immediate feedback allows the user to model rapidly those parts 
+            of the scene which are of interest and to the level of detail required. The combination of automated and manual 
+            reconstruction allows VideoTrace to model parts of the scene not visible, and to succeed in cases where purely 
+            automated approaches would fail.
+         </dc:description>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#computing"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <crew:hasRecordingId>1196430772853126983270</crew:hasRecordingId>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rapid 3D scene modelling from video clips</dc:title>
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/manchester/kilburn/1.10/"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-30T15:00:00Z</eswc:hasEndDateTime>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-30T14:00:00Z</eswc:hasStartDateTime>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <eswc:hasRole rdf:resource="http://www.crew-vre.net/events#presenter-william-clocksin"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#engineering_and_technology"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/manchester/kilburn/1.10/">
+    <eswc:isLocationFor rdf:resource="http://www.crew-vre.net/events#sigraph-2007-11-30"/>
+    <pos:long>-2.233722</pos:long>
+    <pos:lat>53.467339</pos:lat>
+    <dc:title>Access Grid, 1.10, Kilburn Building</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#presenter-william-clocksin">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew-vre.net/events#sigraph-2007-11-30"/>
+    <eswc:heldBy rdf:resource="http://www.crew-vre.net/events#william-clocksin"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+</rdf:RDF>

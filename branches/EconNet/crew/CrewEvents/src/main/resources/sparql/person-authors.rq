@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+SELECT $graph $id $title $givenName $family_name $name
+WHERE {
+    GRAPH $graph {
+        $id rdf:type foaf:Person .
+        $paperId dc:creator $id .
+        OPTIONAL { $id foaf:title $title } .
+        OPTIONAL { $id foaf:givenName $givenName } .
+        OPTIONAL { $id foaf:family_name $family_name } .
+        OPTIONAL { $id foaf:name $name } .
+    }
+}

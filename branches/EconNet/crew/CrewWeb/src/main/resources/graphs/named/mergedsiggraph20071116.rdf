@@ -1,0 +1,79 @@
+<rdf:RDF
+    xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:support="http://www.aktors.org/ontology/support#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:crew="http://www.crew-vre.net/ontology#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:portal="http://www.aktors.org/ontology/portal#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" > 
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#jason-dykes">
+    <eswc:holdsRole rdf:resource="http://www.crew-vre.net/events#presenter-jason-dykes"/>
+    <foaf:family_name>Dykes</foaf:family_name>
+    <foaf:givenName>Jason</foaf:givenName>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#sigraph-2007-11-16">
+    <eswc:hasLocation rdf:resource="http://www.crew-vrew.net/places/manchester/kilburn/1.10/"/>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interesting? Aesthetic? Useful? GeoVisualization Perspectives and Examples</dc:title>
+    <dc:creation-date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-02-19T15:37:25+00:00</dc:creation-date>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#manchester"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#PaperPresentation"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#computing"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
+    <eswc:hasEndDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-16T15:00:00Z</eswc:hasEndDateTime>
+    <dc:description>
+            Geovisualization involves the graphical depiction and exploration of structured spatio-temporal data sets.
+
+            A whole series of techniques are being developed to promote this kind of activity. They are fuelled by a 
+            number of related trends, including: advances in computing; the increasing availability of formally derived 
+            spatial data; the georeferencing of a whole host of diverse data sets including user contributed "social" 
+            data. Situating these techniques in applied contexts and real workflows is less common and developing 
+            geovisualization applications through a process that involves establishing needs and requirements is rare.
+
+            A series of examples of current work at City University will be presented including geographically weighted 
+            interactive graphics (geowigs), the "road/map" application and analytical mashups that use Google 
+            Earth as the basis for exploration.
+
+            They will be considered in terms of their utility and in light of efforts to embed geovisualization in real 
+            applications scenarios. 
+         </dc:description>
+    <eswc:hasStartDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-11-16T14:00:00Z</eswc:hasStartDateTime>
+    <eswc:hasRole rdf:resource="http://www.crew-vre.net/events#presenter-jason-dykes"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#OrganisedEvent"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#GBR"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#england"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#AcademicEvent"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#engineering_and_technology"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Event-1"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#locations"/>
+    <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#TalkEvent"/>
+    <iugo:hasSubject rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/subjects/#disciplines"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+    <iugo:hasLocation rdf:resource="http://www.ilrt.bristol.ac.uk/iugo/location/#europe"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vrew.net/places/manchester/kilburn/1.10/">
+    <eswc:isLocationFor rdf:resource="http://www.crew-vre.net/events#sigraph-2007-11-16"/>
+    <pos:long>-2.233722</pos:long>
+    <pos:lat>53.467339</pos:lat>
+    <dc:title>Access Grid, 1.10, Kilburn Building</dc:title>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Place"/>
+    <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.crew-vre.net/events#presenter-jason-dykes">
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Presenter"/>
+    <dc:title>Presenter</dc:title>
+    <eswc:isRoleAt rdf:resource="http://www.crew-vre.net/events#sigraph-2007-11-16"/>
+    <eswc:heldBy rdf:resource="http://www.crew-vre.net/events#jason-dykes"/>
+    <rdf:type rdf:resource="http://xmlns.com/wordnet/1.6/Role-1"/>
+    <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+  </rdf:Description>
+</rdf:RDF>
