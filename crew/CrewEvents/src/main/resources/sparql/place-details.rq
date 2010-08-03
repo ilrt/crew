@@ -1,10 +1,15 @@
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-SELECT $graph $id $name $latitude $longitude $altitude
+PREFIX ge: <http://www.ilrt.bris.ac.uk/GreeningEvents/ontology#>
+SELECT $graph $id $name $latitude $longitude $locationDescription $locationUrl $locationThumbUrl $locationImagesUrl
 WHERE {
     GRAPH $graph {
         $id dc:title $name .
         OPTIONAL { $id pos:lat $latitude .
                    $id pos:long $longitude } .
+        OPTIONAL { $id dc:description $locationDescription } .
+        OPTIONAL { $id ge:locationUrl $locationUrl } .
+        OPTIONAL { $id ge:locationThumbSrc $locationThumbUrl } .
+        OPTIONAL { $id ge:locationImagesSrc $locationImagesUrl } .
     }
 }

@@ -78,18 +78,18 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
         return user;
     }
 
-    public User createUser(String username, String password, String name, String email,
-                           boolean active) {
+    public User createUser(String username, String password, String name, String postcode,
+            String email, boolean active) {
 
-        User user = new User(username, password, email, name, new Date(), active);
+        User user = new User(username, password, email, name, postcode, new Date(), active);
         this.getHibernateTemplate().save(user);
         return user;
     }
 
-    public User createUser(String username, String password, String name, String email,
-                           boolean active, Group group) {
+    public User createUser(String username, String password, String name, String postcode, 
+            String email, boolean active, Group group) {
 
-        User user = new User(username, password, email, name, new Date(), active);
+        User user = new User(username, password, email, name, postcode, new Date(), active);
         user.getGroups().add(group);
         this.getHibernateTemplate().save(user);
         return user;

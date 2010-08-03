@@ -44,12 +44,12 @@ public class TestData {
     public void loadData() {
 
         userManagementFacade.registerUser("admin", "admin", "The default admin user",
-                "admin@example.org");
+                "admin@example.org", "TQ14 8PT");
         userManagementFacade.addUserToGroup("admin", "ADMIN_GROUP");
         userManagementFacade.addUserToGroup("admin", "USER_GROUP");
 
         userManagementFacade.registerUser("testuser", "testuser", "A test user",
-                "testuser@example.org");
+                "testuser@example.org", "");
         userManagementFacade.addUserToGroup("testuser", "USER_GROUP");
 
     }

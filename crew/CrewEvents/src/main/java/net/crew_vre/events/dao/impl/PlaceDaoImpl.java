@@ -98,6 +98,9 @@ public class PlaceDaoImpl implements PlaceDao {
         // there should only be one...
         while (rs.hasNext()) {
             place = getPlaceDetails(rs.nextSolution());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Found place with title: " + place.getTitle() + " latitude: " + place.getLatitude());
+            }
             place.setLocations(findPartsForPlace(place.getId()));
         }
 
@@ -134,6 +137,9 @@ public class PlaceDaoImpl implements PlaceDao {
 
         while (rs.hasNext()) {
             Place place = getPlaceDetails(rs.nextSolution());
+            if (logger.isDebugEnabled()) {
+                logger.debug("Found place with title: " + place.getTitle() + " latitude: " + place.getLatitude());
+            }
             parts.add(place);
         }
 
@@ -159,20 +165,54 @@ public class PlaceDaoImpl implements PlaceDao {
             place.setGraph(qs.getResource("graph").getURI());
         }
 
-        if (qs.getLiteral("name") != null) {
+        if (qs.getLiteral("name") != null && !qs.getLiteral("name").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location name: " + qs.getLiteral("name"));
+            }
             place.setTitle(qs.getLiteral("name").getLexicalForm());
         }
 
-        if (qs.getLiteral("longitude") != null) {
+        if (qs.getLiteral("longitude") != null && !qs.getLiteral("longitude").getLexicalForm().equals("")) {
             place.setLongitude(Float.valueOf(qs.getLiteral("longitude").getLexicalForm()));
         }
 
-        if (qs.getLiteral("latitude") != null) {
+        if (qs.getLiteral("latitude") != null && !qs.getLiteral("latitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("latitude").getLexicalForm()));
         }
-
-        if (qs.getLiteral("altitude") != null) {
+/*
+        if (qs.getLiteral("altitude") != null && !qs.getLiteral("altitude").getLexicalForm().equals("")) {
             place.setLatitude(Float.valueOf(qs.getLiteral("altitude").getLexicalForm()));
+        }
+ */
+        if (qs.getLiteral("locationDescription") != null && !qs.getLiteral("locationDescription").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location description: " + qs.getLiteral("locationDescription"));
+            }
+            // Remove any line breaks which will break the javascript output
+            String description = qs.getLiteral("locationDescription").getLexicalForm();
+            description = description.replaceAll("[\\n\\r]", " ");
+            place.setLocationDescription(description);
+        }
+
+        if (qs.getLiteral("locationUrl") != null && !qs.getLiteral("locationUrl").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location URL: " + qs.getLiteral("locationUrl"));
+            }
+            place.setLocationUrl(qs.getLiteral("locationUrl").getLexicalForm());
+        }
+
+        if (qs.getLiteral("locationThumbUrl") != null && !qs.getLiteral("locationThumbUrl").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location thumbnail URL: " + qs.getLiteral("locationThumbUrl"));
+            }
+            place.setLocationThumbUrl(qs.getLiteral("locationThumbUrl").getLexicalForm());
+        }
+
+        if (qs.getLiteral("locationImagesUrl") != null && !qs.getLiteral("locationImagesUrl").getLexicalForm().equals("")) {
+            if (logger.isDebugEnabled()) {
+                logger.debug("Location images URL: " + qs.getLiteral("locationImagesUrl"));
+            }
+            place.setLocationImagesUrl(qs.getLiteral("locationImagesUrl").getLexicalForm());
         }
 
         return place;

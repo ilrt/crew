@@ -46,6 +46,25 @@
         <constructor-arg index="3" ref="personFacets"/>
     </bean>
 
+    <!-- find journey sharers -->
+
+    <bean name="/secured/findJourneySharers.do" id="findJourneySharersController"
+          class="net.crew_vre.web.controller.FindJourneySharersController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" value="postcodes"/>
+        <!-- <property name="successView" value="reqJourneySharers"/> -->
+    </bean>
+
+    <bean name="/secured/reqJourneySharers.do" id="reqJourneySharersController"
+          class="net.crew_vre.web.controller.ReqJourneySharersController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <constructor-arg index="1" ref="sendEmailToUsersFacade"/>
+        <property name="commandClass" value="net.crew_vre.web.command.JourneySharersForm"/>
+        <property name="commandName" value="journeySharersForm"/>
+        <property name="successView" value="findJourneySharers"/>
+        <property name="formView" value="reqJourneySharers"/>
+    </bean>
+
     <!-- display event -->
     <bean name="/displayEvent.do" id="displayEventController"
           class="net.crew_vre.web.controller.DisplayEventController">
@@ -70,13 +89,18 @@
         <constructor-arg index="3" ref="liveAnnotationTypeRepository" />
     </bean>
 
-
     <!-- display place -->
     <bean name="/displayPlace.do" id="displayPlaceController"
           class="net.crew_vre.web.controller.DisplayPlaceController">
         <constructor-arg index="0" ref="displayPlaceFacade"/>
         <constructor-arg index="1" ref="browseHistory"/>
-        <constructor-arg index="2" value="${google.map.key}"/>
+    </bean>
+
+    <!-- display route -->
+    <bean name="/displayRoute.do" id="displayRouteController"
+          class="net.crew_vre.web.controller.DisplayRouteController">
+        <constructor-arg index="0" ref="displayRouteFacade"/>
+        <constructor-arg index="1" ref="browseHistory"/>
     </bean>
 
     <!-- display person -->
@@ -120,9 +144,22 @@
         <entry key="feedUrl" value="feeds/recentlyAdded.xml"/>
     </util:map>
 
+    <!-- feed - annotations -->
+    <util:map id="eventAnnotations" map-class="java.util.HashMap">
+        <entry key="format" value="atom_1.0"/>
+        <entry key="language" value="en"/>
+        <entry key="title" value="Recently added comments"/>
+        <entry key="description" value="Comments added to a CREW event"/>
+        <entry key="commentUrlFragment" value="displayComments.do?commentId="/>
+        <entry key="contentType" value="application/atom+xml"/>
+        <entry key="periodInDays" value="31"/>
+        <entry key="feedUrl" value="feeds/comments.do"/>
+    </util:map>
+
     <util:list id="feedList" list-class="java.util.ArrayList">
         <ref bean="upcomingEvents"/>
         <ref bean="recentlyAddedEvents"/>
+        <ref bean="eventAnnotations"/>
     </util:list>
 
     <!-- feed - upcoming events -->
@@ -132,11 +169,16 @@
         <constructor-arg index="1" ref="listEventsFacade"/>
     </bean>
 
-    <!-- feed - upcoming events -->
+    <!-- feed - recently added events -->
     <bean name="/feeds/recentlyAdded.xml" id="recentlyCreatedFeedController"
           class="net.crew_vre.web.controller.feeds.RecentlyCreatedEventsFeedController">
         <constructor-arg index="0" ref="recentlyAddedEvents"/>
         <constructor-arg index="1" ref="listEventsFacade"/>
+    </bean>
+
+    <bean name="/feeds/comments.do" id="annotationsFeedController"
+          class="net.crew_vre.web.controller.feeds.AnnotationsFeedController">
+        <constructor-arg index="0" ref="eventAnnotations"/>
     </bean>
 
     <!-- ========== USER MANAGEMENT ========== -->
@@ -222,6 +264,19 @@
         <constructor-arg index="0" ref="userManagementFacade"/>
         <property name="commandClass" value="org.ilrt.dibden.web.command.UserForm"/>
         <property name="commandName" value="userForm"/>
+    </bean>
+
+    <!-- user form to update own user details -->    
+
+    <bean name="/secured/updateUserDetails.do"
+          class="org.ilrt.dibden.web.controller.UpdateUserDetailsController">
+        <constructor-arg index="0" ref="userManagementFacade"/>
+        <property name="commandClass" value="org.ilrt.dibden.web.command.UserForm"/>
+        <property name="commandName" value="userForm"/>
+        <property name="successView" value="displayProfile"/>
+        <property name="validator" >
+            <bean class="org.ilrt.dibden.web.validator.UpdateUserDetailsValidator"/>
+        </property>
     </bean>
 
     <!-- list roles -->
@@ -367,6 +422,60 @@
         <property name="commandName" value="source"/>
         <property name="formView" value="editHarvestSource"/>
         <property name="successView" value="redirect:./listHarvestSources.do"/>
+    </bean>
+
+    <!-- =============== Greening Events repository configuration ================= -->
+
+    <util:map id="localRepositoryDetails" map-class="java.util.HashMap">
+        <entry key="location" value="repository/localEvents.rdf"/>
+    </util:map>
+
+    <bean id="repositoryEventValidator" class="org.ilrt.green_repository.web.RepositoryEventValidator">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+    </bean>
+
+    <bean name="/secured/repository/listRepositoryEvents.do"
+          class="org.ilrt.green_repository.web.ListRepositoryEventsController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.ListRepositoryEventsForm"/>
+        <property name="commandName" value="listRepositoryEventsForm"/>
+        <property name="formView" value="listRepositoryEvents"/>
+    </bean>
+
+    <bean name="/repository/localEvents.rdf"
+          class="org.ilrt.green_repository.web.LocalEventsRDFExportController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+    </bean>
+
+    <bean name="/repository/route_*.kml"
+          class="org.ilrt.green_repository.web.LocalEventsKmlExportController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+    </bean>
+
+    <bean name="/secured/repository/addRepositoryEvent.do"
+          class="org.ilrt.green_repository.web.AddRepositoryEventController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEventForm"/>
+        <property name="formView" value="addRepositoryEvent"/>
+        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
+        <property name="validator" ref="repositoryEventValidator"/>
+    </bean>
+
+    <bean name="/secured/repository/editRepositoryEvent.do"
+          class="org.ilrt.green_repository.web.EditRepositoryEventController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEventForm"/>
+        <property name="formView" value="editRepositoryEvent"/>
+        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
+        <property name="validator" ref="repositoryEventValidator"/>
     </bean>
 
     <bean name="/secured/admin/sparql.do" class="net.crew_vre.web.controller.SparqlQueryController">

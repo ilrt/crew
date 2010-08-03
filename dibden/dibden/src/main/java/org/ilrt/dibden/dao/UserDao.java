@@ -34,7 +34,6 @@
 package org.ilrt.dibden.dao;
 
 import org.ilrt.dibden.domain.User;
-import org.ilrt.dibden.domain.Role;
 import org.ilrt.dibden.domain.Group;
 
 import java.util.List;
@@ -49,10 +48,11 @@ public interface UserDao {
 
     User findUserByEmail(String email);
 
-    User createUser(String username, String password, String name, String email, boolean enabled);
+    User createUser(String username, String password, String name, String postcode,
+            String email, boolean active);
 
-    User createUser(String username, String password, String name, String email, boolean enabled,
-                    Group group);
+    User createUser(String username, String password, String name, String postcode,
+            String email, boolean enabled, Group group);
 
     void updateUser(User user);
 

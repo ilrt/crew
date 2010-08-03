@@ -225,5 +225,11 @@
             <artifactId>recaptcha4j</artifactId>
             <version>0.0.7</version>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.13</version>
+        </dependency>
     </dependencies>
 </project>
+

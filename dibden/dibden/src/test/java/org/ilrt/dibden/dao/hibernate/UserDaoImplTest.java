@@ -61,7 +61,7 @@ public class UserDaoImplTest extends AbstractDaoImplTest {
 
         // create the user
         userDao.createUser("jdoe", HashUtility.generateHash("wh0am1", "MD5"),
-                "John Doe", "john.doe@example.org", true);
+                "John Doe", "TQ14 8PT", "john.doe@example.org", true);
 
         // flush the session (write to db) so we can test with JdbcTemplate
         flush();

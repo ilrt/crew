@@ -116,6 +116,15 @@ public class RegistrationValidator implements Validator {
                 errors.rejectValue("emailOne", "register.email.exists");
             }
 
+            // check the structure of the optional post code
+            if (regCommand.getPostcode() != null && !regCommand.getPostcode().isEmpty()) {
+                Matcher postcodeMatcher = postcodePattern.matcher(regCommand.getPostcode());
+
+                if (!postcodeMatcher.matches()) {
+                    errors.rejectValue("postcode", "register.postcode.valid");
+                }
+            }
+
         }
 
     }
@@ -124,5 +133,6 @@ public class RegistrationValidator implements Validator {
 
     Pattern userNamePattern = Pattern.compile("^[a-zA-Z0-9]+$");
     Pattern emailPattern = Pattern.compile("^[\\.\\+_a-zA-Z0-9-]+@[a-zA-Z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,6})$");
+    Pattern postcodePattern = Pattern.compile("^([A-Za-z][A-Za-z]?[0-9][0-9A-Za-z]? *[0-9][A-Za-z][A-Za-z])$");
 
 }

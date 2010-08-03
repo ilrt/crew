@@ -59,6 +59,7 @@
                                 <td><fmt:message key="list.users.username"/></td>
                                 <td><fmt:message key="list.users.name"/></td>
                                 <td><fmt:message key="list.users.email"/></td>
+                                <td><fmt:message key="list.users.postcode"/></td>
                                 <td><fmt:message key="list.users.created"/></td>
                                 <td><fmt:message key="list.users.groups"/></td>
                             </tr>
@@ -74,6 +75,7 @@
                                 <td>${person.username}</td>
                                 <td>${person.name}</td>
                                 <td>${person.email}</td>
+                                <td>${person.postcode}</td>
                                 <td><fmt:formatDate value="${person.creationDate}"
                                                     pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                 <td>
