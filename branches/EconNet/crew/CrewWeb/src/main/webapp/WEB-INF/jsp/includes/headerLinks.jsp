@@ -1,7 +1,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="authz" uri="http://www.springframework.org/security/tags" %>
 
-<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+<li><a href="${pageContext.request.contextPath}/"><fmt:message key="topNav.home"/></a></li>
 
 <%-- anonymous user - see a login link --%>
 <authz:authorize ifAllGranted="ROLE_ANONYMOUS">

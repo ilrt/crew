@@ -1,3 +1,4 @@
+<%-- dtd and xml declaration --%>
 <%@ include file="includes/header.jsp" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,167 +9,105 @@
 <%@ page session="true" contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <c:if test="${not empty event}">
-        <meta name="caboto-annotation" content="${event.id}"/>
-    </c:if>
     <title><spring:message code="proj.title"/> ${event.title}</title>
     <style type="text/css"
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    <script type="text/javascript" src="./js/prototype.js"></script>
-    <script type="text/javascript" src="./js/annotations.js"></script>
-    <link rel='stylesheet' type='text/css' media='screen'
-          href='http://www.jiscdigitalmedia.ac.uk/?css=jdm/master.v.1267190280' />
-</head>
-<body class="bodybg2" onload="initializeAnnotations();">
-<div id="topbg"></div>
-
-<div>
-<!--start of wrapper-->
-    <div class="wrapper">
-
-        <!--start of top nav-->
-        <div class="mainNav">
-            <a href="http://www.jiscdigitalmedia.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif" border="0" width="279" height="55" alt="JISC Digital Media" id="logo" /></a>
-            <ul>
-                <li class="diamond" id="about"><a href="http://www.jiscdigitalmedia.ac.uk/about/">About</a></li>
-                <li class="diamond" id="helpdesk"><a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a></li>
-                <li class="diamond" id="news"><a href="http://www.jiscdigitalmedia.ac.uk/news/">News</a></li>
-                <li class="diamond" id="case"><a href="http://www.jiscdigitalmedia.ac.uk/tags/category/case-studies/">Case Studies</a></li>
-                <li><a href="http://www.jiscdigitalmedia.ac.uk/contact/" id="contact">Contact</a></li>
-            </ul>
-            <!--start of search form-->
-<form id='searchForm' method="post" action="http://www.jiscdigitalmedia.ac.uk/"  >
-<div class='hiddenFields'>
-<input type="hidden" name="ACT" value="19" />
-<input type="hidden" name="XID" value="" />
-
-<input type="hidden" name="RP" value="search/results" />
-<input type="hidden" name="NRP" value="search&amp;#47;no-results" />
-<input type="hidden" name="RES" value="90" />
-<input type="hidden" name="status" value="open" />
-<input type="hidden" name="weblog" value="not archived|default_site|external|seminar-test|tips" />
-<input type="hidden" name="search_in" value="entries" />
-<input type="hidden" name="where" value="all" />
-<input type="hidden" name="site_id" value="1" />
-</div>
-
-
-<div>
-<input type="text" name="keywords" id="search" value=""  /> <input type="submit" name="searchBtn" id="searchBtn" value="Search" title="Search" />
-</div>
-</form>
-			<!--end of search form-->
-
-		</div>
-			<!--end of top nav-->
-		<div class="clearDiv"></div>
-<!--start of main content-->
-                <div class="contentWrap contentWrap2">
-                        <div class="intro intro2">
-                            <img src="http://www.jiscdigitalmedia.ac.uk/images/site/hometopleft2.gif" alt="" width="525" height="169" id="hometop2" />
-                            <div class="introBox introBox2">
-                                <p>Free help and advice to the UK Further and Higher Education community</p>
-
-                                <a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a>
-                            </div>
-                            <img src="http://www.jiscdigitalmedia.ac.uk/images/site/hometopbottom.gif" alt="" width="445" height="23" id="hometopbtm" />
-                        </div>
-                </div>
-
-                <div class="clearDiv"></div>
-
-<div class="content content2">
-<%-- BREAD CRUMB --%>
-<div id="breadCrumb">
-    <c:choose>
-        <c:when test="${not empty resultsUrl}">
-            <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
-        </c:when>
-        <c:otherwise>
-            <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-        </c:otherwise>
-    </c:choose>
-
-    <strong>&gt;</strong>
-
-    <c:if test="${not empty event.partOf}">
-        <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
-            <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
-            <strong>&gt;</strong>
+    <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/drupal_style_main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/style_print.css" type="text/css" media="print" />
+<c:if test="${not empty event}">
+    <meta name="caboto-annotation" content="${event.id}"/>
+</c:if>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Language" content="en-uk" />
+    <link rel="Help" href="http://economicsnetwork.ac.uk/tenways" />
+    <c:if test="${not empty feedList}">
+        <c:forEach var="feed" items="${feedList}">
+    <link rel="alternate" href="${feed.feedUrl}" type="${feed.contentType}" title="${feed.title}"/>
         </c:forEach>
     </c:if>
+    <script type="text/javascript" src="./js/prototype.js"></script>
+    <script type="text/javascript" src="./js/annotations.js"></script>
+</head>
 
-    ${event.title}
-</div>
-
-<div class="clearDiv"></div>
-
-<!--start of Left content-->
-
-<div class="leftMargin">
-
-    <div class="geCalloutBox trainingBlock accountLinksBox">
-    <%-- the header links --%>
-    <ul id="accountLinks">
-    <%@ include file="includes/headerLinks.jsp" %>
-
-    <%-- register message --%>
-    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
-    </ul>
-    </div>
-    <%-- quick links --%>
-    <%-- <%@ include file="includes/quickLinks.jsp" %> --%>
-    <%-- the browser links --%>
-    <%@ include file="includes/headerBrowse.jsp" %>
-
-    <%-- the facets ---%>
-    <%--
-    <div class="bl">
-        <div class="br">
-            <div class="tl">
-                <div class="tr">
-                    <div class="box" id="facetNavigation">
-                        <h4 class="box-header"><spring:message code="facet.title"/></h4>
-                        <c:forEach var="facet" items="${facets}">
-                            <crew:facet facet="${facet}" showEmpty="false" url="${url}"
-                                        parameters="${parameters}"/>
-                        </c:forEach>
-                    </div>
-                </div>
+<body onload="initializeAnnotations();">
+    <div id="doc2" class="yui-t2">
+        <div id="hd">
+            <div id="header">
+                <a href="http://economicsnetwork.ac.uk/" name="top" id="top" accesskey="1">
+                        <img src="http://economicsnetwork.ac.uk/nav/acadlogo.gif" id="logo" alt="Economics Network of the Higher Education Academy" title="Home Page of the Economics Network" style="width:292px;height:151px;border:0" />
+                </a>
+                <ul id="navlist">
+                    <li class="toabout">
+                            <a href="http://economicsnetwork.ac.uk/about" accesskey="2">About Us</a>
+                    </li>
+                    <li class="topubs">
+                            <a href="http://economicsnetwork.ac.uk/journals" accesskey="3">Lecturer Resources</a>
+                    </li>
+                    <li class="tores">
+                            <a href="http://economicsnetwork.ac.uk/resources" accesskey="4">Learning Materials</a>
+                    </li>
+                    <li class="tofunds">
+                            <a href="http://economicsnetwork.ac.uk/projects" accesskey="5">Projects&nbsp;&amp; Funding</a>
+                    </li>
+                    <li class="tonews">
+                            <a href="http://economicsnetwork.ac.uk/news" accesskey="6">News&nbsp;&amp; Events</a>
+                    </li>
+                    <li class="tothemes">
+                            <a href="http://economicsnetwork.ac.uk/subjects/" accesskey="7">Browse by Topic</a>
+                    </li>
+                    <li id="help">
+                            <a href="http://economicsnetwork.ac.uk/tenways" style="color:#036" accesskey="?">Help</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="homelink">
+                    <a href="http://economicsnetwork.ac.uk/">Home</a>
             </div>
         </div>
-    </div>
-    --%>
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
+                    <div class="yui-gc">
+                        <div class="yui-u first" id="content"> <!-- width: 66%; float: left -->
+                            <div id="content-header">
+                                <h1 class="title">${event.title}</h1> <%-- Mid column main page title --%>
+                                <%-- BREAD CRUMB --%>
+                                <div id="breadCrumb">
+                                    <c:choose>
+                                        <c:when test="${not empty resultsUrl}">
+                                            <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+                                        </c:otherwise>
+                                    </c:choose>
 
-  <%--  <div id="travelfootprint"> --%>
-    <div class="trainingBlock travelfootprint">
-        <h3>What's your travel footprint?</h3>
-        <span><spring:message code="place.footprint.message"/></span>
-    </div>
-    <div class="travelfootprint">
-        <!-- Travelfootprint panel -->
-        <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
-            style="margin-top:0; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
-        <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
-    </div>
+                                    <strong>&gt;</strong>
 
-</div>
-<!--end of Left content-->
+                                    <c:if test="${not empty event.partOf}">
+                                        <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
+                                            <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
+                                            <strong>&gt;</strong>
+                                        </c:forEach>
+                                    </c:if>
 
-<!--start of Middle content-->
-<div class="colRight genericContent traininglist">
-
-<div><h1 style="width:100%; padding: 0.3em 0 0.5em 1em">${event.title}</h1></div>
-
-<div class="contentBlock" style="width:100%; padding: 1em 0.5em 0 1em">
+                                    ${event.title}
+                                </div>
+                            </div>
+    <!-- /#content-header -->
+    <div id="content-area">
+    <%-- START OF CONTENT --%>
+        <div id="node-89" class=" node-inner">
+            <div class="content">
+                <div class="compact">
 
 <c:choose>
 <c:when test="${not empty event}">
 
     <%-- EVENT DATES --%>
 <c:if test="${not empty event.startDate}">
-    <h2><spring:message code="event.details.date"/></h2>
+    <h4><spring:message code="event.details.date"/></h4>
     <p>
         <c:choose>
             <c:when test="${event.singleDay == true}">
@@ -188,13 +127,13 @@
 
     <%-- EVENT DESCRIPTION --%>
 <c:if test="${not empty event.description}">
-    <h2><spring:message code="event.details.description"/></h2>
+    <h4><spring:message code="event.details.description"/></h4>
     <p>${event.description}</p>
 </c:if>
 
     <%-- EVENT PLACES --%>
 <c:if test="${not empty event.places}">
-        <h2><spring:message code="event.details.place"/></h2>
+        <h4><spring:message code="event.details.place"/></h4>
         <ul>
             <c:forEach var="place" items="${event.places}">
                 <li>
@@ -207,7 +146,7 @@
     <%-- EVENT SCHEDULE --%>
 <c:if test="${not empty event.parts}">
 
-    <h2><spring:message code="event.details.schedule"/></h2>
+    <h4><spring:message code="event.details.schedule"/></h4>
 
     <table>
         <c:forEach var="part" items="${event.parts}">
@@ -272,7 +211,7 @@
     <%-- EVENT LOCATIONS --%>
 <c:if test="${not empty event.locations}">
 
-        <h2><spring:message code="event.details.locations"/></h2>
+        <h4><spring:message code="event.details.locations"/></h4>
         <ul>
         <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
             <li><c:if test="${location.name != 'Locations'}">${location.name};</c:if></li>
@@ -283,7 +222,7 @@
 
     <%-- EVENT SUBJECTS --%>
 <c:if test="${not empty event.subjects}">
-        <h2><spring:message code="event.details.subjects"/></h2>
+        <h4><spring:message code="event.details.subjects"/></h4>
         <ul>
         <c:forEach var="subject" items="${event.subjects}" varStatus="rowNo">
             <li><c:if test="${subject.name != 'Disciplines'}">${subject.name};</c:if></li>
@@ -293,7 +232,7 @@
 
     <%-- EVENT TAGS--%>
 <c:if test="${not empty event.tags}">
-        <h2><spring:message code="event.details.tags"/></h2>
+        <h4><spring:message code="event.details.tags"/></h4>
         <ul>
         <c:forEach var="tag" items="${event.tags}" varStatus="rowNo">
             <li>${tag}<c:if test="${not rowNo.last}">;</c:if></li>
@@ -304,7 +243,7 @@
     <%-- EVENT EXTERNAL LINKS --%>
 <c:if test="${not empty event.programme || not empty event.proceedings}">
 
-    <h2><spring:message code="event.details.external"/></h2>
+    <h4><spring:message code="event.details.external"/></h4>
     <ul>
 
         <c:if test="${not empty event.programme}">
@@ -321,7 +260,7 @@
     <%-- ROLES --%>
 <c:if test="${not empty event.roles}">
 
-    <h2><spring:message code="event.roles"/></h2>
+    <h4><spring:message code="event.roles"/></h4>
         <ul>
             <c:forEach var="role" items="${event.roles}">
                 <li>${role.name}:&nbsp;<a
@@ -329,12 +268,13 @@
                 </li>
             </c:forEach>
         </ul>
-    </div>
 
 </c:if>
 
-<!-- end contentBlock -->
+<!-- end compact -->
     </div>
+<!-- end content -->
+</div>
 
 
 <%
@@ -353,7 +293,8 @@
 %>
 
 
-<div class="contentBlock" style="width:100%; padding: 1em 0 0 1em">
+<div class="content">
+    <div class="compact">
         <div id="annotations-title">Comments about this event</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
@@ -363,7 +304,7 @@
         or [http://www.jiscdigitalmedia.ac.uk]</div>
 
         <div id="annotation-messages"></div>
-        
+
             <%-- show form if they are logged in --%>
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
@@ -387,8 +328,8 @@
 
             <%-- message if not logged in --%>
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
-            <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.
-                You can <a href="./registration.do">register</a> if you do not have an account.<br/>
+            <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.<br/>
+                <%-- You can <a href="./registration.do">register</a> if you do not have an account.<br/> --%>
                 <a href="./forgottenPassword.do">Forgotten</a> your password?</p>
 
         </security:authorize>
@@ -400,21 +341,151 @@
 </c:otherwise>
 </c:choose>
 
-
-<!-- end contentBlock -->
+    <%-- End class="compact" --%>
     </div>
 
-</div>
-<!--End of Middle content-->
+    <%-- End class="content" --%>
+    </div>
 
-	<div class="clearDiv" style="height:2em;"></div>
+        <%-- End id="node-89" class=" node-inner" --%>
+    </div>
 
-<!-- End of content2 -->
-</div>
+    <%-- END id="content-area" --%>
+    </div>
 
-		</div>
-<!--end of wrqpper-->
-</div>
-<%@ include file="includes/jdm_footer.jsp" %>
-	</body>
+    <%-- end yui-u first --%>
+    </div>
+
+
+    <%-- RIGHT COLUMN --%>
+                        <div class="yui-u"><%-- width: 32%; float: right --%>
+                            <div id="rightcol">
+                                <div id="sidebar-right-inner" class="region region-right">
+                                    <div id="block-block-12" class="">
+                                    <h3 class="title"><%-- Right col title --%></h3>
+                                        <div class="content">
+                                            <div class="compact">
+
+                                            <%-- RIGHT COLUMN CONTENT --%>
+
+    <div class="trainingBlock travelfootprint">
+        <h3>What's your travel footprint?</h3>
+        <span><spring:message code="place.footprint.message"/></span>
+    </div>
+    <div class="travelfootprint">
+        <!-- Travelfootprint panel -->
+        <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
+            style="margin-top:0; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+        <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
+    </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    <%-- END RIGHT COLUMN --%>
+
+
+                    </div>
+                </div>
+            </div>
+
+<%-- LEFT NAV --%>
+            <div class="yui-b">		<!--googleoff: all-->
+                <div id="snav">
+                    <div class="snavtop"></div>
+                    <form method="get" action="http://search2.openobjects.com/kbroker/hea/economics/search.lsim" class="sform">
+                        <fieldset>
+                            <input type="text" name="qt" size="15" maxlength="1000" value="" class="sbox" style="width:100px" />
+                            <input id="submit" type="submit" value="Search" class="gobutton" style="width:4em" />
+                            <input type="hidden" name="sr" value="0" />
+                            <input type="hidden" name="nh" value="10" />
+                            <input type="hidden" name="cs" value="iso-8859-1" />
+                            <input type="hidden" name="sc" value="hea" />
+                            <input type="hidden" name="sm" value="0" />
+                            <input type="hidden" name="mt" value="1" />
+                            <input type="hidden" name="ha" value="1022" />
+                        </fieldset>
+                    </form>
+                    <%-- Left nav links --%>
+                    <div class="content">
+                        <ul>
+                            <%@ include file="includes/headerLinks.jsp" %>
+                            <%@ include file="includes/headerBrowse.jsp" %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="snavbtm"></div>
+                <div class="qjumptop"></div>
+                <form action="http://economicsnetwork.ac.uk/quickjump.asp" method="get" id="quickjump">
+                    <fieldset>
+                        <label for="quickjump">
+                            <b>Quickjump to:</b>
+                        </label>
+                        <br />
+                        <select name="jumpto" size="1" class="quickjumpmenu" style="font-size:95%" id="jumpto">
+                            <option value="http://www.economicsnetwork.ac.uk/awards/">Awards</option>
+                            <option value="http://www.economicsnetwork.ac.uk/books/">Books</option>
+                            <option value="http://www.economicsnetwork.ac.uk/teaching/casestudy.htm">Case Studies (Economics)</option>
+                            <option value="http://www.economicsnetwork.ac.uk/showcase/">Case Studies (Teaching)</option>
+                            <option value="http://www.economicsnetwork.ac.uk/contact/">Contact Us</option>
+                            <option value="http://www.economicsnetwork.ac.uk/cheer/">CHEER Journal</option>
+                            <option value="http://www.economicsnetwork.ac.uk/links/tl.htm">Economics Education</option>
+                            <option value="http://www.economicsnetwork.ac.uk/events/">Events</option>
+                            <option value="http://www.economicsnetwork.ac.uk/externals/">External Examiners</option>
+                            <option value="http://www.economicsnetwork.ac.uk/projects/">Funding</option>
+                            <option value="http://www.economicsnetwork.ac.uk/handbook/">Handbook for Lecturers</option>
+                            <option value="http://www.economicsnetwork.ac.uk/iree/">IREE Journal</option>
+                            <option value="http://www.economicsnetwork.ac.uk/news/centre.htm">News</option>
+                            <option value="http://www.economicsnetwork.ac.uk/links/reference.htm">Official Documents</option>
+                            <option value="http://www.economicsnetwork.ac.uk/links/othertl.htm">Online L&amp;T Materials</option>
+                            <option value="http://www.economicsnetwork.ac.uk/links/sources.htm">Online Sources</option>
+                            <option value="http://www.economicsnetwork.ac.uk/qnbank/">Question Bank</option>
+                            <option value="http://www.economicsnetwork.ac.uk/showcase/">Reflections on Teaching</option>
+                            <option value="http://www.economicsnetwork.ac.uk/pds/">Regional Contacts</option>
+                            <option value="http://www.economicsnetwork.ac.uk/software.htm">Software Guide</option>
+                            <option value="http://www.economicsnetwork.ac.uk/books/">Textbook Guide</option>
+                            <option value="http://www.economicsnetwork.ac.uk/subjects">Themes</option>
+                            <option value="http://www.economicsnetwork.ac.uk/links/depts.htm">UK Departments</option>
+                        </select>
+                        <input type="submit" value="Go" class="gobutton" />
+                    </fieldset>
+                </form>
+                <div class="qjumpbtm"></div>
+
+                <div id="sidebar-left">
+                    <form style="padding: 1px; margin-top: 1.5em;" method="post" action="http://www.jiscmail.ac.uk/cgi-bin/webadmin">
+                        <fieldset>
+                            <input type="hidden" value="ECON-NETWORK" name="SUBED2" />
+                            <input type="hidden" value="1" name="A" />
+                            <h4>Monthly Email Updates</h4>
+                            <span style="font-size: smaller;">from the Economics Network</span>
+                            <br />
+                            <input type="text" onclick="if (this.form.s.value='Your Email Address'){this.form.s.value=''}" style="width: 167px;" name="s" value="Your Email Address" />
+                            <input type="submit" class="gobutton" value="Join" name="b" />
+                            <input type="submit" class="gobutton" value="Leave" name="a" />
+                        </fieldset>
+                    </form>
+                    <p class="user_link">
+                        <a href="http://economicsnetwork.ac.uk/user">Team member? Log in</a>
+                    </p>
+                </div>
+                </div>
+            </div>
+
+ <%@ include file="includes/footer.jsp" %>
+
+    </div>
+    <script src="http://www.economicsnetwork.ac.uk/gatag.js" type="text/javascript"></script>
+    <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
+    <script type="text/javascript">try{var pageTracker = _gat._getTracker("UA-1171701-1");pageTracker._trackPageview();} catch(err) {}</script>
+
+
+
+</body>
 </html>
+
+
+
