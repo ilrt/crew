@@ -152,6 +152,7 @@
                     <div class="content">
                         <ul>
                             <%@ include file="includes/headerLinks.jsp" %>
+                            <%@ include file="includes/headerBrowse.jsp" %>
                         </ul>
                     </div>
                 </div>
