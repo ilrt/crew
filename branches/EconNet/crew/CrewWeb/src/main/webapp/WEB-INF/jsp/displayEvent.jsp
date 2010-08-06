@@ -8,7 +8,7 @@
 <%@ page session="true" contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
-    <title><spring:message code="proj.title"/> ${event.title}</title>
+    <title>${event.title}</title>
     <style type="text/css"
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     <style type="text/css" media="screen">@import "./style.css";</style>
