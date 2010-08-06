@@ -63,7 +63,7 @@
                     center: centrepoint,
                     streetViewControl: true
                   }
-                  map = new google.maps.Map(document.getElementById("mapDivCentre"), mapOptions);
+                  map = new google.maps.Map(document.getElementById("mapDivTop"), mapOptions);
 
           <c:choose>
               <c:when test="${startPoint != null}">
@@ -105,7 +105,7 @@
                   var panoramaOptions = {
                     position: streetViewStartPoint
                   };
-                  var panorama = new  google.maps.StreetViewPanorama(document.getElementById("streetViewCentre"), panoramaOptions);
+                  var panorama = new  google.maps.StreetViewPanorama(document.getElementById("streetViewBottom"), panoramaOptions);
                   map.setStreetView(panorama);
               }
 
@@ -197,8 +197,8 @@
                                 <div id="node-89" class=" node-inner">
                                     <div class="content">
                                         <div class="compact">
-                                            <div id="mapDivCentre"></div>
-                                            <div id="streetViewCentre"></div>
+                                            <div id="mapDivTop"></div>
+                                            <div id="streetViewBottom"></div>
                                             <div id="routeDirections"></div>
                                         </div>
                                     </div>
