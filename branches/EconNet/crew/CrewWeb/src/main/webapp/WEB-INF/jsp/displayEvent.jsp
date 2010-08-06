@@ -1,4 +1,3 @@
-<%-- dtd and xml declaration --%>
 <%@ include file="includes/header.jsp" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,6 +11,7 @@
     <title><spring:message code="proj.title"/> ${event.title}</title>
     <style type="text/css"
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
+    <style type="text/css" media="screen">@import "./style.css";</style>
     <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/drupal_style_main.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/style_print.css" type="text/css" media="print" />
 <c:if test="${not empty event}">
@@ -295,13 +295,14 @@
 
 <div class="content">
     <div class="compact">
-        <div id="annotations-title">Comments about this event</div>
-        <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
+        <div class="seealso">
+        <h3>Comments about this event</h3>
+        <p>Sorry, you need a JavaScript enabled browser.</p>
 
-        <div id="annotation-note"><strong>Add your own comment or question about this event ...</strong><br />
+        <p><strong>Add your own comment or question about this event ...</strong><br />
         - use wiki style notation to add links, <br />
         e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
-        or [http://www.jiscdigitalmedia.ac.uk]</div>
+        or [http://www.jiscdigitalmedia.ac.uk]</p>
 
         <div id="annotation-messages"></div>
 
@@ -341,6 +342,9 @@
 </c:otherwise>
 </c:choose>
 
+    <%-- end seealso --%>
+        </div>
+<br/>
     <%-- End class="compact" --%>
     </div>
 
@@ -362,14 +366,13 @@
                             <div id="rightcol">
                                 <div id="sidebar-right-inner" class="region region-right">
                                     <div id="block-block-12" class="">
-                                    <h3 class="title"><%-- Right col title --%></h3>
+                                    <h3 class="title">What's your travel footprint?</h3>
                                         <div class="content">
                                             <div class="compact">
 
                                             <%-- RIGHT COLUMN CONTENT --%>
 
     <div class="trainingBlock travelfootprint">
-        <h3>What's your travel footprint?</h3>
         <span><spring:message code="place.footprint.message"/></span>
     </div>
     <div class="travelfootprint">

@@ -675,10 +675,19 @@ li.pagination {
     margin-left: 310px;
 }
 
+#mapDivCentre {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 350px;
+}
+
 #mapDivLeft {
     float: left;
     border: solid grey;
     border-width: 1px;
+    margin: 1em 0;
     width: 450px;
     height: 350px;
 }
@@ -691,28 +700,29 @@ li.pagination {
     margin-left: 460px;
 }
 
+#streetViewCentre {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 350px;
+}
+
 .leftMargin {
     float:left;
     width: 300px;
 }
 
 #routeLinks {
-    border: solid grey;
-    border-width: 1px;
-    padding: 2px;
 }
 
 .travelfootprint {
-    float: left;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .travelfootprint span {
-    float: left;
-    margin: 0 1em 0 1em;
-    padding: 0 1em 0.5em 0.8em;
-    color:#333333;
-    font-size:0.8125em;
+    /* color:#333333; */
+    /* font-size:0.8125em; */
 }
 
 
