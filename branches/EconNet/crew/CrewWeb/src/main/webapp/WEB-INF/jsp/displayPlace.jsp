@@ -57,7 +57,7 @@
                     </c:when>
                 </c:choose>
                 <c:if test="${place.locationDescription != null}">
-                    contentString += '<br/>${place.locationDescription}';
+                    contentString += '<br/><br/>${place.locationDescription}';
                 </c:if>
 			<%--
                 <c:if test="${place.locationImagesUrl != null}">
