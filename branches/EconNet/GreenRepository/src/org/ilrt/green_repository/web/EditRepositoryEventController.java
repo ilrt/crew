@@ -39,6 +39,8 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
@@ -54,6 +56,7 @@ public class EditRepositoryEventController extends SimpleFormController {
     private Map<String, String> config;
     private final RepositoryEventManagementFacade repositoryFacade;
     private HarvesterSourceManagementFacade harvesterFacade;
+    private Logger logger = Logger.getLogger("org.ilrt.green_repository.web.EditRepositoryEventController");
 
     public EditRepositoryEventController(RepositoryEventManagementFacade repositoryFacade,
             HarvesterSourceManagementFacade harvesterFacade, final Map<String, String> config) {
@@ -79,11 +82,15 @@ public class EditRepositoryEventController extends SimpleFormController {
             if (repositoryLocation == null)
                 repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
 
-            String msg = harvesterFacade.harvestSource(
-                    request.getScheme() + "://" +
+            String repositoryUrl = request.getScheme() + "://" +
                     request.getServerName() + ":" +
                     request.getServerPort() +
-                    request.getContextPath() + "/" + repositoryLocation);
+                    request.getContextPath() + "/" + repositoryLocation;
+
+            logger.debug("Requesting reharvest at: " + repositoryUrl);
+
+            String msg = harvesterFacade.harvestSource(repositoryUrl);
+
         }
 
         return new ModelAndView("redirect:./listRepositoryEvents.do");
