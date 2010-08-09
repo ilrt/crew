@@ -87,7 +87,7 @@ public class EditRepositoryEventController extends SimpleFormController {
                     request.getServerPort() +
                     request.getContextPath() + "/" + repositoryLocation;
 
-            logger.debug("Requesting reharvest at: repositoryUrl");
+            logger.debug("Requesting reharvest at: " + repositoryUrl);
 
             String msg = harvesterFacade.harvestSource(repositoryUrl);
         }
