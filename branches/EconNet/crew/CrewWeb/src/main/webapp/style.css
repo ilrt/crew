@@ -480,13 +480,11 @@ li.pagination {
 .annotation-entry-description {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
-    font-size:0.85em;
     line-height:1.5em;
 }
 
 .annotation-entry-created {
     font-style: italic;
-    font-size:0.8em;
     float: left;
 }
 
