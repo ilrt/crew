@@ -296,13 +296,13 @@
 <div class="content">
     <div class="compact">
         <div class="seealso">
-        <h3>Comments about this event</h3>
-        <p>Sorry, you need a JavaScript enabled browser.</p>
+        <div id="annotations-title">Comments about this event</div>
+        <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
-        <p><strong>Add your own comment or question about this event ...</strong><br />
+        <div id="annotation-note"><strong>Add your own comment or question about this event ...</strong><br />
         - use wiki style notation to add links, <br />
         e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
-        or [http://www.jiscdigitalmedia.ac.uk]</p>
+        or [http://www.jiscdigitalmedia.ac.uk]</div>
 
         <div id="annotation-messages"></div>
 
