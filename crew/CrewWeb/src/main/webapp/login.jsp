@@ -93,6 +93,7 @@
 <div class="snavtop"></div><form method="get" action="http://search2.openobjects.com/kbroker/hea/economics/search.lsim" class="sform"><fieldset>
 <input type="text" name="qt" size="15" maxlength="1000" value="" class="sbox" style="width:100px" /><input id="submit" type="submit" value="Search" class="gobutton" style="width:4em" /><input type="hidden" name="sr" value="0" /><input type="hidden" name="nh" value="10" /><input type="hidden" name="cs" value="iso-8859-1" /><input type="hidden" name="sc" value="hea" /><input type="hidden" name="sm" value="0" /><input type="hidden" name="mt" value="1" /><input type="hidden" name="ha" value="1022" /></fieldset></form>
     <div class="snavbtm"></div>
+<%--
 <div class="qjumptop"></div><form action="http://economicsnetwork.ac.uk/quickjump.asp" method="get" id="quickjump"><fieldset>
     <label for="quickjump"><b>Quickjump to:</b></label><br />
     <select name="jumpto" size="1" class="quickjumpmenu" style="font-size:95%" id="jumpto">
@@ -137,7 +138,7 @@
         </div></div><!-- /#sidebar-left-inner, /#sidebar-left -->
       <p class="user_link"><a href="http://economicsnetwork.ac.uk/user">Team member? Log in</a></p>
 </div>
-
+--%>
 </div>
 	</div>
    <div id="ft">
