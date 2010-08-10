@@ -43,7 +43,7 @@
     <div class="yui-u first" id="content" style="width: 98%">
       <div id="content-header">
         <h1 class="title">Greening Events user account</h1>
-          <div class="breadcrumb"><a href="${pageContext.request.contextPath}">Greening Events Home</a></div>
+          <div class="breadcrumb"><a href="${pageContext.request.contextPath}/">Greening Events Home</a></div>
       </div> <!-- /#content-header -->
 
     <div id="content-area" style="margin-top: 1em">
