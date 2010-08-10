@@ -329,7 +329,7 @@
 
             <%-- message if not logged in --%>
         <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
-            <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add an annotation.<br/>
+            <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add a comment.<br/>
                 <%-- You can <a href="./registration.do">register</a> if you do not have an account.<br/> --%>
                 <a href="./forgottenPassword.do">Forgotten</a> your password?</p>
 
