@@ -81,11 +81,24 @@ public class AddRepositoryEventController extends SimpleFormController {
             if (repositoryLocation == null)
                 repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
 
-            String msg = harvesterFacade.harvestSource(
-                    request.getScheme() + "://" +
-                    request.getServerName() + ":" +
-                    request.getServerPort() +
-                    request.getContextPath() + "/" + repositoryLocation);
+            StringBuffer repositoryUrl = new StringBuffer();
+            repositoryUrl.append(request.getScheme());
+            repositoryUrl.append("://");
+            repositoryUrl.append(request.getServerName());
+
+            if ( request.getServerPort() != 80 )  {
+                // A direct string comparison is made with the list of harvestable urls, so :80 will cause an error
+                repositoryUrl.append( ":");
+                repositoryUrl.append(request.getServerPort());
+            }
+
+            repositoryUrl.append(request.getContextPath());
+            repositoryUrl.append("/");
+            repositoryUrl.append(repositoryLocation);
+
+            logger.debug("Requesting reharvest at: " + repositoryUrl.toString());
+
+            String msg = harvesterFacade.harvestSource(repositoryUrl.toString());
         }
 
        return new ModelAndView("redirect:./listRepositoryEvents.do");
