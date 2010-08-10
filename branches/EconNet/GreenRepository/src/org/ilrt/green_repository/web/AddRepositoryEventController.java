@@ -96,8 +96,6 @@ public class AddRepositoryEventController extends SimpleFormController {
             repositoryUrl.append("/");
             repositoryUrl.append(repositoryLocation);
 
-            logger.debug("Requesting reharvest at: " + repositoryUrl.toString());
-
             String msg = harvesterFacade.harvestSource(repositoryUrl.toString());
         }
 
