@@ -71,7 +71,7 @@
                         <div class="yui-u first" id="content" style="width: 98%"> <!-- width: 66%; float: left -->
                             <div id="content-header">
                                 <h1 class="title"><fmt:message key="journeysharers.find.title"/></h1> <%-- Mid column main page title --%>
-                                  <div class="breadcrumb"><a href="${pageContext.request.contextPath}">Greening Events Home</a></div>
+                                  <div class="breadcrumb"><a href="${pageContext.request.contextPath}/">Greening Events Home</a></div>
 
                                   
                                   </div> <!-- /#content-header -->
