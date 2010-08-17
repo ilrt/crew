@@ -466,6 +466,26 @@
         <property name="validator" ref="repositoryEventValidator"/>
     </bean>
 
+    <!-- Wizard version of local repository creation controller -->
+    <bean name="addRepositoryEventWizardController"
+            class="org.ilrt.green_repository.web.AddRepositoryEventWizardController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEventForm"/>
+        <property name="validator" ref="repositoryEventValidator"/>
+        <property name="pages">
+            <list>
+                <value>addRepositoryEventDetails</value>
+                <value>addRepositoryEventLocation</value>
+                <value>addRepositoryEventRoute</value>
+                <value>addRepositoryEventKML</value>
+                <value>redirect:./listRepositoryEvents.do</value>
+            </list>
+        </property>
+    </bean>
+
     <bean name="/secured/repository/editRepositoryEvent.do"
           class="org.ilrt.green_repository.web.EditRepositoryEventController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
@@ -520,6 +540,21 @@
         <property name="exceptionMappings">
             <props>
                 <prop key="java.lang.reflect.UndeclaredThrowableException">accessDenied</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- HandlerMappings -->
+    <bean id="beanNameUrlMapping"
+        class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+            <property name="order"><value>1</value></property>
+    </bean>
+    <bean id="simpleUrlMapping"
+        class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order"><value>0</value></property>
+        <property name="mappings">
+            <props>
+                <prop key="/secured/repository/addRepositoryEventWizard.do">addRepositoryEventWizardController</prop>
             </props>
         </property>
     </bean>
