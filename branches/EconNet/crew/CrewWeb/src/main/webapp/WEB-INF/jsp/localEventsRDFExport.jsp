@@ -16,7 +16,7 @@
          xmlns:ge="http://www.ilrt.bris.ac.uk/GreeningEvents/ontology#">
 
     <c:forEach var="event" items="${events}" varStatus="status">
-        <rdf:Description rdf:about="http://www.jiscdigitalmedia.ac.uk/events/${event.eventId}">
+        <rdf:Description rdf:about="http://www.economicsnetwork.ac.uk/events/${event.eventId}">
             <rdf:type rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#MainEvent"/>
             <rdf:type rdf:resource="http://www.eswc2006.org/technologies/ontology#ConferenceEvent"/>
             <dc:title>${event.title}</dc:title>

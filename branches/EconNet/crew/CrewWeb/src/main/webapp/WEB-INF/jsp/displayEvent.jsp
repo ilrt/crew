@@ -301,8 +301,8 @@
 
         <div id="annotation-note"><strong>Add your own comment or question about this event ...</strong><br />
         - use wiki style notation to add links, <br />
-        e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
-        or [http://www.jiscdigitalmedia.ac.uk]</div>
+        e.g. Go to [The Economics Network|http://www.economicsnetwork.ac.uk/]
+        or just [http://www.economicsnetwork.ac.uk/]</div>
 
         <div id="annotation-messages"></div>
 
