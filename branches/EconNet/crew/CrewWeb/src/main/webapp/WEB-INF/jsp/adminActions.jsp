@@ -41,7 +41,7 @@
                     <li><a href="./secured/repository/listRepositoryEvents.do"><fmt:message key="admin.nav.list.events"/></a></li>
                     <li><a href="./secured/admin/addGroup.do"><fmt:message key="admin.nav.add.group"/></a></li>
                     <li><a href="./secured/admin/addRole.do"><fmt:message key="admin.nav.add.role"/></a></li>
-                    <li><a href="./secured/repository/addRepositoryEvent.do"><fmt:message key="admin.nav.add.event"/></a></li>
+                    <li><a href="./secured/repository/addRepositoryEventWizard.do"><fmt:message key="admin.nav.add.event"/></a></li>
                     <li><a href="./secured/admin/sparql.do"><fmt:message key="admin.nav.sparql"/></a></li>
 					<li><a href="./secured/admin/reindex.do"><fmt:message key="admin.nav.reindex"/></a></li>
                 </ul>
