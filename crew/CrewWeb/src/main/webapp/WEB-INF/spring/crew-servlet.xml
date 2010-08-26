@@ -466,7 +466,19 @@
         <property name="validator" ref="repositoryEventValidator"/>
     </bean>
 
-    <!-- Wizard version of local repository creation controller -->
+    <bean name="/secured/repository/editRepositoryEvent.do"
+          class="org.ilrt.green_repository.web.EditRepositoryEventController">
+        <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
+        <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
+        <constructor-arg index="2" ref="localRepositoryDetails"/>
+        <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
+        <property name="commandName" value="repositoryEventForm"/>
+        <property name="formView" value="editRepositoryEvent"/>
+        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
+        <property name="validator" ref="repositoryEventValidator"/>
+    </bean>
+
+    <!-- Wizard version of local repository creation controllers -->
     <bean name="addRepositoryEventWizardController"
             class="org.ilrt.green_repository.web.AddRepositoryEventWizardController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
@@ -485,17 +497,26 @@
             </list>
         </property>
     </bean>
-
-    <bean name="/secured/repository/editRepositoryEvent.do"
-          class="org.ilrt.green_repository.web.EditRepositoryEventController">
+    <bean name="editRepositoryEventWizardController"
+            class="org.ilrt.green_repository.web.EditRepositoryEventWizardController">
         <constructor-arg index="0" ref="repositoryEventManagementFacade"/>
         <constructor-arg index="1" ref="harvesterSourceManagementFacade"/>
         <constructor-arg index="2" ref="localRepositoryDetails"/>
         <property name="commandClass" value="org.ilrt.green_repository.web.RepositoryEventForm"/>
         <property name="commandName" value="repositoryEventForm"/>
-        <property name="formView" value="editRepositoryEvent"/>
-        <property name="successView" value="redirect:./listRepositoryEvents.do"/>
         <property name="validator" ref="repositoryEventValidator"/>
+        <property name="pages">
+            <list>
+                <value>editRepositoryEventDetails</value>
+                <value>editRepositoryEventLocation</value>
+                <value>editRepositoryEventRoute</value>
+                <value>editRepositoryEventKML</value>
+                <value>redirect:./listRepositoryEvents.do</value>
+            </list>
+        </property>
+        <property name="synchronizeOnSession">
+            <value>true</value>
+        </property>
     </bean>
 
     <bean name="/secured/admin/sparql.do" class="net.crew_vre.web.controller.SparqlQueryController">
@@ -555,6 +576,7 @@
         <property name="mappings">
             <props>
                 <prop key="/secured/repository/addRepositoryEventWizard.do">addRepositoryEventWizardController</prop>
+                <prop key="/secured/repository/editRepositoryEventWizard.do">editRepositoryEventWizardController</prop>
             </props>
         </property>
     </bean>

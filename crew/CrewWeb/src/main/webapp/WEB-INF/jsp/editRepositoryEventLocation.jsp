@@ -10,7 +10,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><fmt:message key="repository.add.title"/></title>
+        <title><fmt:message key="repository.edit.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     </head>
 
@@ -30,9 +30,10 @@
 
             <fieldset>
                 <legend><strong><fmt:message key="repository.title.location"/></strong></legend>
-                <p><fmt:message key="repository.add.location"/></p>
+                <p><fmt:message key="repository.edit.location"/></p>
 
-                <form:form method="post" action="./addRepositoryEventWizard.do" commandName="repositoryEventForm">
+                <form:form method="post" action="./editRepositoryEventWizard.do" commandName="repositoryEventForm">
+                    <form:hidden path="eventId"/>
                         <%-- Location information --%>
                     <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr>
@@ -71,8 +72,9 @@
                         </tr>
                     </table>
                     <p>
-                        <input type="submit" name="_target2" value='Next'/>
+                        <input type="submit" name="_target2" value='Edit route details'/>
                         <input type="submit" name="_target0" value='Back to event details'/>
+                        <input type="submit" name="_finish" value='Finish'/>
                         <input type="submit" name="_cancel" value='<fmt:message key="repository.cancel"/>'/>
                     </p>
                 </form:form>
