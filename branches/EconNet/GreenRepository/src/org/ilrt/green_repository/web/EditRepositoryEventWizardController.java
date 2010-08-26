@@ -39,9 +39,12 @@ import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractWizardFormController;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
+import org.ilrt.green_repository.domain.RepositoryEvent;
 import org.springframework.validation.Errors;
 
 /**
@@ -49,22 +52,32 @@ import org.springframework.validation.Errors;
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 
-public class AddRepositoryEventWizardController extends AbstractWizardFormController {
+public class EditRepositoryEventWizardController extends AbstractWizardFormController {
 
-
-    private final RepositoryEventManagementFacade repositoryFacade;
-    private HarvesterSourceManagementFacade harvesterFacade;
-    private final String VIEW_NAME = "addRepositoryEvent";
     private final String DEFAULT_REPOSITORY_LOCATION = "repository/localEvents.rdf";
     private Map<String, String> config;
+    private final RepositoryEventManagementFacade repositoryFacade;
+    private HarvesterSourceManagementFacade harvesterFacade;
+    private Logger logger = Logger.getLogger("org.ilrt.green_repository.web.EditRepositoryEventController");
 
-    public AddRepositoryEventWizardController(RepositoryEventManagementFacade repositoryFacade,
+    public EditRepositoryEventWizardController(RepositoryEventManagementFacade repositoryFacade,
             HarvesterSourceManagementFacade harvesterFacade, final Map<String, String> config) {
         this.repositoryFacade = repositoryFacade;
         this.harvesterFacade = harvesterFacade;
         this.config = config;
     }
-    
+
+    // Get existing data on the event and insert into the command object passed to the first page
+    @Override
+    protected Object formBackingObject(HttpServletRequest request) throws Exception {
+        RepositoryEventForm form = null;
+        if (request.getParameter("eventId") != null) {
+            RepositoryEvent event = repositoryFacade.getRepositoryEvent((String)request.getParameter("eventId"));
+            form = new RepositoryEventForm(event);
+        }
+        return form;
+    }
+
     @Override
     protected ModelAndView processFinish(HttpServletRequest request, HttpServletResponse response,
             Object command, BindException errors) {
@@ -72,8 +85,8 @@ public class AddRepositoryEventWizardController extends AbstractWizardFormContro
         // get the command object - RepositoryEventForm
         RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
 
-        // save the repository event
-        repositoryFacade.addRepositoryEvent(repositoryEventForm);
+        // update the repository event
+        repositoryFacade.updateRepositoryEvent(repositoryEventForm);
 
         // Re-harvest from the local repository
         String repositoryLocation = config.get("location");
@@ -95,14 +108,10 @@ public class AddRepositoryEventWizardController extends AbstractWizardFormContro
         repositoryUrl.append("/");
         repositoryUrl.append(repositoryLocation);
 
+        logger.debug("Requesting reharvest at: " + repositoryUrl.toString());
+
         String msg = harvesterFacade.harvestSource(repositoryUrl.toString());
 
-       return new ModelAndView(getSuccessView());
-    }
-
-    @Override
-    protected ModelAndView processCancel(HttpServletRequest request, HttpServletResponse response,
-            Object command, BindException bindException) throws Exception {
         return new ModelAndView(getSuccessView());
     }
 
@@ -122,6 +131,12 @@ public class AddRepositoryEventWizardController extends AbstractWizardFormContro
             // Location details page
             validator.validateLocation(repositoryEventForm, errors);
         }
+    }
+
+    @Override
+    protected ModelAndView processCancel(HttpServletRequest request, HttpServletResponse response,
+            Object command, BindException bindException) throws Exception {
+        return new ModelAndView(getSuccessView());
     }
 
     private String getSuccessView() {

@@ -94,4 +94,45 @@ public class RepositoryEventValidator implements Validator {
         }
     }
 
+    // Methods for page validation
+    public void validateTitle(Object command, Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "title", "repository.title.missing");
+    }
+
+    public void validateDates(Object command, Errors errors) {
+        RepositoryEventForm form = (RepositoryEventForm) command;
+
+            // check date formats are yyyy-MM-dd
+            Perl5Util perl5Util = new Perl5Util();
+            if (!perl5Util.match(DATE_REGEXP, form.getStartDate())) {
+                errors.rejectValue("startDate", "repository.startDate.format");
+            }
+            if (!perl5Util.match(DATE_REGEXP, form.getEndDate())) {
+                errors.rejectValue("endDate", "repository.endDate.format");
+            }
+
+            // check enddate is same as or after startdate
+            if (form.getStartDateObj() != null
+                    && form.getEndDateObj() != null
+                    && form.getStartDateObj().compareTo(form.getEndDateObj()) > 0) {
+                errors.rejectValue("endDate", "repository.endDate.notafter");
+            }
+    }
+
+    public void validateUrl(Object command, Errors errors) {
+        RepositoryEventForm form = (RepositoryEventForm) command;
+        
+        // Not mandatory so check if there is an eventUrl value first
+        if (form.getEventUrl() != null && !form.getEventUrl().equals("")) {
+            if (!(form.getEventUrl().startsWith("http://")
+                    || form.getEventUrl().startsWith("https://"))) {
+                errors.rejectValue("eventUrl", "repository.eventUrl.protocol");
+            }
+        }
+    }
+
+    public void validateLocation(Object command, Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "location", "repository.location.missing");
+    }
+
 }
