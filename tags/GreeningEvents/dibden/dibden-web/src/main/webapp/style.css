@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 76%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.user-management-container {
+    padding: 1em;
+    width: 45em;
+}
+
+.user-management-message, .user-management-nav, .user-management-error, .user-management-pag {
+    text-align: center;   
+}
+
+
+.list-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.list-table td {
+    padding: 0em 0.8em 0em 0.8em;
+
+}
+
+.list-header {
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: burlywood;
+}
+
+.list-body {
+    font-size: 0.8em;
+}
+
+.list-body tr {
+    border-bottom: lightgray dashed 1px;
+}
+
+.alt-row {
+    background-color: beige;
+}
+
+.details-table {
+    font-size: 0.8em;
+}

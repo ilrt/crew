@@ -1,0 +1,76 @@
+@prefix eswc:    <http://www.eswc2006.org/technologies/ontology#>
+@prefix dc:      <http://purl.org/dc/elements/1.1/>
+@prefix foaf:    <http://xmlns.com/foaf/0.1/>
+@prefix iugo:   <http://www.ilrt.bristol.ac.uk/iugo#>
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#>
+@prefix crew:    <http://www.crew-vre.net/ontology#> .
+
+[rdfs8:  (?a rdfs:subClassOf ?b), (?b rdfs:subClassOf ?c) -> (?a rdfs:subClassOf ?c)] 
+[rdfs9:  (?x rdfs:subClassOf ?y), (?a rdf:type ?x) -> (?a rdf:type ?y)] 
+
+
+# has part -> is partOf relationship
+(?A eswc:isPartOf ?B) -> (?B eswc:hasPart ?A) .
+(?A eswc:hasPart ?B) -> (?B eswc:isPartOf ?A) .
+
+# roles - held by
+(?A eswc:heldBy ?B) -> (?B eswc:holdsRole ?A) .
+(?A eswc:holdsRole ?B) -> (?B eswc:heldBy ?A) .
+
+# roles - roles at
+(?A eswc:hasRole ?B) -> (?B eswc:isRoleAt ?A) .
+(?A eswc:isRoleAt ?B) -> (?B eswc:hasRole ?A) .
+
+# ensure that broader subjects are picked up
+(?A iugo:hasLocation ?B), (?B skos:broader ?C) -> (?A iugo:hasLocation ?C) .
+
+# ensure  the broader locations are picked up
+(?A iugo:hasSubject ?B), (?B skos:broader ?C) -> (?A iugo:hasSubject ?C) .
+
+# ensure that the application sees the skos:prefLabel as a rdfs:label
+(?A skos:prefLabel ?B) -> (?A rdfs:label ?B) .
+
+(?A eswc:hasRelatedArtefact ?B) -> (?B eswc:relatedToEvent ?A) .
+(?A eswc:relatedToEvent ?B) -> (?B eswc:hasRelatedArtefact ?A) .
+
+# so we can identify just the titles of the "main" events
+#(?A dc:title ?B), (?A rdf:type iugo:MainEvent) -> (?A iugo:mainEventTitle ?B) .
+
+# ensure we can identify the start date of the "main" events
+#(?A eswc:hasStartDateTime ?B), (?A rdf:type iugo:MainEvent) -> (?A iugo:hasMainStartDateTime ?B) .
+
+# closure rules for the subject ontology
+#(?A iugo:hasSubject ?B) -> (?A iugo:hasSubjectCl ?B) .
+#(?A iugo:hasSubjectCl ?B) (?B skos:broader ?C) -> (?A iugo:hasSubjectCl ?C) .
+
+# closure rules for the location ontology
+#(?A iugo:hasLocation ?B) -> (?A iugo:hasLocationCl ?B) .
+#(?A iugo:hasLocationCl ?B) (?B skos:broader ?C) -> (?A iugo:hasLocationCl ?C) .
+
+
+(?A rdfs:subClassOf ?B), (?C eswc:heldBy ?A) -> (?C eswc:heldBy ?B) .
+(?A rdfs:subClassOf ?B), (?C eswc:holdsRole ?A) -> (?C eswc:holdsRole ?B) .
+
+#(?A eswc:hasLocation ?B) -> (?B eswc:isLocationFor ?A) .
+
+(?A eswc:holdsRole ?B), (?B rdf:type ?C) -> (?A iugo:holdsRole ?C) .
+
+## create the author role for dc:creator
+#(?A dc:creator ?B), (?A rdf:type eswc:Paper) -> (?B iugo:holdsRole iugo:Author) .
+
+#(?A dc:creator ?B) -> (?B iugo:isAuthorOf ?A) .
+
+# ensure that we have an xsd:date if we have an xsd:dateTime
+(?A eswc:hasStartDateTime ?B), toXsdDate(?B, ?C) -> (?A crew:hasStartDate ?C) .
+(?A eswc:hasEndDateTime ?B), toXsdDate(?B, ?C) -> (?A crew:hasEndDate ?C) .
+
+# ensure an event inherits subject areas from its parents
+(?A iugo:hasSubject ?B), (?A eswc:hasPart ?C) -> (?C iugo:hasSubject ?B) .
+
+# associate a person with a subject if they have a role at an event
+(?A eswc:hasRole ?B), (?A iugo:hasSubject ?C), (?B eswc:heldBy ?D) -> (?D foaf:topic_interest ?C) .
+
+# create a role for a dc:creator
+(?A dc:creator ?B), (?C eswc:hasRelatedArtefact ?A), createResource(?D) -> (?C eswc:hasRole ?D),
+(?D eswc:heldBy ?B), (?B eswc:holdsRole ?D), (?D eswc:isRoleAt ?C),
+(?D dc:title "Author of paper or resource referenced in presentation"), (?D rdf:type iugo:Author) .

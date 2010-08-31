@@ -1,0 +1,9 @@
+PREFIX iugo: <http://www.ilrt.bristol.ac.uk/iugo#> 
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT $graph $skosLocationId $skosLocationName
+WHERE {
+    GRAPH $graph {
+        $id iugo:hasLocation $skosLocationId .
+    }
+    $skosLocationId skos:prefLabel $skosLocationName .
+}

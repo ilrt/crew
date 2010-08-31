@@ -1,0 +1,765 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 76%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#container {
+    /* width : 100 %; */
+    min-width: 800px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+
+#headerContainer {
+    position: relative;
+    min-height: 8em;
+    height: 8em;
+    border-bottom: burlywood groove 1px;
+}
+
+#headerLogo {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#headerLogo img {
+    border: none;
+}
+
+#headerLogo a:link, #headerLogo a:hover, #headerLogo a:visited, #headerLogo a:active {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#headerLinks {
+    margin-top: 0.5em;
+}
+
+#headerLinks a:link, #headerLinks a:visited, #headerLinks a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+#headerLinks a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+#headerBrowse {
+    /*
+    display: inline;
+    position: absolute;
+    left: 160px;
+    bottom: 3px;
+    */
+}
+
+#headerBrowse a:link, #headerBrowse a:hover, #headerBrowse a:visited, #headerBrowse a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+#headerBrowse li:hover {
+    background-color: #CCCC66;
+}
+
+#headerSearch {
+    display: inline;
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+}
+
+#headerLinks ul, #headerLinks li {
+    list-style-type: none;
+    display: inline;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    margin: 0.1em 0.1em 0.1em 0.1em;
+    font-size: 1em;
+}
+
+#headerBrowse ul, #headerBrowse li {
+    list-style-type: none;
+    display: inline;
+}
+
+#headerBrowse li {
+    background-color: darkkhaki;
+    display: inline;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    margin: 0.1em 0.1em 0.1em 0.1em;
+    font-size: 1.4em;
+}
+
+#headerMessage {
+}
+
+#breaker {
+    padding: 0em;
+    margin: 0em;
+    border-bottom: 1px solid #2F4F4F;
+}
+
+#navBanner {
+    font-size: 0.8em;
+    min-height: 2.2em;
+}
+
+#navLinks {
+/* position : absolute; */
+    top: 0em;
+    right: 0em;
+    font-size: 1.3em;
+    color: #000000;
+    text-align: right;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    margin-right: 0.6em;
+}
+
+#navBanner a:link, #navBanner a:hover, #navBanner a:visited, #navBanner a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+#header {
+    background: #3F4C6B url( ./images/banner-bl.png ) bottom left no-repeat;
+}
+
+#header-title {
+    font-size: 1.1em;
+    margin-top: 0.1em;
+    padding-top: 0.3em;
+    margin-bottom: 0.1em;
+    padding-bottom: 0.1em;
+}
+
+h1#header-title a:link, h1#header-title a:hover, h1#header-title a:visited, h1#header-title a:active {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+h1#header-title span {
+    border-bottom: solid 1px #CCCCCC;
+}
+
+#header-tagline {
+    font-size: 0.7em;
+    margin: 0.3em 0em 0.3em 0em;
+    padding-bottom: 0.3em;
+    color: #FFFFFF;
+    font-style: italic;
+    background: url( ./images/banner-br.png ) bottom right no-repeat;
+}
+
+#navLogo {
+    color: #FFFFFF;
+    font-size: 1.5em;
+    padding-left: 0.3em;
+}
+
+#navLinks {
+    padding-top: 0.3em;
+}
+
+#navLinks ul, #navLinks li {
+    list-style-type: none;
+    text-align: right;
+    display: inline;
+}
+
+#mainBody {
+    margin: 0em;
+    padding: 0em;
+}
+
+#leftColumn {
+    float: left;
+    width: 20em;
+}
+
+#rightColumn {
+    float: right;
+    width: 19em;
+    margin: 0em;
+}
+
+#middleColumn {
+    margin: 0em;
+    padding: 0.3em 20em 0.3em 21em;
+}
+
+#detailsColumn {
+    margin: 0em;
+    padding: 0.3em 20em 0.3em 0.3em;
+}
+
+.bl {
+    background: #eeeeee url( ./images/box-bl.png ) 0 100% no-repeat;
+}
+
+.br {
+    background: url( ./images/box-br.png ) 100% 100% no-repeat;
+}
+
+.tl {
+    background: url( ./images/box-tl.png ) 0 0 no-repeat;
+}
+
+.tr {
+    background: url( ./images/box-tr.png ) 100% 0 no-repeat;
+}
+
+.box {
+    margin: 1em 1em 1em 1em;
+}
+
+.box-header {
+    font-size: 1.2em;
+    color: #3F4C6B;
+    padding-top: 0.6em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #000000;
+}
+
+.box-list {
+    list-style: none;
+    margin: 0em;
+    padding: 0em 0em 1em 0em
+}
+
+.box-list-item {
+    font-size: 0.95em;
+}
+
+.box-text {
+    font-size: 0.95em;
+}
+
+.box-list-item a:link, .box-list-item a:visited, box-list-item a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+.box-list-item a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.box-message {
+    font-size: 0.95em;
+}
+
+#footer {
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+    border-top: 1px solid #3F4C6B;
+    margin-top: 1em;
+    clear: both;
+}
+
+#copyright {
+    margin-top: 0.3em;
+    font-size: 1em;
+}
+
+.resultDetails {
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.resultHeader {
+    font-size: 1.1em;
+    margin: 0em;
+    padding: 0em;
+}
+
+
+.resultHeader a:link, .resultHeader a:visited, .resultHeader a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+.resultHeader a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+
+.resultDate {
+    font-size: 1em;
+    margin: 0em;
+    padding: 0em;
+}
+
+.resultsLocations {
+    font-size: 1em;
+    margin: 0em;
+    padding: 0em;
+}
+
+.rowEven {
+    background: #FFFFCC;
+    border-bottom: #000000 1px dotted;
+    padding: 0.3em;
+}
+
+.rowOdd {
+    border-bottom: #000000 1px dotted;
+    padding: 0.3em;
+}
+
+.feedImage {
+    border: none;
+}
+
+.externaLink {
+    border: none;
+    vertical-align: middle;
+}
+
+#event-bread-crumb {
+    font-size: 1.1em;
+    text-align: center;
+}
+
+#event-title {
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.videoImage {
+    vertical-align: bottom;
+}
+
+#player {
+    border: solid 1px 1px 0px 1px #000000;
+    margin: 1px;
+    padding: 0;
+    text-align: center;
+}
+
+#player-container {
+    text-align: center;
+}
+
+.controller {
+    border: none;
+    vertical-align: bottom;
+}
+
+#place-nav {
+    text-align: center;
+}
+
+#place-details h3 {
+    text-align: center;
+}
+
+#person-nav {
+    text-align: center;
+}
+
+.crew-facet {
+    font-size: 0.9em;
+    margin: 1em;
+}
+
+.crew-facet-list {
+    padding: 0em;
+    margin: 0.5em;
+    margin-left: 0em;
+
+}
+
+.crew-facet-list-item {
+    list-style-type: none;
+    margin: 0em;
+    padding-left: 0em;
+}
+
+.crew-facet-list-item a:link, .crew-facet-list-item a:visited, .crew-facet-list-item a:active {
+    color: blue;
+    text-decoration: none;
+}
+
+.crew-facet-list-item a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.crew-facet form {
+	padding-left: 1.5em;
+}
+
+.crew-facet input {
+	font-size: 0.9em;
+}
+
+.crew-facet input[type=text] {
+	width: 10em;
+}
+
+#facetNavigation h5 {
+    font-size: 1.1em;
+    padding: 0em;
+    margin: 0em;
+}
+
+#facetNavigation ul {
+    margin-top: 0.2em;
+    padding-left: 1.5em;
+}
+
+.current-facet {
+    font-style: italic;
+}
+
+.ical {
+    vertical-align: bottom;
+    border: none;
+}
+
+ul.pagination {
+    list-style: none;
+    display: inline;
+    padding: 0em;
+    margin: 0em;
+    border: none;
+}
+
+li.pagination {
+    list-style: none;
+    display: inline;
+    padding: 0.1em 0.2em 3em 0.2em;
+    margin: 0em;
+    border: none;
+}
+
+.pagination-bottom {
+    margin-top: 1em;
+    text-align: center;
+}
+
+#annotations-title {
+    color: #003;
+    clear:both;
+    display:inline;
+    float:left;
+    font-size:large;
+    font-weight:bold;
+    margin:0;
+    padding:1em 0 0;
+    width:100%;
+}
+
+.annotation-entry {
+    padding-top: 0.4em;
+    padding-bottom: 1.5em;
+    clear: both;
+}
+
+#annotations-results {
+    /* border-bottom: darkgray dashed 1px; */
+}
+
+.annotation-entry-title-public {
+    font-weight: bold;
+}
+
+.annotation-entry-title-private {
+    font-weight: bold;
+}
+
+.annotation-entry-description {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    line-height:1.5em;
+}
+
+.annotation-entry-created {
+    font-style: italic;
+    float: left;
+}
+
+#annotation-note {
+    clear:both;
+    float:left;
+    line-height:1.5em;
+    padding:2em 0 2em 0;
+    width:100%;
+}
+
+.fieldSet {
+    margin-top: 1em;
+}
+
+.fieldSet legend {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#annotation-messages {
+    font-style: italic;
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.annotation-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.user-management-container {
+    padding: 1em;
+    width: 45em;
+}
+
+.user-management-message, .user-management-nav, .user-management-error, .user-management-pag {
+    text-align: center;
+}
+
+.journeysharers-submission-container {
+    padding: 1em;
+    width: 45em;
+}
+
+.journeysharers-select-container {
+    padding: 1em;
+    width: 45em;
+}
+
+#journeyReqContent {
+    margin-top: 3em;
+}
+
+.journeyMessage {
+    color: #660C66;
+    font-weight: bold;
+}
+
+.list-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.list-table td {
+    text-align: left;
+
+}
+
+.list-table thead td {
+    color: white;
+}
+
+.list-header {
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: #369;
+    text-align: left;
+    color: white;
+}
+
+.list-body {
+    font-size: 0.8em;
+}
+
+.list-body tr {
+    border-bottom: lightgray 1px;
+}
+
+.alt-row {
+    background-color: #E3E5E5;
+}
+
+.details-table {
+    font-size: 0.8em;
+}
+
+.harvester-management-container {
+    padding: 1em;
+    width: 55em;
+}
+
+#sparql-results-table {
+    border: #000000 solid 1px;
+}
+
+#sparql-results-table-header {
+    background-color: burlywood;
+}
+
+.anno-src {
+    margin-left: 5em;
+    font-size: 80%;
+}
+
+.search-hit {
+    font-weight: bold;
+}
+
+/* Jisc Digital Media style */
+#peopleBtn {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#D43C00 url(http://www.jiscdigitalmedia.ac.uk/images/site/adviceHdr.gif) repeat-x scroll 0 0;
+}
+#peopleBtn:hover {
+    -moz-background-clip:border;
+    -moz-background-inline-policy:continuous;
+    -moz-background-origin:padding;
+    background:#FE6D01 url(/images/site/adviceHdron.gif) repeat-x scroll 0 0;
+}
+.jdmResultDetails {
+    float:left;
+    font-family:Arial,Helvetica,Verdana,Geneva,sans-serif;
+    font-size:0.8125em;
+    font-weight: bold;
+    height:2em;
+    padding-left:1.3em;
+    padding-top:0.4em;
+}
+
+.accountLinksBox {
+    padding: 1em;
+}
+.accountLinksBox a {
+    text-decoration: none;
+}
+.accountLinksBox a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#accountLinks {
+
+}
+
+.colRight {
+    width: 660px;
+    height: 600px;
+    margin-left: 310px;
+}
+
+.geCalloutBox {
+    float:left;
+    padding-bottom:1em;
+    width:268px;
+    margin-bottom: 5px;
+}
+
+#mapCol {
+    float: left;
+}
+
+.map h1 {
+    color: #FFFFFF;
+    float: left;
+    font-size: 1.6em;
+    font-weight: normal;
+    padding: 0.3em 0 0.5em 1em;
+    margin: 0 auto;
+    width: 37em;
+}
+
+#mapContainer {
+    margin-top: 1em;
+}
+
+#routeContainer {
+    float: left;
+    margin-top: 1em;
+}
+
+#mapDivRight {
+    border: solid grey;
+    border-width: 1px;
+    width: 660px;
+    height: 600px;
+    margin-left: 310px;
+}
+
+#mapDivCentre {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 400px;
+}
+
+#mapDivLeft {
+    float: left;
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 450px;
+    height: 300px;
+}
+
+#mapDivTop {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 300px;
+}
+
+#streetViewRight {
+    border: solid grey;
+    border-width: 1px;
+    width: 450px;
+    height: 350px;
+    margin-left: 460px;
+}
+
+#streetViewCentre {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 350px;
+}
+
+#streetViewBottom {
+    border: solid grey;
+    border-width: 1px;
+    margin: 1em 0;
+    width: 100%;
+    height: 300px;
+}
+
+.leftMargin {
+    float:left;
+    width: 300px;
+}
+
+#routeLinks {
+}
+
+.travelfootprint {
+    margin-top: 1em;
+}
+
+.travelfootprint span {
+    /* color:#333333; */
+    /* font-size:0.8125em; */
+}
+
+#routeDirections {
+    margin-top: 1em;
+    /*border: solid grey;
+    border-width: 1px;*/
+    padding: 2px;
+}
+
+/* Repository input */
+.error {
+    font-weight: bold;
+}

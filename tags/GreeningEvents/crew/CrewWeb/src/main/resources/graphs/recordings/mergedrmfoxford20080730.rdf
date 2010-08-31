@@ -1,0 +1,1658 @@
+<rdf:RDF
+        xmlns:coakting="http://www.aktors.org/coakting/ontology/meeting-20040304-1#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:memetic="http://www.memetic-vre.net/ontologies/memetic-20050106-1#"
+        xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:j.0="http://xmlns.com/wordnet/1.6/"
+        xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:support="http://www.aktors.org/ontology/support#"
+        xmlns:foaf="http://xmlns.com/foaf/0.1/"
+        xmlns:crew="http://www.crew-vre.net/ontology#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:portal="http://www.aktors.org/ontology/portal#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:pos="http://www.w3.org/2003/01/geo/wgs84_pos#" >
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215413342272796534702</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-marsh"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:02:31+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:02:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">6204960</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">46729</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">35</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">22990668</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:02:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4059633539</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">280446</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1254</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">243026255</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:02:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4059631649</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">470779</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1784</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">435897438</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:02:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4059640919</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">46336</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">99</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">34204755</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T09:15:47+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215413342272796534702/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215413342272796534702/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215168409688944930690</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-carr"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:47:33+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654185867"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654190558"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654190557"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654186446"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654186447"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654187420"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654187421"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654185867">
+        <crew:has-ssrc>3654185867</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">29395200</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">35286</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">17360712</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654190558">
+        <crew:has-ssrc>3654190558</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:47:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3823328957</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2381</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">104</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1980630</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654190557">
+        <crew:has-ssrc>3654190557</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3632760437</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">26497</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">296</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">16548480</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654186446">
+        <crew:has-ssrc>3654186446</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3632749997</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">287901</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1498</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">260045477</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654186447">
+        <crew:has-ssrc>3654186447</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:47:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3823321757</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">17716</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">27</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">16421602</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654187420">
+        <crew:has-ssrc>3654187420</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3632749187</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">282265</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">200</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">252590897</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654187421">
+        <crew:has-ssrc>3654187421</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:45:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:47:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3823321127</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">25537</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">43</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">24137880</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:10:38+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654187420"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215168409688944930690/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215168409688944930690/stream/3654190557"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215417756151378984706</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-geneletti"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:30:54+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:30:54+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">143473920</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">29152</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">14342784</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:30:54+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1308854293</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">128474</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">113</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">105262164</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:30:54+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1308856183</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">228108</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">334</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">205882001</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:30:54+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1308863113</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">25828</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">10</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">16915310</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:01:44+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417756151378984706/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417756151378984706/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215187136156697095700</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-neale"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:36:09+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:36:09+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">232819680</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">35210</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">29</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">17323320</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:36:09+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3090441345</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30333</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">107</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20699152</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:36:09+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3090434055</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">401691</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">986</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">371610315</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:36:09+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3090432795</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">370604</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">917</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">342854294</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T17:00:56+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215187136156697095700/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215187136156697095700/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215420337205598891711</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-molitor"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T10:39:32+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890560176"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890562409"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890560960"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890565598"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890560176">
+        <crew:has-ssrc>3890560176</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T10:39:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">31537920</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">44858</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">12</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">22070136</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890562409">
+        <crew:has-ssrc>3890562409</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T10:39:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3455711517</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">318793</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">339</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">282478132</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890560960">
+        <crew:has-ssrc>3890560960</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T10:39:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3455712057</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">459119</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">204</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">426580569</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890565598">
+        <crew:has-ssrc>3890565598</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T10:39:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3455726457</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">46923</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">46</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">32893204</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:54:40+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890562409"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420337205598891711/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420337205598891711/stream/3890565598"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215185500714578301699</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-hammersley"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:59:33+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:59:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">206041920</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">54363</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">65</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">26746596</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:59:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2789204595</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40483</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">103</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">24236863</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:59:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2789200185</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">652740</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1938</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">606351599</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:59:33+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2789200545</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">645699</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2905</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">602577820</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T16:05:09+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215185500714578301699/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215185500714578301699/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215414928871371359704</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-lambert"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:06+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:06+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">64843680</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">41161</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">23</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20251212</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:06+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">424316203</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">264623</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">991</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">232094023</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:06+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">424314583</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">452803</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2188</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">421310610</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:06+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">424326013</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40756</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">138</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28690356</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:17:56+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414928871371359704/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414928871371359704/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>121516736952124648686</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session6-dicks"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:09:26+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654185867"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654190557"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654186446"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654187420"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654185867">
+        <crew:has-ssrc>3654185867</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:09:26+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">9552960</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40132</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">17</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">19744944</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654190557">
+        <crew:has-ssrc>3654190557</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:09:26+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3409550357</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">37126</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">614</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">25782498</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654186446">
+        <crew:has-ssrc>3654186446</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:09:26+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3409543067</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">282479</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">844</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">250892548</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654187420">
+        <crew:has-ssrc>3654187420</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T16:09:26+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3409543517</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">263602</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">339</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">231085188</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-06-30T15:29:18+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654187420"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/121516736952124648686/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/121516736952124648686/stream/3654190557"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215419883605357799709</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-ananiadou"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:31:46+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:31:46+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">221546400</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">47388</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">9</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">23314896</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:31:46+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2187118483</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">228215</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">169</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">190716951</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:31:46+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2187116863</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">344430</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">840</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">307644158</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T17:31:46+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2187116773</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">45173</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">62</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">31217323</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:44:23+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215419883605357799709/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215419883605357799709/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215422473661849830713</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-antaki"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:51:01+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890560176"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890562409"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890560960"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890565598"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890560176">
+        <crew:has-ssrc>3890560176</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:51:01+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95200320</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">43666</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">109</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">21483672</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890562409">
+        <crew:has-ssrc>3890562409</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:51:01+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4171872117</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">295484</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">823</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">260294742</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890560960">
+        <crew:has-ssrc>3890560960</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:51:01+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4171868157</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">535292</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">465</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">503374732</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890565598">
+        <crew:has-ssrc>3890565598</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:51:01+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4171877697</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">59211</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">228</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">45691803</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:07:18+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890562409"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215422473661849830713/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215422473661849830713/stream/3890565598"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215414189781344772703</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-jones"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:47:08+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:47:08+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28886880</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">44102</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">21698184</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:47:08+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">19821553</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">265417</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">509</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">230096296</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:47:08+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">19819843</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">453723</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">897</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">420644253</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:47:08+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">19834603</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40941</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">44</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28763323</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T10:03:02+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215414189781344772703/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215414189781344772703/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215181606408382542696</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-prosser"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:51:32+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:51:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">149424960</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">44245</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">170</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">21768540</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:51:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2152297815</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">39654</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">114</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">27144734</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:51:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2152286025</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">350448</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1094</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">313767544</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:51:32+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2152285125</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">493586</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1237</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">458441751</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:07:12+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215181606408382542696/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215181606408382542696/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215175570706588346694</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-halfpenny"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:56:38+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:56:38+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">67166400</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40781</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">31</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20064252</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:56:38+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1226924655</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">41614</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">74</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">29296537</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:56:38+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1226918535</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">408952</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">652</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">375236237</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:56:38+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1226917725</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">391247</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">563</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">361687075</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T11:15:50+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215175570706588346694/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215175570706588346694/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215418373854162233707</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-savage"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T15:23:35+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T15:23:35+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">157888320</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">51820</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">25495440</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T15:23:35+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1471004863</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">232258</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">162</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">190763411</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T15:23:35+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1471003243</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">567468</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">784</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">527389196</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T15:23:35+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1471013413</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">59540</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">55</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">44567830</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T14:31:46+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418373854162233707/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418373854162233707/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215417257143390291705</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session29-longley"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:37:56+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:37:56+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">85007040</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">38000</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">8</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">18696000</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:37:56+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">651141313</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">202847</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">350</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">172806226</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:56+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:37:56+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">651139963</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">374445</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">546</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">343803560</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:57+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T12:37:56+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">651151933</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">81659</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">110</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">73315844</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T11:59:56+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215417257143390291705/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215417257143390291705/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215418535236915085708</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session39-woodruff"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:43:42+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804992294"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804994664"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804993251"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804997681"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804992294">
+        <crew:has-ssrc>3804992294</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:43:42+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">200306400</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">43562</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">21432504</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804994664">
+        <crew:has-ssrc>3804994664</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:43:42+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1948190623</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">174247</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">178</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">139534435</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804993251">
+        <crew:has-ssrc>3804993251</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:43:42+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1948192603</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">365216</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">855</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">330903985</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804997681">
+        <crew:has-ssrc>3804997681</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:43:42+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1948200883</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">35832</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">22516788</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-02T16:00:08+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804994664"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215418535236915085708/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215418535236915085708/stream/3804997681"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215183783270192134697</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session18-squire"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T15:34:15+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T15:34:15+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">171576960</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">40805</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">169</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20076060</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T15:34:15+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2401484415</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">36308</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">197</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">23735009</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T15:34:15+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2401477305</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">447354</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2558</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">412058493</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T15:34:15+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2401475865</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">491738</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">2405</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">459399982</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T14:53:21+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215183783270192134697/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215183783270192134697/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215173415873296605692</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session8-charmaz"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:44:31+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718176457"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718181928"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718178463"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718177304"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718176457">
+        <crew:has-ssrc>3718176457</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:44:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">31205760</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">43582</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">14</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">21442344</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718181928">
+        <crew:has-ssrc>3718181928</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:44:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">822381675</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">49738</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">38834671</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718178463">
+        <crew:has-ssrc>3718178463</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:44:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">822377175</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">304785</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">254</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">270269129</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718177304">
+        <crew:has-ssrc>3718177304</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:44:31+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">822376275</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">486714</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">348</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">455045793</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-01T10:00:55+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718178463"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215173415873296605692/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215173415873296605692/stream/3718181928"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215420058754909984710</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-trapala"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:53:24+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890560176"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890562409"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890560960"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890565598"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890560176">
+        <crew:has-ssrc>3890560176</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:53:23+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">13009440</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">37161</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">309</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">18283212</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890562409">
+        <crew:has-ssrc>3890562409</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:53:24+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3247275477</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">327254</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3061</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">296314831</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890560960">
+        <crew:has-ssrc>3890560960</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:53:24+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3247271067</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">362789</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">962</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">335839370</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890565598">
+        <crew:has-ssrc>3890565598</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:53:24+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3247278627</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">31998</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">102</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20844931</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T09:16:04+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890562409"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215420058754909984710/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215420058754909984710/stream/3890565598"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Recording"/>
+        <crew:has-id>1215421798074243891712</crew:has-id>
+        <crew:is-recording-of rdf:resource="http://www.crew_vre.net/events#rmf-2008-06-30-session50-ragin"/>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:06:18+01:00</crew:has-end-time>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890560176"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890562409"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890560960"/>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890565598"/>
+        <crew:has-layout rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890560176">
+        <crew:has-ssrc>3890560176</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:06:18+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">71738880</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">47818</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">137</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">23526456</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890562409">
+        <crew:has-ssrc>3890562409</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:06:18+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3907943607</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">449681</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1656</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">409856128</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890560960">
+        <crew:has-ssrc>3890560960</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:06:18+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3907943787</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">532923</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">698</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">499133666</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890565598">
+        <crew:has-ssrc>3890565598</crew:has-ssrc>
+        <crew:has-start-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-start-time>
+        <crew:has-end-time rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T12:06:18+01:00</crew:has-end-time>
+        <crew:has-first-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3907953597</crew:has-first-timestamp>
+        <crew:has-packets-seen rdf:datatype="http://www.w3.org/2001/XMLSchema#long">46427</crew:has-packets-seen>
+        <crew:has-packets-missed rdf:datatype="http://www.w3.org/2001/XMLSchema#long">188</crew:has-packets-missed>
+        <crew:has-bytes rdf:datatype="http://www.w3.org/2001/XMLSchema#long">34279062</crew:has-bytes>
+        <crew:has-rtp-type rdf:datatype="http://www.w3.org/2001/XMLSchema#int">77</crew:has-rtp-type>
+        <crew:has-cname>ag@crew</crew:has-cname>
+        <crew:has-email>jmf-user@sun.com</crew:has-email>
+        <crew:has-tool>JMF RTP Player v2.0</crew:has-tool>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault">
+        <rdf:type rdf:resource="http://www.crew-vre.net/ontology#Layout"/>
+        <crew:has-name>CrewDefault</crew:has-name>
+        <crew:has-timestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2008-07-03T11:18:25+01:00</crew:has-timestamp>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault/position/Video"/>
+        <crew:has-layout-position rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault/position/Screen"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault/position/Video">
+        <crew:has-name>Video</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890562409"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.crew-vre.net/recordings/1215421798074243891712/layout/0/CrewDefault/position/Screen">
+        <crew:has-name>Screen</crew:has-name>
+        <crew:has-stream rdf:resource="http://www.crew-vre.net/recordings/1215421798074243891712/stream/3890565598"/>
+    </rdf:Description>
+</rdf:RDF>
