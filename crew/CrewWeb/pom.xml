@@ -29,6 +29,15 @@
                 <filter.location>src/main/filters/deployment.properties</filter.location>
             </properties>
         </profile>
+        <profile>
+            <id>tc-prod0</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <filter.location>src/main/filters/tc-prod0.properties</filter.location>
+            </properties>
+        </profile>
     </profiles>
     <repositories>
         <!-- ILRT maven repo -->
@@ -216,7 +225,8 @@
         <dependency>
             <groupId>rome</groupId>
             <artifactId>rome</artifactId>
-            <version>0.9</version>
+            <!-- <version>0.9</version> -->
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -237,7 +247,7 @@
         <dependency>
             <groupId>org.ilrt.dibden</groupId>
             <artifactId>dibden</artifactId>
-            <version>0.4</version>
+            <version>0.5-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>asm</groupId>
@@ -424,6 +434,13 @@
             <artifactId>ehcache</artifactId>
             <version>1.5.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>GreeningEvents</groupId>
+            <artifactId>GreenRepository</artifactId>
+            <version>0.1</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 </project>
+
+

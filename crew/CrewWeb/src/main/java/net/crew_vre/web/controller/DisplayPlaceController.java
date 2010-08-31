@@ -33,14 +33,17 @@
  */
 package net.crew_vre.web.controller;
 
+import java.util.List;
 import net.crew_vre.events.domain.Place;
 import net.crew_vre.web.facade.DisplayPlaceFacade;
 import net.crew_vre.web.history.BrowseHistory;
+import net.crew_vre.events.domain.StartPoint;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.crew_vre.events.domain.KmlObject;
 
 /**
  * @author Mike Jones (mike.a.jones@bristol.ac.uk)
@@ -49,19 +52,25 @@ import javax.servlet.http.HttpServletResponse;
 public class DisplayPlaceController implements Controller {
 
     public DisplayPlaceController(DisplayPlaceFacade displayPlaceFacade, BrowseHistory
-            browseHistory, String googleMapKey) {
+            browseHistory) {
         this.displayPlaceFacade = displayPlaceFacade;
         this.browseHistory = browseHistory;
-        this.googleMapKey = googleMapKey;
     }
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
         Place place = null;
+        List<StartPoint> startPoints = null;
+        List<KmlObject> kmlObjects = null;
 
         if (request.getParameter("placeId") != null) {
             place = displayPlaceFacade.displayPlace(request.getParameter("placeId"));
+        }
+
+        if (request.getParameter("eventId") != null) {
+            startPoints = displayPlaceFacade.getStartPoints(request.getParameter("eventId"));
+            kmlObjects = displayPlaceFacade.getKmlObjects(request.getParameter("eventId"));
         }
 
         if (place != null) {
@@ -69,15 +78,19 @@ public class DisplayPlaceController implements Controller {
         }
 
         ModelAndView mov = new ModelAndView("displayPlace");
+        // Pass event details back for use in nav link
+        mov.addObject("eventId", request.getParameter("eventId"));
+        mov.addObject("eventTitle", request.getParameter("eventTitle"));
         mov.addObject("place", place);
-        mov.addObject("googleMapKey", googleMapKey);
+        if (startPoints != null)
+            mov.addObject("startPointList", startPoints);
+        if (kmlObjects != null)
+            mov.addObject("kmlList", kmlObjects);
 
         return mov;
     }
 
     private DisplayPlaceFacade displayPlaceFacade;
-
-    private String googleMapKey;
 
     private BrowseHistory browseHistory;
 

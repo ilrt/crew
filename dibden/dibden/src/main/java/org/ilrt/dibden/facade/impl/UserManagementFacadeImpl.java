@@ -75,12 +75,12 @@ public class UserManagementFacadeImpl implements UserManagementFacade {
         return userDao.findUserByEmail(email) != null;
     }
 
-    public User registerUser(String username, String password, String name, String email) {
+    public User registerUser(String username, String password, String name, String email, String postcode) {
 
         String passwd = HashUtility.generateHash(password, digestAlgorithm);
 
         Group group = groupDao.findGroup("USER_GROUP");
-        return userDao.createUser(username, passwd, name, email, true, group);
+        return userDao.createUser(username, passwd, name, postcode, email, true, group);
     }
 
     public boolean validatePassword(String username, String password) {
@@ -151,13 +151,14 @@ public class UserManagementFacadeImpl implements UserManagementFacade {
         userDao.deleteUser(username);
     }
 
-    public void updateUser(String username, String name, String email) {
+    public void updateUser(String username, String name, String email, String postcode) {
 
         User user = userDao.findUser(username);
 
         if (user != null) {
             user.setName(name);
             user.setEmail(email);
+            user.setPostcode(postcode);
             userDao.updateUser(user);
         }
     }

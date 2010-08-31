@@ -63,6 +63,26 @@ public class Place extends PlacePart {
     private Float altitude;
 
     /**
+     * A description of the location for inserting into a Google InfoWindow - may include html tags
+     */
+    private String locationDescription;
+
+    /**
+     * A URL connected with the location
+     */
+    private String locationUrl;
+
+    /**
+     * URL of a thumbnail images associated with the location
+     */
+    private String locationThumbUrl;
+
+    /**
+     * URL for further images associated with the location
+     */
+    private String locationImagesUrl;
+
+    /**
      * List of other places that this place might hold.
      */
     private Set<Place> places = new HashSet<Place>();
@@ -91,6 +111,38 @@ public class Place extends PlacePart {
 
     public void setAltitude(final Float altitude) {
         this.altitude = altitude;
+    }
+
+    public String getLocationDescription() {
+        return locationDescription;
+    }
+
+    public void setLocationDescription(String locationDescription) {
+        this.locationDescription = locationDescription;
+    }
+
+    public String getLocationUrl() {
+        return locationUrl;
+    }
+
+    public void setLocationUrl(String locationUrl) {
+        this.locationUrl = locationUrl;
+    }
+
+    public String getLocationThumbUrl() {
+        return locationThumbUrl;
+    }
+
+    public void setLocationThumbUrl(String locationThumbUrl) {
+        this.locationThumbUrl = locationThumbUrl;
+    }
+
+    public String getLocationImagesUrl() {
+        return locationImagesUrl;
+    }
+
+    public void setLocationImagesUrl(String locationImagesUrl) {
+        this.locationImagesUrl = locationImagesUrl;
     }
 
     public Set<Place> getLocations() {

@@ -34,12 +34,14 @@
             <security:authorize ifAllGranted="ROLE_ADMIN">
                 <p><fmt:message key="admin.nav.msg"/></p>
                 <ul>
+                    <li><a href="./registration.do">Register new user</a></li>
                     <li><a href="./secured/admin/listUsers.do"><fmt:message key="admin.nav.list.users"/></a></li>
                     <li><a href="./secured/admin/listRoles.do"><fmt:message key="admin.nav.list.roles"/></a></li>
-                    <li><a href="./secured/admin/listGroups.do"><fmt:message key="admin.nav.list.groups"/></a>
-                    </li>
+                    <li><a href="./secured/admin/listGroups.do"><fmt:message key="admin.nav.list.groups"/></a></li>
+                    <li><a href="./secured/repository/listRepositoryEvents.do"><fmt:message key="admin.nav.list.events"/></a></li>
                     <li><a href="./secured/admin/addGroup.do"><fmt:message key="admin.nav.add.group"/></a></li>
                     <li><a href="./secured/admin/addRole.do"><fmt:message key="admin.nav.add.role"/></a></li>
+                    <li><a href="./secured/repository/addRepositoryEventWizard.do"><fmt:message key="admin.nav.add.event"/></a></li>
                     <li><a href="./secured/admin/sparql.do"><fmt:message key="admin.nav.sparql"/></a></li>
 					<li><a href="./secured/admin/reindex.do"><fmt:message key="admin.nav.reindex"/></a></li>
                 </ul>

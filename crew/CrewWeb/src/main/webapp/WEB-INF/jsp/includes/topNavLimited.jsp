@@ -4,9 +4,13 @@
 <div id="headerContainer">
 
     <%-- the logo --%>
-    <%@ include file="headerLogo.jsp" %>
+    <%-- <%@ include file="headerLogo.jsp" %> --%>
 
     <%-- the header links --%>
+    <div id="headerLinks">
+    <ul>
     <%@ include file="headerLinks.jsp" %>
+    </ul>
+    </div>
 
 </div>
