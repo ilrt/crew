@@ -12,8 +12,12 @@
     <head>
         <title><fmt:message key="repository.edit.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    </head>
 
+        <%-- Script for Google map lat long finder --%>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/localEventRouteMaps.js"></script>
+    </head>
+    <body>
 <div id="container">
 
     <%-- banner navigation--%>
@@ -68,6 +72,14 @@
                             </td>
                         </tr>
                         <tr>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_1',1)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 1</p>
+                                <div id="map_canvas_1" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
                             <td><form:input size="30" path="startPoint2"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
@@ -95,6 +107,14 @@
                                 <form:errors path="waypointLat2_2"/>
                                 <form:errors path="waypointLong2_2"/>
                                 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_2',2)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 2</p>
+                                <div id="map_canvas_2" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                             </td>
                         </tr>
                         <tr>
@@ -127,6 +147,14 @@
                                 </span>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_3',3)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 3</p>
+                                <div id="map_canvas_3" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
                     </table>
                     <p>
                         <input type="submit" name="_target3" value='Edit KML overlays'/>
@@ -143,3 +171,5 @@
 
     <%-- the logo banner --%>
 <%@ include file="includes/footer.jsp" %>
+    </body>
+</html>
