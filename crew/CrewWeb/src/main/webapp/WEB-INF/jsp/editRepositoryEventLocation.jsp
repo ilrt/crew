@@ -12,8 +12,12 @@
     <head>
         <title><fmt:message key="repository.edit.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    </head>
 
+        <%-- Script for Google map lat long finder --%>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/localEventLocationMap.js"></script>
+    </head>
+        <body>
 <div id="container">
 
     <%-- banner navigation--%>
@@ -49,6 +53,9 @@
                             </td>
                         </tr>
                     </table>
+                    <!-- Google map here -->
+                    <p onclick="toggleMap('map_canvas')" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</p>
+                    <div id="map_canvas" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                     <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr>
                             <td><strong><fmt:message key="repository.eventLocationDescription"/></strong></td>
@@ -86,3 +93,5 @@
 
     <%-- the logo banner --%>
 <%@ include file="includes/footer.jsp" %>
+        </body>
+</html>

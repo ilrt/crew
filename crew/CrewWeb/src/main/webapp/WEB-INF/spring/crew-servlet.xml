@@ -46,8 +46,6 @@
         <constructor-arg index="3" ref="personFacets"/>
     </bean>
 
-    <!-- find journey sharers -->
-
     <bean name="/secured/findJourneySharers.do" id="findJourneySharersController"
           class="net.crew_vre.web.controller.FindJourneySharersController">
         <constructor-arg index="0" ref="userManagementFacade"/>

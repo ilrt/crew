@@ -13,7 +13,7 @@
         <title><fmt:message key="repository.edit.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     </head>
-
+    <body>
 <div id="container">
 
     <%-- banner navigation--%>
@@ -78,3 +78,5 @@
 
     <%-- the logo banner --%>
 <%@ include file="includes/footer.jsp" %>
+    </body>
+</html>
