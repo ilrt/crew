@@ -39,7 +39,15 @@
                 <form:form method="post" action="./addRepositoryEventWizard.do" commandName="repositoryEventForm">
                         <%-- Startpoint details --%>
                         <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
-                            <tr><td colspan="6"><h2>Create routes from a start point lat-long</h2></td></tr>
+                            <tr><td colspan="7"><h2>Create routes from a start point lat-long</h2></td></tr>
+                        <tr>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_1',1)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 1</p>
+                                <div id="map_canvas_1" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
                         <tr>
                             <td style="width:15%"><strong><fmt:message key="repository.eventStartPoint1"/></strong></td>
                             <td><form:input size="30" path="startPoint1"/></td>
@@ -73,9 +81,9 @@
                         <tr>
                             <td colspan="7">
                                 <!-- Google map here -->
-                                <p><span onclick="toggleMap('map_canvas_1',1)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
-                                for Start point 1</p>
-                                <div id="map_canvas_1" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                                <p><span onclick="toggleMap('map_canvas_2',2)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 2</p>
+                                <div id="map_canvas_2" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                             </td>
                         </tr>
                         <tr>
@@ -111,9 +119,9 @@
                         <tr>
                             <td colspan="7">
                                 <!-- Google map here -->
-                                <p><span onclick="toggleMap('map_canvas_2',2)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
-                                for Start point 2</p>
-                                <div id="map_canvas_2" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                                <p><span onclick="toggleMap('map_canvas_3',3)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 3</p>
+                                <div id="map_canvas_3" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                             </td>
                         </tr>
                         <tr>
@@ -144,14 +152,6 @@
                                 <form:errors path="waypointLat3_2"/>
                                 <form:errors path="waypointLong3_2"/>
                                 </span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="7">
-                                <!-- Google map here -->
-                                <p><span onclick="toggleMap('map_canvas_3',3)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
-                                for Start point 3</p>
-                                <div id="map_canvas_3" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                             </td>
                         </tr>
                     </table>
