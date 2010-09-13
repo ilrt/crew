@@ -12,8 +12,12 @@
     <head>
         <title><fmt:message key="repository.edit.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    </head>
 
+        <%-- Script for Google map lat long finder --%>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/localEventRouteMaps.js"></script>
+    </head>
+    <body>
 <div id="container">
 
     <%-- banner navigation--%>
@@ -36,9 +40,17 @@
                     <form:hidden path="eventId"/>
                         <%-- Startpoint details --%>
                         <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
-                            <tr><td cols="6"><h3>Create route from a start point lat-long</h3></td></tr>
+                            <tr><td cols="7"><h3>Create route from a start point lat-long</h3></td></tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_1',1)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 1</p>
+                                <div id="map_canvas_1" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint1"/></strong></td>
                             <td><form:input size="30" path="startPoint1"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input size="30" path="startPointLat1"/></td>
@@ -52,11 +64,11 @@
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint1"/></strong></td>
                             <td>&nbsp;</td>
                             <td>Lat: <form:input size="30" path="waypointLat1_1"/><br/>
                             Long: <form:input size="30" path="waypointLong1_1"/><br/><br/></td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint2"/></strong></td>
                             <td>Lat: <form:input size="30" path="waypointLat1_2"/><br/>
                             Long: <form:input size="30" path="waypointLong1_2"/><br/><br/></td>
                             <td><span class="error">
@@ -68,7 +80,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_2',2)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 2</p>
+                                <div id="map_canvas_2" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint2"/></strong></td>
                             <td><form:input size="30" path="startPoint2"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input size="30" path="startPointLat2"/></td>
@@ -82,11 +102,11 @@
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint1"/></strong></td>
                             <td>&nbsp;</td>
                             <td>Lat: <form:input size="30" path="waypointLat2_1"/><br/>
                             Long: <form:input size="30" path="waypointLong2_1"/><br/><br/></td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint2"/></strong></td>
                             <td>Lat: <form:input size="30" path="waypointLat2_2"/><br/>
                             Long: <form:input size="30" path="waypointLong2_2"/><br/><br/></td>
                             <td><span class="error">
@@ -98,7 +118,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><strong><fmt:message key="repository.eventStartPoint"/></strong></td>
+                            <td colspan="7">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_3',3)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for Start point 3</p>
+                                <div id="map_canvas_3" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong><fmt:message key="repository.eventStartPoint3"/></strong></td>
                             <td><form:input size="30" path="startPoint3"/></td>
                             <td><strong><fmt:message key="repository.eventLatitude"/></strong></td>
                             <td><form:input size="30" path="startPointLat3"/></td>
@@ -112,11 +140,11 @@
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint1"/></strong></td>
                             <td>&nbsp;</td>
                             <td>Lat: <form:input size="30" path="waypointLat3_1"/><br/>
                             Long: <form:input size="30" path="waypointLong3_1"/></td>
-                            <td><strong><fmt:message key="repository.eventWaypoint"/></strong></td>
+                            <td><strong><fmt:message key="repository.eventWaypoint2"/></strong></td>
                             <td>Lat: <form:input size="30" path="waypointLat3_2"/><br/>
                             Long: <form:input size="30" path="waypointLong3_2"/></td>
                             <td><span class="error">
@@ -143,3 +171,5 @@
 
     <%-- the logo banner --%>
 <%@ include file="includes/footer.jsp" %>
+    </body>
+</html>

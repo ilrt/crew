@@ -12,8 +12,12 @@
     <head>
         <title><fmt:message key="repository.add.title"/></title>
         <style type="text/css" media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    </head>
 
+        <%-- Script for Google map lat long finder --%>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/js/localEventKMLMaps.js"></script>
+    </head>
+    <body>
 <div id="container">
 
     <%-- banner navigation--%>
@@ -37,6 +41,14 @@
                     <table class="details-table" style="border: 1px solid grey; padding: 3px; margin: 6px 0 6px 0">
                         <tr><td cols="4"><h3>Create route from a KML file</h3></td></tr>
                         <tr>
+                            <td colspan="4">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_1',1)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for route 1</p>
+                                <div id="map_canvas_1" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <strong>Route title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
                                 <form:input size="30" path="kmlTitle1"/><br/><br/>
@@ -59,6 +71,14 @@
                             </td>
                         </tr>
                         <tr>
+                            <td colspan="4">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_2',2)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for route 2</p>
+                                <div id="map_canvas_2" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
+                            </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <strong>Route title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>
                                 <form:input size="30" path="kmlTitle2"/><br/><br/>
@@ -78,6 +98,14 @@
                                 <form:errors path="kmlType2"/>
                                 <form:errors path="kmlXml2"/>
                                 </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <!-- Google map here -->
+                                <p><span onclick="toggleMap('map_canvas_3',3)" style="text-decoration:underline; color: -webkit-link; cursor: pointer">Click to toggle lat/long map</span>
+                                for route 3</p>
+                                <div id="map_canvas_3" style="display: none; width: 600px; height: 400px; border-style: solid; border-width: 1px"></div>
                             </td>
                         </tr>
                         <tr>
@@ -117,3 +145,5 @@
 
     <%-- the logo banner --%>
 <%@ include file="includes/footer.jsp" %>
+    </body>
+</html>
