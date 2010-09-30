@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:pcv="http://jena.hpl.hp.com/2003/04/portal-config-vocab#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#" 
+    xmlns:iugo="http://www.ilrt.bristol.ac.uk/iugo" 
+    xmlns:eswc="http://www.eswc2006.org/technologies/ontology#"
+    xmlns:iugosubs="http://www.ilrt.bristol.ac.uk/iugo/subjects/#"
+    xml:base="http://www.ilrt.bristol.ac.uk/iugo">
+
+	<!--  event -->
+	<rdfs:Class rdf:ID="Event">
+		<rdfs:label xml:lang="en">Event</rdfs:label>
+	</rdfs:Class>
+
+	<!-- Used to identify the "main" event -->
+	<rdfs:Class rdf:ID="MainEvent">
+		<rdfs:label xml:lang="en">Main Event</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ilrt.bristol.ac.uk/iugo#Event"/>
+	</rdfs:Class>
+
+	<!-- Link an event to a subject -->
+	<rdf:Property rdf:ID="hasSubject">
+		<rdfs:domain rdf:resource="#MainEvent"/>
+		<rdfs:range rdf:resource="http://www.w3c.rl.ac.uk/2003/11/21-skos-core#Concept"/>
+	</rdf:Property>
+
+	<!-- Start date for main event - created by the closure rules -->
+	<rdf:Property rdf:ID="hasMainStartDate">
+		<rdfs:domain rdf:resource="#MainEvent"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</rdf:Property>
+	
+	<!-- Link an event to a location -->
+	<rdf:Property rdf:ID="hasLocation">
+		<rdfs:domain rdf:resource="http://www.eswc2006.org/technologies/ontology#Event"/>
+		<rdfs:range rdf:resource="http://www.w3c.rl.ac.uk/2003/11/21-skos-core#Concept"/>
+	</rdf:Property>
+
+    <!-- Force the workshop higher -->
+    <!--
+    <rdfs:Class rdf:about="http://www.eswc2006.org/technologies/ontology#WorkshopEvent">
+    		<rdfs:label>Workshop Events</rdfs:label>
+    		<pcv:order rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</pcv:order>
+    </rdfs:Class>
+    -->
+    
+	<!-- Define suproperty to foaf:homepage -->
+	<rdf:Property rdf:ID="flickrHomepage">
+		<rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/homepage" />
+	</rdf:Property>
+	
+
+	
+	<!-- Used to identify a company as a subclass of foaf:Organization -->
+	<rdfs:Class rdf:ID="Company">
+		<rdfs:label xml:lang="en">Company</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+	</rdfs:Class>
+	
+	<!-- Used to identify an Educational Organisation as a subclass of foaf:Organization -->
+	<rdfs:Class rdf:ID="EducationalOrg">
+		<rdfs:label xml:lang="en">Educational Organisation</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+	</rdfs:Class>
+
+    <!-- Define property to describe how a person may be affiliated to an organisation 
+   		 This general affiliation can be subproperty'd to express a specific type  
+   		 of affiliation such as 'employedBy' or 'visitingFellowAt' ... -->	
+	<rdf:Property rdf:ID="affiliatedOrg">
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+	</rdf:Property>
+	
+	<!-- Define property to link an employee to the organisation that employs them  -->
+	<rdf:Property rdf:ID="employedBy">
+		<rdfs:subPropertyOf rdf:resource="#affiliatedOrg" />
+	</rdf:Property>
+	
+	<!-- Define property to link an employee to the organisation that employs them  -->
+	<rdf:Property rdf:ID="visitingFellowAt">
+		<rdfs:subPropertyOf rdf:resource="#affiliatedOrg" />
+		<rdfs:range rdf:resource="#EducationalOrg"/>
+	</rdf:Property>
+
+	<!--  Retrievable Resource -->
+	<rdfs:Class rdf:ID="Retrievable">
+		<rdfs:label xml:lang="en">Retrievable Resource</rdfs:label>
+	</rdfs:Class>
+	
+	<!-- Paper Author -->
+	<rdfs:Class rdf:ID="Author">
+		<rdfs:label xml:lang="en">Author</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/> 
+	</rdfs:Class>
+	
+	<rdf:Property rdf:ID="holdsRole">
+		<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+		<rdfs:range rdf:resource="http://www.eswc2006.org/technologies/ontology#Role"/>
+	</rdf:Property>
+	
+	<owl:Class rdf:ID="TutorialSession">
+     <rdfs:subClassOf rdf:resource="http://www.eswc2006.org/technologies/ontology#SessionEvent"/>
+     <rdfs:label>Tutorial Session</rdfs:label>
+   	</owl:Class>
+	
+</rdf:RDF>
+    
