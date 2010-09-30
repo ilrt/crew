@@ -34,7 +34,6 @@
 package org.ilrt.green_repository.web;
 
 import org.ilrt.green_repository.RepositoryEventManagementFacade;
-import org.ilrt.green_repository.domain.RepositoryEvent;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
@@ -74,7 +73,7 @@ public class ListRepositoryEventsController extends SimpleFormController {
 
         // add a new event
         if (listForm.getAddButton() != null) {
-            return new ModelAndView("redirect:./addRepositoryEvent.do");
+            return new ModelAndView("redirect:./addRepositoryEventWizard.do");
         } else {
 
             if (listForm.getEventId() != null) { // anything else needs an id
@@ -92,14 +91,10 @@ public class ListRepositoryEventsController extends SimpleFormController {
                             request.getServerPort() +
                             request.getContextPath() + "/" + repositoryLocation);
                     
-                } else if (listForm.getEditButton() != null) { // we want to edit an existing role - redirect to correct view
-                    if (listForm.getEventId() != null) {
-                        RepositoryEvent event = repositoryFacade.getRepositoryEvent(listForm.getEventId());
-                        RepositoryEventForm form = new RepositoryEventForm(event);
-                        ModelAndView mav = new ModelAndView("editRepositoryEvent");
-                        mav.addObject("repositoryEventForm", form);
-                        return mav;
-                    }
+                } else if (listForm.getEditButton() != null) { 
+                    // we want to edit an existing role - redirect to correct view
+                    ModelAndView mav = new ModelAndView("redirect:./editRepositoryEventWizard.do?eventId=" + listForm.getEventId());
+                    return mav;
                 }
             }
         }

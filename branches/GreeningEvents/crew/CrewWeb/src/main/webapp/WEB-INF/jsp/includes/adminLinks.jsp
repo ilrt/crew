@@ -7,4 +7,4 @@
     <a href="${pageContext.request.contextPath}/secured/repository/listRepositoryEvents.do"><fmt:message key="admin.nav.list.events"/></a> |
     <a href="${pageContext.request.contextPath}/secured/admin/addGroup.do"><fmt:message key="admin.nav.add.group"/></a> |
     <a href="${pageContext.request.contextPath}/secured/admin/addRole.do"><fmt:message key="admin.nav.add.role"/></a> ] |
-    <a href="${pageContext.request.contextPath}/secured/repository/addRepositoryEvent.do"><fmt:message key="admin.nav.add.event"/></a> ]</p>
+    <a href="${pageContext.request.contextPath}/secured/repository/addRepositoryEventWizard.do"><fmt:message key="admin.nav.add.event"/></a> ]</p>
