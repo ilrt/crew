@@ -63,7 +63,7 @@ public class EditUserController extends SimpleFormController {
             // we are updating user details
             if (userForm.getUpdateUser() != null) {
                 userManagementFacade.updateUser(userForm.getUsername(), userForm.getName(),
-                        userForm.getEmail());
+                        userForm.getEmail(), userForm.getPostcode());
             }
 
             // we are removing a group from the user
@@ -94,7 +94,7 @@ public class EditUserController extends SimpleFormController {
         List<Group> groups = userManagementFacade.getGroups();
 
         UserForm userForm = new UserForm(user.getUsername(), user.getName(),
-                user.getEmail(), user.getGroups(), groups);
+                user.getEmail(), user.getPostcode(), user.getGroups(), groups);
 
         ModelAndView mav = new ModelAndView("editUser");
 

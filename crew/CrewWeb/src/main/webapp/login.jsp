@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>CREW - Log In</title>
+    <title>Greening Events - Log In</title>
     <style type="text/css" media="screen">@import "./style.css";</style>
 </head>
 <body>
@@ -18,16 +18,10 @@
 
     <div id="headerLogo">
         <a href="./"><img
-                src="./images/crew-logo.png" alt="CREW Logo"
-                width="182" height="75"/></a>
-    </div>
-
-
-    <div id="headerLinks">
-        <ul>
-            <li><a href="./help.html">Help</a>&nbsp;|</li>
-            <li><a href="./about.html">About</a></li>
-        </ul>
+                src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif"
+                alt="JISC Digital Media Logo"
+                width="279" height="55"
+                style="margin-bottom: 2em"/></a>
     </div>
 
 </div>
@@ -35,7 +29,7 @@
 
 <div id="mainBody">
     <br/>
-    <fieldset>
+    <fieldset style="width: 400px">
         <label>Login Details</label>
 
         <form method="POST" action="j_spring_security_check">
@@ -57,7 +51,7 @@
 
             <p><input type="submit" value="Log In"/></p>
 
-            <p>If you don't have an account, please <a href="registration.do">register</a>.</p>
+            <%-- <p>If you don't have an account, please <a href="registration.do">register</a>.</p> --%>
 
             <p><a href="forgottenPassword.do">Forgotten your password?</a></p>
 
@@ -66,7 +60,7 @@
 </div>
 
 <div id="footer">
-    <p id="copyright">&copy; 2007-2009 University of Bristol and University of Manchester.</p>
+    <p id="copyright">&copy; 2007-2010 University of Bristol and University of Manchester.</p>
 </div>
 
 </body>

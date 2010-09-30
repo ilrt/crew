@@ -19,17 +19,28 @@
 <div id="container">
 
     <%-- banner navigation--%>
-    <%@ include file="includes/topNavLimited.jsp" %>
+    <%-- <%@ include file="includes/topNavLimited.jsp" %>  --%>
 
     <%-- the logo banner --%>
     <%--<%@ include file="includes/logo.jsp" %>--%>
+    <div id="headerContainer">
+
+        <div id="headerLogo">
+            <a href="./"><img
+                    src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif"
+                    alt="JISC Digital Media Logo"
+                    width="279" height="55"
+                    style="margin-bottom: 2em"/></a>
+        </div>
+
+    </div>
 
     <%-- The main content --%>
     <div id="mainBody">
 
         <form:form method="post">
 
-            <fieldset>
+            <fieldset style="width: 400px">
                 <legend><strong><fmt:message key="password.title"/></strong></legend>
 
                 <p>Please provide your email address:</p>

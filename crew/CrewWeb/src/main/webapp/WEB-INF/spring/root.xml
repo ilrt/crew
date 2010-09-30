@@ -56,6 +56,7 @@
                 <value>classpath:crew.properties</value>
                 <value>classpath:version.properties</value>
                 <value>classpath:events.properties</value>
+                <value>classpath:repository.properties</value>
                 <value>classpath:caboto.properties</value>
             </list>
         </property>
@@ -84,7 +85,6 @@
         <property name="maxWait" value="10000"/>
         <property name="maxIdle" value="5000"/>
     </bean>
-
 
     <bean id="db" class="org.caboto.jena.db.impl.DatasourceDatabase">
         <constructor-arg index="0" ref="eventsDataSource"/>
@@ -418,6 +418,26 @@
         </property>
     </bean>
 
+    <bean id="startPointDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="startPointDaoTarget"/>
+        <property name="proxyInterfaces" value="net.crew_vre.events.dao.StartPointDao"/>
+        <property name="interceptorNames">
+            <list>
+                <value>findAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="kmlObjectDao" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="kmlObjectDaoTarget"/>
+        <property name="proxyInterfaces" value="net.crew_vre.events.dao.KmlObjectDao"/>
+        <property name="interceptorNames">
+            <list>
+                <value>findAdvisor</value>
+            </list>
+        </property>
+    </bean>
+
     <bean id="locationDao" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="locationDaoTarget"/>
         <property name="proxyInterfaces" value="net.crew_vre.events.dao.LocationDao"/>
@@ -475,7 +495,6 @@
             </list>
         </property>
     </bean>
-
 
     <!-- ========== CABOTO INTEGRATION ========== -->
 
@@ -551,6 +570,14 @@
     </bean>
 
     <bean id="placeDaoTarget" class="net.crew_vre.events.dao.impl.PlaceDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="startPointDaoTarget" class="net.crew_vre.events.dao.impl.StartPointDaoImpl">
+        <constructor-arg index="0" ref="memoryCacheDatabase"/>
+    </bean>
+
+    <bean id="kmlObjectDaoTarget" class="net.crew_vre.events.dao.impl.KmlObjectDaoImpl">
         <constructor-arg index="0" ref="memoryCacheDatabase"/>
     </bean>
 
@@ -649,6 +676,14 @@
 
     <bean id="displayPlaceFacade" class="net.crew_vre.web.facade.impl.DisplayPlaceFacadeImpl">
         <constructor-arg index="0" ref="placeDao"/>
+        <constructor-arg index="1" ref="startPointDao"/>
+        <constructor-arg index="2" ref="kmlObjectDao"/>
+    </bean>
+
+    <bean id="displayRouteFacade" class="net.crew_vre.web.facade.impl.DisplayRouteFacadeImpl">
+        <constructor-arg index="0" ref="placeDao"/>
+        <constructor-arg index="1" ref="startPointDao"/>
+        <constructor-arg index="2" ref="kmlObjectDao"/>
     </bean>
 
     <bean id="displayPersonFacade" class="net.crew_vre.web.facade.impl.DisplayPersonFacadeImpl">
@@ -729,9 +764,9 @@
     <!-- list of facet configurations: events -->
     <util:list id="eventFacets" list-class="java.util.ArrayList">
         <ref bean="event-text-search"/>
-        <ref bean="locations"/>
-        <ref bean="subjects"/>
-        <ref bean="eventTitles"/>
+        <!-- <ref bean="locations"/> -->
+        <!-- <ref bean="subjects"/> -->
+        <!-- <ref bean="eventTitles"/> -->
         <ref bean="eventDate"/>
         <!-- <ref bean="eventTypes" /> -->
     </util:list>
@@ -1004,5 +1039,84 @@
     </bean>
 
     <context:component-scan base-package="net.crew_vre.events"/>
+
+
+    <!-- ================ Local Event Repository configuration ================ -->
+
+    <!-- datasource for the local event repository -->
+
+    <bean id="repositoryDataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${repository.database.driver}"/>
+        <property name="url" value="${repository.database.url}"/>
+        <property name="username" value="${repository.database.username}"/>
+        <property name="password" value="${repository.database.password}"/>
+    </bean>
+
+    <!-- SessionFactory for Repository -->
+    <bean id="repositorySessionFactory"
+          class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource" ref="repositoryDataSource"/>
+        <property name="configLocation" value="/WEB-INF/hibernate_repository.cfg.xml"/>
+        <property name="configurationClass" value="org.hibernate.cfg.AnnotationConfiguration"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Repository HibernateTemplate -->
+    <bean id="hibernateRepositoryTemplate"
+          class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="repositorySessionFactory"/>
+    </bean>
+
+    <!-- transaction manager for repository - spring hibernate support -->
+    <bean id="repositoryTransactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="dataSource" ref="repositoryDataSource"/>
+        <property name="sessionFactory" ref="repositorySessionFactory"/>
+    </bean>
+
+    <!-- Greening Events repository DAO -->
+    <bean id="repositoryDao" class="org.ilrt.green_repository.dao.hibernate.RepositoryDaoImpl">
+        <constructor-arg index="0" ref="hibernateRepositoryTemplate"/>
+    </bean>
+
+    <!-- Greening Events repository facade -->
+
+    <bean id="repositoryEventManagementFacade"
+          class="org.ilrt.green_repository.RepositoryEventManagementFacade">
+        <constructor-arg index="0" ref="repositoryDao"/>
+    </bean>
+
+    <!-- Email facade used by find journey sharers -->
+    
+    <bean id="sendEmailToUsersFacade" class="net.crew_vre.web.facade.impl.SendEmailToUsersFacadeImpl">
+        <property name="mailSender" ref="mailSender"/>
+        <property name="mailMessage" ref="mailMessage"/>
+    </bean>
+
+    <bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="${mail.from.address}" />
+        <property name="subject" value="${mail.journeyshare.subject}"/>
+        <property name="text">
+            <value>
+                <![CDATA[
+Dear %RECIPIENTUSERNAME%,
+%LOCALUSERNAME% wishes to ask if you would like to share the journey to the
+Economics Network conference on 9th September. Please see their message
+below. If you wish to respond to this request, you can email %LOCALUSERNAME% at:
+%LOCALUSEREMAIL% or reply to this message.
+
+Message:
+%USERMESSAGE%
+                ]]>
+            </value>
+        </property>
+    </bean>
+
 
 </beans>

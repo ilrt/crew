@@ -22,9 +22,9 @@ function annotationFailure(fail) {
     var error;
 
     if (fail.status == 404) {
-        error = "<p>There are currently no annotations.</p>";
+        error = "<p>There are currently no comments.</p>";
     } else if (fail.status == 401) {
-        error = "<p>You are not authorized to view the annotations.</p>";
+        error = "<p>You are not authorized to view the comments.</p>";
     } else {
         error = "<p>" + fail.status + " - something has gone wrong!";
     }
@@ -88,6 +88,11 @@ function formatAnnotation(annotation, uid, admin) {
     var date = parseDate(annotation.created);
     var author = parseAuthor(annotation.author);
     var body = annotation.body.description.replace(/\n|\r/g, "<br />\n");
+    /* Decode user entered urls in wiki format */
+    /* Single url in brackets e.g. [http://link.com] */
+    body = body.replace(/\[([^\|\]]+)\]/g, "<a href=\"$1\">$1</a>");
+    /* Url in brackets with link text e.g. [link text|http://link.com] */
+    body = body.replace(/\[([^\|]+)\|([^\]]+)\]/g, "<a href=\"$2\">$1</a>");
     var type = findType(annotation.id);
 
     var output = "<div class='annotation-entry'>";

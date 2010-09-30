@@ -17,90 +17,166 @@
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     <script type="text/javascript" src="./js/prototype.js"></script>
     <script type="text/javascript" src="./js/annotations.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen'
+          href='http://www.jiscdigitalmedia.ac.uk/?css=jdm/master.v.1267190280' />
 </head>
-<body onload="initializeAnnotations();">
-<%--@elvariable id="event" type="org.apache.wml.dom.WMLCardElementImpl"--%>
-<div id="container">
+<body class="bodybg2" onload="initializeAnnotations();">
+<div id="topbg"></div>
 
-<%-- banner navigation--%>
-<%@ include file="includes/topNavAll.jsp" %>
+<div>
+<!--start of wrapper-->
+    <div class="wrapper">
 
-<%-- the logo banner --%>
-<%--<%@ include file="includes/logo.jsp" %>--%>
+        <!--start of top nav-->
+        <div class="mainNav">
+            <a href="http://www.jiscdigitalmedia.ac.uk/"><img src="http://www.jiscdigitalmedia.ac.uk/images/site/logo.gif" border="0" width="279" height="55" alt="JISC Digital Media" id="logo" /></a>
+            <ul>
+                <li class="diamond" id="about"><a href="http://www.jiscdigitalmedia.ac.uk/about/">About</a></li>
+                <li class="diamond" id="helpdesk"><a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a></li>
+                <li class="diamond" id="news"><a href="http://www.jiscdigitalmedia.ac.uk/news/">News</a></li>
+                <li class="diamond" id="case"><a href="http://www.jiscdigitalmedia.ac.uk/tags/category/case-studies/">Case Studies</a></li>
+                <li><a href="http://www.jiscdigitalmedia.ac.uk/contact/" id="contact">Contact</a></li>
+            </ul>
+            <!--start of search form-->
+<form id='searchForm' method="post" action="http://www.jiscdigitalmedia.ac.uk/"  >
+<div class='hiddenFields'>
+<input type="hidden" name="ACT" value="19" />
+<input type="hidden" name="XID" value="" />
 
-<%-- The main content --%>
-<div id="mainBody">
-
-<%-- The left column: navigation --%>
-<%--
-<div id="leftColumn">
---%>
-    <%-- quick links --%>
-    <%--<%@ include file="includes/quickLinks.jsp" %>--%>
-<%--
+<input type="hidden" name="RP" value="search/results" />
+<input type="hidden" name="NRP" value="search&amp;#47;no-results" />
+<input type="hidden" name="RES" value="90" />
+<input type="hidden" name="status" value="open" />
+<input type="hidden" name="weblog" value="not archived|default_site|external|seminar-test|tips" />
+<input type="hidden" name="search_in" value="entries" />
+<input type="hidden" name="where" value="all" />
+<input type="hidden" name="site_id" value="1" />
 </div>
---%>
 
-<%-- The right column: RSS Feeds etc --%>
-<div id="rightColumn">
 
-    <%-- quick links --%>
-    <%@ include file="includes/box-aboutCrew.jsp" %>
-
+<div>
+<input type="text" name="keywords" id="search" value=""  /> <input type="submit" name="searchBtn" id="searchBtn" value="Search" title="Search" />
 </div>
+</form>
+			<!--end of search form-->
 
-<!-- Middle column: main content -->
-<div id="detailsColumn">
+		</div>
+			<!--end of top nav-->
+		<div class="clearDiv"></div>
+<!--start of main content-->
+                <div class="contentWrap contentWrap2">
+                        <div class="intro intro2">
+                            <img src="http://www.jiscdigitalmedia.ac.uk/images/site/hometopleft2.gif" alt="" width="525" height="169" id="hometop2" />
+                            <div class="introBox introBox2">
+                                <p>Free help and advice to the UK Further and Higher Education community</p>
 
+                                <a href="http://www.jiscdigitalmedia.ac.uk/helpdesk/">Helpdesk</a>
+                            </div>
+                            <img src="http://www.jiscdigitalmedia.ac.uk/images/site/hometopbottom.gif" alt="" width="445" height="23" id="hometopbtm" />
+                        </div>
+                </div>
+
+                <div class="clearDiv"></div>
+
+<div class="content content2">
 <%-- BREAD CRUMB --%>
-<div id="event-bread-crumb">
+<div id="breadCrumb">
+    <c:choose>
+        <c:when test="${not empty resultsUrl}">
+            <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
+        </c:when>
+        <c:otherwise>
+            <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+        </c:otherwise>
+    </c:choose>
 
-    <p>
-        <c:choose>
-            <c:when test="${not empty resultsUrl}">
-                <a href="${resultsUrl}"><spring:message code="event.crumb.events"/></a>
-            </c:when>
-            <c:otherwise>
-                <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-            </c:otherwise>
-        </c:choose>
+    <strong>&gt;</strong>
 
-        <strong>&gt;</strong>
+    <c:if test="${not empty event.partOf}">
+        <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
+            <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
+            <strong>&gt;</strong>
+        </c:forEach>
+    </c:if>
 
-        <c:if test="${not empty event.partOf}">
-            <c:forEach var="item" items="${event.partOf}" varStatus="rowNo">
-                <a href="displayEvent.do?eventId=<crew:uri uri='${item.id}'/>">${item.title}</a>
-                <strong>&gt;</strong>
-            </c:forEach>
-        </c:if>
-
-        ${event.title}
-    </p>
-
+    ${event.title}
 </div>
 
+<div class="clearDiv"></div>
 
-<div id="eventDetails">
+<!--start of Left content-->
+
+<div class="leftMargin">
+
+    <div class="geCalloutBox trainingBlock accountLinksBox">
+    <%-- the header links --%>
+    <ul id="accountLinks">
+    <%@ include file="includes/headerLinks.jsp" %>
+
+    <%-- register message --%>
+    <%-- <%@ include file="includes/headerMessage.jsp" %> --%>
+    </ul>
+    </div>
+    <%-- quick links --%>
+    <%-- <%@ include file="includes/quickLinks.jsp" %> --%>
+    <%-- the browser links --%>
+    <%@ include file="includes/headerBrowse.jsp" %>
+
+    <%-- the facets ---%>
+    <%--
+    <div class="bl">
+        <div class="br">
+            <div class="tl">
+                <div class="tr">
+                    <div class="box" id="facetNavigation">
+                        <h4 class="box-header"><spring:message code="facet.title"/></h4>
+                        <c:forEach var="facet" items="${facets}">
+                            <crew:facet facet="${facet}" showEmpty="false" url="${url}"
+                                        parameters="${parameters}"/>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    --%>
+
+  <%--  <div id="travelfootprint"> --%>
+    <div class="trainingBlock travelfootprint">
+        <h3>What's your travel footprint?</h3>
+        <span><spring:message code="place.footprint.message"/></span>
+    </div>
+    <div class="travelfootprint">
+        <!-- Travelfootprint panel -->
+        <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
+            style="margin-top:0; width: 300px; height: 250px; display:block;border: 0; overflow:hidden">
+        <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
+    </div>
+
+</div>
+<!--end of Left content-->
+
+<!--start of Middle content-->
+<div class="colRight genericContent traininglist">
+
+<div><h1 style="width:100%; padding: 0.3em 0 0.5em 1em">${event.title}</h1></div>
+
+<div class="contentBlock" style="width:100%; padding: 1em 0.5em 0 1em">
 
 <c:choose>
 <c:when test="${not empty event}">
-<h3 id="event-title">${event.title}</h3>
-
-
-<fieldset class="fieldSet">
-<legend><strong><spring:message code="event.details"/></strong></legend>
 
     <%-- EVENT DATES --%>
-<c:if test="${event.startDateTime != null}">
-    <p id="event-dates"><strong><spring:message code="event.details.date"/></strong>
+<c:if test="${not empty event.startDate}">
+    <h2><spring:message code="event.details.date"/></h2>
+    <p>
         <c:choose>
             <c:when test="${event.singleDay == true}">
-                <joda:format value="${event.startDateTime}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDateTime}" pattern=" HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/>
             </c:when>
             <c:otherwise>
-                <joda:format value="${event.startDateTime}" pattern="dd MMMM yyyy, HH:mm"/> -
-                <joda:format value="${event.endDateTime}" pattern="dd MMMM yyyy, HH:mm"/>
+                <joda:format value="${event.startDate}" pattern="dd MMMM yyyy"/> -
+                <joda:format value="${event.endDate}" pattern="dd MMMM yyyy"/>
             </c:otherwise>
         </c:choose>
         <a href="./eventCalendar.do?eventId=<crew:uri uri='${event.id}'/>"><img
@@ -112,29 +188,26 @@
 
     <%-- EVENT DESCRIPTION --%>
 <c:if test="${not empty event.description}">
-    <p id="event-description">
-        <strong><spring:message code="event.details.description"/></strong>
-            ${event.description}</p>
+    <h2><spring:message code="event.details.description"/></h2>
+    <p>${event.description}</p>
 </c:if>
 
     <%-- EVENT PLACES --%>
 <c:if test="${not empty event.places}">
-    <div id="event-places">
-        <p><strong><spring:message code="event.details.place"/></strong></p>
+        <h2><spring:message code="event.details.place"/></h2>
         <ul>
             <c:forEach var="place" items="${event.places}">
                 <li>
-                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>">${place.title}</a>
+                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>&amp;eventId=<crew:uri uri='${event.id}'/>&amp;eventTitle=${event.title}">${place.title}</a>
                 </li>
             </c:forEach>
         </ul>
-    </div>
 </c:if>
 
     <%-- EVENT SCHEDULE --%>
 <c:if test="${not empty event.parts}">
 
-    <p id="event-schedule"><strong><spring:message code="event.details.schedule"/></strong></p>
+    <h2><spring:message code="event.details.schedule"/></h2>
 
     <table>
         <c:forEach var="part" items="${event.parts}">
@@ -198,60 +271,57 @@
 
     <%-- EVENT LOCATIONS --%>
 <c:if test="${not empty event.locations}">
-    <p id="event-locations">
-        <strong><spring:message code="event.details.locations"/></strong>
+
+        <h2><spring:message code="event.details.locations"/></h2>
+        <ul>
         <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
-            <c:if test="${location.name != 'Locations'}">${location.name};</c:if>
+            <li><c:if test="${location.name != 'Locations'}">${location.name};</c:if></li>
         </c:forEach>
-    </p>
+        </ul>
+
 </c:if>
 
     <%-- EVENT SUBJECTS --%>
 <c:if test="${not empty event.subjects}">
-    <p id="event-subjects">
-        <strong><spring:message code="event.details.subjects"/></strong>
+        <h2><spring:message code="event.details.subjects"/></h2>
+        <ul>
         <c:forEach var="subject" items="${event.subjects}" varStatus="rowNo">
-            <c:if test="${subject.name != 'Disciplines'}">${subject.name};</c:if>
+            <li><c:if test="${subject.name != 'Disciplines'}">${subject.name};</c:if></li>
         </c:forEach>
-    </p>
+        </ul>
 </c:if>
 
     <%-- EVENT TAGS--%>
 <c:if test="${not empty event.tags}">
-    <p id="event-tags">
-        <strong><spring:message code="event.details.tags"/></strong>
+        <h2><spring:message code="event.details.tags"/></h2>
+        <ul>
         <c:forEach var="tag" items="${event.tags}" varStatus="rowNo">
-            ${tag}<c:if test="${not rowNo.last}">;</c:if>
+            <li>${tag}<c:if test="${not rowNo.last}">;</c:if></li>
         </c:forEach>
-    </p>
+        </ul>
 </c:if>
 
     <%-- EVENT EXTERNAL LINKS --%>
 <c:if test="${not empty event.programme || not empty event.proceedings}">
 
-    <p id="event-external-links"><strong><spring:message code="event.details.external"/></strong>
+    <h2><spring:message code="event.details.external"/></h2>
+    <ul>
 
         <c:if test="${not empty event.programme}">
-            <a href="${event.programme}"><spring:message code="event.details.programme"/></a>
-            <img class="externalLink" src="./images/web.png" alt="External Link" width="16"
-                 height="16"/>
+            <li><a href="${event.programme}"><spring:message code="event.details.programme"/></a></li>
         </c:if>
 
         <c:if test="${not empty event.proceedings}">
-            <a href="${event.proceedings}"><spring:message code="event.details.proceedings"/></a>
-            <img class="externalLink" src="./images/web.png" alt="External Link" width="16"
-                 height="16"/>
+            <li><a href="${event.proceedings}"><spring:message code="event.details.proceedings"/></a></li>
         </c:if>
-
-    </p>
-
+    </ul>
 </c:if>
 
 
     <%-- ROLES --%>
 <c:if test="${not empty event.roles}">
 
-    <div id="event-roles"><strong><spring:message code="event.roles"/></strong>
+    <h2><spring:message code="event.roles"/></h2>
         <ul>
             <c:forEach var="role" items="${event.roles}">
                 <li>${role.name}:&nbsp;<a
@@ -263,8 +333,9 @@
 
 </c:if>
 
+<!-- end contentBlock -->
+    </div>
 
-</fieldset>
 
 <%
     Cookie uid = new Cookie("uid", null);
@@ -280,17 +351,19 @@
     response.addCookie(uid);
     response.addCookie(admin);
 %>
-<div class="annotations">
 
-    <fieldset class="fieldSet">
-        <legend>Annotations</legend>
+
+<div class="contentBlock" style="width:100%; padding: 1em 0 0 1em">
+        <div id="annotations-title">Comments about this event</div>
         <div id="annotations-results"><p>Sorry, you need a JavaScript enabled browser.</p></div>
 
-
-        <p>Add your own annotation...</p>
+        <div id="annotation-note"><strong>Add your own comment or question about this event ...</strong><br />
+        - use wiki style notation to add links, <br />
+        e.g. [Go to JISC Digital Media|http://www.jiscdigitalmedia.ac.uk]
+        or [http://www.jiscdigitalmedia.ac.uk]</div>
 
         <div id="annotation-messages"></div>
-
+        
             <%-- show form if they are logged in --%>
         <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
             <form id="annotation-comment-form"
@@ -320,9 +393,6 @@
 
         </security:authorize>
 
-    </fieldset>
-</div>
-
 
 </c:when>
 <c:otherwise>
@@ -331,12 +401,20 @@
 </c:choose>
 
 
+<!-- end contentBlock -->
+    </div>
+
+</div>
+<!--End of Middle content-->
+
+	<div class="clearDiv" style="height:2em;"></div>
+
+<!-- End of content2 -->
 </div>
 
-
+		</div>
+<!--end of wrqpper-->
 </div>
-</div>
-
-
-<%-- the logo banner --%>
-<%@ include file="includes/footer.jsp" %>
+<%@ include file="includes/jdm_footer.jsp" %>
+	</body>
+</html>

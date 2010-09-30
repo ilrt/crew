@@ -52,6 +52,11 @@
                             <td><form:errors path="name"/></td>
                         </tr>
                         <tr>
+                            <td><strong><fmt:message key="user.postcode"/></strong></td>
+                            <td><form:input path="postcode"/></td>
+                            <td><form:errors path="postcode"/></td>
+                        </tr>
+                        <tr>
                             <td><strong><fmt:message key="user.email"/></strong></td>
                             <td><form:input path="email"/></td>
                             <td><form:errors path="email"/></td>

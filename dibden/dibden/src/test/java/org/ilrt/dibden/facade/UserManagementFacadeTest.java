@@ -97,7 +97,7 @@ public class UserManagementFacadeTest extends AbstractDaoImplTest {
         String password = "secret";
 
         User user = userManagementFacade.registerUser("mjones", password, "M Jones",
-                "m.jones@example.org");
+                "m.jones@example.org", "TQ14 8PT");
 
         assertNotNull("The user is null", user);
         assertEquals("Incorrect password hash", HashUtility.generateHash(password, "md5"),
@@ -112,7 +112,7 @@ public class UserManagementFacadeTest extends AbstractDaoImplTest {
         String password = "secret";
 
         User user = userManagementFacade.registerUser("mjones", password, "M Jones",
-                "m.jones@example.org");
+                "m.jones@example.org", "TQ14 8PT");
 
         // make sure the user is in the database
         assertTrue("The user doesn't exist", userManagementFacade.isUsernameRegistered(user.getUsername()));
@@ -209,12 +209,13 @@ public class UserManagementFacadeTest extends AbstractDaoImplTest {
     @Test
     public void testUpdateUser() {
 
-        userManagementFacade.updateUser("ghunt", "changed", "ghunt@test.org");
+        userManagementFacade.updateUser("ghunt", "changed", "ghunt@test.org", "BS8 1HH");
 
         User user = userDao.findUser("ghunt");
 
         assertEquals("The name hasn't changed", "changed", user.getName());
         assertEquals("The email hasn't changed", "ghunt@test.org", user.getEmail());
+        assertEquals("The post code hasn't changed", "BS8 1HH", user.getPostcode());
     }
 
     @Test

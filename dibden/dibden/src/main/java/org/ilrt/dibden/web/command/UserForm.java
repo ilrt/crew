@@ -47,11 +47,12 @@ public class UserForm {
     public UserForm() {
     }
 
-    public UserForm(String username, String name, String email, Set<Group> userGroups,
+    public UserForm(String username, String name, String email, String postcode, Set<Group> userGroups,
                     List<Group> groups) {
         this.username = username;
         this.name = name;
         this.email = email;
+        this.postcode = postcode;
         this.userGroups = userGroups;
         this.groups = groups;
     }
@@ -78,6 +79,14 @@ public class UserForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
     public Set<Group> getUserGroups() {
@@ -139,6 +148,7 @@ public class UserForm {
     private String username;
     private String name;
     private String email;
+    private String postcode;
     private Set<Group> userGroups;
     private List<Group> groups;
     private String userGroupId;
