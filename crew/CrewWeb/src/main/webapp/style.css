@@ -553,6 +553,7 @@ li.pagination {
     font-weight: bold;
     background-color: burlywood;
     text-align: left;
+    color: white;
 }
 
 .list-body {
@@ -715,10 +716,14 @@ li.pagination {
     font-size:0.8125em;
 }
 
-
 #routeDirections {
     margin-top: 1em;
     /*border: solid grey;
     border-width: 1px;*/
     padding: 2px;
+}
+
+/* Repository input */
+.error {
+    font-weight: bold;
 }

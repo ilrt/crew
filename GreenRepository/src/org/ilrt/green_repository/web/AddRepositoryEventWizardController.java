@@ -37,18 +37,19 @@ import org.ilrt.green_repository.RepositoryEventManagementFacade;
 import net.crew_vre.harvester.HarvesterSourceManagementFacade;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.mvc.AbstractWizardFormController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
+import org.springframework.validation.Errors;
 
 /**
  *
  * @author Phil Cross (phil.cross@bristol.ac.uk)
  */
 
-public class AddRepositoryEventController extends SimpleFormController {
+public class AddRepositoryEventWizardController extends AbstractWizardFormController {
 
 
     private final RepositoryEventManagementFacade repositoryFacade;
@@ -57,7 +58,7 @@ public class AddRepositoryEventController extends SimpleFormController {
     private final String DEFAULT_REPOSITORY_LOCATION = "repository/localEvents.rdf";
     private Map<String, String> config;
 
-    public AddRepositoryEventController(RepositoryEventManagementFacade repositoryFacade,
+    public AddRepositoryEventWizardController(RepositoryEventManagementFacade repositoryFacade,
             HarvesterSourceManagementFacade harvesterFacade, final Map<String, String> config) {
         this.repositoryFacade = repositoryFacade;
         this.harvesterFacade = harvesterFacade;
@@ -65,40 +66,66 @@ public class AddRepositoryEventController extends SimpleFormController {
     }
     
     @Override
-    protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response,
+    protected ModelAndView processFinish(HttpServletRequest request, HttpServletResponse response,
             Object command, BindException errors) {
 
         // get the command object - RepositoryEventForm
         RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
 
-        // only add if the add button is pressed ...
-        if (repositoryEventForm.getAddButton() != null) {
-            // save the repository event
-            repositoryFacade.addRepositoryEvent(repositoryEventForm);
+        // save the repository event
+        repositoryFacade.addRepositoryEvent(repositoryEventForm);
 
-            // Re-harvest from the local repository
-            String repositoryLocation = config.get("location");
-            if (repositoryLocation == null)
-                repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
+        // Re-harvest from the local repository
+        String repositoryLocation = config.get("location");
+        if (repositoryLocation == null)
+            repositoryLocation = DEFAULT_REPOSITORY_LOCATION;
 
-            StringBuffer repositoryUrl = new StringBuffer();
-            repositoryUrl.append(request.getScheme());
-            repositoryUrl.append("://");
-            repositoryUrl.append(request.getServerName());
+        StringBuffer repositoryUrl = new StringBuffer();
+        repositoryUrl.append(request.getScheme());
+        repositoryUrl.append("://");
+        repositoryUrl.append(request.getServerName());
 
-            if ( request.getServerPort() != 80 )  {
-                // A direct string comparison is made with the list of harvestable urls, so :80 will cause an error
-                repositoryUrl.append( ":");
-                repositoryUrl.append(request.getServerPort());
-            }
-
-            repositoryUrl.append(request.getContextPath());
-            repositoryUrl.append("/");
-            repositoryUrl.append(repositoryLocation);
-
-            String msg = harvesterFacade.harvestSource(repositoryUrl.toString());
+        if ( request.getServerPort() != 80 )  {
+            // A direct string comparison is made with the list of harvestable urls, so :80 will cause an error
+            repositoryUrl.append( ":");
+            repositoryUrl.append(request.getServerPort());
         }
 
-       return new ModelAndView("redirect:./listRepositoryEvents.do");
+        repositoryUrl.append(request.getContextPath());
+        repositoryUrl.append("/");
+        repositoryUrl.append(repositoryLocation);
+
+        String msg = harvesterFacade.harvestSource(repositoryUrl.toString());
+
+       return new ModelAndView(getSuccessView());
+    }
+
+    @Override
+    protected ModelAndView processCancel(HttpServletRequest request, HttpServletResponse response,
+            Object command, BindException bindException) throws Exception {
+        return new ModelAndView(getSuccessView());
+    }
+
+    @Override
+    protected void validatePage(Object command, Errors errors, int page) {
+        RepositoryEventForm repositoryEventForm = (RepositoryEventForm) command;
+        RepositoryEventValidator validator = (RepositoryEventValidator)getValidator();
+
+        if (page == 0) {
+            // Details page
+            validator.validateTitle(repositoryEventForm, errors);
+            validator.validateDates(repositoryEventForm, errors);
+            validator.validateUrl(repositoryEventForm, errors);
+        }
+
+        if (page == 1) {
+            // Location details page
+            validator.validateLocation(repositoryEventForm, errors);
+        }
+    }
+
+    private String getSuccessView() {
+        // Return last entry in pages list for controller
+        return getPages()[getPages().length-1];
     }
 }
