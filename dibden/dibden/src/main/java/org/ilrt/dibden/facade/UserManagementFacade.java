@@ -49,7 +49,7 @@ public interface UserManagementFacade {
 
     public boolean isEmailRegistered(String email);
 
-    public User registerUser(String username, String password, String name, String email);
+    public User registerUser(String username, String password, String name, String email, String postcode);
 
     public boolean validatePassword(String username, String password);
 
@@ -69,7 +69,7 @@ public interface UserManagementFacade {
 
     public void removeUser(String username);
 
-    public void updateUser(String username, String name, String email);
+    public void updateUser(String username, String name, String email, String postcode);
 
     public Role createRole(String groupId, String name, String description);
 

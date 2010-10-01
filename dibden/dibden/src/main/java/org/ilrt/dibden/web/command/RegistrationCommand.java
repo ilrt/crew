@@ -46,7 +46,7 @@ public class RegistrationCommand {
     }
 
     public RegistrationCommand(String userName, String passwordOne, String passwordTwo,
-                               String emailOne, String emailTwo, String name,
+                               String emailOne, String emailTwo, String name, String postcode,
                                String recaptcha_challenge_field, String recaptcha_response_field) {
         this.userName = userName;
         this.passwordOne = passwordOne;
@@ -54,6 +54,7 @@ public class RegistrationCommand {
         this.emailOne = emailOne;
         this.emailTwo = emailTwo;
         this.name = name;
+        this.postcode = postcode;
         this.recaptcha_challenge_field = recaptcha_challenge_field;
         this.recaptcha_response_field = recaptcha_response_field;
     }
@@ -88,6 +89,14 @@ public class RegistrationCommand {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
     public String getPasswordTwo() {
@@ -130,6 +139,7 @@ public class RegistrationCommand {
     private String emailOne;
     private String emailTwo;
     private String name;
+    private String postcode;
 
     // captcha fields
     private String recaptcha_challenge_field;

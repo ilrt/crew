@@ -73,6 +73,11 @@
                 <td><form:input path="emailTwo"/></td>
                 <td><form:errors path="emailTwo"/></td>
             </tr>
+            <tr>
+                <td><fmt:message key="register.postcode"/></td>
+                <td><form:input path="postcode"/></td>
+                <td><form:errors path="postcode"/></td>
+            </tr>
         </table>
 
         <script type="text/javascript"

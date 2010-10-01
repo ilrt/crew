@@ -58,12 +58,14 @@ public class User implements Serializable {
     public User() {
     }
 
+    // Constructor including post code string
     public User(String username, String password, String email, String name,
-                Date creationDate, boolean enabled) {
+                String postcode, Date creationDate, boolean enabled) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.name = name;
+        this.postcode = postcode;
         this.creationDate = creationDate;
         this.enabled = enabled;
     }
@@ -90,6 +92,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
     public String getName() {
@@ -120,6 +130,7 @@ public class User implements Serializable {
         this.groups = groups;
     }
 
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
@@ -132,6 +143,7 @@ public class User implements Serializable {
 
     }
 
+    @Override
     public int hashCode() {
         int result;
         result = username.hashCode();
@@ -152,6 +164,9 @@ public class User implements Serializable {
 
     @Column(name = "NAME", nullable = false)
     private String name;
+
+    @Column(name = "POSTCODE")
+    private String postcode;
 
     @Column(name = "CREATION_DATE", nullable = false)
     private Date creationDate;
