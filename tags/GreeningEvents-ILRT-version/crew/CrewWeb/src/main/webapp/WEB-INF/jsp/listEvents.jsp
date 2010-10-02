@@ -8,6 +8,8 @@
 
 <head>
     <title><spring:message code="event.list.title"/></title>
+    <style type="text/css"
+           media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     <style type="text/css" media="screen"><!-- @import url(http://www.bristol.ac.uk/portal_css/uobcms_corporate.css); --></style>
     <link rel="stylesheet" type="text/css" media="print" href="http://www.bristol.ac.uk/portal_css/uobcms_print.css" />
     <style type="text/css" media="screen"><!-- @import url(http://www.ilrt.bris.ac.uk/styles/ilrt-style.css); --></style>
@@ -69,10 +71,10 @@
             <li><a href="http://www.ilrt.bris.ac.uk/aboutus/contactus/" title="">Contact Us</a></li>
         </ul>
     </div>
+
+
+
 <div id="uobcms-wrapper">
-
-
-
 <div id="uobcms-col1">
 <!--htdig_noindex-->
 <h4 class="navtitle">
