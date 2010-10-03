@@ -109,7 +109,7 @@ function formatAnnotation(annotation, uid, admin) {
               "Created on " + date.toLocaleString() + " by " + author + "</div>";
 
     if (uid == author || admin == "true") {
-        output += "<div>[<a href='#' onclick='deleteAnnotation(\"" +
+        output += "<div id='annotation-delete-button'>&nbsp;[<a href='#' onclick='deleteAnnotation(\"" +
                   annotation.id + "\")'>Delete</a>]</div>";
     }
 

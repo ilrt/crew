@@ -139,6 +139,14 @@ Maps and Directions
  <div id="uobcms-content">
    <h1 id="pagetitle">${event.title}</h1>
 
+    <div id="footprint-box">
+        <span><spring:message code="place.footprint.message"/></span>
+    </div>
+    <!-- Travelfootprint panel -->
+    <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
+        style="margin: 0 0 2em 1em; width: 300px; height: 250px; display:block;border: 0; overflow:hidden; clear:right;float:right">
+    <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
+
 <c:choose>
 <c:when test="${not empty event}">
 
@@ -147,15 +155,6 @@ Maps and Directions
     <h2><spring:message code="event.details.description"/></h2>
     <p>${event.description}</p>
 </c:if>
-
-
-    <div id="footprint-box">
-        <span><spring:message code="place.footprint.message"/></span>
-    </div>
-    <!-- Travelfootprint panel -->
-    <iframe src="http://www.travelfootprint.org/journey_emissions_apis/" scrolling="no" border="0" frameborder="0"
-        style="margin-top:0; width: 300px; height: 250px; display:block;border: 0; overflow:hidden; clear:right;float:right">
-    <p>View the <a href="http://www.travelfootprint.org/journey_emissions_apis/">Journey Emissions Tool</a></p></iframe>
     
     <%-- EVENT PLACES --%>
 <c:if test="${not empty event.places}">
