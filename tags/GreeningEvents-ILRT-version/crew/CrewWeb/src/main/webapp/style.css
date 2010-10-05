@@ -733,6 +733,10 @@ li.pagination {
     margin-top: 1em;
 }
 
+#mapContainerWide{
+    width: 800px;
+}
+
 #routeContainer {
     float: left;
     margin-top: 1em;

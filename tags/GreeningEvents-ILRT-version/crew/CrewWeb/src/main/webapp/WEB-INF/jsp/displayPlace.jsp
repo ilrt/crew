@@ -184,21 +184,12 @@ Maps and Directions
      >
 <a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
      >
-      Maps and Directions
+      <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
        <!--/UserTrail-->
 </p>
 
  <div id="uobcms-content">
     <h1 id="pagetitle">${place.title} location information</h1>
-
-    <%-- BREAD CRUMB --%>
-    <%--
-    <div id="breadCrumb">
-        <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-        <strong>&gt;</strong>
-        <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
-    </div>
-    --%>
     <div id="mapContainer">
         <div id="mapDivLeft"></div>
         <div id="routeLinks">
