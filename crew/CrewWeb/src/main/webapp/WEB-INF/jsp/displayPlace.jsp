@@ -10,17 +10,16 @@
     <title><spring:message code="place.details"/></title>
     <style type="text/css"
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
-    <style type="text/css" media="screen">@import "./style.css";</style>
-    <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/drupal_style_main.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="http://economicsnetwork.ac.uk/style/style_print.css" type="text/css" media="print" />
-<c:if test="${not empty event}">
-    <meta name="caboto-annotation" content="${event.id}"/>
-</c:if>
+    <style type="text/css" media="screen"><!-- @import url(http://www.bristol.ac.uk/portal_css/uobcms_corporate.css); --></style>
+    <link rel="stylesheet" type="text/css" media="print" href="http://www.bristol.ac.uk/portal_css/uobcms_print.css" />
+    <style type="text/css" media="screen"><!-- @import url(http://www.ilrt.bris.ac.uk/styles/ilrt-style.css); --></style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Language" content="en-uk" />
+<c:if test="${not empty event}">
+    <meta name="caboto-annotation" content="${event.id}"/>
+</c:if>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <link rel="Help" href="http://economicsnetwork.ac.uk/tenways" />
     <c:choose>
         <c:when test="${place.latitude != null}">
             <script type="text/javascript"
@@ -33,7 +32,7 @@
                   center: latlng,
                   mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
-                var map = new google.maps.Map(document.getElementById("mapDivCentre"), mapOptions);
+                var map = new google.maps.Map(document.getElementById("mapDivLeft"), mapOptions);
                 var marker = new google.maps.Marker({
                     position: latlng,
                     map: map,
@@ -76,148 +75,200 @@
             </script>
 
             </head>
-            <body onload="initialize()">
+            <body id="bristol-ac-uk" onload="initialize()">
 
         </c:when>
         <c:otherwise>
             </head>
-            <body>
+            <body id="bristol-ac-uk">
         </c:otherwise>
     </c:choose>
+    <div class="uobnav" id="topnav">
 
-    <div id="doc2" class="yui-t2">
-        <div id="hd">
-            <div id="header">
-                <a href="http://economicsnetwork.ac.uk/" name="top" id="top" accesskey="1">
-                        <img src="http://economicsnetwork.ac.uk/nav/acadlogo.gif" id="logo" alt="Economics Network of the Higher Education Academy" title="Home Page of the Economics Network" style="width:292px;height:151px;border:0" />
-                </a>
-                <ul id="navlist">
-                    <li class="toabout">
-                            <a href="http://economicsnetwork.ac.uk/about" accesskey="2">About Us</a>
-                    </li>
-                    <li class="topubs">
-                            <a href="http://economicsnetwork.ac.uk/journals" accesskey="3">Lecturer Resources</a>
-                    </li>
-                    <li class="tores">
-                            <a href="http://economicsnetwork.ac.uk/resources" accesskey="4">Learning Materials</a>
-                    </li>
-                    <li class="tofunds">
-                            <a href="http://economicsnetwork.ac.uk/projects" accesskey="5">Projects&nbsp;&amp; Funding</a>
-                    </li>
-                    <li class="tonews">
-                            <a href="http://economicsnetwork.ac.uk/news" accesskey="6">News&nbsp;&amp; Events</a>
-                    </li>
-                    <li class="tothemes">
-                            <a href="http://economicsnetwork.ac.uk/subjects/" accesskey="7">Browse by Topic</a>
-                    </li>
-                    <li id="help">
-                            <a href="http://economicsnetwork.ac.uk/tenways" style="color:#036" accesskey="?">Help</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="homelink">
-                    <a href="http://economicsnetwork.ac.uk/">Home</a>
-            </div>
+        <!--htdig_noindex-->
+
+        <a name="top" href="#uobcms-content-nonav" id="skip"
+           title="Go straight to the content of this page">skip to content</a>
+
+        <form action="http://www.ilrt.bris.ac.uk/powersearch.html" onsubmit="return (this.words.value != '' &amp;&amp; this.words.value != 'search')">
+            <input type="text" onfocus="if (this.value == 'search') {this.value=''}" name="search" id="search" value="search" size="18" title="enter search keywords" />
+
+            <input type="submit" id="submitwords" name="submitwords" value="search" class="searchbutton" />
+        </form>
+
+        <ul>
+            <li><a href="http://www.bris.ac.uk/" title="University of Bristol homepage">university home</a></li>
+            <li><a href="http://www.bristol.ac.uk/study/" title="Information about undergraduate, postgraduate and lifelong learning opportunities">study</a></li>
+            <li><a href="http://www.bristol.ac.uk/research/" title="Information about research">research</a></li>
+            <li><a href="http://www.bris.ac.uk/contacting-people/" title="Contact details for all staff and students, useful contacts and emergency contact details">contacting people</a></li>
+            <li><a href="http://www.bris.ac.uk/index/" title="Complete a-z of faculties, depts, research centres and other aspects of the University">a-z index</a></li>
+            <li><a href="http://www.bris.ac.uk/news/" title="All the latest news related to the University">news</a></li>
+            <li class="no-separator"><a href="http://www.bris.ac.uk/help/" title="Your most common questions and queries answered">help</a></li>
+        </ul>
+
+    <!--/htdig_noindex-->
+    </div>
+    <div id="header">
+    <div id="uoblogo"><a accesskey="1" href="http://www.bristol.ac.uk/"
+                         title="University of Bristol homepage">University of Bristol</a></div>
+
+    <div class="maintitle" id="maintitle1">
+        <span id="title1"><a href="/">Institute for Learning &amp; Research Technology</a></span>
+    </div>
+    </div>
+
+
+    <!-- end of HEADER -->
+
+    <!--/htdig_noindex-->
+     <div id="deptnav">
+        <ul>
+            <li><a href="http://www.ilrt.bris.ac.uk/">ILRT home</a></li>
+             <li><a href="http://www.ilrt.bris.ac.uk/aboutus/" title="">About Us</a></li>
+             <li><a href="http://www.ilrt.bris.ac.uk/aboutus/staff/" title="">Staff A-Z </a></li>
+             <li><a href="http://www.ilrt.bris.ac.uk/whatwedo/projectsaz/" title="">Projects A-Z</a></li>
+            <li><a href="http://www.ilrt.bris.ac.uk/aboutus/contactus/" title="">Contact Us</a></li>
+        </ul>
+    </div>
+
+
+
+<div id="uobcms-wrapper">
+<div id="uobcms-col1">
+<!--htdig_noindex-->
+<h2 class="navtitle">
+ILRT
+</h2>
+<ul class="navgroup">
+<li>
+<a href="http://www.ilrt.bris.ac.uk/aboutus/">About Us</a>
+<ul>
+<li>
+<a href="http://www.ilrt.bris.ac.uk/aboutus/contactus/">Contact Us</a>
+</li>
+<li>
+<span class="link-on">
+Maps and Directions
+</span>
+</li>
+<li>
+<a href="http://www.ilrt.bris.ac.uk/aboutus/staff/">Staff A-Z</a>
+</li>
+
+</ul>
+</li>
+<li>
+<a href="http://www.ilrt.bris.ac.uk/whatwedo/">What We Do</a>
+</li>
+<li>
+<a href="http://www.ilrt.bris.ac.uk/news/">News</a>
+</li>
+<li>
+<a href="http://www.ilrt.bris.ac.uk/events/">Events</a>
+</li>
+</ul>
+
+<!-- IE Fix --><div></div><!-- /IE Fix -->
+<!--/htdig_noindex-->
+</div>
+
+
+
+ <!--UserTrail-->
+<p id="breadcrumbs">
+  <!--htdig_noindex-->
+<a name="skipmenu" id="skipmenu" href="#skipmenu" accesskey="S"></a>
+<a href="http://www.bristol.ac.uk/" title="University home">University home</a>
+     >
+<a href="http://www.ilrt.bris.ac.uk">ILRT home</a>
+     >
+<a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
+     >
+      Maps and Directions
+       <!--/UserTrail-->
+</p>
+
+ <div id="uobcms-content">
+    <h1 id="pagetitle">${place.title} location information</h1>
+
+    <%-- BREAD CRUMB --%>
+    <%--
+    <div id="breadCrumb">
+        <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
+        <strong>&gt;</strong>
+        <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
+    </div>
+    --%>
+    <div id="mapContainer">
+        <div id="mapDivLeft"></div>
+        <div id="routeLinks">
+            <c:if test="${startPointList != null}">
+                <h3>Walking routes to ${place.title} from:</h3>
+            <ul>
+                <c:forEach var="startPoint" items="${startPointList}">
+                <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
+                </c:forEach>
+            </ul>
+            </c:if>
+            <c:if test="${kmlList != null}">
+            <ul>
+                <c:forEach var="kml" items="${kmlList}">
+                <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
+                </c:forEach>
+            </ul>
+            </c:if>
         </div>
-        <div id="bd">
-            <div id="yui-main">
-                <div class="yui-b">
-                    <div class="yui-gc">
-                        <div class="yui-u first" id="content"> <!-- width: 66%; float: left -->
-                            <div id="content-header">
-                                <h1 class="title">${place.title} location information</h1> <%-- Mid column main page title --%>
-                                <%-- BREAD CRUMB --%>
-                                <div id="breadCrumb">
-                                    <a href="listEvents.do"><spring:message code="event.crumb.events"/></a>
-                                    <strong>&gt;</strong>
-                                    <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
-                                </div>
-                            </div>
-                            <!-- /#content-header -->
-                            <div id="content-area">
-                            <%-- START OF CONTENT --%>
-                                <div id="node-89" class=" node-inner">
-                                    <div class="content">
-                                        <div class="compact">
-                                            <div id="mapDivCentre"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="yui-u"> <%-- width: 32%; float: right --%>
-                            <div id="rightcol">
-                                <div id="sidebar-right-inner" class="region region-right">
-                                    <div id="block-block-12" class="">
-                                    <h3 class="title">Walking routes to ${place.title} from:</h3>
-                                        <div class="content">
-                                            <div class="compact">
-                                                <div id="routeLinks">
-                                                    <c:if test="${startPointList != null}">
-                                                    <ul>
-                                                        <c:forEach var="startPoint" items="${startPointList}">
-                                                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;startPointId=<crew:uri uri='${startPoint.id}'/>">${startPoint.title}</a></li>
-                                                        </c:forEach>
-                                                    </ul>
-                                                    </c:if>
-                                                    <c:if test="${kmlList != null}">
-                                                    <ul>
-                                                        <c:forEach var="kml" items="${kmlList}">
-                                                        <li><a href="./displayRoute.do?placeId=<crew:uri uri='${place.id}'/>&amp;kml=<crew:uri uri='${kml.id}'/>">${kml.title}</a></li>
-                                                        </c:forEach>
-                                                    </ul>
-                                                    </c:if>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-		<%-- END RIGHT COLUMN --%>
-
-
-            </div>
-        </div>
     </div>
 
-    <%-- LEFT NAV --%>
-    <div class="yui-b">		<!--googleoff: all-->
-            <div id="snav">
-                    <div class="snavtop"></div>
-                    <form method="get" action="http://search2.openobjects.com/kbroker/hea/economics/search.lsim" class="sform">
-                            <fieldset>
-                                    <input type="text" name="qt" size="15" maxlength="1000" value="" class="sbox" style="width:100px" />
-                                    <input id="submit" type="submit" value="Search" class="gobutton" style="width:4em" />
-                                    <input type="hidden" name="sr" value="0" />
-                                    <input type="hidden" name="nh" value="10" />
-                                    <input type="hidden" name="cs" value="iso-8859-1" />
-                                    <input type="hidden" name="sc" value="hea" />
-                                    <input type="hidden" name="sm" value="0" />
-                                    <input type="hidden" name="mt" value="1" />
-                                    <input type="hidden" name="ha" value="1022" />
-                            </fieldset>
-                    </form>
-                    <%-- Left nav links --%>
-                    <div class="content">
-                            <ul>
-                                    <%@ include file="includes/headerLinks.jsp" %>
-                                    <%@ include file="includes/headerBrowse.jsp" %>
-                            </ul>
-                    </div>
-            </div>
-            <div class="snavbtm"></div>
-            <%@include file="includes/econNetLeftNavBottom.jsp" %>
-            </div>
-    </div>
+  </div><!-- close uobcms-content div -->
+ </div><!-- close wrapper div -->
 
- <%@ include file="includes/footer.jsp" %>
 
-    </div>
-    <script src="http://www.economicsnetwork.ac.uk/gatag.js" type="text/javascript"></script>
-    <script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script>
-    <script type="text/javascript">try{var pageTracker = _gat._getTracker("UA-1171701-1");pageTracker._trackPageview();} catch(err) {}</script>
+<div id="deptnavbottom" class="deptnavbottom-nav">
+    <ul>
+        <li class="">
+            <a href="/" title="ILRT home page">ILRT home</a>
+        </li>
+        <li class="">
+            <a href="https://intranet.ilrt.bris.ac.uk/">Intranet</a>
+        </li>
+        <li class="">
+            <a href="/aboutus/map-directions/">Finding the ILRT</a>
+        </li>
+        <li class="">
+            <a href="http://www.bristol.ac.uk/university/maps/">Finding the University</a>
+        </li>
+    </ul>
+    <!--/htdig_noindex-->
+     </div>
+   <div id="footer" class="footer-nonav">
+			<p>Updated 19 May 2008 by the
+        <a href="mailto:webmaster-ilrt@bris.ac.uk">ILRT</a><br />
+
+				 University of Bristol, 8-10 Berkeley Square, Bristol BS8 1HH, UK. Tel: +44 (0)117 331 4430</p>
+		</div>
+		<div id="uobnavbottom" class="uobnavbottom-nonav">
+    <!--htdig_noindex-->
+    <ul>
+    <li><a title="University of Bristol homepage" href="http://www.bris.ac.uk/">university home</a></li>
+    <li><a href="http://www.bris.ac.uk/index/" title="Complete a-z of faculties, depts, research centres and other aspects of the University">a-z index</a></li>
+    <li><a title="Your most common questions and queries answered" href="http://www.bris.ac.uk//help/">help</a></li>
+    <li><a href="http://www.bris.ac.uk/university/web/terms-conditions.html">terms and conditions</a></li>
+    <li><a href="http://www.bris.ac.uk/university/web/privacy-policy.html">privacy and cookie policy</a></li>
+    <li class="no-separator"><a href="http://www.bris.ac.uk/university/web/terms-conditions.html#copyright">&copy; 2002-2010 University of Bristol</a></li>
+    </ul>
+    <!--/htdig_noindex-->
+</div>
+ <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6546258-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
 
 </body>
 </html>
