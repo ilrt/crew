@@ -248,13 +248,14 @@ or just [http://www.ilrt.bris.ac.uk/]</div>
 
 <br/>
 
-
+<%--
+REMOVED FOR NOW UNLESS THIS SERVICE IS REQUIRED FOR THE TEST
     <div class="content">
         <ul>
             <li><a href="${pageContext.request.contextPath}/secured/findJourneySharers.do"><fmt:message key="qlinks.people"/></a></li>
         </ul>
     </div>
-
+--%>
 
 
 
