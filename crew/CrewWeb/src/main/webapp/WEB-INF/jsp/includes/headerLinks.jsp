@@ -20,4 +20,4 @@
     <li><a href="${pageContext.request.contextPath}/registration.do"><fmt:message key="topNav.registration"/></a></li>
 </authz:authorize>
 
-<li id="linkBtn"><a href="http://greeningevents.ilrt.bris.ac.uk/">Greening Events Project</a></li>
+<%-- <li id="linkBtn"><a href="http://greeningevents.ilrt.bris.ac.uk/">Greening Events Project</a></li> --%>
