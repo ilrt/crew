@@ -758,9 +758,17 @@ li.pagination {
     float: left;
     border: solid grey;
     border-width: 1px;
-    margin: 1em 0;
-    width: 450px;
-    height: 300px;
+    margin-bottom: 1em;
+    width: 600px;
+    height: 400px;
+}
+
+#routeLinks {
+    border: solid grey;
+    border-width: 1px;
+    padding-left: 0.5em;
+    margin-left: 605px;
+    width: 150px;
 }
 
 #mapDivTop {
@@ -798,9 +806,6 @@ li.pagination {
 .leftMargin {
     float:left;
     width: 300px;
-}
-
-#routeLinks {
 }
 
 .travelfootprint {
