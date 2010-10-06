@@ -196,6 +196,7 @@ Maps and Directions
     response.addCookie(admin);
 %>
 
+<%--
 <div id="annotations-block">
 <h2>Comments about this event</h2>
 <div id="annotations-results">
@@ -208,8 +209,9 @@ e.g. Go to [ILRT|http://www.ilrt.bris.ac.uk/]
 or just [http://www.ilrt.bris.ac.uk/]</div>
 
 <div id="annotation-messages"></div>
-
+--%>
     <%-- show form if they are logged in --%>
+<%--
 <security:authorize ifAnyGranted="ROLE_USER,ROLE_ADMIN">
     <form id="annotation-comment-form"
           action="javascript:processForm('<%=request.getUserPrincipal().getName()%>')"
@@ -229,16 +231,19 @@ or just [http://www.ilrt.bris.ac.uk/]</div>
         </p>
     </form>
 </security:authorize>
-
+--%>
     <%-- message if not logged in --%>
+<%--
 <security:authorize ifNotGranted="ROLE_USER,ROLE_ADMIN">
     <p>You need to be <a href="./secured/displayProfile.do">logged in</a> to add a comment.<br/>
+--%>
         <%-- You can <a href="./registration.do">register</a> if you do not have an account.<br/> --%>
+<%--
         <a href="./forgottenPassword.do">Forgotten</a> your password?</p>
 
 </security:authorize>
 </div> <!-- close annotations-block div -->
-
+--%>
 
 </c:when>
 <c:otherwise>
