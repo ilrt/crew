@@ -150,6 +150,17 @@ Maps and Directions
 <c:choose>
 <c:when test="${not empty event}">
 
+    <%-- EVENT LOCATIONS --%>
+<c:if test="${not empty event.locations}">
+
+        <h2><spring:message code="event.details.locations"/></h2>
+        <ul>
+        <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
+            <li><c:if test="${location.name != 'Locations'}">${location.name};</c:if></li>
+        </c:forEach>
+        </ul>
+</c:if>
+
     <%-- EVENT DESCRIPTION --%>
 <c:if test="${not empty event.description}">
     <h2><spring:message code="event.details.description"/></h2>
@@ -168,18 +179,6 @@ Maps and Directions
         </ul>
 </c:if>
         
-    <%-- EVENT LOCATIONS --%>
-<c:if test="${not empty event.locations}">
-
-        <h2><spring:message code="event.details.locations"/></h2>
-        <ul>
-        <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
-            <li><c:if test="${location.name != 'Locations'}">${location.name};</c:if></li>
-        </c:forEach>
-        </ul>
-
-</c:if>
-
 
 <%
     Cookie uid = new Cookie("uid", null);
