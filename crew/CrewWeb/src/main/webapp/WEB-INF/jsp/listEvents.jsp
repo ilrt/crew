@@ -212,7 +212,7 @@ Maps and Directions
     <!--/htdig_noindex-->
      </div>
    <div id="footer" class="footer-nonav">
-			<p>Updated 19 May 2008 by the
+			<p>Updated 9 October 2010 by the
         <a href="mailto:webmaster-ilrt@bris.ac.uk">ILRT</a><br />
 
 				 University of Bristol, 8-10 Berkeley Square, Bristol BS8 1HH, UK. Tel: +44 (0)117 331 4430</p>
