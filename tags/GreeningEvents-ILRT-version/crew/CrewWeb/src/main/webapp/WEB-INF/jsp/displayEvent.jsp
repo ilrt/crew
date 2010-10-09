@@ -152,30 +152,26 @@ Maps and Directions
 
     <%-- EVENT PLACES --%>
 <c:if test="${not empty event.places}">
-        <h2><spring:message code="event.details.place"/></h2>
+        <h2>Travel information &amp; resources</h2>
         <ul>
             <c:forEach var="place" items="${event.places}">
-                <li>
-                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>&amp;eventId=<crew:uri uri='${event.id}'/>&amp;eventTitle=${event.title}">${place.title}</a>
+                <li style="list-style-type: none;list-style-image: none">
+                    <a href="displayPlace.do?placeId=<crew:uri uri='${place.id}'/>&amp;eventId=<crew:uri uri='${event.id}'/>&amp;eventTitle=${event.title}">
+                    Interactive Maps: Bristol Bus Station &amp; Bristol Temple Meads to ILRT
+                    </a>
                 </li>
             </c:forEach>
-        </ul>
-</c:if>
-        
-    <%-- EVENT LOCATIONS --%>
-<c:if test="${not empty event.locations}">
-
-        <h2><spring:message code="event.details.locations"/></h2>
-        <ul>
-        <c:forEach var="location" items="${event.locations}" varStatus="rowNo">
-            <li><c:if test="${location.name != 'Locations'}">${location.name};</c:if></li>
-        </c:forEach>
+                <li style="list-style-type: none;list-style-image: none">
+                    <a href="http://tc-greeningevents.ilrt.bris.ac.uk/gemobile/">Mobile website</a> (for Smartphone users; includes walking routes and live bus timetables)
+                </li>
+                <li style="list-style-type: none;list-style-image: none">
+                    <a href="http://www.ilrt.bris.ac.uk/aboutus/directions-to-ilrt">Text Travel Instructions to ILRT</a>
+                </li>
         </ul>
 </c:if>
 
     <%-- EVENT DESCRIPTION --%>
 <c:if test="${not empty event.description}">
-    <h2><spring:message code="event.details.description"/></h2>
     <p>${event.description}</p>
 </c:if>
     
