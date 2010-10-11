@@ -7,7 +7,7 @@
 <%@ page session="true" contentType="text/html;charset=UTF-8" language="java" %>
 
 <head>
-    <title><spring:message code="place.details"/></title>
+    <title>Interactive maps</title>
     <style type="text/css"
            media="screen">@import "${pageContext.request.contextPath}/style.css";</style>
     <style type="text/css" media="screen"><!-- @import url(http://www.bristol.ac.uk/portal_css/uobcms_corporate.css); --></style>
@@ -185,7 +185,7 @@ Maps and Directions
 <a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
      >
       <a href="displayEvent.do?eventId=<crew:uri uri='${eventId}'/>">${eventTitle}</a>
-       <!--/UserTrail-->
+     > Interactive maps
 </p>
 
  <div id="uobcms-content">
