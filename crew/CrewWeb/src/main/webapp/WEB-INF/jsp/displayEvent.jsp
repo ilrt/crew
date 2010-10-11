@@ -132,7 +132,7 @@ Maps and Directions
      >
 <a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
      >
-      Maps and Directions
+      Travel information to the ILRT
        <!--/UserTrail-->
 </p>
 
