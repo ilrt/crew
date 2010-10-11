@@ -235,7 +235,8 @@ Maps and Directions
 <a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
 <c:if test="${browseHistory[1] != null}">
     >
-    <a href="${browseHistory[1].path}">Location information</a>
+    <a href="${browseHistory[1].path}">Travel information to the ILRT</a>
+    > Route details
 </c:if>
 </p>
 
