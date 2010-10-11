@@ -61,7 +61,7 @@
                          title="University of Bristol homepage">University of Bristol</a></div>
 
     <div class="maintitle" id="maintitle1">
-        <span id="title1"><a href="/">Institute for Learning &amp; Research Technology</a></span>
+        <span id="title1"><a href="http://www.ilrt.bris.ac.uk/">Institute for Learning &amp; Research Technology</a></span>
     </div>
     </div>
 
@@ -266,13 +266,13 @@ REMOVED FOR NOW UNLESS THIS SERVICE IS REQUIRED FOR THE TEST
 <div id="deptnavbottom" class="deptnavbottom-nav">
     <ul>
         <li class="">
-            <a href="/" title="ILRT home page">ILRT home</a>
+            <a href="http://www.ilrt.bris.ac.uk/" title="ILRT home page">ILRT home</a>
         </li>
         <li class="">
             <a href="https://intranet.ilrt.bris.ac.uk/">Intranet</a>
         </li>
         <li class="">
-            <a href="/aboutus/map-directions/">Finding the ILRT</a>
+            <a href="http://www.ilrt.bris.ac.uk/aboutus/map-directions/">Finding the ILRT</a>
         </li>
         <li class="">
             <a href="http://www.bristol.ac.uk/university/maps/">Finding the University</a>
