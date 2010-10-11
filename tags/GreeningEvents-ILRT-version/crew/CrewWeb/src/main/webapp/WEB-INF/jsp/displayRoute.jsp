@@ -233,9 +233,11 @@ Maps and Directions
 <a href="http://www.ilrt.bris.ac.uk">ILRT home</a>
      >
 <a href="http://www.ilrt.bris.ac.uk/aboutus">About Us</a>
+    >
+    <a href="http://www.ilrt.bris.ac.uk/aboutus/map-directions/">Travel information to the ILRT</a>
 <c:if test="${browseHistory[1] != null}">
     >
-    <a href="${browseHistory[1].path}">Travel information to the ILRT</a>
+    <a href="${browseHistory[1].path}">Interactive maps</a>
     > Route details
 </c:if>
 </p>
