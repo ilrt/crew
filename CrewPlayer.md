@@ -1,0 +1,4 @@
+![http://crew.googlecode.com/svn/wiki/images/crewPlayer.png](http://crew.googlecode.com/svn/wiki/images/crewPlayer.png)
+
+# Introduction #
+The CrewPlayer is the replay interface for recordings created by the CREW system. It is a flash based interface that synchronizes the video streams and live annotations of a conference session. The player can be configured through the definition of a ReplayLayout that is stored with the recording. The player consists in the default configuration of two synchronized video streams, the Controls containing the play/pause, the annotation list and the time-slider highlighting the audience annotations.
